@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Mona - Model Agency HTML5 Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>髮cute/註冊</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./img/core-img/favicon.ico">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="wrapper">
+      <div class="cssload-loader"></div>
+    </div>
+  </div>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar justify-content-between" id="monaNav">
+
+          <!-- Background Curve -->
+          <div class="bg-curve" style="background-image: url(./img/ad-img/curve.png);"></div>
+
+          <!-- Logo -->
+          <a class="nav-brand" href="index.html"><img src="./img/ad-img/logo.png" alt=""></a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+            <!-- Menu Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+              <ul id="nav">
+                <li><a href="#">登入</a>
+                </li>
+                <li><a href="./projects.html">註冊</a>
+                </li>
+              </ul>
+
+              <!-- Search Icon -->
+              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                <i class="icon_search"></i>
+              </div>
+            </div>
+            <!-- Nav End -->
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** register Form Area Start ***** -->
+  <section class="mona-casting-form-area">
+    <div class="container h-100 ">
+      <div class="row align-items-end h-50">
+        <div class="col-12">
+          <div class="breadcumb--con">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> 首頁</a></li>
+                <li class="breadcrumb-item active" aria-current="page">註冊</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-center justify-content-between">
+        <!-- register Form -->
+        <div class="col-xl-4 ">
+          <img src="./img/ad-img/設計師註冊.jpg" class="register-Form-img">
+        </div>
+        <div class="col-xl-8 ">
+          <div class="casting-form mona-contact-form mb-40 ">
+            <div class="contact-heading">
+              <h2>填寫註冊資料</h2>
+            </div>
+            <form action="#" method="POST">
+              <ul>
+                <li>
+                  <label>E-mail:</label>
+                  <input type="text" name="" id="emailaddress" value maxlength="50" placeholder="請填寫有效的Email">
+                  <span id="emailaddress_msg"></span>
+                </li>
+                <li>
+                  <label>密碼:</label>
+                  <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼">
+                  <span id="pwd_msg"></span>
+                </li>
+                <li>
+                  <label>密碼確認:</label>
+                  <input type="password" name="" id="pwdcheck" value maxlength="15" placeholder="請再輸入一次密碼">
+                  <span id="pwdchcek_msg"></span>
+                </li>
+                <li>
+                  <label>姓名:</label>
+                  <input type="text" name="" id="username" value maxlength="20" placeholder="請填寫真實姓名">
+                  <span id="username_msg"></span>
+                </li>
+                <li>
+                  <label>暱稱:</label>
+                  <input type="text" name="" id="usernickname" value maxlength="20" placeholder="顯示在網站上的名稱">
+                  <span id="usernickname_msg"></span>
+                </li>
+                <li>
+                  <label>性別:</label>
+                  <b><input type="radio" id="male" class="chk" value="1" name="gender" checked>男</b>
+                  <b><input type="radio" id="female" class="chk" value="2" name="gender">女</b>
+                </li>
+                <li>
+                  <label>生日:</label>
+                  <span>
+                    <select name="birthdayYear" id="birthdayYear">
+                      <option value="x">西元年</option>
+                    </select>
+                  </span>
+                  <span>
+                    <select name="birthdayMonth" id="birthdayMonth">
+                      <option value="x">月份</option>
+                    </select>
+                  </span>
+                  <span>
+                    <select name="birthdayDay" id="birthdayDay">
+                      <option value="x">日期</option>
+                    </select>
+                  </span>
+                  <span id="birthday_msg"></span>
+                </li>
+                <li>
+                  <label>地址:</label>
+                  <span>
+                    <select name="" id="">
+                      <option value="">高雄市</option>
+                      <option value="">台中市</option>
+                    </select>
+                  </span>
+                  <span>
+                    <select name="" id="">
+                      <option value="">前鎮區</option>
+                    </select>
+                  </span>
+                  <span id="address_msg"></span>
+                </li>
+                <li>
+                  <label>手機號碼:</label>
+                  <input type="text" name="" id="phonenumber" value maxlength="10" placeholder="請輸入手機號碼進行認證">
+                  <button id="receiveVerification" class="btn btn-warning">獲取手機驗證碼</button>
+                  <span id="phonenumber_msg"></span>
+                </li>
+                <li>
+                  <label>手機認證碼:</label>
+                  <input type="text" name="" id="catchVerification" value maxlength="6" placeholder="請輸入簡訊中的六碼數字">
+                  <span id="catchVerification_msg"></span>
+                </li> 
+              </ul>
+            </form>           
+          </div>
+      </div>
+        <div row >
+          <div class="form-group register-Form-btn">
+            <input type="reset" value="重置資料" class="btn btn-outline-danger">
+            <input type="submit" value="立即註冊" class="btn btn-outline-danger">
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <<footer>
+  <div class="container">
+  <div class=" row col-12 register-Form-footer">
+      <!--<dd><a href="#">聯絡我們</a></dd>-->
+  </div>
+  </div>
+  </footer>
+  <!-- ***** Casting Form Area End ***** -->
+
+
+  <!-- ***** Footer Area Start ***** -->
+   <!--<footer class="footer-area section-padding-80-0">
+    <div class="container">
+      <div class="row justify-content-between">-->
+
+        <!-- Single Footer Widget -->
+         <!--<div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="single-footer-widget mb-60">-->
+            <!-- Logo -->
+            <!--<a href="#" class="d-block mb-4"><img src="./img/core-img/logo.png" alt=""></a>
+            <p>Integer vehicula mauris libero, at molestie eros imperdiet sit amet. Suspendisse mattis ante sit amet ante.</p>
+            <div class="copywrite-text">
+              <p>&copy;--> 
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            <!--</div>
+          </div>
+        </div> -->
+
+        <!-- Single Footer Widget -->
+        <!--<div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+          <div class="single-footer-widget mb-60">-->
+            <!-- Widget Title 
+            <h4 class="widget-title">Our Link</h4>-->
+
+            <!-- Catagories Nav -->
+            <!--<nav>
+              <ul class="our-link">
+                <li><a href="#">New Faces</a></li>
+                <li><a href="#">Model Of the Week</a></li>
+                <li><a href="#">Classic Women</a></li>
+                <li><a href="#">Privacy Terms</a></li>
+                <li><a href="#">Classic Men</a></li>
+                <li><a href="#">Conditions</a></li>
+                <li><a href="#">Hair & Styles</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>-->
+
+        <!-- Single Footer Widget -->
+        <!--<div class="col-12 col-lg-4 col-xl-3">
+          <div class="single-footer-widget mb-60">-->
+            <!-- Widget Title 
+            <h4 class="widget-title">Contact</h4>-->
+            <!-- Footer Content 
+            <div class="footer-content mb-30">
+              <h4>+01-3-8888-6868</h4>
+              <h6>40 Baria Sreet 133/2 NewYork City</h6>
+            </div>-->
+            <!-- Social Info 
+            <div class="footer-social-info">
+              <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="pinterest" data-toggle="tooltip" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a>
+              <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="youtube" data-toggle="tooltip" data-placement="top" title="YouTube"><i class="fa fa-youtube-play"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+  <!-- ***** Footer Area End ***** -->
+
+  <!-- ******* All JS ******* -->
+  <!-- jQuery js -->
+  <script src="js/jquery.min.js"></script>
+  <!-- Popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- All js -->
+  <script src="js/mona.bundle.js"></script>
+  <!-- Active js -->
+  <script src="js/default-assets/active.js"></script>
+
+</body>
+
+</html>
