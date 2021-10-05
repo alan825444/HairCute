@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>髮CUTE | 預剪美好的一天</title>
+    <meta name="author" content="Aubrey Lin">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="monaNav">
+
+                    <!-- Background Curve -->
+                    <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
+                    </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+                            <ul id="nav">
+
+                                <li><a href="#">登入</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">- 設計師</a></li>
+                                        <li><a href="#">- 會員</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">註冊</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">- 設計師</a></li>
+                                        <li><a href="#">- 會員</a></li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">- 台中</a></li>
+                                        <li><a href="#">- 高雄</a></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+
+
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-- ***** search bar Area Start ***** -->
+    <div class="container seachbar d-flex align-items-center shadow">
+        
+        <form class="row gy-2 gx-3 align-items-center">
+            <div class="col-auto">
+                <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>縣市</option>
+                  <option value="1">台北市</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            <div class="col-auto">
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-map-marker-alt mr-2"></i>
+                      地區
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">台北市</a>
+                    <ul class="dropdown-menu"><li class="dropdown-item"><a href="#">大安區</a></li></ul></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <!-- <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li> -->
+                    </ul>
+                  </div>
+            </div>
+            <div class="col-auto">
+              <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+              <select class="form-select" id="autoSizingSelect">
+                <option selected>Choose...</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+            <div class="col-auto">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                <label class="form-check-label" for="autoSizingCheck">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-success">搜尋</button>
+            </div>
+          </form>
+        </div>
+    </div>
+    <!-- ***** search bar Area End ***** -->
+
+    <!-- ***** Result list Area Start ***** -->
+    <div class="container result-list">
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <table class="table table-striped table-hover">
+                    
+                    <tbody>
+                        <tr>
+                            <td class="w-25">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/banner-img/store2.jpg" class="img-thumbnail img-fluid rounded-circle">
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+
+                            </td>
+                            <td class="w-25">
+                                <ul>
+                                    <li class="list_store_name">查理</li>
+                                    <li class="list_store_address"><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                    </li>
+                                    <li>
+                                        <ul class="img-list d-flex flex-row my-3">
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td colspan="2">
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/banner-img/store2.jpg" class="img-thumbnail img-fluid rounded-circle">
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+
+                            </td>
+                            <td class="w-25">
+                                <ul>
+                                    <li class="list_store_name">查理</li>
+                                    <li class="list_store_address"><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                    </li>
+                                    <li>
+                                        <ul class="img-list d-flex flex-row my-3">
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td colspan="2">
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="w-25">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <img src="img/banner-img/store2.jpg" class="img-thumbnail img-fluid rounded-circle">
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+
+                            </td>
+                            <td class="w-25">
+                                <ul>
+                                    <li class="list_store_name">查理</li>
+                                    <li class="list_store_address"><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                    </li>
+                                    <li>
+                                        <ul class="img-list d-flex flex-row my-3">
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+                                            <li><img class="img-thumbnail img-fluid" src="img/hair2.jpeg" alt=""> </li>
+
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td colspan="2">
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                                <ul class="d-flex justify-content-between">
+                                    <ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-caret-right"></i>
+                                        <h5>造型剪髮 + 洗頭</h5>
+                                    </li>
+                                    <li>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p>
+                                    </li>
+                                    </ul>
+                                    <li class="d-inline-flex ">
+                                        <i class="fas fa-dollar-sign"></i>
+                                        <h5>499</h5>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Result list Area End ***** -->
+
+    <!-- ******* All JS ******* -->
+    <!-- jQuery js -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>    
+    <!-- All js -->
+    <script src="js/mona.bundle.js"></script>
+    <!-- Active js -->
+    <script src="js/default-assets/active.js"></script>
+
+</body>
+
+</html>
