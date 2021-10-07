@@ -1,1 +1,0 @@
-var branch = "Hello branch";
