@@ -1,0 +1,423 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EE5ED64-A9CA-497E-AFDE-E2E24A0A218D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Haircute</RootNamespace>
+    <AssemblyName>Haircute</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44333</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\animate.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\default-assets\classy-nav.css" />
+    <Content Include="Content\css\default-assets\hkgrotesk-fonts.css" />
+    <Content Include="Content\css\default-assets\slick.css" />
+    <Content Include="Content\css\font-awesome.min.css" />
+    <Content Include="Content\css\fonts\ElegantIcons.svg" />
+    <Content Include="Content\css\magnific-popup.css" />
+    <Content Include="Content\css\owl.carousel.min.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="fonts\classy.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\HKGrotesk-Bold.svg" />
+    <Content Include="fonts\HKGrotesk-BoldItalic.svg" />
+    <Content Include="fonts\HKGrotesk-Italic.svg" />
+    <Content Include="fonts\HKGrotesk-Medium.svg" />
+    <Content Include="fonts\HKGrotesk-MediumItalic.svg" />
+    <Content Include="fonts\HKGrotesk-Regular.svg" />
+    <Content Include="fonts\HKGrotesk-SemiBold.svg" />
+    <Content Include="fonts\HKGrotesk-SemiBoldItalic.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="img\banner-img\curve.png" />
+    <Content Include="img\banner-img\hair4.jpeg" />
+    <Content Include="img\banner-img\hair6.jpeg" />
+    <Content Include="img\banner-img\logo.png" />
+    <Content Include="img\banner-img\rank1.png" />
+    <Content Include="img\banner-img\rank2.png" />
+    <Content Include="img\banner-img\rank3.png" />
+    <Content Include="img\banner-img\store1.jpg" />
+    <Content Include="img\banner-img\store2.jpg" />
+    <Content Include="img\banner-img\小短髮.jpg" />
+    <Content Include="img\banner-img\小短髮2.jpg" />
+    <Content Include="img\banner-img\歐美 Undercut.jpg" />
+    <Content Include="img\banner-img\歐美 Undercut2.jpg" />
+    <Content Include="img\banner-img\韓系劉海頭.jpg" />
+    <Content Include="img\banner-img\韓系劉海頭2.jpg" />
+    <Content Include="img\bg-img\1.jpg" />
+    <Content Include="img\bg-img\10.jpg" />
+    <Content Include="img\bg-img\11.jpg" />
+    <Content Include="img\bg-img\12.jpg" />
+    <Content Include="img\bg-img\13.jpg" />
+    <Content Include="img\bg-img\14.jpg" />
+    <Content Include="img\bg-img\15.jpg" />
+    <Content Include="img\bg-img\16.jpg" />
+    <Content Include="img\bg-img\17.jpg" />
+    <Content Include="img\bg-img\18.jpg" />
+    <Content Include="img\bg-img\19.jpg" />
+    <Content Include="img\bg-img\2.jpg" />
+    <Content Include="img\bg-img\20.jpg" />
+    <Content Include="img\bg-img\21.jpg" />
+    <Content Include="img\bg-img\22.jpg" />
+    <Content Include="img\bg-img\23.jpg" />
+    <Content Include="img\bg-img\24.jpg" />
+    <Content Include="img\bg-img\25.jpg" />
+    <Content Include="img\bg-img\26.jpg" />
+    <Content Include="img\bg-img\27.jpg" />
+    <Content Include="img\bg-img\28.jpg" />
+    <Content Include="img\bg-img\29.jpg" />
+    <Content Include="img\bg-img\3.jpg" />
+    <Content Include="img\bg-img\30.jpg" />
+    <Content Include="img\bg-img\31.jpg" />
+    <Content Include="img\bg-img\32.jpg" />
+    <Content Include="img\bg-img\33.jpg" />
+    <Content Include="img\bg-img\34.jpg" />
+    <Content Include="img\bg-img\35.jpg" />
+    <Content Include="img\bg-img\36.jpg" />
+    <Content Include="img\bg-img\37.jpg" />
+    <Content Include="img\bg-img\38.jpg" />
+    <Content Include="img\bg-img\39.jpg" />
+    <Content Include="img\bg-img\4.jpg" />
+    <Content Include="img\bg-img\40.jpg" />
+    <Content Include="img\bg-img\41.jpg" />
+    <Content Include="img\bg-img\42.jpg" />
+    <Content Include="img\bg-img\43.jpg" />
+    <Content Include="img\bg-img\44.jpg" />
+    <Content Include="img\bg-img\45.jpg" />
+    <Content Include="img\bg-img\46.jpg" />
+    <Content Include="img\bg-img\47.jpg" />
+    <Content Include="img\bg-img\48.jpg" />
+    <Content Include="img\bg-img\49.jpg" />
+    <Content Include="img\bg-img\5.jpg" />
+    <Content Include="img\bg-img\50.jpg" />
+    <Content Include="img\bg-img\51.jpg" />
+    <Content Include="img\bg-img\6.jpg" />
+    <Content Include="img\bg-img\7.jpg" />
+    <Content Include="img\bg-img\8.jpg" />
+    <Content Include="img\bg-img\9.jpg" />
+    <Content Include="img\bg-img\banner.png" />
+    <Content Include="img\core-img\curve.png" />
+    <Content Include="img\core-img\favicon.ico" />
+    <Content Include="img\core-img\logo.png" />
+    <Content Include="img\hair.jpeg" />
+    <Content Include="img\hair2.jpeg" />
+    <Content Include="img\hair3.jpeg" />
+    <Content Include="img\hair5.jpeg" />
+    <Content Include="img\hair6.jpeg" />
+    <Content Include="img\logo-white.png" />
+    <Content Include="img\register-customer.png" />
+    <Content Include="img\register-store.png" />
+    <Content Include="img\register.jpg" />
+    <Content Include="img\register.png" />
+    <Content Include="img\store2.jpg" />
+    <Content Include="img\store3.jpg" />
+    <Content Include="img\user-img\13.jpg" />
+    <Content Include="img\user-img\card.png" />
+    <Content Include="img\user-img\good-job.png" />
+    <Content Include="img\user-img\photos.png" />
+    <Content Include="img\user-img\photosw.png" />
+    <Content Include="img\user-img\point.png" />
+    <Content Include="img\user-img\pointw.png" />
+    <Content Include="img\user-img\rectangle.png" />
+    <Content Include="img\user-img\reserve.png" />
+    <Content Include="img\user-img\reservew.png" />
+    <Content Include="img\user-img\star %281%29.png" />
+    <Content Include="img\user-img\star.png" />
+    <Content Include="img\user-img\starw.png" />
+    <Content Include="img\user-img\store2.jpg" />
+    <Content Include="img\user-img\writing.png" />
+    <Content Include="img\user-img\writingw.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\default-assets\active.js" />
+    <Content Include="js\default-assets\avoid.console.error.js" />
+    <Content Include="js\default-assets\classynav.js" />
+    <Content Include="js\default-assets\jquery.scrollup.min.js" />
+    <Content Include="js\default-assets\slick.min.js" />
+    <Content Include="js\gulpfile.js" />
+    <Content Include="js\imagesloaded.pkgd.min.js" />
+    <Content Include="js\isotope.pkgd.min.js" />
+    <Content Include="js\jarallax-video.min.js" />
+    <Content Include="js\jarallax.min.js" />
+    <Content Include="js\jquery.easing.min.js" />
+    <Content Include="js\jquery.magnific-popup.min.js" />
+    <Content Include="js\jquery.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\mona.bundle.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="js\popper.min.js" />
+    <Content Include="js\waypoints.min.js" />
+    <Content Include="js\wow.min.js" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tMember.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="img\.DS_Store" />
+    <Content Include="img\banner-img\.DS_Store" />
+    <Content Include="img\bg-img\.DS_Store" />
+    <Content Include="fonts\classy.eot" />
+    <Content Include="fonts\classy.ttf" />
+    <Content Include="fonts\classy.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\HKGrotesk-Bold.eot" />
+    <Content Include="fonts\HKGrotesk-Bold.ttf" />
+    <Content Include="fonts\HKGrotesk-Bold.woff" />
+    <Content Include="fonts\HKGrotesk-Bold.woff2" />
+    <Content Include="fonts\HKGrotesk-BoldItalic.eot" />
+    <Content Include="fonts\HKGrotesk-BoldItalic.ttf" />
+    <Content Include="fonts\HKGrotesk-BoldItalic.woff" />
+    <Content Include="fonts\HKGrotesk-BoldItalic.woff2" />
+    <Content Include="fonts\HKGrotesk-Italic.eot" />
+    <Content Include="fonts\HKGrotesk-Italic.ttf" />
+    <Content Include="fonts\HKGrotesk-Italic.woff" />
+    <Content Include="fonts\HKGrotesk-Italic.woff2" />
+    <Content Include="fonts\HKGrotesk-Medium.eot" />
+    <Content Include="fonts\HKGrotesk-Medium.ttf" />
+    <Content Include="fonts\HKGrotesk-Medium.woff" />
+    <Content Include="fonts\HKGrotesk-Medium.woff2" />
+    <Content Include="fonts\HKGrotesk-MediumItalic.eot" />
+    <Content Include="fonts\HKGrotesk-MediumItalic.ttf" />
+    <Content Include="fonts\HKGrotesk-MediumItalic.woff" />
+    <Content Include="fonts\HKGrotesk-MediumItalic.woff2" />
+    <Content Include="fonts\HKGrotesk-Regular.eot" />
+    <Content Include="fonts\HKGrotesk-Regular.ttf" />
+    <Content Include="fonts\HKGrotesk-Regular.woff" />
+    <Content Include="fonts\HKGrotesk-Regular.woff2" />
+    <Content Include="fonts\HKGrotesk-SemiBold.eot" />
+    <Content Include="fonts\HKGrotesk-SemiBold.ttf" />
+    <Content Include="fonts\HKGrotesk-SemiBold.woff" />
+    <Content Include="fonts\HKGrotesk-SemiBold.woff2" />
+    <Content Include="fonts\HKGrotesk-SemiBoldItalic.eot" />
+    <Content Include="fonts\HKGrotesk-SemiBoldItalic.ttf" />
+    <Content Include="fonts\HKGrotesk-SemiBoldItalic.woff" />
+    <Content Include="fonts\HKGrotesk-SemiBoldItalic.woff2" />
+    <Content Include="Content\css\fonts\ElegantIcons.eot" />
+    <Content Include="Content\css\fonts\ElegantIcons.ttf" />
+    <Content Include="Content\css\fonts\ElegantIcons.woff" />
+    <Content Include="Content\style.css.map" />
+    <Content Include="Content\css\.DS_Store" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="scss\.DS_Store" />
+    <Content Include="scss\mixins\_flex.scss" />
+    <Content Include="scss\mixins\_miscellaneous.scss" />
+    <Content Include="scss\style.scss" />
+    <Content Include="scss\utilities\_color.scss" />
+    <Content Include="scss\utilities\_fonts.scss" />
+    <Content Include="scss\utilities\_responsive.scss" />
+    <Content Include="scss\utilities\_variables.scss" />
+    <Content Include="scss\_about.scss" />
+    <Content Include="scss\_backtotop.scss" />
+    <Content Include="scss\_blog.scss" />
+    <Content Include="scss\_breadcrumb.scss" />
+    <Content Include="scss\_buttons.scss" />
+    <Content Include="scss\_contact.scss" />
+    <Content Include="scss\_cta.scss" />
+    <Content Include="scss\_footer.scss" />
+    <Content Include="scss\_gallery.scss" />
+    <Content Include="scss\_header.scss" />
+    <Content Include="scss\_heading.scss" />
+    <Content Include="scss\_hero.scss" />
+    <Content Include="scss\_model.scss" />
+    <Content Include="scss\_preloader.scss" />
+    <Content Include="scss\_reboot.scss" />
+    <Content Include="scss\_spacing.scss" />
+    <Content Include="scss\_team.scss" />
+    <Content Include="scss\_testimonial.scss" />
+    <Content Include="scss\_widget.scss" />
+    <Content Include="Views\Shared\package-lock.json" />
+    <Content Include="Views\Shared\package.json" />
+    <Content Include="Views\Home\package-lock.json" />
+    <Content Include="Views\Home\package.json" />
+    <Content Include="Views\Register\Register.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>56932</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44333/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="demodbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tMember">
+    <Key>
+      <PropertyRef Name="fID" />
+    </Key>
+    <Property Name="fID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="fEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="fGender" Type="char" MaxLength="10" />
+    <Property Name="fBirth" Type="date" />
+    <Property Name="fArea" Type="nvarchar" MaxLength="50" />
+    <Property Name="fDesign" Type="char" MaxLength="10" />
+    <Property Name="fk_Designer" Type="int" />
+    <Property Name="fk_Memorder" Type="int" />
+  </EntityType>
+  <EntityContainer Name="demodbModelStoreContainer">
+    <EntitySet Name="tMember" EntityType="Self.tMember" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

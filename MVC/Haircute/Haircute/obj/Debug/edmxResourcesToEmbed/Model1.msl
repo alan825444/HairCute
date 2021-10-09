@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demodbModelStoreContainer" CdmEntityContainer="demodbEntities">
+    <EntitySetMapping Name="tMember">
+      <EntityTypeMapping TypeName="demodbModel.tMember">
+        <MappingFragment StoreEntitySet="tMember">
+          <ScalarProperty Name="fID" ColumnName="fID" />
+          <ScalarProperty Name="fPwd" ColumnName="fPwd" />
+          <ScalarProperty Name="fUsername" ColumnName="fUsername" />
+          <ScalarProperty Name="fEmail" ColumnName="fEmail" />
+          <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+          <ScalarProperty Name="fGender" ColumnName="fGender" />
+          <ScalarProperty Name="fBirth" ColumnName="fBirth" />
+          <ScalarProperty Name="fArea" ColumnName="fArea" />
+          <ScalarProperty Name="fDesign" ColumnName="fDesign" />
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fk_Memorder" ColumnName="fk_Memorder" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
