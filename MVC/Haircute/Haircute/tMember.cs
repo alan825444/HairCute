@@ -25,5 +25,7 @@ namespace Haircute
         public string fDesign { get; set; }
         public Nullable<int> fk_Designer { get; set; }
         public Nullable<int> fk_Memorder { get; set; }
+        public string fNickname { get; set; }
+        public string fCity { get; set; }
     }
 }

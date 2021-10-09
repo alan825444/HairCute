@@ -7,10 +7,12 @@
     <Property Name="fID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="fUsername" Type="nvarchar" MaxLength="50" />
+    <Property Name="fNickname" Type="nvarchar" MaxLength="50" />
     <Property Name="fEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="fPhone" Type="nvarchar" MaxLength="50" />
     <Property Name="fGender" Type="char" MaxLength="10" />
     <Property Name="fBirth" Type="date" />
+    <Property Name="fCity" Type="nvarchar" MaxLength="50" />
     <Property Name="fArea" Type="nvarchar" MaxLength="50" />
     <Property Name="fDesign" Type="char" MaxLength="10" />
     <Property Name="fk_Designer" Type="int" />

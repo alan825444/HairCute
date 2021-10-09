@@ -76,8 +76,9 @@ C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\zh-Hant\System
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\zh-Hant\System.Web.Webpages.Razor.resources.dll
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\zh-Hant\System.Web.Helpers.resources.dll
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\zh-Hant\System.Web.Mvc.resources.dll
-C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.AssemblyReference.cache
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.CoreCompileInputs.cache
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.CopyComplete
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.dll
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.pdb
+C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\zh-Hant\EntityFramework.SqlServer.resources.dll
+C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.AssemblyReference.cache

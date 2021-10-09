@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="demodbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="demodbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tMember">
           <Key>
             <PropertyRef Name="fID" />
@@ -12,10 +12,12 @@
           <Property Name="fID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fPwd" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fUsername" Type="nvarchar" MaxLength="50" />
+          <Property Name="fNickname" Type="nvarchar" MaxLength="50" />
           <Property Name="fEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="fPhone" Type="nvarchar" MaxLength="50" />
           <Property Name="fGender" Type="char" MaxLength="10" />
           <Property Name="fBirth" Type="date" />
+          <Property Name="fCity" Type="nvarchar" MaxLength="50" />
           <Property Name="fArea" Type="nvarchar" MaxLength="50" />
           <Property Name="fDesign" Type="char" MaxLength="10" />
           <Property Name="fk_Designer" Type="int" />
@@ -24,8 +26,7 @@
         <EntityContainer Name="demodbModelStoreContainer">
           <EntitySet Name="tMember" EntityType="Self.tMember" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="demodbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -44,6 +45,8 @@
           <Property Name="fDesign" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="fk_Designer" Type="Int32" />
           <Property Name="fk_Memorder" Type="Int32" />
+          <Property Name="fNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tMember" EntityType="Self.tMember" />
@@ -57,6 +60,8 @@
           <EntitySetMapping Name="tMember">
             <EntityTypeMapping TypeName="demodbModel.tMember">
               <MappingFragment StoreEntitySet="tMember">
+                <ScalarProperty Name="fCity" ColumnName="fCity" />
+                <ScalarProperty Name="fNickname" ColumnName="fNickname" />
                 <ScalarProperty Name="fID" ColumnName="fID" />
                 <ScalarProperty Name="fPwd" ColumnName="fPwd" />
                 <ScalarProperty Name="fUsername" ColumnName="fUsername" />

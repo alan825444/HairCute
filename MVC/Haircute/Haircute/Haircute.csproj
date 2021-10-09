@@ -251,7 +251,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -274,6 +273,7 @@
     <Compile Include="tMember.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\CMenberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -367,7 +367,7 @@
     <Content Include="Views\Shared\package.json" />
     <Content Include="Views\Home\package-lock.json" />
     <Content Include="Views\Home\package.json" />
-    <Content Include="Views\Register\Register.cshtml" />
+    <Content Include="Views\Home\RGFDesigner.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
