@@ -38,10 +38,10 @@
                 <nav class="classy-navbar justify-content-between" id="monaNav">
 
                     <!-- Background Curve -->
-                    <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+                    <div class="bg-curve" style="background-image: url('../img/banner-img/curve.png');"></div>
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.html"><img src="~/img/banner-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -125,13 +125,13 @@
                         <div class="register-card shadow">
                             <a href="~/Register/Register">
                                 <div class="register-cardHead" id="banner01">設計師</div>
-                                <div class="register-cardBody"><img src="img/register-store.png"></div>
+                                <div class="register-cardBody"><img src="~/img/register-store.png"></div>
                             </a>
                         </div>
                         <div class="register-card shadow">
                             <a href="register.html">
                                 <div class="register-cardHead" id="banner02">消費者</div>
-                                <div class="register-cardBody"><img src="img/register-customer.png"></div>
+                                <div class="register-cardBody"><img src="~/img/register-customer.png"></div>
                             </a>
                         </div>
 
@@ -151,7 +151,7 @@
             <div class="modal-dialog">
                 <div class="modal-content login-area">
                     <div class="modal-header border-0">
-                        <img class="login-logo" src="img/logo-white.png" alt="">
+                        <img class="login-logo" src="~/img/logo-white.png" alt="">
                         <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -199,7 +199,9 @@
     </div>
     <!-- ***** login Area End ***** -->
     <!-- ***** Header Area End ***** -->
-    @RenderBody()
+    <div>
+        @RenderBody()
+    </div>
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area py-3">
         <div class="container">
@@ -209,7 +211,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="single-footer-widget ">
                         <!-- Logo -->
-                        <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
+                        <a href="#" class="d-block mb-4"><img src="~/img/banner-img/logo.png" alt=""></a>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
                         <div class="copywrite-text">
                             <p>

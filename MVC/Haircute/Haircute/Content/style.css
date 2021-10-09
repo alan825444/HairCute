@@ -695,32 +695,32 @@ ul {
       bottom: 93%;
       left: 17%;
     }
-    .hair-style-img{
-      position: absolute;
-      width: 450px;
-      height: 350px;
-      overflow: hidden;
-      border-radius: 1rem;
-      background-image: url(~/img/banner-img/hair4.jpeg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 120%;
-      left: 10%;
-      top: 35%;
-    }
-    .hair-style-img2{
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      overflow: hidden;
-      border-radius: 1rem;
-      background-image: url(~/img/banner-img/hair6.jpeg);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 100%;
-      left: 70%;
-      bottom: 40%;
-    }
+.hair-style-img {
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-image: url('~/img/banner-img/hair4.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    left: 10%;
+    top: 35%;
+}
+.hair-style-img2 {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 1rem;
+    background-image: url('~/img/banner-img/hair6.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    left: 70%;
+    bottom: 40%;
+}
     
   .single-welcome-slide .main-bg-img {
     position: absolute;
