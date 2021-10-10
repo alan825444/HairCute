@@ -2798,3 +2798,45 @@ margin: 5px 0px;
   padding-top: 20px;
   padding-bottom: 500px;
 }
+
+
+/*reserve-menu*/
+.reserve-menu{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.reserve-menu button{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:1px solid rgb(206, 203, 203);
+  font-family: 'Times New Roman', Times, serif;
+}
+.date-btn{
+  display: inline-block;
+  width: 20%;
+  margin-left: 5px;
+}
+.date-range{
+  display: inline-block;
+  width: 50%;
+  padding-top: 7px;
+  margin-left: -60px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+/*reserve-manage-area*/
+.reserve-manage-area{
+  text-align: center;
+}
+
+.reserve-manage-area a{
+  font-size: 16px;
+  color: blue;
+}
+.close-a{
+  padding-top: 5px;
+}
+
+.reserve-manage-area button{
+    font-size: 10px;
+}
