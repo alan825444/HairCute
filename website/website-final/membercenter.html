@@ -184,11 +184,12 @@
                 <h2>查理</h2>
               </div>
               <div class="user-star">
-                <img src="img/user-img/star (1).png">
-                <img src="img/user-img/star (1).png">
-                <img src="img/user-img/star (1).png">
-                <img src="img/user-img/star (1).png">
-                <img src="img/user-img/star (1).png">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ml-1"><b>4.9</b></span>
               </div>
             </li>
             <li>
@@ -216,7 +217,6 @@
           <ul>
             <a href="#"><div class="userinfo-edit">編輯個人資料</div></a>
             <a href="#"><div class="userinfo-edit">上傳作品</div></a>
-            <a href="#"><div class="userinfo-edit">撰寫文章</div></a>
             <a href="#"><div class="userinfo-edit">預約管理</div></a>
           </ul>
         </div>
@@ -224,10 +224,8 @@
       <div class="row membercenter-Tab">
         <div class="col-12">
           <a href="#" ><div class="Tab1"><img src="img/user-img/photos.png" ><span>作品集</span></div></a>
-          <a href="#" ><div class="Tab2"><img src="img/user-img/writing.png" ><span>我的文章</span></div></a>
-          <a href="#" ><div class="Tab3"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
-          <a href="#" ><div class="Tab4"><img src="img/user-img/point.png" ><span>點數</span></div></a>
-          <a href="#" ><div class="Tab5"><img src="img/user-img/star.png" ><span>評價</span></div></a>
+          <a href="#" ><div class="Tab2"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
+          <a href="#" ><div class="Tab3"><img src="img/user-img/star.png" ><span>評價</span></div></a>
         </div>
       </div>
       <script>
@@ -239,32 +237,21 @@
           $(".Tab2,.Tab3,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#design-area').fadeIn();
-          $('#article-area,#reservation-area,#point-area,#evaluate-area').fadeOut();
+          $('#reservation-area,#evaluate-area').fadeOut();
         })
         $(".Tab2").click(function(){
           $(".Tab1,.Tab3,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
-          $('#article-area').fadeIn();
-          $('#design-area,#reservation-area,#point-area,#evaluate-area').fadeOut();
+          $('#reservation-area').fadeIn();
+          $('#design-area,#evaluate-area').fadeOut();
         })
         $(".Tab3").click(function(){
           $(".Tab2,.Tab1,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
-          $('#reservation-area').fadeIn();
-          $('#design-area,#article-area,#point-area,#evaluate-area').fadeOut();
-        })
-        $(".Tab4").click(function(){
-          $(".Tab2,.Tab1,.Tab3,.Tab5").removeClass('change');
-          $(this).addClass('change');
-          $('#point-area').fadeIn();
-          $('#design-area,#article-area,#reservation-area,#evaluate-area').fadeOut();
-        })
-        $(".Tab5").click(function(){
-          $(".Tab2,.Tab1,.Tab4,.Tab3").removeClass('change');
-          $(this).addClass('change');
           $('#evaluate-area').fadeIn();
-          $('#design-area,#article-area,#reservation-area,#point-area').fadeOut();
+          $('#design-area,#reservation-area').fadeOut();
         })
+        
       </script>
 
       <!--design-area start-->
@@ -353,7 +340,7 @@
       <!--design-area End-->
 
       <!--article-area start-->
-      <div id="article-area">
+      <!--<div id="article-area">
         <article>
           <div class="row article-area">
             <div class="article-item">
@@ -473,48 +460,134 @@
             </div>
           </div>
         </article>
-      </div>
+      </div>-->
       <!--article-area End-->
 
       <!--reservation-area start-->
       <div id="reservation-area">
         <article>
           <div class="row reservation-area">
-            <ul>
-              <li>
-                aaaaaaa
-              </li>
-              <div class="article-item">
+              <div class="reservation-item">
                 <ul>
                   <li>
-                    <div class="article-title">
-                      <h3>想知道如何將頭髮保養好嗎?</h3>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="article-likes">
-                      <img src="img/user-img/good-job.png">
-                      <label>4455</label>
-                    </div>
-                    <div class="article-birth">
-                      <label>發表時間：2021/10/05</label>
+                    <div class="reservation-pic-div">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
                   </li>
                 </ul>
                 <ul>
-                  <div class="article-pic">
-                    <img src="img/bg-img/48.jpg">
-                  </div>
+                  <li>
+                    <div class="reservation-title">
+                      <a href="#">查理</a>
+                      <div class="reservation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer">
+                      <label>預約狀態:</label><b>已確認</b><i class="fas fa-check-circle"></i>
+                    </div>
+                  </li>
                 </ul>
               </div>
-            </ul>
+              <div class="reservation-item">
+                <ul>
+                  <li>
+                    <div class="reservation-pic-div">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div class="reservation-title">
+                      <a href="#">查理</a>
+                      <div class="reservation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer">
+                      <label>預約狀態:</label><b>已確認</b><i class="fas fa-check-circle"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="reservation-item">
+                <ul>
+                  <li>
+                    <div class="reservation-pic-div">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                    <div class="reservation-title">
+                      <a href="#">查理</a>
+                      <div class="reservation-star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer">
+                      <label>預約狀態:</label><b>已確認</b><i class="fas fa-check-circle"></i>
+                    </div>
+                  </li>
+                </ul>
+              </div>
           </div>
         </article>
       </div>
       <!--reservation-area End-->
 
       <!--point-area start-->
-      <div id="point-area">
+      <!--<div id="point-area">
         <article>
           <div class="row point-area">
             <div class="point-form">
@@ -570,9 +643,9 @@
                   $('#point-record-expired').show();
                   $('#point-record-used,#point-record-all').hide();
                 })
-              </script>
+              </script>-->
               <!--point-record-area start-->
-              <div class="point-record-group" id="point-record-all">
+              <!--<div class="point-record-group" id="point-record-all">
                 <div class="point-record">
                   <ul>
                     <div class="point-record-pic">
@@ -645,10 +718,10 @@
                     </div>
                   </ul>       
                 </div>
-              </div>
+              </div>-->
               <!--point-record-area start-->
               <!--point-record-area start-->
-              <div class="point-record-group" id="point-record-used">
+              <!--<div class="point-record-group" id="point-record-used">
                 <div class="point-record">
                   <ul>
                     <div class="point-record-pic">
@@ -721,10 +794,10 @@
                     </div>
                   </ul>       
                 </div>
-              </div>
+              </div>-->
               <!--point-record-area start-->
               <!--point-record-area start-->
-              <div class="point-record-group" id="point-record-expired">
+              <!--<div class="point-record-group" id="point-record-expired">
                 <div class="point-record">
                   <ul>
                     <div class="point-record-pic">
@@ -797,15 +870,12 @@
                     </div>
                   </ul>       
                 </div>
-              </div>
-              <!--point-record-area start-->
+              </div>-->
+              <!--point-record-area start
             </div>
           </div>
-          <div class="row point-attention">
-
-          </div>
         </article>
-      </div>
+      </div>-->
       <!--point-area End-->
 
       <!--evaluate-area start-->
