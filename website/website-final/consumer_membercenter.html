@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Title -->
-  <title>髮CUTE | 設計師主頁</title>
+  <title>髮CUTE | 消費者主頁</title>
 
   <!-- Favicon -->
   <link rel="icon" href="./img/core-img/favicon.ico">
@@ -192,12 +192,7 @@
                 <span class="ml-1"><b>4.9</b></span>
               </div>
             </li>
-            <li>
-              <div>
-                <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-              </div>
-            </li>
-            <li>
+            <!--<li>
               <div class="user-service">
                 <h4>服務項目</h4>
               </div>
@@ -210,259 +205,39 @@
                 造型剪髮+洗頭 $499<br>
                 #####
               </div>
-            </li>
+            </li>-->
           </ul>
         </div>
         <div class="col-3 membercenter-edit">
           <ul>
             <a href="#"><div class="userinfo-edit">編輯個人資料</div></a>
-            <a href="#"><div class="userinfo-edit">上傳作品</div></a>
-            <a href="#"><div class="userinfo-edit">預約管理</div></a>
           </ul>
         </div>
       </div>
       <div class="row membercenter-Tab">
         <div class="col-12">
-          <a href="#" ><div class="Tab1"><img src="img/user-img/photos.png" ><span>作品集</span></div></a>
           <a href="#" ><div class="Tab2"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
           <a href="#" ><div class="Tab3"><img src="img/user-img/star.png" ><span>評價</span></div></a>
         </div>
       </div>
       <script>
         $(document).ready(function(){
-          $(".Tab1").addClass('change');
-          $('#article-area,#reservation-area,#point-area,#evaluate-area').hide();
-        })
-        $(".Tab1").click(function(){
-          $(".Tab2,.Tab3,.Tab4,.Tab5").removeClass('change');
-          $(this).addClass('change');
-          $('#design-area').fadeIn();
-          $('#reservation-area,#evaluate-area').fadeOut();
+          $(".Tab2").addClass('change');
+          $('#evaluate-area').hide();
         })
         $(".Tab2").click(function(){
           $(".Tab1,.Tab3,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#reservation-area').fadeIn();
-          $('#design-area,#evaluate-area').fadeOut();
+          $('#evaluate-area').fadeOut();
         })
         $(".Tab3").click(function(){
           $(".Tab2,.Tab1,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#evaluate-area').fadeIn();
-          $('#design-area,#reservation-area').fadeOut();
+          $('#reservation-area').fadeOut();
         })
-        
       </script>
-
-      <!--design-area start-->
-      <div id="design-area">
-        <article>
-          <div class="row design-area">
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮<br>#####</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-          </div>
-          <div class="row design-area">
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/29.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/30.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/31.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/32.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-          </div>
-          <div class="row design-area">
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/33.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/34.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/35.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-            <div class="col-3 design-item">
-              <a href="#">
-                <div class="design-head"><img src="img/bg-img/36.jpg" class="design-pic"></div>
-                <div class="design-body">#俏麗短髮</div>
-              </a>
-            </div>
-          </div>
-        </article>
-      </div>
-      <!--design-area End-->
-
-      <!--article-area start-->
-      <!--<div id="article-area">
-        <article>
-          <div class="row article-area">
-            <div class="article-item">
-              <ul>
-                <li>
-                  <div class="article-title">
-                    <h3>想知道如何將頭髮保養好嗎?</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="article-likes">
-                    <img src="img/user-img/good-job.png">
-                    <label>4455</label>
-                  </div>
-                  <div class="article-birth">
-                    <label>發表時間：2021/10/05</label>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <div class="article-pic">
-                  <img src="img/bg-img/48.jpg">
-                </div>
-              </ul>
-            </div>
-            <div class="article-item">
-              <ul>
-                <li>
-                  <div class="article-title">
-                    <h3>想知道如何將頭髮保養好嗎?</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="article-likes">
-                    <img src="img/user-img/good-job.png">
-                    <label>4455</label>
-                  </div>
-                  <div class="article-birth">
-                    <label>發表時間：2021/10/05</label>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <div class="article-pic">
-                  <img src="img/bg-img/49.jpg">
-                </div>
-              </ul>
-            </div>
-            <div class="article-item">
-              <ul>
-                <li>
-                  <div class="article-title">
-                    <h3>想知道如何將頭髮保養好嗎?</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="article-likes">
-                    <img src="img/user-img/good-job.png">
-                    <label>4455</label>
-                  </div>
-                  <div class="article-birth">
-                    <label>發表時間：2021/10/05</label>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <div class="article-pic">
-                  <img src="img/bg-img/50.jpg">
-                </div>
-              </ul>
-            </div>
-            <div class="article-item">
-              <ul>
-                <li>
-                  <div class="article-title">
-                    <h3>想知道如何將頭髮保養好嗎?</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="article-likes">
-                    <img src="img/user-img/good-job.png">
-                    <label>4455</label>
-                  </div>
-                  <div class="article-birth">
-                    <label>發表時間：2021/10/05</label>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <div class="article-pic">
-                  <img src="img/bg-img/1.jpg">
-                </div>
-              </ul>
-            </div>
-            <div class="article-item">
-              <ul>
-                <li>
-                  <div class="article-title">
-                    <h3>想知道如何將頭髮保養好嗎?</h3>
-                  </div>
-                </li>
-                <li>
-                  <div class="article-likes">
-                    <img src="img/user-img/good-job.png">
-                    <label>4455</label>
-                  </div>
-                  <div class="article-birth">
-                    <label>發表時間：2021/10/05</label>
-                  </div>
-                </li>
-              </ul>
-              <ul>
-                <div class="article-pic">
-                  <img src="img/bg-img/2.jpg">
-                </div>
-              </ul>
-            </div>
-          </div>
-        </article>
-      </div>-->
-      <!--article-area End-->
-
       <!--reservation-area start-->
       <div id="reservation-area">
         <article>
@@ -477,6 +252,9 @@
                 </ul>
                 <ul>
                   <li>
+                    <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
+                  </li>
+                  <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
                       <div class="reservation-star">
@@ -515,6 +293,9 @@
                 </ul>
                 <ul>
                   <li>
+                    <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
+                  </li>
+                  <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
                       <div class="reservation-star">
@@ -552,6 +333,9 @@
                   </li>
                 </ul>
                 <ul>
+                  <li>
+                    <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
+                  </li>
                   <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
