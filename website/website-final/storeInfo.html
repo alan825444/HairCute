@@ -3,15 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Mona - Model Agency HTML5 Template">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Title -->
-  <title>髮CUTE | 設計師主頁</title>
-
-  <!-- Favicon -->
-  <link rel="icon" href="./img/core-img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>髮CUTE | 預剪美好的一天</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,20 +20,16 @@
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
-    <script>
-      
-    </script>
+  <!-- jquery ui -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-
-    
+  <!-- jQuery js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
 
 <body>
-  
+
 
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
@@ -71,11 +62,11 @@
 
               <ul id="nav">
 
-                <li><a href="#" data-toggle="modal" data-target="#log-in-select">登入</a>
-                  
+                <li><a href="#" data-toggle="modal" data-target="#log-in">登入</a>
+
                 </li>
-                <li><a href="#" data-toggle="modal" data-target="#log-in-select">註冊</a>
-                  
+                <li><a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+
                 </li>
 
                 <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
@@ -100,7 +91,7 @@
       </div>
     </div>
   </header>
-  <!-- ***** Header Area End ***** -->
+<!-- ***** Header Area End ***** -->
 
   <!-- ***** Top Search Area Start ***** -->
   <div class="top-search-area">
@@ -124,52 +115,96 @@
   <!-- ***** Top Search Area End ***** -->
 
 
-  <!-- ***** log-in Area Start ***** -->
-  <div class="log-in-select">
-    <!-- Search Modal -->
-    <div class="modal fade" id="log-in-select" tabindex="-1">
+  <!-- ***** register Area Start ***** -->
+  <div class="register-select">
+    <!-- register Modal -->
+    <div class="modal fade" id="register-select" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content register-cardarea">
           <div class="modal-header border-0">
-            <!-- <h5 class="text-center">註冊</h5> -->
             <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="register-select">
             <div class="register-card shadow">
-              <a href="#">
+              <a href="register.html">
                 <div class="register-cardHead" id="banner01">設計師</div>
                 <div class="register-cardBody"><img src="img/register-store.png"></div>
               </a>
             </div>
             <div class="register-card shadow">
-              <a href="#">
+              <a href="register.html">
                 <div class="register-cardHead" id="banner02">消費者</div>
                 <div class="register-cardBody"><img src="img/register-customer.png"></div>
               </a>
             </div>
+
           </div>
+
         </div>
       </div>
+
     </div>
+
   </div>
-  <!-- ***** log-in Area End ***** -->
+  <!-- ***** register Area End ***** -->
+
+  <!-- ***** login Area Start ***** -->
+  <div class="log-in">
+    <!-- register Modal -->
+    <div class="modal fade" id="log-in" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content login-area">
+          <div class="modal-header border-0">
+            <img class="login-logo" src="img/logo-white.png" alt="">
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="row row-cols-lg-auto justify-content-center ">
+              <div class="col-10 mb-3">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">ID</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="far fa-user"></i></div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="請輸入帳號">
+                </div>
+              </div>
+
+              <div class="col-10 pb-3">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">password</label>
+                <div class="input-group">
+                  <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
+                  <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="請輸入密碼">
+                </div>
+                <div class="row">
+                  <div class="col-6 my-3">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                      <label class="form-check-label" for="inlineFormCheck">
+                        記住帳號
+                      </label>
+                      <!-- <a href="#">忘記密碼</a> -->
+                    </div>
+                    
+                  </div>
+                  <div class="col-6 my-3 d-flex flex-row-reverse">
+                    <a href="#"><i class="far fa-question-circle mr-1"></i>忘記密碼 </a>
+                  </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="submit" class="btn log-in-btn">登入</button>
+
+                </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  <!-- ***** login Area End ***** -->
 
   <!-- ***** membercenter Area Start ***** -->
   <main class="membercenter-area">
-    <div class="container h-100 ">
-      <div class="row align-items-end h-50">
-        <div class="col-12">
-          <div class="breadcumb--con">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> 首頁</a></li>
-                <li class="breadcrumb-item active" aria-current="page">會員中心</li>
-              </ol>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="container">
       <div class="row membercenter-header">
         <div class="col-3 membercenter-pic">
@@ -212,54 +247,72 @@
             </li>
           </ul>
         </div>
-        <div class="col-3 membercenter-edit">
+        <!-- <div class="col-3 membercenter-edit">
           <ul>
-            <a href="#"><div class="userinfo-edit">編輯個人資料</div></a>
-            <a href="#"><div class="userinfo-edit">上傳作品</div></a>
-            <a href="#"><div class="userinfo-edit">撰寫文章</div></a>
-            <a href="#"><div class="userinfo-edit">預約管理</div></a>
+            <a href="#">
+              <div class="userinfo-edit">編輯個人資料</div>
+            </a>
+            <a href="#">
+              <div class="userinfo-edit">上傳作品</div>
+            </a>
+            <a href="#">
+              <div class="userinfo-edit">撰寫文章</div>
+            </a>
+            <a href="#">
+              <div class="userinfo-edit">預約管理</div>
+            </a>
           </ul>
-        </div>
+        </div> -->
       </div>
-      <div class="row membercenter-Tab" >
+      <div class="row membercenter-Tab">
         <div class="col-12" id="membercenter-Tab">
-          <a href="#" ><div class="Tab1"><img src="img/user-img/photos.png" ><span>作品集</span></div></a>
-          <a href="#" ><div class="Tab2"><img src="img/user-img/writing.png" ><span>我的文章</span></div></a>
-          <a href="#" ><div class="Tab3"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
-          <a href="#" ><div class="Tab4"><img src="img/user-img/point.png" ><span>點數</span></div></a>
-          <a href="#" ><div class="Tab5"><img src="img/user-img/star.png" ><span>評價</span></div></a>
+          <a href="#">
+            <div class="Tab1"><img src="img/user-img/photos.png"><span>作品集</span></div>
+          </a>
+          <a href="#">
+            <div class="Tab2"><img src="img/user-img/writing.png"><span>我的文章</span></div>
+          </a>
+          <a href="#">
+            <div class="Tab3"><img src="img/user-img/reserve.png"><span>我的預約</span></div>
+          </a>
+          <a href="#">
+            <div class="Tab4"><img src="img/user-img/point.png"><span>點數</span></div>
+          </a>
+          <a href="#">
+            <div class="Tab5"><img src="img/user-img/star.png"><span>評價</span></div>
+          </a>
         </div>
       </div>
       <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
           $(".Tab1").addClass('change');
           $('#article-area,#reservation-area,#point-area,#evaluate-area').hide();
         })
-        $(".Tab1").click(function(){
+        $(".Tab1").click(function () {
           $(".Tab2,.Tab3,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#design-area').fadeIn();
           $('#article-area,#reservation-area,#point-area,#evaluate-area').fadeOut();
         })
-        $(".Tab2").click(function(){
+        $(".Tab2").click(function () {
           $(".Tab1,.Tab3,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#article-area').fadeIn();
           $('#design-area,#reservation-area,#point-area,#evaluate-area').fadeOut();
         })
-        $(".Tab3").click(function(){
+        $(".Tab3").click(function () {
           $(".Tab2,.Tab1,.Tab4,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#reservation-area').fadeIn();
           $('#design-area,#article-area,#point-area,#evaluate-area').fadeOut();
         })
-        $(".Tab4").click(function(){
+        $(".Tab4").click(function () {
           $(".Tab2,.Tab1,.Tab3,.Tab5").removeClass('change');
           $(this).addClass('change');
           $('#point-area').fadeIn();
           $('#design-area,#article-area,#reservation-area,#evaluate-area').fadeOut();
         })
-        $(".Tab5").click(function(){
+        $(".Tab5").click(function () {
           $(".Tab2,.Tab1,.Tab4,.Tab3").removeClass('change');
           $(this).addClass('change');
           $('#evaluate-area').fadeIn();
@@ -527,20 +580,23 @@
                 <div class="point-info-group">
                   <li>
                     <div class="point-info">
-                      <b>可用總點數:</b><div class="point-money"><b>$4,000</b></div>
+                      <b>可用總點數:</b>
+                      <div class="point-money"><b>$4,000</b></div>
                     </div>
                   </li>
                   <li>
                     <div class="point-info">
-                      <b>已使用點數:</b><div class="point-money"><b>$50</b></div>
+                      <b>已使用點數:</b>
+                      <div class="point-money"><b>$50</b></div>
                     </div>
                   </li>
                   <li>
                     <div class="point-info">
-                      <b>已過期點數:</b><div class="point-money"><b>$50</b></div>
+                      <b>已過期點數:</b>
+                      <div class="point-money"><b>$50</b></div>
                     </div>
                   </li>
-              </div>
+                </div>
               </ul>
               <div class="point-Tab-group">
                 <div class="point-Tab" id="point1"><b>所有紀錄</b></div>
@@ -548,23 +604,23 @@
                 <div class="point-Tab" id="point3"><b>已過期點數</b></div>
               </div>
               <script>
-                $(document).ready(function(){
+                $(document).ready(function () {
                   $('#point1').addClass('point-click');
                   $('#point-record-used,#point-record-expired').hide();
                 })
-                $('#point1').click(function(){
+                $('#point1').click(function () {
                   $('#point1').addClass('point-click');
                   $('#point2,#point3').removeClass('point-click');
                   $('#point-record-all').show();
                   $('#point-record-used,#point-record-expired').hide();
                 })
-                $('#point2').click(function(){
+                $('#point2').click(function () {
                   $('#point2').addClass('point-click');
                   $('#point1,#point3').removeClass('point-click');
                   $('#point-record-used').show();
                   $('#point-record-all,#point-record-expired').hide();
                 })
-                $('#point3').click(function(){
+                $('#point3').click(function () {
                   $('#point3').addClass('point-click');
                   $('#point1,#point2').removeClass('point-click');
                   $('#point-record-expired').show();
@@ -595,7 +651,7 @@
                     <div class="point-record-money">
                       <b>+470</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -619,7 +675,7 @@
                     <div class="point-record-money">
                       <b>+75</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -643,7 +699,7 @@
                     <div class="point-record-money">
                       <b>+75</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
               </div>
               <!--point-record-area start-->
@@ -671,7 +727,7 @@
                     <div class="point-record-money">
                       <b>-100</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -695,7 +751,7 @@
                     <div class="point-record-money">
                       <b>-5</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -719,7 +775,7 @@
                     <div class="point-record-money">
                       <b>-10</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
               </div>
               <!--point-record-area start-->
@@ -747,7 +803,7 @@
                     <div class="point-record-money">
                       <b>$15</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -771,7 +827,7 @@
                     <div class="point-record-money">
                       <b>$20</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
                 <div class="point-record">
                   <ul>
@@ -795,7 +851,7 @@
                     <div class="point-record-money">
                       <b>$30</b>
                     </div>
-                  </ul>       
+                  </ul>
                 </div>
               </div>
               <!--point-record-area start-->
@@ -824,8 +880,7 @@
 
 
   <!-- ******* All JS ******* -->
-  <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+
   <!-- Popper js -->
   <script src="js/popper.min.js"></script>
   <!-- Bootstrap js -->
@@ -837,6 +892,7 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
+
 
 </body>
 

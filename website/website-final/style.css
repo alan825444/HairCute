@@ -2204,13 +2204,80 @@ ul {
 
 /* :: 21.0 search_result */
 
-.seachbar{
+.searchBar{
   margin-top: 150px;
-  border: #e99d19 3px solid;
+  /* border: rgba(233, 157, 25, 0.7) 3px solid; */
   border-radius: 1rem;
   height: 20vh;
   
 }
+.searchBar:hover{
+  border:hsla(329, 82%, 61%, 0.4) 3px outset;
+}
+
+.dropdown-toggle{
+  width: 10vw;
+  height: 5vh;
+  border-radius: 1rem;
+  border: 1px solid gray;
+
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.dropdown-toggle, .location-menu, .dropdown-submenu{
+  border: solid 1px #777C81;
+  border-radius: 0.8rem;
+
+}
+
+.dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu{
+  display: block;
+}
+
+.datepicker, .timepicker{
+  height: 5vh;
+  width: 12vw;
+  font-size: 0.9rem;
+  border-radius: 0.8rem;
+  border: 1px solid gray;
+}
+
+.form-check-input{
+  font-size: 1rem;
+}
+.form-check label{
+  font-size: 1.2rem;
+  color: rgb(70, 68, 68);
+}
+
+.btn-search{
+  border: #ed489d 1px solid;
+  width: 5vw;
+  color:#ed489d;
+}
+
+.btn-search:hover{
+  background-color: #ed489d;
+  color: white;
+  border: none;
+}
+
+
+
+
 .store_image{
   width: 8vw;
 }
@@ -2422,7 +2489,6 @@ margin: 5px 0px;
   margin: 0px 0px 10px 0px;
 }
 }
-
 
 
 /*membercenter area*/
@@ -2797,4 +2863,46 @@ margin: 5px 0px;
   width: 100%;
   padding-top: 20px;
   padding-bottom: 500px;
+}
+
+
+/*reserve-menu*/
+.reserve-menu{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.reserve-menu button{
+  color: #000000;
+  background-color: #FFFFFF;
+  border:1px solid rgb(206, 203, 203);
+  font-family: 'Times New Roman', Times, serif;
+}
+.date-btn{
+  display: inline-block;
+  width: 20%;
+  margin-left: 5px;
+}
+.date-range{
+  display: inline-block;
+  width: 50%;
+  padding-top: 7px;
+  margin-left: -60px;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+/*reserve-manage-area*/
+.reserve-manage-area{
+  text-align: center;
+}
+
+.reserve-manage-area a{
+  font-size: 16px;
+  color: blue;
+}
+.close-a{
+  padding-top: 5px;
+}
+
+.reserve-manage-area button{
+    font-size: 10px;
 }
