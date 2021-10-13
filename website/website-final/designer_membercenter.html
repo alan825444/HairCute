@@ -13,10 +13,11 @@
   <!-- Favicon -->
   <link rel="icon" href="./img/core-img/favicon.ico">
 
+ 
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
-
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
@@ -29,7 +30,10 @@
     src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    
     <script>
+
       
     </script>
 
@@ -215,7 +219,7 @@
         </div>
         <div class="col-3 membercenter-edit">
           <ul>
-            <a href="#"><div class="userinfo-edit">編輯個人資料</div></a>
+            <a href="#" data-toggle="modal" data-target="#update-user-info"><div class="userinfo-edit">編輯個人資料</div></a>
             <a href="#"><div class="userinfo-edit">上傳作品</div></a>
             <a href="#"><div class="userinfo-edit">預約管理</div></a>
           </ul>
@@ -978,8 +982,8 @@
                   </li>
                   <li>
                     <div class="evaluate-footer">
-                      <label>日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
+                      <label class="pos-label">日期：</label><b>2021/10/12</b>
                     </div>
                   </li>
                 </ul>
@@ -1008,9 +1012,9 @@
                     </div>
                   </li>
                   <li>
-                    <div class="evaluate-footer">
-                      <label>日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b>
+                    <div class="evaluate-footer">                     
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
+                      <label class="pos-label">日期：</label><b>2021/10/12</b>
                     </div>
                   </li>
                 </ul>
@@ -1039,9 +1043,9 @@
                     </div>
                   </li>
                   <li>
-                    <div class="evaluate-footer">
-                      <label>日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b>
+                    <div class="evaluate-footer">   
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
+                      <label class="pos-label">日期：</label><b>2021/10/12</b>
                     </div>
                   </li>
                 </ul>
@@ -1070,9 +1074,9 @@
                     </div>
                   </li>
                   <li>
-                    <div class="evaluate-footer">
-                      <label>日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b>
+                    <div class="evaluate-footer"> 
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
+                      <label class="pos-label">日期：</label><b>2021/10/12</b>
                     </div>
                   </li>
                 </ul>
@@ -1083,6 +1087,170 @@
       <!--evaluate-area End-->
     </div>
   </main>
+
+  <!--update user-info start-->
+  <div>
+    <div class=" modal fade" id="update-user-info" aria-hidden="true" tabindex="-1"  role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">編輯個人資料</h3>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label">E-mail</label>
+              <input type="text" id="email" value maxlength="50" class="form-control" placeholder="請填寫有效的Email">
+              <span id="emailaddress_msg"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label">密碼</label>
+              <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                class="form-control">
+              <span id="pwd_msg"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label">確認密碼</label>
+              <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
+                class="form-control">
+              <span id="doublepwd_msg"></span>
+            </div>
+          </div>
+          <div class="row align-items-center">
+            <div class="col-md-4 col-8"><label class="form-label">姓名</label>
+              <input type="text" name="" id="username" value maxlength="20" placeholder="請填寫真實姓名"
+                class="form-control">
+              <span id="username_msg"></span>
+            </div>
+            <div class="col-md-3 col-4">           
+              <div class="form-check form-check-inline">
+                <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                  value="option1">
+                <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                  value="option2">
+                <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+              </div>
+            </div>
+            <div class="col-md-5 c0l-12"><label class="form-label">暱稱</label>
+              <input type="text" name="" id="usernickname" value maxlength="20" placeholder="顯示在網站上的名稱"
+                class="form-control">
+              <span id="usernickname_msg"></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <label class="form-label">生日</label>
+              <input type="text" name="date" class="form-control datepicker">
+            </div>
+          </div>
+          <div class="row">
+            <label class="form-label">店址</label>
+            <div class="col-md-6 col-12">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>縣市</option>
+                <option value="1">台北市</option>
+                <option value="2">台中市</option>
+                <option value="3">高雄市</option>
+              </select>
+            </div>
+            <div class="col-md-6 col-12">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>區域</option>
+                <option value="1">大安區</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <input type="text" name="" id="" value maxlength="20" placeholder="請填寫完整店址" class="form-control">
+            </div>          
+          </div>
+          <div class="row">
+            <label class="form-label">服務項目</label>
+            <div class="col-9">
+              <span class="add-col">
+                <a href="#" id="add-col"><i class="fas fa-plus" ></i></a>
+              </span>
+              <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addin">
+            </div>
+            <div class="col-3">
+              <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+            </div>
+          </div>
+          <div id="add-service">
+            <div class="row">
+              <label class="form-label">服務項目</label>
+              <div class="col-9">
+                <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
+              </div>
+              <div class="col-3">
+                <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label class="form-label">服務項目</label>
+              <div class="col-9">
+                <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
+              </div>
+              <div class="col-3">
+                <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label class="form-label">服務項目</label>
+              <div class="col-9">
+                <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
+              </div>
+              <div class="col-3">
+                <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label class="form-label">服務項目</label>
+              <div class="col-9">
+                <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
+              </div>
+              <div class="col-3">
+                <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+              </div>
+            </div>
+            <div class="row">
+              <label class="form-label">服務項目</label>
+              <div class="col-9">
+                <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
+              </div>
+              <div class="col-3">
+                <input type="text" name="myserviceprice" id="myserviceprice" value maxlength="10" placeholder="服務價格" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer"> 
+          <button class="btn btn-success">儲存修改</button>
+        </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!--update user-info end-->
+    <script>
+      $(document).ready(function(){
+        $('#add-service').hide();
+      })
+      $('#add-col').click(function(){
+        $('#add-service').show();
+      })
+    </script>
   <!-- ***** membercenter Area Start ***** -->
 
 

@@ -2909,7 +2909,9 @@ margin: 5px 0px;
   margin-top: -50px;
   color: #9c9c9c;
 }
-
+.pos-label{
+  margin-left: 350px;
+}
 /*reserve-menu*/
 .reserve-menu{
   margin-top: 10px;
@@ -2949,4 +2951,18 @@ margin: 5px 0px;
 
 .reserve-manage-area button{
     font-size: 10px;
+}
+
+/*update-user-info*/
+.add-col{
+  display: inline-block;
+}
+.addin{
+  display: inline-block;
+  width: 90%;
+  margin-left: 10px;
+}
+.addcopy{
+  width: 90%;
+  margin-left: 25px;
 }
