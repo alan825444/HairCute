@@ -26,24 +26,27 @@
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    
-    <script>
+  
+  <!-- jQuery js -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-      
-    </script>
+    
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    
+  <script>
+    $(function () {
+        $(".datepicker").datepicker();
+        $(".datepicker").datepicker('setDate', 'today');
+        });  
+  </script>
 
 
     
 </head>
 
 <body>
-  
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
     <!-- Main Header Start -->
@@ -221,7 +224,7 @@
           <ul>
             <a href="#" data-toggle="modal" data-target="#update-user-info"><div class="userinfo-edit">編輯個人資料</div></a>
             <a href="#"><div class="userinfo-edit">上傳作品</div></a>
-            <a href="#"><div class="userinfo-edit">預約管理</div></a>
+            <a href="reserve_manage.html" target="_new"><div class="userinfo-edit">預約管理</div></a>
           </ul>
         </div>
       </div>
@@ -553,7 +556,7 @@
                     <div class="reservation-footer">
                       <label>預約狀態:</label>
                       <span id="res-evaluation">
-                        <button type="button" class="btn btn-danger">評價</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reservation-evaluate">評價</button>
                       </span>
                     </div>
                   </li>
@@ -1095,7 +1098,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h3 class="modal-title">編輯個人資料</h3>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -1176,10 +1179,10 @@
             </div>          
           </div>
           <div class="row">
-            <label class="form-label">服務項目</label>
+            <label class="form-label">服務項目1</label>
             <div class="col-9">
               <span class="add-col">
-                <a href="#" id="add-col"><i class="fas fa-plus" ></i></a>
+                <a href="#" id="add-col"><i class="fas fa-caret-down" ></i></a>
               </span>
               <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addin">
             </div>
@@ -1189,7 +1192,7 @@
           </div>
           <div id="add-service">
             <div class="row">
-              <label class="form-label">服務項目</label>
+              <label class="form-label">服務項目2</label>
               <div class="col-9">
                 <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
               </div>
@@ -1198,7 +1201,7 @@
               </div>
             </div>
             <div class="row">
-              <label class="form-label">服務項目</label>
+              <label class="form-label">服務項目3</label>
               <div class="col-9">
                 <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
               </div>
@@ -1207,7 +1210,7 @@
               </div>
             </div>
             <div class="row">
-              <label class="form-label">服務項目</label>
+              <label class="form-label">服務項目4</label>
               <div class="col-9">
                 <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
               </div>
@@ -1216,7 +1219,7 @@
               </div>
             </div>
             <div class="row">
-              <label class="form-label">服務項目</label>
+              <label class="form-label">服務項目5</label>
               <div class="col-9">
                 <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
               </div>
@@ -1225,7 +1228,7 @@
               </div>
             </div>
             <div class="row">
-              <label class="form-label">服務項目</label>
+              <label class="form-label">服務項目6</label>
               <div class="col-9">
                 <input type="text" name="myservice" id="myservice" value maxlength="10" placeholder="請填寫服務項目名稱" class="form-control addcopy">
               </div>
@@ -1243,6 +1246,32 @@
       </div>
     </div>
     <!--update user-info end-->
+    <!--reservation-evaluate start-->
+    <div class="modal fade" id="reservation-evaluate">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body main-body">
+            <div class="main-star">
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <div class="write-body">
+              <textarea name="" id="" cols="40" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="送出">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--reservation-evaluate End-->
     <script>
       $(document).ready(function(){
         $('#add-service').hide();
@@ -1250,6 +1279,7 @@
       $('#add-col').click(function(){
         $('#add-service').show();
       })
+
     </script>
   <!-- ***** membercenter Area Start ***** -->
 
