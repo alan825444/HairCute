@@ -2431,6 +2431,12 @@ margin: 5px 0px;
   position: relative;
   top: 100px;
 }
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+   }
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+   }
+@media only screen and (max-width: 767px) {
+   }
 .membercenter-header{
   margin-top: 30px;
   margin-bottom: 30px;
@@ -2727,6 +2733,20 @@ margin: 5px 0px;
 .reservation-footer i{
   color: green;
 }
+.reservation-footer button{
+  display: inline-flex;
+  height: 30px;
+  width: 78px;
+  align-items:center;
+  letter-spacing: 10px;
+  font-size: 20px;
+}
+.res-cancel b{
+  color: red;
+}
+.res-cancel i{
+  color: red;
+}
 
 
 /*point-area*/
@@ -2847,15 +2867,48 @@ margin: 5px 0px;
 
 /*evaluate-area*/
 .evaluate-area{
-  border: solid;
   display: flex;
   justify-content: center;
   height: 1500px;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 500px;
+  padding-bottom: 1000px;
 }
-
+.evaluate-item{
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+  height: 180px;
+  width: 60%;
+  border-bottom: 1px solid #dfd9d9;
+}
+.evaluate-title{
+  font-size: 20px;
+  width: 100px;
+}
+.evaluate-star{
+  position: relative;
+  font-size: 24px;
+  width: 180px;
+  margin-left: 70px;
+  top:30px;
+}
+.evaluate-star i{
+  color: rgb(251, 177, 5);
+}
+.evaluate-body{
+  position: relative;
+  height: 140px;
+  width: 310px;
+  font-size: 16px;
+  padding-top: 30px;
+  left: 320px;
+  top: -50px;
+}
+.evaluate-footer{
+  margin-top: -50px;
+  color: #9c9c9c;
+}
 
 /*reserve-menu*/
 .reserve-menu{
