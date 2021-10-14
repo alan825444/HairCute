@@ -171,46 +171,34 @@
     </div>
     <div class="container">
       <div class="row membercenter-header">
-        <div class="col-3 membercenter-pic">
-          <button class="uesr-btn">
-            <img src="img/user-img/store2.jpg" class="uesr-pic">
-          </button>
-        </div>
-        <div class="col-6 membercenter-user">
-          <ul>
-            <li>
-              <div class="user-name">
-                <h2>查理</h2>
-              </div>
-              <div class="user-star">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span class="ml-1"><b>4.9</b></span>
-              </div>
-            </li>
-            <!--<li>
-              <div class="user-service">
-                <h4>服務項目</h4>
-              </div>
-            </li>
-            <li>
-              <div class="service-edit">
-                造型剪髮+洗頭 $499、
-                特殊刻髮+洗頭 $499、
-                造型剪髮+洗頭 $499
-                造型剪髮+洗頭 $499<br>
-                #####
-              </div>
-            </li>-->
-          </ul>
-        </div>
-        <div class="col-3 membercenter-edit">
-          <ul>
-            <a href="#"><div class="userinfo-edit">編輯個人資料</div></a>
-          </ul>
+        <div class="col-12">
+          <div class="consumer-pic">
+            <button class="uesr-btn">
+              <img src="img/user-img/store2.jpg" class="uesr-pic">
+            </button>
+          </div>
+          <div class="membercenter-user">
+            <ul>
+              <li>
+                <div class="consumer-name">
+                  <h2>查理</h2>
+                </div>
+                <div class="consumer-star">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <span class="ml-1"><b>4.9</b></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="membercenter-edit">
+            <ul>
+              <a href="#" data-toggle="modal" data-target="#update-cons-info"><div class="userinfo-edit">編輯個人資料</div></a>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="row membercenter-Tab">
@@ -243,16 +231,16 @@
           <div class="row reservation-area">
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
                   </li>
                 </ul>
                 <ul>
-                  <li>
+                  <div>
                     <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
-                  </li>
+                  </div>
                   <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
@@ -287,16 +275,16 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
                   </li>
                 </ul>
                 <ul>
-                  <li>
+                  <div>
                     <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
-                  </li>
+                  </div>
                   <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
@@ -331,16 +319,16 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
                   </li>
                 </ul>
                 <ul>
-                  <li>
+                  <div>
                     <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
-                  </li>
+                  </div>
                   <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
@@ -374,16 +362,16 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
                   </li>
                 </ul>
                 <ul>
-                  <li>
+                  <div>
                     <button type="button" class="btn close-btn" id="cancelbtn"><i class="fa fa-times"></i></button>
-                  </li>
+                  </div>
                   <li>
                     <div class="reservation-title">
                       <a href="#">查理</a>
@@ -858,8 +846,96 @@
     </div>
   </main>
   <!-- ***** membercenter Area Start ***** -->
-
-
+  <!--update user-info start-->
+  <div>
+    <div class=" modal fade" id="update-cons-info" aria-hidden="true" tabindex="-1"  role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">編輯個人資料</h3>
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">E-mail</label>
+                <input type="text" id="email" value maxlength="50" class="form-control" placeholder="請填寫有效的Email">
+                <span id="emailaddress_msg"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">密碼</label>
+                <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                  class="form-control">
+                <span id="pwd_msg"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">確認密碼</label>
+                <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
+                  class="form-control">
+                <span id="doublepwd_msg"></span>
+              </div>
+            </div>
+            <div class="row align-items-center">
+              <div class="col-md-4 col-8"><label class="form-label">姓名</label>
+                <input type="text" name="" id="username" value maxlength="20" placeholder="請填寫真實姓名"
+                  class="form-control">
+                <span id="username_msg"></span>
+              </div>
+              <div class="col-md-3 col-4">           
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                    value="option1">
+                  <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                    value="option2">
+                  <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                </div>
+              </div>
+              <div class="col-md-5 c0l-12"><label class="form-label">暱稱</label>
+                <input type="text" name="" id="usernickname" value maxlength="20" placeholder="顯示在網站上的名稱"
+                  class="form-control">
+                <span id="usernickname_msg"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">生日</label>
+                <input type="text" name="date" class="form-control datepicker">
+              </div>
+            </div>
+            <div class="row">
+              <label class="form-label">地址</label>
+              <div class="col-md-6 col-12">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>縣市</option>
+                  <option value="1">台北市</option>
+                  <option value="2">台中市</option>
+                  <option value="3">高雄市</option>
+                </select>
+              </div>
+              <div class="col-md-6 col-12">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>區域</option>
+                  <option value="1">大安區</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"> 
+            <button class="btn btn-success">儲存修改</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  <!--update user-info End-->
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->

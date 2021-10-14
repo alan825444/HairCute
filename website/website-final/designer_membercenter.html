@@ -36,10 +36,10 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     
   <script>
-    $(function () {
+    /*$(function () {
         $(".datepicker").datepicker();
         $(".datepicker").datepicker('setDate', 'today');
-        });  
+        });*/  
   </script>
 
 
@@ -200,7 +200,7 @@
               </div>
             </li>
             <li>
-              <div>
+              <div class="desAddress">
                 <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
               </div>
             </li>
@@ -213,7 +213,7 @@
               <div class="service-edit">
                 造型剪髮+洗頭 $499、
                 特殊刻髮+洗頭 $499、
-                造型剪髮+洗頭 $499
+                造型剪髮+洗頭 $499、
                 造型剪髮+洗頭 $499<br>
                 #####
               </div>
@@ -1255,11 +1255,11 @@
           </div>
           <div class="modal-body main-body">
             <div class="main-star">
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
-              <i class="far fa-star"></i>
+              <i class="far fa-star star" id="star1"></i>
+              <i class="far fa-star star" id="star2"></i>
+              <i class="far fa-star star" id="star3"></i>
+              <i class="far fa-star star" id="star4"></i>
+              <i class="far fa-star star" id="star5"></i>
             </div>
             <div class="write-body">
               <textarea name="" id="" cols="40" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
@@ -1280,6 +1280,18 @@
         $('#add-service').show();
       })
 
+      $(".star").mousemove(function(){
+        $(this).addClass("fas fa-star");
+        $(this).prevAll().addClass("fas fa-star");
+      })
+      $(".star").mouseout(function(){
+        $(this).nextAll().removeClass("fas fa-star");
+        $(this).nextAll().addClass("far fa-star");
+      })
+      $(".star").click(function(){
+        $(this).addClass("fas fa-star");
+        $(this).prevAll().addClass("fas fa-star");
+      })
     </script>
   <!-- ***** membercenter Area Start ***** -->
 
