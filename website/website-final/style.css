@@ -2478,6 +2478,10 @@ margin: 5px 0px;
   margin-top: 20px;
   margin-left: 20px;
 }
+.consumer-user ul{
+  margin-top: 20px;
+  margin-left: 20px;
+}
 .user-name{
   display: inline-block;
 }
@@ -2615,7 +2619,10 @@ margin: 5px 0px;
     margin-left: 35px;
   }
   .consumer-name{
-    margin-left: 60px;
+    margin-left:70px;
+  }
+  .consumer-star{
+    width: 120px;
   }
 }
 .membercenter-Tab{
