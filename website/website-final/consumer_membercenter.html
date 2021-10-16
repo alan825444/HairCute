@@ -311,7 +311,7 @@
                     <div class="reservation-footer">
                       <label>預約狀態:</label>
                       <span id="res-evaluation">
-                        <button type="button" class="btn btn-danger">評價</button>
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reservation-evaluate">評價</button>
                       </span>
                     </div>
                   </li>
@@ -936,6 +936,81 @@
       </div>
     </div>
   <!--update user-info End-->
+
+  <!--reservation-evaluate start-->
+  <div class="modal fade" id="reservation-evaluate">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body main-body">
+          <div class="main-star">
+            <img src="img/user-img/star-black.png" class="x" id="img1">
+            <img src="img/user-img/star-black.png" class="x" id="img2">
+            <img src="img/user-img/star-black.png" class="x" id="img3">
+            <img src="img/user-img/star-black.png" class="x" id="img4">
+            <img src="img/user-img/star-black.png" class="x" id="img5">
+          </div>
+          <div>
+            單擊即可評分，雙擊可重新評分
+          </div>
+          <div class="write-body">
+            <textarea name="" id="" cols="30" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="submit" class="btn btn-success" value="送出">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--reservation-evaluate End-->
+
+<script>
+  let star=document.querySelectorAll("img.x");
+      for(let img of star){
+        img.addEventListener("mouseover",mouseover);
+        img.addEventListener("mouseout",mouseout);
+        img.addEventListener("click",click);
+        img.addEventListener("dblclick",dblclick);
+      }
+      function mouseover(){
+        let num = $(this).index();
+        for (let i = 0; i < num+1; i++) {
+              star[i].src="img/user-img/star-yellow.png"
+            }
+      }
+      function mouseout(){
+        let num = $(this).index();
+        if(starNum != -1){
+          for(let i = 0 ; i<num+1;i++){
+            if(i <= starNum){
+              star[i].src="img/user-img/star-yellow.png"
+            }else{
+              star[i].src="img/user-img/star-black.png";
+            }
+          }
+        }else{
+          for(let i =0 ;i < 5 ;i++){
+            star[i].src="img/user-img/star-black.png";
+          }
+        }
+      }
+      var starNum = -1;
+      var starArray = Array.from(star);
+      function click(e){
+        if (e.target.tagName === "IMG") {
+             starNum = starArray.indexOf(e.target); 
+        }
+      }
+      function dblclick(){
+        starNum = -1;
+        for (let i = 0; i < 5; i++) {
+            star[i].src = "img/user-img/star-black.png";
+        }
+      }
+</script>
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->

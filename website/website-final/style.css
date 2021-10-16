@@ -3287,12 +3287,15 @@ margin: 5px 0px;
   text-align: center;
 }
 .main-star{
-  font-size: 40px;
   position: relative;
   text-align: center;
-  color:rgb(251, 177, 5);
+  margin-bottom: 10px;
+}
+.main-star img{
+  width: 50px;
 }
 .write-body{
   position: relative;
   font-size: 16px;
+  margin-top: 10px;
 }

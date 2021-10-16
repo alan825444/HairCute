@@ -223,7 +223,7 @@
         <div class="col-3 membercenter-edit">
           <ul>
             <a href="#" data-toggle="modal" data-target="#update-user-info"><div class="userinfo-edit">編輯個人資料</div></a>
-            <a href="#"><div class="userinfo-edit">上傳作品</div></a>
+            <a href="#"><div class="userinfo-edit" data-toggle="modal" data-target="#update-user-design">上傳作品</div></a>
             <a href="reserve_manage.html" target="_new"><div class="userinfo-edit">預約管理</div></a>
           </ul>
         </div>
@@ -476,7 +476,7 @@
           <div class="row reservation-area">
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
@@ -520,7 +520,7 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
@@ -564,7 +564,7 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
@@ -607,7 +607,7 @@
               </div>
               <div class="reservation-item">
                 <ul>
-                  <li>
+                  <li class="pic-li">
                     <div class="reservation-pic-div">
                       <img src="img/user-img/store2.jpg" class="reservation-pic">
                     </div>
@@ -1246,6 +1246,28 @@
       </div>
     </div>
     <!--update user-info end-->
+
+    <!--update-user-design start-->
+    <div class="modal fade" id="update-user-design">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="post" enctype="multipart/form-data">
+              <input type="file" name="fileupload" id="fileupload" accept="image/jpeg,image/gif,image/png" onchange="openFile()">
+            </form>
+            <p><img src="" id="imgpreview" width="500"></p>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-success" value="儲存修改">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--update-user-design end-->
+
     <!--reservation-evaluate start-->
     <div class="modal fade" id="reservation-evaluate">
       <div class="modal-dialog modal-dialog-centered">
@@ -1255,14 +1277,17 @@
           </div>
           <div class="modal-body main-body">
             <div class="main-star">
-              <i class="far fa-star star" id="star1"></i>
-              <i class="far fa-star star" id="star2"></i>
-              <i class="far fa-star star" id="star3"></i>
-              <i class="far fa-star star" id="star4"></i>
-              <i class="far fa-star star" id="star5"></i>
+              <img src="img/user-img/star-black.png" class="x" id="img1">
+              <img src="img/user-img/star-black.png" class="x" id="img2">
+              <img src="img/user-img/star-black.png" class="x" id="img3">
+              <img src="img/user-img/star-black.png" class="x" id="img4">
+              <img src="img/user-img/star-black.png" class="x" id="img5">
+            </div>
+            <div>
+              單擊即可評分，雙擊可重新評分
             </div>
             <div class="write-body">
-              <textarea name="" id="" cols="40" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
+              <textarea name="" id="" cols="30" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
             </div>
           </div>
           <div class="modal-footer">
@@ -1280,18 +1305,48 @@
         $('#add-service').show();
       })
 
-      $(".star").mousemove(function(){
-        $(this).addClass("fas fa-star");
-        $(this).prevAll().addClass("fas fa-star");
-      })
-      $(".star").mouseout(function(){
-        $(this).nextAll().removeClass("fas fa-star");
-        $(this).nextAll().addClass("far fa-star");
-      })
-      $(".star").click(function(){
-        $(this).addClass("fas fa-star");
-        $(this).prevAll().addClass("fas fa-star");
-      })
+      let star=document.querySelectorAll("img.x");
+      for(let img of star){
+        img.addEventListener("mouseover",mouseover);
+        img.addEventListener("mouseout",mouseout);
+        img.addEventListener("click",click);
+        img.addEventListener("dblclick",dblclick);
+      }
+      function mouseover(){
+        let num = $(this).index();
+        for (let i = 0; i < num+1; i++) {
+              star[i].src="img/user-img/star-yellow.png"
+            }
+      }
+      function mouseout(){
+        let num = $(this).index();
+        if(starNum != -1){
+          for(let i = 0 ; i<num+1;i++){
+            if(i <= starNum){
+              star[i].src="img/user-img/star-yellow.png"
+            }else{
+              star[i].src="img/user-img/star-black.png";
+            }
+          }
+        }else{
+          for(let i =0 ;i < 5 ;i++){
+            star[i].src="img/user-img/star-black.png";
+          }
+        }
+      }
+      var starNum = -1;
+      var starArray = Array.from(star);
+      function click(e){
+        if (e.target.tagName === "IMG") {
+             starNum = starArray.indexOf(e.target); 
+        }
+      }
+      function dblclick(){
+        starNum = -1;
+        for (let i = 0; i < 5; i++) {
+            star[i].src = "img/user-img/star-black.png";
+        }
+      }
     </script>
   <!-- ***** membercenter Area Start ***** -->
 
