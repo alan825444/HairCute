@@ -217,6 +217,7 @@
     <Content Include="img\user-img\writing.png" />
     <Content Include="img\user-img\writingw.png" />
     <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\CItyAreajs.js" />
     <Content Include="js\default-assets\active.js" />
     <Content Include="js\default-assets\avoid.console.error.js" />
     <Content Include="js\default-assets\classynav.js" />
@@ -269,7 +270,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\CityArea.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tArea.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tCity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tMember.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -377,7 +385,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

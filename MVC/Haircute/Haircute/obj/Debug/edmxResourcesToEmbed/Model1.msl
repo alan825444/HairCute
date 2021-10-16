@@ -20,5 +20,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tArea">
+      <EntityTypeMapping TypeName="demodbModel.tArea">
+        <MappingFragment StoreEntitySet="tArea">
+          <ScalarProperty Name="fk_City" ColumnName="fk_City" />
+          <ScalarProperty Name="fArea" ColumnName="fArea" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCity">
+      <EntityTypeMapping TypeName="demodbModel.tCity">
+        <MappingFragment StoreEntitySet="tCity">
+          <ScalarProperty Name="fCity" ColumnName="fCity" />
+          <ScalarProperty Name="fID" ColumnName="fID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

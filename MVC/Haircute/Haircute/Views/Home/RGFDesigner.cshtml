@@ -83,19 +83,11 @@
                         <div class="row">
                             <label class="form-label">地址</label>
                             <div class="col-md-6 col-12">
-                                <select class="form-select" aria-label="Default select example" name="fCity">
-                                    <option selected>縣市</option>
-                                    <option value="1">台北市</option>
-                                    <option value="2">台中市</option>
-                                    <option value="3">高雄市</option>
-                                </select>
+                                @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select", id = "fCity" })
                             </div>
                             <div class="col-md-6 col-12">
-                                <select class="form-select" aria-label="Default select example" name="fArea">
-                                    <option selected>區域</option>
-                                    <option value="1">大安區</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                <select class="form-select" aria-label="Default select example" name="fArea" id="fArea">
+                                    <option>--------</option>
                                 </select>
                             </div>
                         </div>
@@ -119,3 +111,4 @@
     </div>
 </section>
 
+<script src="~/js/CItyAreajs.js"></script>
