@@ -2440,27 +2440,6 @@ margin: 5px 0px;
   height: 270px;
   padding: 5px;
 }
-.consumer-pic{
-  width: 270px;
-  height: 270px;
-  padding: 5px;
-  margin-left: 420px;
-}
-.consumer-name{
-  display: inline-block;
-  margin-left: 440px;
-}
-.consumer-star{
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  align-items: center;
-  height: 60px;
-  width: 180px;
-}
-.consumer-star i{
-  color: rgb(251, 177, 5);
-}
 .uesr-pic{
   display: block;
   border-radius: 50%;
@@ -2478,10 +2457,6 @@ margin: 5px 0px;
   margin-top: 20px;
   margin-left: 20px;
 }
-.consumer-user ul{
-  margin-top: 20px;
-  margin-left: 20px;
-}
 .user-name{
   display: inline-block;
 }
@@ -2493,22 +2468,12 @@ margin: 5px 0px;
   height: 60px;
   width: 180px;
 }
-.user-star i{
-  color: rgb(251, 177, 5);
-}
 .user-service{
   margin-top: 10px;
 }
 .service-edit{
   display: block;
-  width: 510px;
-  height: 120px;
-  font-size: 16px;
-  line-height: 30px;
-}
-.rwd-edit{
-  display: block;
-  width: 660px;
+  width: 490px;
   height: 120px;
   font-size: 16px;
   line-height: 30px;
@@ -2531,99 +2496,6 @@ margin: 5px 0px;
 .userinfo-edit:hover{
   color:white;
   background-color:#DA627D;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .service-edit{
-    width: 430px;
-    height: 130px;
-    font-size: 20px;
-  }
-  .rwd-edit{
-    width: 610px;
-    font-size: 20px;
-  }
-  .consumer-pic{
-    margin-left: 320px;
-  }
-  .consumer-name{
-    margin-left: 350px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .membercenter-pic{
-    width: 24px;
-    height: 200px;
-    padding: 5px;
-    margin-top: 20px;
-  }
-  .service-edit{
-    width: 340px;
-  }
-  .consumer-pic{
-    margin-left: 210px;
-  }
-  .consumer-name{
-    margin-left: 250px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .membercenter-pic{
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .membercenter-user{
-    margin-top: 10px;
-  }
-  .membercenter-user ul{
-    position: relative;
-    left: -100px;
-    margin-top: 0px;
-    margin-left: 0px;
-    width: 360px;
-    height: 360px;
-  }
-  .membercenter-user li{
-    width: 360px;
-    height: 50px;
-  }
-  .user-name{
-    font-size: 16px;
-    position: relative;
-    margin-left: 90px;
-  }
-  .user-star{
-    width: 130px;
-  }
-  .desAddress{
-    margin-left: 90px;
-    font-size: 8px;
-  }
-  .service-edit{
-    width: 165px;
-    height: 180px;
-  }
-  .rwd-edit{
-    width: 340px;
-    height: 180px;
-  }
-  .membercenter-edit{
-    left: -50px;
-    top: 20px;
-  }
-  .userinfo-edit{
-    font-size: 16px;
-    width: 130px; 
-  }
-  .consumer-pic{
-    margin-left: 35px;
-  }
-  .consumer-name{
-    margin-left:70px;
-  }
-  .consumer-star{
-    width: 120px;
-  }
 }
 .membercenter-Tab{
   display:flex;
@@ -2653,6 +2525,22 @@ margin: 5px 0px;
   height: 30px;
 }
 .Tab3{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 110px;
+  height: 30px;
+}
+.Tab4{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 80px;
+  height: 30px;
+}
+.Tab5{
   border-radius: 10px;
   position: relative;
   display: inline-block;
@@ -2698,38 +2586,6 @@ margin: 5px 0px;
   height: 300px;
   max-width:300px;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .design-item{
-    padding-left: 10px;
-  }
-  .design-head{
-    height: 250px;
-    width: 175px;
-  }
-  .design-body{
-    height: 50px;
-    width: 175px;
-    font-size: 16px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .design-area{
-    margin-top: -30px;
-    margin-bottom: -230px;
-  }
-  .design-item{
-    padding-left: 10px;
-  }
-  .design-head{
-    height: 110px;
-    width: 90px;
-  }
-  .design-body{
-    width: 90px;
-    font-size: 12px;
-  }
-}
-
 /*article-area*/
 .article-area{
   display: flex;
@@ -2805,223 +2661,16 @@ margin: 5px 0px;
   }
 /*reservation-area*/
 .reservation-area{
+  border: solid;
   display: flex;
   justify-content: center;
   height: 1500px;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 900px;
+  padding-bottom: 500px;
 }
-.reservation-item{
-  display: flex;
-  position: relative;
-  margin-top: 30px;
-  height: 180px;
-  width: 70%;
-  border: 1px solid #dfd9d9;
-  box-shadow:1px 1px #b6b5b5;
-}
-.reservation-pic-div{
-  height: 20%;
-  width: 20%;
-  background:white;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-.reservation-pic{
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.reservation-title{
-  position: absolute;
-  border-bottom: 1px solid;
-  left: 190px;
-  top: 20px;
-}
-.reservation-title a{
-  font-size: 20px;
-  color: #007bff;
-}
-.reservation-title b{
-  font-size: 16px;
-}
-.reservation-star{
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  width: 130px;
-  align-items: center;
-}
-.reservation-star i{
-  color: rgb(251, 177, 5);
-}
-.reservation-body{
-  position: absolute;
-  border-bottom: 1px solid;
-  font-size: 20px;
-  left: 190px;
-  top: 60px;
-  width: 520px;
-}
-.reservation-body b{
-  margin-right: 10px;
-}
-.re-la1{
-  margin-left: 57px;
-}
-.reservation-footer{
-  position: absolute;
-  font-size: 20px;
-  right: 50px;
-  top: 140px;
-}
-.reservation-footer b{
-  color: green;
-}
-.reservation-footer i{
-  color: green;
-}
-.reservation-footer button{
-  display: inline-flex;
-  height: 30px;
-  width: 78px;
-  align-items:center;
-  letter-spacing: 10px;
-  font-size: 20px;
-}
-.res-cancel b{
-  color: red;
-}
-.res-cancel i{
-  color: red;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 80%;
-    height: 200px;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:690px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-    width: 500px;
-  }
-  .reservation-title a{
-    font-size: 20px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 1.3rem;
-    width: 500px;
-  }
-  .re-la1{
-    margin-left: 50px;
-  }
-  .reservation-footer{
-    margin-top: 15px;
-    font-size: 20px;
-  }
-  .reservation-footer button{
-    font-size: 20px;
-    width: 80px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 100%;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:640px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-  }
-  .reservation-title a{
-    font-size: 16px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 16px;
-    width: 470px;
-  }
-  .re-la1{
-    margin-left: 45px;
-  }
-  .reservation-footer{
-    font-size: 16px;
-  }
-  .reservation-footer button{
-    font-size: 16px;
-    width: 65px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 100%;
-    height: 220px;
-  }
-  .pic-li{
-    width:290px;
-  }
-  .reservation-pic-div{
-    height: 40%;
-    width: 40%;
-    margin-top: 20px;
-  }
-  .reservation-title{
-    width: 160px;
-    left:10px;
-    top: 140px;
-    border: none;
-  }
-  .reservation-title a{
-    font-size: 12px;
-  }
-  .reservation-title b{
-    font-size: 8px;
-  }
-  .reservation-star{
-    width: 110px;
-  }
-  .reservation-body{
-    font-size: 8px;
-    left: 170px;
-    top: 50px;
-    width: 160px;
-    border: none;
-  }
-  .re-la1{
-    margin-left: 0px;
-  }
-  .reservation-footer{
-    font-size: 16px;
-    right: 20px;
-    top: 180px;
-  }
-  .reservation-footer button{
-    width: 65px;
-    font-size: 16px;
-  }
-}
+
+
 
 /*point-area*/
 .point-area{
@@ -3141,161 +2790,11 @@ margin: 5px 0px;
 
 /*evaluate-area*/
 .evaluate-area{
+  border: solid;
   display: flex;
   justify-content: center;
   height: 1500px;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 1000px;
-}
-.evaluate-item{
-  display: flex;
-  position: relative;
-  margin-top: 30px;
-  height: 180px;
-  width: 60%;
-  border-bottom: 1px solid #dfd9d9;
-}
-.evaluate-title{
-  font-size: 20px;
-  width: 100px;
-}
-.evaluate-star{
-  position: relative;
-  font-size: 24px;
-  width: 180px;
-  margin-left: 70px;
-  top:30px;
-}
-.evaluate-star i{
-  color: rgb(251, 177, 5);
-}
-.evaluate-body{
-  position: relative;
-  height: 140px;
-  width: 310px;
-  font-size: 16px;
-  padding-top: 30px;
-  left: 320px;
-  top: -50px;
-}
-.evaluate-footer{
-  margin-top: -50px;
-  color: #9c9c9c;
-}
-.pos-label{
-  margin-left: 350px;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .evaluate-item{
-    width: 80%;
-    height: 180px;
-  }
-  .pos-label{
-    margin-left: 400px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .evaluate-item{
-    width: 100%;
-    height: 180px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .evaluate-item{
-    width: 100%;
-    height: 250px;
-  }
-  .evaluate-star{
-    font-size: 20px;
-    margin-left: 20px;
-    top:10px;
-  }
-  .evaluate-body{
-    font-size: 14px;
-    left: 20px;
-    top: -10px;
-  }
-  .evaluate-footer{
-    margin-top: 10px;
-  }
-  .pos-label{
-    margin-left: 10px;
-  }
-}
-/*reserve-menu*/
-.reserve-menu{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.reserve-menu button{
-  color: #000000;
-  background-color: #FFFFFF;
-  border:1px solid rgb(206, 203, 203);
-  font-family: 'Times New Roman', Times, serif;
-}
-.date-btn{
-  display: inline-block;
-  width: 20%;
-  margin-left: 5px;
-}
-.date-range{
-  display: inline-block;
-  width: 50%;
-  padding-top: 7px;
-  margin-left: -60px;
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
-}
-/*reserve-manage-area*/
-.reserve-manage-area{
-  text-align: center;
-}
-
-.reserve-manage-area a{
-  font-size: 16px;
-  color: blue;
-}
-.close-a{
-  padding-top: 5px;
-}
-
-.reserve-manage-area button{
-    font-size: 10px;
-}
-
-/*update-user-info*/
-.add-col{
-  display: inline-block;
-}
-.addin{
-  display: inline-block;
-  width: 90%;
-  margin-left: 10px;
-}
-.addcopy{
-  width: 90%;
-  margin-left: 25px;
-}
-.modal-footer{
-  display: flex;
-  justify-content: center;
-}
-/*reservation-evaluate*/
-.main-body{
-  display: block;
-  text-align: center;
-}
-.main-star{
-  position: relative;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.main-star img{
-  width: 50px;
-}
-.write-body{
-  position: relative;
-  font-size: 16px;
-  margin-top: 10px;
+  padding-bottom: 500px;
 }

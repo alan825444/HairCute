@@ -31,6 +31,7 @@ namespace Haircute.Controllers
             demodbEntities db = new demodbEntities();
             db.tMember.Add(m.Member);
             db.SaveChanges();
+            new registFunction().SendEmail().Wait();
             return RedirectToAction("Index");
         }
 
@@ -53,7 +54,13 @@ namespace Haircute.Controllers
                 }
 
             }
+            
             return this.Json(items);
+        }
+
+        public ActionResult mailtest() 
+        {
+            return Content("成功");
         }
 
     }
