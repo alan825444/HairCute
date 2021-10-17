@@ -35,6 +35,7 @@
           <Property Name="fCity" Type="nvarchar" MaxLength="50" />
           <Property Name="fArea" Type="nvarchar" MaxLength="50" />
           <Property Name="fDesign" Type="char" MaxLength="10" />
+          <Property Name="fconfirmation" Type="char" MaxLength="1" />
           <Property Name="fk_Designer" Type="int" />
           <Property Name="fk_Memorder" Type="int" />
         </EntityType>
@@ -80,6 +81,7 @@
           <Property Name="fk_Memorder" Type="Int32" />
           <Property Name="fNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fconfirmation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tMember" EntityType="Self.tMember" />
@@ -128,6 +130,7 @@
           <EntitySetMapping Name="tMember">
             <EntityTypeMapping TypeName="demodbModel.tMember">
               <MappingFragment StoreEntitySet="tMember">
+                <ScalarProperty Name="fconfirmation" ColumnName="fconfirmation" />
                 <ScalarProperty Name="fCity" ColumnName="fCity" />
                 <ScalarProperty Name="fNickname" ColumnName="fNickname" />
                 <ScalarProperty Name="fID" ColumnName="fID" />
