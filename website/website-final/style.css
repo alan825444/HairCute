@@ -2559,6 +2559,9 @@ margin: 5px 0px;
   .service-edit{
     width: 340px;
   }
+  .rwd-edit{
+    width: 500px;
+  }
   .consumer-pic{
     margin-left: 210px;
   }
@@ -2702,6 +2705,10 @@ margin: 5px 0px;
   .design-item{
     padding-left: 10px;
   }
+  .design-item{
+    padding-left: 10px;
+    width: 50%;
+  }
   .design-head{
     height: 250px;
     width: 175px;
@@ -2714,18 +2721,20 @@ margin: 5px 0px;
 }
 @media only screen and (max-width: 767px) {
   .design-area{
-    margin-top: -30px;
-    margin-bottom: -230px;
+    margin-top: 20px;
+    height: 500px;
   }
   .design-item{
-    padding-left: 10px;
+    padding-left: 40px;
+    margin-top: -50px;
+    width: 50%;
   }
   .design-head{
-    height: 110px;
-    width: 90px;
+    height: 150px;
+    width: 120px;
   }
   .design-body{
-    width: 90px;
+    width: 120px;
     font-size: 12px;
   }
 }
@@ -3298,4 +3307,56 @@ margin: 5px 0px;
   position: relative;
   font-size: 16px;
   margin-top: 10px;
+}
+
+/*update-user-design*/
+.designpreview{
+  display: block;
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+.design-modal{
+  height: 350px;
+  width: 300px;
+  margin-left:80px;
+  overflow: hidden;
+}
+#design-info{
+  margin-left: 80px;
+}
+.modal-body h4{
+  margin-top: 10px;
+  margin-left: 180px;
+}
+
+/*update-user-pic*/
+.userpreview{
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.userpreviewdiv{
+  width: 270px;
+  height: 270px;
+  padding: 5px;
+  margin-left:90px;
+}
+@media only screen and (max-width: 767px){
+  .design-modal{
+    margin-top: 5px;
+    margin-left:20px;
+  }
+  #design-info{
+    margin-left: 20px;
+  }
+  .modal-body h4{
+    margin-left: 110px;
+  }
+  .userpreviewdiv{
+    margin-left:30px;
+  }
 }
