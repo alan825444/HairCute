@@ -184,13 +184,12 @@
           <input type="text" class="datepicker">
         </div>
         <div class="row reserve-manage-area">
-          <div class="col-12">
+          <div class="col-sm-12">
             <table class="table">
               <thead>
-                <th>時間表</th>
-                <th>10/11</th>
-                <th>10/12</th>
-                <th>10/13</th>
+                <th >時間表</th>
+                <th >10/11</th>
+                <th >10/12</th>
               </thead>
               <tbody>
                 <tr>
@@ -205,22 +204,12 @@
                       <button class="btn btn-secondary" data-toggle="modal" data-target="#open">時段關閉</button>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>10:00</th>
                   <td>
                     <div>
                       <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
                     </div>
                   </td>
                   <td>
@@ -241,11 +230,6 @@
                       <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>12:00</th>
@@ -257,11 +241,6 @@
                   <td>
                     <div class="close-a">
                       <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
                     </div>
                   </td>
                 </tr>
@@ -277,11 +256,6 @@
                         <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
                     </div>
                   </td>
-                  <td>
-                    <div>
-                      <button class="btn btn-secondary" data-toggle="modal" data-target="#open">時段關閉</button>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>14:00</th>
@@ -295,22 +269,12 @@
                       <a href="#" data-toggle="modal" data-target="#close">空閒</a>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>15:00</th>
                   <td>
                     <div>
                       <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
-                    </div>
-                  </td>
-                  <td>
-                    <div>
-                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
                     </div>
                   </td>
                   <td>
@@ -331,11 +295,6 @@
                       <a href="#" data-toggle="modal" data-target="#close">空閒</a>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>17:00</th>
@@ -349,22 +308,12 @@
                       <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>18:00</th>
                   <td>
                     <div>
                       <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
-                    </div>
-                  </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
                     </div>
                   </td>
                   <td>
@@ -385,19 +334,9 @@
                       <a href="#" data-toggle="modal" data-target="#close">空閒</a>
                     </div>
                   </td>
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <th>20:00</th>               
-                  <td>
-                    <div class="close-a">
-                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
-                    </div>
-                  </td>
                   <td>
                     <div class="close-a">
                       <a href="#" data-toggle="modal" data-target="#close">空閒</a>
@@ -418,7 +357,7 @@
   </main>
 
   <div class="modal" id="unconfirmed">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">預約未確認</h3>
@@ -439,7 +378,7 @@
     </div>
   </div>
   <div class="modal" id="confirm">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">預約確認</h3>
@@ -457,7 +396,7 @@
     </div>
   </div>
   <div class="modal" id="open">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">時段開啟</h3>

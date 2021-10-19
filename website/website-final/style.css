@@ -3249,30 +3249,10 @@ margin: 5px 0px;
   margin-left: -10px;
   font-size: 20px;
 }
-.reserve-menu button{
-  color: #000000;
-  background-color: #FFFFFF;
-  border:1px solid rgb(206, 203, 203);
-  font-family: 'Times New Roman', Times, serif;
-}
-.date-btn{
-  display: inline-block;
-  width: 20%;
-  margin-left: 5px;
-}
-.date-range{
-  display: inline-block;
-  width: 50%;
-  padding-top: 7px;
-  margin-left: -60px;
-  font-size: 20px;
-  font-family: 'Times New Roman', Times, serif;
-}
 /*reserve-manage-area*/
 .reserve-manage-area{
   text-align: center;
 }
-
 .reserve-manage-area a{
   font-size: 16px;
   color: blue;
@@ -3280,11 +3260,9 @@ margin: 5px 0px;
 .close-a{
   padding-top: 5px;
 }
-
 .reserve-manage-area button{
     font-size: 10px;
 }
-
 /*update-user-info*/
 .add-col{
   display: inline-block;
