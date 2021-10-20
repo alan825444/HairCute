@@ -25,9 +25,6 @@
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- jquery ui -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-
 </head>
 
 <body>
@@ -81,8 +78,8 @@
               </ul>
 
               <!-- Search Icon -->
-              <div class="search-icon">
-                <a href="#search-bar"><i class="icon_search"></i></a>
+              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                <i class="icon_search"></i>
               </div>
             </div>
             <!-- Nav End -->
@@ -93,6 +90,28 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Top Search Area Start ***** -->
+  <div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="index.html" method="post">
+              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Top Search Area End ***** -->
+
 
   <!-- ***** register Area Start ***** -->
   <div class="register-select">
@@ -129,8 +148,8 @@
 
   <!-- ***** login Area Start ***** -->
   <!-- <div class="log-in"> -->
-  <!-- register Modal -->
-  <!-- <div class="modal fade" id="log-in" tabindex="-1">
+    <!-- register Modal -->
+    <!-- <div class="modal fade" id="log-in" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content login-area">
           <div class="modal-header border-0">
@@ -197,7 +216,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
+          <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div>
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -241,7 +260,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <!-- <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div> -->
+          <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div>
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -285,7 +304,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <!-- <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div> -->
+          <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div>
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -322,105 +341,46 @@
       </div>
 
     </div>
-  </section>
+  </section><br><br><br>
   <!-- ***** Welcome Area End ***** -->
 
   <!--Search-->
-  <span id="search-bar"></span>
-  <div class="container search-bar">
-    <form class="row">
-      <div class="index-location-dropdown col-md-3 col-sm-10">
-        <button class="btn index-dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          <i class="fas fa-map-marker-alt mr-2"></i>地區
-        </button>
-        <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-          <li>
-            <a class="dropdown-item" href="#">
-              台北市 &raquo;
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">大安區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">中正區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">信義區</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              台中市 &raquo;
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">東區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">西區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">南區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">北區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">中區</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a class="dropdown-item" href="#">
-              高雄市 &raquo;
-            </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">左營區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">三民區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">新興區</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="datepicker-area  col-sm-10 col-md-3 ">
-        <input type="text" name="date" class="datepicker text-center col-10">
-      </div>
-      <div class="col-md-3 col-sm-10 d-flex flex-md-row pt-1 checkboxes">
-        <div class="col-10 d-flex flex-row">
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-            剪
-          </label>
+  <section class="hero spad set-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <form action="#" class="filter__form d-flex align-items-center">
+            <div class="filter__form__item col-md-3">
+              <p>Location</p>
+              <div class="filter__form__input">
+                <select class="form-select" id="inputGroupSelect01">
+                  <option selected>Choose...</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="filter__form__item col-md-3">
+              <p>Date</p>
+              <input type="datetime-local" class="form-control mx-2" name="date" id="date" />
+            </div>
+            <div class="filter__form__item col-md-3">
+              <p>Keywords</p>
+              <input class="form-control me-2" type="search" placeholder="關鍵字搜尋" aria-label="Search" />
+            </div>
+            <div class="filter__form__item col-md-3 mx-5">
+              <div class="form_btn shadow">
+                <a href="search_result.html" role="button">預約搜尋</a>
+              </div>
+            </div>
         </div>
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-          <label class="form-check-label" for="flexCheckChecked">
-            染
-          </label>
-        </div>
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-          <label class="form-check-label" for="flexCheckChecked">
-            燙
-          </label>
-        </div>
+
+        </form>
       </div>
-      </div>
-      <div class="search-btn align-items-center col-md-3 col-sm-10">
-        <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
-      </div>
-    </form>
-  </div>
+    </div>
+    </div>
+  </section>
 
   <!--Search End-->
 
@@ -1130,8 +1090,8 @@
   <section class="clients-feedback-area section-padding-80 clearfix">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-10 review-title">
-          <div class="quote-icon d-flex flex-row justify-content-center align-items-center mt-0 mb-2">
+        <div class="col-12 col-md-10">
+          <div class="quote-icon d-flex flex-row justify-content-center align-items-center">
             <i class="icon_quotations mx-2" aria-hidden="true"></i>
             <h2>近期評論</h2>
             <i class="icon_quotations mx-2" aria-hidden="true"></i>
@@ -1425,8 +1385,7 @@
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/jquery.min.js"></script>
   <!-- Popper js -->
   <script src="js/popper.min.js"></script>
   <!-- Bootstrap js -->
@@ -1438,23 +1397,6 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
-
-  <script>
-    // location jquery
-    $(".location-menu li a").click(function () {
-
-      $(this).parents(".index-location-dropdown").find('#dropdownMenuButton').text($(this).text());
-      $(this).parents(".index-location-dropdown").find('#dropdownMenuButton').val($(this).text());
-
-    });
-
-    //DateTimePicker
-    $(function () {
-      $(".datepicker").datepicker();
-      $(".datepicker").datepicker('setDate', 'today');
-    });
-
-  </script>
 
 </body>
 
