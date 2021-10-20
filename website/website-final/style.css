@@ -1047,10 +1047,39 @@ ul {
       left: auto;
       right: 0;
       top: 0; }
+<<<<<<< HEAD
+=======
 
 /* 11.0 Model CSS */
 .model-tab-area {
   position: relative;
+  z-index: 1; }
+  .model-tab-area .nav-tabs {
+    border-bottom: none;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .model-tab-area .nav-tabs .nav-link {
+      border: none;
+      border-radius: 0;
+      padding: 0 30px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: #a6a6a6;
+      font-weight: 600;
+      text-transform: uppercase; }
+      .model-tab-area .nav-tabs .nav-link.active {
+        color: #232323; }
+      @media only screen and (max-width: 767px) {
+        .model-tab-area .nav-tabs .nav-link {
+          padding: 0 10px;
+          font-size: 14px; } }
+>>>>>>> parent of 2f24f8b (update_10/16)
+
+/* 11.0 Model CSS */
+.model-tab-area {
+  position: relative;
+<<<<<<< HEAD
   z-index: 1; }
   .model-tab-area .nav-tabs {
     border-bottom: none;
@@ -1078,6 +1107,11 @@ ul {
   z-index: 1;
   padding: 0 3%; }
 
+=======
+  z-index: 1;
+  padding: 0 3%; }
+
+>>>>>>> parent of 2f24f8b (update_10/16)
 .single-model-item {
   position: relative;
   z-index: 1; }
@@ -1710,6 +1744,7 @@ ul {
       .post-catagories ul li a {
         font-size: 10px;
         padding: 5px 10px; } }
+<<<<<<< HEAD
 
 .related-news-area {
 <<<<<<< HEAD
@@ -1763,10 +1798,50 @@ ul {
     font-size: 18px;
     color: #ffffff;
     margin-bottom: 30px; }
+=======
+>>>>>>> parent of 2f24f8b (update_10/16)
+
+.related-news-area {
+  position: relative;
+<<<<<<< HEAD
+=======
+  z-index: 1;
+  padding-top: 50px;
+  border-top: 1px solid #ebebeb;
+  margin-bottom: 20px; }
+
+/* :: 15.0 CTA CSS */
+.mona-cta-area {
+  position: relative;
+  z-index: 1;
+  background-color: #f8b195; }
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  text-align: center; }
+  .cta-content h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ffffff; }
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+      .cta-content h2 {
+        font-size: 42px; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      .cta-content h2 {
+        font-size: 36px; } }
+    @media only screen and (max-width: 767px) {
+      .cta-content h2 {
+        font-size: 30px; } }
+  .cta-content h6 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px; }
 
 /* :: 16.0 Team CSS */
 .single-team-member-area {
   position: relative;
+>>>>>>> parent of 2f24f8b (update_10/16)
   z-index: 1; }
   .single-team-member-area .team-member-thumbnail {
     position: relative;
@@ -2437,6 +2512,7 @@ font-size: 0.8rem;
 
 /*login area*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 .login-area{
   display: flex;
   padding-bottom: 30px;
@@ -2457,6 +2533,8 @@ font-size: 0.8rem;
 }
 .login-area a:hover{
 =======
+=======
+>>>>>>> parent of 2f24f8b (update_10/16)
 .log-in-area{
   position: absolute;
   top: 50%;
@@ -2483,15 +2561,21 @@ font-size: 0.8rem;
   color: #777C81;
 }
 .log-in-area a:hover{
+<<<<<<< HEAD
+>>>>>>> parent of 2f24f8b (update_10/16)
+=======
 >>>>>>> parent of 2f24f8b (update_10/16)
   text-decoration: underline;
 }
 
 .log-in-btn{
 <<<<<<< HEAD
+<<<<<<< HEAD
   border: white 1px solid;
   color: white;
 =======
+=======
+>>>>>>> parent of 2f24f8b (update_10/16)
   border: rgb(136, 131, 131) 1px solid;
   color: rgb(161, 156, 156);
   margin-bottom: 30px;
@@ -2542,9 +2626,12 @@ margin: 5px 0px;
   margin: 0px 0px 10px 0px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 =======
+=======
+>>>>>>> parent of 2f24f8b (update_10/16)
 }
 
 
@@ -2613,6 +2700,7 @@ margin: 5px 0px;
 >>>>>>> parent of 2f24f8b (update_10/16)
 
 
+
 /*membercenter area*/
 .membercenter-area{
   z-index: 1;
@@ -2629,7 +2717,11 @@ margin: 5px 0px;
   padding: 5px;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .uesr-pic{
+=======
+.membercenter-pic .uesr-pic{
+>>>>>>> parent of 2f24f8b (update_10/16)
 =======
 .membercenter-pic .uesr-pic{
 >>>>>>> parent of 2f24f8b (update_10/16)
