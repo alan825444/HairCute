@@ -4,6 +4,7 @@
     <EntitySetMapping Name="tMember">
       <EntityTypeMapping TypeName="demodbModel.tMember">
         <MappingFragment StoreEntitySet="tMember">
+          <ScalarProperty Name="fconfirmation" ColumnName="fconfirmation" />
           <ScalarProperty Name="fCity" ColumnName="fCity" />
           <ScalarProperty Name="fNickname" ColumnName="fNickname" />
           <ScalarProperty Name="fID" ColumnName="fID" />

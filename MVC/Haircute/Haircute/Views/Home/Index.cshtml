@@ -1,5 +1,4 @@
-﻿
-<!-- ***** Welcome Area Start ***** -->
+﻿<!-- ***** Welcome Area Start ***** -->
 <section class="welcome-area">
     <!-- Welcome Slides -->
     <div class="welcome-slides owl-carousel">
@@ -7,12 +6,12 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url('../img/banner-img/curve.png');"></div>
+            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
                 </div>
-                <div class="rank"><img src="../img/banner-img/rank1.png" alt=""></div>
+                <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
                 </div>
                 <div class="hair-style-img2 shadow">
@@ -57,12 +56,12 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url('../img/banner-img/curve.png')"></div>
+            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
                 </div>
-                <div class="rank"><img src="../img/banner-img/rank2.png" alt=""></div>
+                <!-- <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
                 </div>
                 <div class="hair-style-img2 shadow">
@@ -107,12 +106,12 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url('../img/banner-img/curve.png'); "></div>
+            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
                 </div>
-                <div class="rank"><img src="../img/banner-img/rank3.png" alt=""></div>
+                <!-- <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
                 </div>
                 <div class="hair-style-img2 shadow">
@@ -156,45 +155,103 @@
 
     </div>
 </section>
-<br>
-<br>
-<br>
 <!-- ***** Welcome Area End ***** -->
 <!--Search-->
-<section class="hero spad set-bg">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <form action="#" class="filter__form d-flex align-items-center">
-                    <div class="filter__form__item col-md-3">
-                        <p>Location</p>
-                        <div class="filter__form__input">
-                            <select class="form-select" id="inputGroupSelect01">
-                                <option selected>Choose...</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="filter__form__item col-md-3">
-                        <p>Date</p>
-                        <input type="datetime-local" class="form-control mx-2" name="date" id="date" />
-                    </div>
-                    <div class="filter__form__item col-md-3">
-                        <p>Keywords</p>
-                        <input class="form-control me-2" type="search" placeholder="關鍵字搜尋" aria-label="Search" />
-                    </div>
-                    <div class="filter__form__item col-md-3 mx-5">
-                        <div class="form_btn shadow">
-                            <a href="search_result.html" role="button">預約搜尋</a>
-                        </div>
-                    </div>
-                </form>
+<span id="search-bar"></span>
+<div class="container search-bar">
+    <form class="row">
+        <div class="index-location-dropdown col-md-3 col-sm-10">
+            <button class="btn index-dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                <i class="fas fa-map-marker-alt mr-2"></i>地區
+            </button>
+            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台北市 &raquo;
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        <li>
+                            <a class="dropdown-item" href="#">大安區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">中正區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">信義區</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台中市 &raquo;
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        <li>
+                            <a class="dropdown-item" href="#">東區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">西區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">南區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">北區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">中區</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        高雄市 &raquo;
+                    </a>
+                    <ul class="dropdown-menu dropdown-submenu">
+                        <li>
+                            <a class="dropdown-item" href="#">左營區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">三民區</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">新興區</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="datepicker-area  col-sm-10 col-md-3 ">
+            <input type="text" name="date" class="datepicker text-center col-10">
+        </div>
+        <div class="col-md-3 col-sm-10 d-flex flex-md-row pt-1 checkboxes">
+            <div class="col-10 d-flex flex-row">
+                <div class="form-check col-md-auto">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        剪
+                    </label>
+                </div>
+                <div class="form-check col-md-auto">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        染
+                    </label>
+                </div>
+                <div class="form-check col-md-auto">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                        燙
+                    </label>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="search-btn align-items-center col-md-3 col-sm-10">
+            <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+        </div>
+    </form>
+</div>
 
 <!--Search End-->
 <!-- ***** Model Area Start ***** -->
@@ -239,9 +296,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10" alt="">
+                                        <img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -255,9 +312,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/11.jpg" alt="">
+                                        <img class="first-thumbnail" src="../img/bg-img/11.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/12.jpg" alt="">
+                                        <img class="second-thumbnail" src="../img/bg-img/12.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -271,9 +328,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/13.jpg" alt="">
+                                        <img class="first-thumbnail" src="../img/bg-img/13.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/14.jpg" alt="">
+                                        <img class="second-thumbnail" src="../img/bg-img/14.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -287,9 +344,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -303,9 +360,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -319,9 +376,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -335,9 +392,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -351,9 +408,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -367,9 +424,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -383,9 +440,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -404,9 +461,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -420,9 +477,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -436,9 +493,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -452,9 +509,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -468,9 +525,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -484,9 +541,9 @@
                                 <div class="single-model-item">
                                     <div class="model-thumbnail">
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="./img/bg-img/10.jpg" alt="">
+                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="./img/bg-img/9.jpg" alt="">
+                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
                                         <!-- Share Info -->
 
                                     </div>
@@ -902,8 +959,8 @@
 <section class="clients-feedback-area section-padding-80 clearfix">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-md-10">
-                <div class="quote-icon d-flex flex-row justify-content-center align-items-center">
+            <div class="col-12 col-md-10 review-title">
+                <div class="quote-icon d-flex flex-row justify-content-center align-items-center mt-0 mb-2">
                     <i class="icon_quotations mx-2" aria-hidden="true"></i>
                     <h2>近期評論</h2>
                     <i class="icon_quotations mx-2" aria-hidden="true"></i>
@@ -1147,5 +1204,60 @@
 
         </div>
     </div>
+    </div>
+    </div>
 </section>
 <!-- ***** Blog Area End ***** -->
+<!-- ***** Footer Area Start ***** -->
+<footer class="footer-area py-3">
+    <div class="container">
+        <div class="row">
+
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6">
+                <div class="single-footer-widget ">
+                    <!-- Logo -->
+                    <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
+                    <div class="copywrite-text">
+                        <p>
+                            &copy;
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved. <br> This template is
+                            made
+                            with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Footer Widget -->
+            <div class="col-12 col-sm-6">
+                <div class="single-footer-widget">
+                    <!-- Widget Title -->
+                    <h4 class="widget-title mt-3">聯絡方式</h4>
+                    <!-- Footer Content -->
+                    <div class="footer-content mb-3">
+                        <h4>07-969-9885</h4>
+                        <h6>高雄市前金區中正四路211號8樓</h6>
+                    </div>
+                    <!-- Social Info -->
+                    <div class="footer-social-info">
+                        <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter">
+                            <i class="fab fa-twitter-square"></i>
+                        </a>
+                        <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram">
+                            <i class="fab fa-instagram-square"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!-- ***** Footer Area End ***** -->

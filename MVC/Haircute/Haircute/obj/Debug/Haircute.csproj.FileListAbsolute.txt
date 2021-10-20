@@ -176,3 +176,13 @@ C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\SendGrid.pdb
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\SendGrid.xml
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.pdb
 C:\Users\USER\Desktop\HairCute\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.xml
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\Newtonsoft.Json.dll
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.CSharp.HTTP.Client.dll
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.dll
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.dll
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\StarkbankEcdsa.dll
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\Newtonsoft.Json.xml
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.pdb
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.xml
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.pdb
+C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.xml

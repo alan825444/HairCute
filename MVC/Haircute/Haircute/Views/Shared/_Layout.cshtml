@@ -26,7 +26,7 @@
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <script src="~/js/jquery.min.js"></script>
+ 
 </head>
 
 <body>
@@ -94,26 +94,70 @@
             </div>
         </div>
     </header>
-    <!-- ***** Header Area End ***** -->
-    <div class="top-search-area">
-        <!-- Search Modal -->
-        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <!-- Close Button -->
-                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
-                        <!-- Form -->
-                        <form action="index.html" method="post">
-                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
-                            <button type="submit">Search</button>
-                        </form>
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area">
+        <!-- Main Header Start -->
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <!-- Classy Menu -->
+                <nav class="classy-navbar justify-content-between" id="monaNav">
+
+                    <!-- Background Curve -->
+                    <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+
+                    <!-- Logo -->
+                    <a class="nav-brand" href="index.html"><img src="../img/banner-img/logo.png" alt=""></a>
+
+                    <!-- Navbar Toggler -->
+                    <div class="classy-navbar-toggler">
+                        <span class="navbarToggler"><span></span><span></span><span></span></span>
                     </div>
-                </div>
+
+                    <!-- Menu -->
+                    <div class="classy-menu">
+                        <!-- Menu Close Button -->
+                        <div class="classycloseIcon">
+                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                        </div>
+
+                        <!-- Nav Start -->
+                        <div class="classynav">
+
+                            <ul id="nav">
+
+                                <li>
+                                    <a href="~/Home/Login">登入</a>
+
+                                </li>
+                                <li>
+                                    <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+
+                                </li>
+
+                                <li>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                                    <ul class="dropdown">
+                                        <li><a href="#">- 台中</a></li>
+                                        <li><a href="#">- 高雄</a></li>
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+
+                            <!-- Search Icon -->
+                            <div class="search-icon">
+                                <a href="#search-bar"><i class="icon_search"></i></a>
+                            </div>
+                        </div>
+                        <!-- Nav End -->
+
+                    </div>
+                </nav>
             </div>
         </div>
-    </div>
-    <!-- ***** Top Search Area End ***** -->
+    </header>
+    <!-- ***** Header Area End ***** -->
     <!-- ***** register Area Start ***** -->
     <div class="register-select">
         <!-- register Modal -->
@@ -127,13 +171,13 @@
                         <div class="register-card shadow">
                             <a href="~/Home/RGFDesigner">
                                 <div class="register-cardHead" id="banner01">設計師</div>
-                                <div class="register-cardBody"><img src="~/img/register-store.png"></div>
+                                <div class="register-cardBody"><img src="../img/register-store.png"></div>
                             </a>
                         </div>
                         <div class="register-card shadow">
                             <a href="register.html">
                                 <div class="register-cardHead" id="banner02">消費者</div>
-                                <div class="register-cardBody"><img src="~/img/register-customer.png"></div>
+                                <div class="register-cardBody"><img src="../img/register-customer.png"></div>
                             </a>
                         </div>
 
@@ -145,67 +189,9 @@
         </div>
 
     </div>
-    <!-- ***** register Area End ***** -->
-    <!-- ***** login Area Start ***** -->
-    <div class="log-in">
-        <!-- register Modal -->
-        <div class="modal fade" id="log-in" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content login-area">
-                    <div class="modal-header border-0">
-                        <img class="login-logo" src="~/img/logo-white.png" alt="">
-                        <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <form class="row row-cols-lg-auto justify-content-center ">
-                            <div class="col-10 mb-3">
-                                <label class="visually-hidden" for="inlineFormInputGroupUsername">ID</label>
-                                <div class="input-group">
-                                    <div class="input-group-text"><i class="far fa-user"></i></div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="請輸入帳號">
-                                </div>
-                            </div>
-
-                            <div class="col-10 pb-3">
-                                <label class="visually-hidden" for="inlineFormInputGroupUsername">password</label>
-                                <div class="input-group">
-                                    <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
-                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="請輸入密碼">
-                                </div>
-                                <div class="row">
-                                    <div class="col-6 my-3">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
-                                            <label class="form-check-label" for="inlineFormCheck">
-                                                記住帳號
-                                            </label>
-                                            <!-- <a href="#">忘記密碼</a> -->
-                                        </div>
-
-                                    </div>
-                                    <div class="col-6 my-3 d-flex flex-row-reverse">
-                                        <a href="#"><i class="far fa-question-circle mr-1"></i>忘記密碼 </a>
-                                    </div>
-                                </div>
-                                <div class="col-12 d-flex justify-content-center">
-                                    <button type="submit" class="btn log-in-btn">登入</button>
-
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <!-- ***** login Area End ***** -->
-    <!-- ***** Header Area End ***** -->
-    <div>
         @RenderBody()
-    </div>
     <!-- ***** Footer Area Start ***** -->
-    <footer class="footer-area py-3">
+    <footer class="footer-area py-3" id="Lfooter">
         <div class="container">
             <div class="row">
 
@@ -213,7 +199,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="single-footer-widget ">
                         <!-- Logo -->
-                        <a href="#" class="d-block mb-4"><img src="~/img/banner-img/logo.png" alt=""></a>
+                        <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
                         <div class="copywrite-text">
                             <p>
@@ -259,7 +245,7 @@
     <!-- ***** Footer Area End ***** -->
     <!-- ******* All JS ******* -->
     <!-- jQuery js -->
-    
+    <script src="~/js/jquery.min.js"></script>
     <!-- Popper js -->
     <script src="~/js/popper.min.js"></script>
     <!-- Bootstrap js -->

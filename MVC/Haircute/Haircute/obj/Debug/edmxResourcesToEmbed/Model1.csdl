@@ -17,6 +17,7 @@
     <Property Name="fk_Memorder" Type="Int32" />
     <Property Name="fNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fconfirmation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tMember" EntityType="Self.tMember" />
