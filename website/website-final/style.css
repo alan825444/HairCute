@@ -2418,39 +2418,31 @@ font-size: 0.8rem;
 
 
 /*login area*/
-.log-in-area{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  border-radius: 2rem;
-  border:hsla(329, 82%, 61%, 0.4) 3px outset;
+.login-area{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-bottom: 30px;
+  top: 150px;
+  z-index: 1001;
+  background-color: #f8b195d5;
+  border-radius: 2rem;
+  border: none;
+}
+.login-logo{
+  height: 7vh;
+  width: auto;
 }
 
-.log-in-area:hover{
-  box-shadow: rgba(102, 102, 102, 0.3) 10px 5px 5px;
-  
-}
-
-.log-in-area .form-check-label{
-  font-size: 1.1rem;
-}
-
-.log-in-area a{
+.login-area a{
   font-size: 0.9rem;
   color: #777C81;
 }
-.log-in-area a:hover{
+.login-area a:hover{
   text-decoration: underline;
 }
 
 .log-in-btn{
-  border: rgb(136, 131, 131) 1px solid;
-  color: rgb(161, 156, 156);
-  margin-bottom: 30px;
+  border: white 1px solid;
+  color: white;
 }
 
 .log-in-btn:hover{
@@ -2499,70 +2491,6 @@ margin: 5px 0px;
 }
 
 
-/* storeInfo-area */
-
-.storeInfo-pic .uesr-pic{
-  width: 15vw;
-  height: 30vh;
-  border-radius: 50%;
-  margin-right: 50px;
-}
-
-.storeInfo-section .userInfo{
-  display: flex;
-  flex-direction: row;
-}
-
-.userInfo i{
-  color: #E9AD28;
-}
-
-.skills-tag a{
-  font-size: 1rem;
-  margin: 0px 10px 0 0;
-  color: #666666;
-  border: #DA627D solid 1px;
-  padding: 8px 15px;
-  border-radius: 1rem;
-}
-
-.skills-tag a:hover{
-  text-decoration: underline;
-  color: #DA627D;
-  border: none;
-  background-color: hsla(329, 82%, 80%, 0.3);
-}
-
-@media screen and (max-width: 750px){
-  .storeInfo-pic{
-    display: flex;
-    justify-content: center;
-  }
-  .storeInfo-pic .uesr-pic{
-    margin: 0px 100px 0 0;
-    width: 35%;
-    height: auto;
-  }
-  .userInfo h2{
-    margin: 0;
-  }
-  .storeInfo-section{
-    margin-top: 20px;
-    
-  }
-  .storeInfo-section .userInfo{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-  .storeInfo-section li{
-    display: flex;
-    justify-content: center;
-    
-  }
-}
-
-
 /*membercenter area*/
 .membercenter-area{
   z-index: 1;
@@ -2578,7 +2506,7 @@ margin: 5px 0px;
   height: 270px;
   padding: 5px;
 }
-.membercenter-pic .uesr-pic{
+.uesr-pic{
   display: block;
   border-radius: 50%;
   position: relative;
