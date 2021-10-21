@@ -1,0 +1,44 @@
+﻿<!-- ***** login Area Start ***** -->
+<div class="log-in-area col-10 col-md-8">
+    <div class="log-in-form">
+        <form class="row row-cols-lg-auto justify-content-center mt-5" method="post">
+            <div class="col-10 mb-3">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">ID</label>
+                <div class="input-group">
+                    <div class="input-group-text"><i class="far fa-user"></i></div>
+                    <input type="text" class="form-control" name="fAcc" id="fAcc" placeholder="請輸入帳號">
+                </div>
+            </div>
+
+            <div class="col-10 pb-3">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">password</label>
+                <div class="input-group">
+                    <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
+                    <input type="password" class="form-control" name="fPwd" id="fPwd" placeholder="請輸入密碼">
+                </div>
+                <div class="row">
+                    <div class="col-6 my-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+                            <label class="form-check-label" for="inlineFormCheck">
+                                記住帳號
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="col-6 my-3 d-flex flex-row-reverse">
+                        <a href="#"><i class="far fa-question-circle mr-1"></i>忘記密碼 </a>
+                    </div>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button type="submit" class="btn log-in-btn">登入</button>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <p class="text-danger">@ViewBag.message</p>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- ***** login Area End ***** -->
+</div>

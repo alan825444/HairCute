@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 
 namespace Haircute.Controllers
@@ -29,9 +30,16 @@ namespace Haircute.Controllers
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
             demodbEntities db = new demodbEntities();
-            db.tMember.Add(m.Member);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+            if (member == null)
+            {
+                db.tMember.Add(m.Member);
+                db.SaveChanges();
+                new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Message = "此帳號已有人使用";
+            return View();
         }
 
         [HttpPost]
@@ -53,8 +61,39 @@ namespace Haircute.Controllers
                 }
 
             }
+            
             return this.Json(items);
         }
 
+        public ActionResult mailtest(string ID) 
+        {
+            int cfID = Convert.ToInt32(new registFunction().decryptstr(ID));
+            demodbEntities db = new demodbEntities();
+            tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
+            認證.fconfirmation = "Y";
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string txtAcc, string txtPwd)
+        {
+            demodbEntities db = new demodbEntities();
+
+            var q = db.tMember.Where(m => m.fEmail == txtAcc && m.fPwd == txtPwd).FirstOrDefault();
+            if (q == null)
+            {
+                ViewBag.message = "請確認輸入的帳號密碼正確性";
+                return RedirectToAction("Login");
+            }
+            FormsAuthentication.RedirectFromLoginPage(q.fID.ToString(),true);
+            Session["Member"] = q.fNickname;
+            return RedirectToAction("Index");
+        }
     }
 }
