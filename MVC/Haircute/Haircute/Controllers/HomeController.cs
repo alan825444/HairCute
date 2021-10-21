@@ -30,10 +30,16 @@ namespace Haircute.Controllers
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
             demodbEntities db = new demodbEntities();
-            db.tMember.Add(m.Member);
-            db.SaveChanges();
-            new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-            return RedirectToAction("Index");
+            var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+            if (member == null)
+            {
+                db.tMember.Add(m.Member);
+                db.SaveChanges();
+                new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Message = "此帳號已有人使用";
+            return View();
         }
 
         [HttpPost]

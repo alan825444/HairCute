@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -28,6 +29,7 @@ namespace Haircute.ViewModel
             get { return this.Member.fUsername; }
             set { this.Member.fUsername = value; }
         }
+        [Required]
         public string fEmail 
         {
             get { return this.Member.fEmail; }
