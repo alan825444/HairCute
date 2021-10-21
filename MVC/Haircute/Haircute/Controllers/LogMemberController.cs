@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Security;
 
 namespace Haircute.Controllers
 {
+    [Authorize]
     public class LogMemberController : Controller
     {
 
@@ -13,7 +15,7 @@ namespace Haircute.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            return View("../Home/Index", "_LayourMember");
         }
     }
 }

@@ -64,7 +64,7 @@
                             <ul id="nav">
 
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#log-in">@Session["Member"]</a>
+                                    <a href="#" data-toggle="modal" data-target="#log-in">@Session["FName"]</a>
 
                                 </li>
                                 <li>
@@ -120,18 +120,16 @@
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                         </div>
-
-                        <!-- Nav Start -->
                         <div class="classynav">
 
                             <ul id="nav">
 
                                 <li>
-                                    <a href="~/Home/Login">登入</a>
+                                    <a href="#">@Session["FName"]</a>
 
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+                                    <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
 
                                 </li>
 
@@ -145,14 +143,10 @@
 
 
                             </ul>
-
-                            <!-- Search Icon -->
                             <div class="search-icon">
                                 <a href="#search-bar"><i class="icon_search"></i></a>
                             </div>
                         </div>
-                        <!-- Nav End -->
-
                     </div>
                 </nav>
             </div>

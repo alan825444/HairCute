@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using System.Web.Security;
 
 namespace Haircute.Controllers
 {
@@ -28,6 +28,8 @@ namespace Haircute.Controllers
         [HttpPost]
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if (member == null)
@@ -77,6 +79,22 @@ namespace Haircute.Controllers
         public ActionResult Login()
         {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(string fEmail, string fPwd)
+        {
+            demodbEntities db = new demodbEntities();
+            var member = db.tMember.Where(m => m.fEmail == fEmail && m.fPwd == fPwd).FirstOrDefault();
+            if (member == null)
+            {
+                ViewBag.Message = "帳號密碼錯誤";
+                return View();
+            }
+            //Session["FID"] = member.fID.ToString();
+            Session["FName"] = member.fNickname;
+            FormsAuthentication.RedirectFromLoginPage(member.fID.ToString(), true);
+            return RedirectToAction("Index", "LogMember");
         }
 
     }
