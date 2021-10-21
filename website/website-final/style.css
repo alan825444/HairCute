@@ -2664,47 +2664,21 @@ ul li {
   border-radius: 1rem;
 }
 
-.dropdown-menu li {
-  position: relative;
-}
-.dropdown-menu .dropdown-submenu {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: -7px;
-}
-
 .dropdown-toggle,
-.location-menu,
-.dropdown-submenu {
+.location-menu {
   border: rgba(128, 128, 128, 0.3) 1px solid;
   border-radius: 1rem;
 }
 
-.dropdown-menu .dropdown-submenu-left {
-  right: 100%;
-  left: auto;
-}
-.dropdown-menu > li:hover > .dropdown-submenu {
-  display: block;
-}
-
-.searchBar .datepicker,
-.timepicker {
-  height: 5vh;
-  width: 12vw;
-  font-size: 0.9rem;
-  border-radius: 0.8rem;
-  border: rgba(128, 128, 128, 0.3) 1px solid;
-}
-
-.searchBar .form-check-input {
+.searchBar .tag_search_label, .tag_search_label i{
   font-size: 1rem;
+  
 }
-.searchBar .form-check label {
-  font-size: 1.2rem;
-  color: rgb(70, 68, 68);
+
+.animate__shakeX{
+  --animation-duration: 30s;
 }
+
 
 .searchBar .btn-search {
   border: #ed489d 1px solid;
@@ -3009,66 +2983,41 @@ ul li {
 }
 
 /*membercenter area*/
-.membercenter-area{
+.membercenter-area {
   z-index: 1;
   position: relative;
   top: 100px;
 }
-.membercenter-header{
+.membercenter-header {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.membercenter-pic{
+.membercenter-pic {
   width: 270px;
   height: 270px;
   padding: 5px;
 }
-.consumer-pic{
-  width: 270px;
-  height: 270px;
-  padding: 5px;
-  margin-left: 420px;
-}
-.consumer-name{
-  display: inline-block;
-  margin-left: 440px;
-}
-.consumer-star{
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  align-items: center;
-  height: 60px;
-  width: 180px;
-}
-.consumer-star i{
-  color: rgb(251, 177, 5);
-}
-.uesr-pic{
+.membercenter-pic .uesr-pic {
   display: block;
   border-radius: 50%;
   position: relative;
   width: 100%;
   height: 100%;
 }
-.uesr-btn{
+.uesr-btn {
   border: 0;
   height: 100%;
   width: 100%;
-  background:white;
+  background: white;
 }
-.membercenter-user ul{
+.membercenter-user ul {
   margin-top: 20px;
   margin-left: 20px;
 }
-.consumer-user ul{
-  margin-top: 20px;
-  margin-left: 20px;
-}
-.user-name{
+.user-name {
   display: inline-block;
 }
-.user-star{
+.user-star {
   position: relative;
   display: inline-flex;
   margin-left: 10px;
@@ -3076,32 +3025,22 @@ ul li {
   height: 60px;
   width: 180px;
 }
-.user-star i{
-  color: rgb(251, 177, 5);
-}
-.user-service{
+.user-service {
   margin-top: 10px;
 }
-.service-edit{
+.service-edit {
   display: block;
-  width: 510px;
+  width: 490px;
   height: 120px;
   font-size: 16px;
   line-height: 30px;
 }
-.rwd-edit{
-  display: block;
-  width: 660px;
-  height: 120px;
-  font-size: 16px;
-  line-height: 30px;
-}
-.membercenter-edit{
-  display:flex;
+.membercenter-edit {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
-.userinfo-edit{
+.userinfo-edit {
   position: relative;
   border: 1px solid;
   border-radius: 10px;
@@ -3109,114 +3048,18 @@ ul li {
   padding: 5px;
   text-align: center;
   font-size: 20px;
-  width: 150px; 
+  width: 150px;
 }
-.userinfo-edit:hover{
-  color:white;
-  background-color:#DA627D;
+.userinfo-edit:hover {
+  color: white;
+  background-color: #da627d;
 }
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .service-edit{
-    width: 430px;
-    height: 130px;
-    font-size: 20px;
-  }
-  .rwd-edit{
-    width: 610px;
-    font-size: 20px;
-  }
-  .consumer-pic{
-    margin-left: 320px;
-  }
-  .consumer-name{
-    margin-left: 350px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .membercenter-pic{
-    width: 24px;
-    height: 200px;
-    padding: 5px;
-    margin-top: 20px;
-  }
-  .service-edit{
-    width: 340px;
-  }
-  .rwd-edit{
-    width: 500px;
-  }
-  .consumer-pic{
-    margin-left: 210px;
-  }
-  .consumer-name{
-    margin-left: 250px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .membercenter-pic{
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .membercenter-user{
-    margin-top: 10px;
-  }
-  .membercenter-user ul{
-    position: relative;
-    left: -100px;
-    margin-top: 0px;
-    margin-left: 0px;
-    width: 360px;
-    height: 360px;
-  }
-  .membercenter-user li{
-    width: 360px;
-    height: 50px;
-  }
-  .user-name{
-    font-size: 16px;
-    position: relative;
-    margin-left: 90px;
-  }
-  .user-star{
-    width: 130px;
-  }
-  .desAddress{
-    margin-left: 90px;
-    font-size: 8px;
-  }
-  .service-edit{
-    width: 165px;
-    height: 180px;
-  }
-  .rwd-edit{
-    width: 340px;
-    height: 180px;
-  }
-  .membercenter-edit{
-    left: -50px;
-    top: 20px;
-  }
-  .userinfo-edit{
-    font-size: 16px;
-    width: 130px; 
-  }
-  .consumer-pic{
-    margin-left: 35px;
-  }
-  .consumer-name{
-    margin-left:70px;
-  }
-  .consumer-star{
-    width: 120px;
-  }
-}
-.membercenter-Tab{
-  display:flex;
+.membercenter-Tab {
+  display: flex;
   text-align: center;
   height: 30px;
 }
-.Tab1{
+.Tab1 {
   border-radius: 10px;
   position: relative;
   display: inline-block;
@@ -3224,13 +3067,13 @@ ul li {
   width: 90px;
   height: 30px;
 }
-.membercenter-Tab span{
+.membercenter-Tab span {
   vertical-align: middle;
   margin-right: 5px;
   margin-top: -2px;
   margin-bottom: 1px;
 }
-.Tab2{
+.Tab2 {
   border-radius: 10px;
   position: relative;
   display: inline-block;
@@ -3238,7 +3081,15 @@ ul li {
   width: 110px;
   height: 30px;
 }
-.Tab3{
+.Tab3 {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 110px;
+  height: 30px;
+}
+.Tab4 {
   border-radius: 10px;
   position: relative;
   display: inline-block;
@@ -3246,11 +3097,19 @@ ul li {
   width: 80px;
   height: 30px;
 }
-.change{
+.Tab5 {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 80px;
+  height: 30px;
+}
+.change {
   background-color: #f8b195;
 }
 /*design-area*/
-.design-area{
+.design-area {
   display: flex;
   align-items: center;
   text-align: center;
@@ -3259,10 +3118,10 @@ ul li {
   margin-top: -5px;
   margin-bottom: -60px;
 }
-.design-item{
+.design-item {
   padding-left: 35px;
 }
-.design-head{
+.design-head {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3270,7 +3129,7 @@ ul li {
   width: 200px;
   overflow: hidden;
 }
-.design-body{
+.design-body {
   display: flex;
   margin-top: -1px;
   height: 50px;
@@ -3279,51 +3138,13 @@ ul li {
   font-size: 20px;
   justify-content: center;
 }
-.design-pic{
+.design-pic {
   border: solid 1px;
   height: 300px;
-  max-width:300px;
+  max-width: 300px;
 }
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .design-item{
-    padding-left: 10px;
-  }
-  .design-item{
-    padding-left: 10px;
-    width: 50%;
-  }
-  .design-head{
-    height: 250px;
-    width: 175px;
-  }
-  .design-body{
-    height: 50px;
-    width: 175px;
-    font-size: 16px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .design-area{
-    margin-top: 20px;
-    height: 500px;
-  }
-  .design-item{
-    padding-left: 40px;
-    margin-top: -50px;
-    width: 50%;
-  }
-  .design-head{
-    height: 150px;
-    width: 120px;
-  }
-  .design-body{
-    width: 120px;
-    font-size: 12px;
-  }
-}
-
 /*article-area*/
-.article-area{
+.article-area {
   display: flex;
   justify-content: center;
   height: 1500px;
@@ -3331,7 +3152,7 @@ ul li {
   padding-top: 20px;
   padding-bottom: 500px;
 }
-.article-item{
+.article-item {
   display: flex;
   position: relative;
   margin-top: 30px;
@@ -3343,10 +3164,10 @@ ul li {
   border: 1px solid #dfd9d9;
   box-shadow: 0 0 10px 10px #72717130;
 }
-.article-item:hover{
+.article-item:hover {
   background-color: #dddbdb;
 }
-.article-title{
+.article-title {
   display: inline-flex;
   width: 550px;
   height: 100px;
@@ -3354,8 +3175,8 @@ ul li {
   margin-top: 20px;
   padding-left: 50px;
 }
-.article-likes{
-  display:flex;
+.article-likes {
+  display: flex;
   position: relative;
   width: 90px;
   height: 40px;
@@ -3364,14 +3185,14 @@ ul li {
   justify-content: center;
   margin-left: 50px;
 }
-.article-likes label{
+.article-likes label {
   color: #e61717;
-  font-size:20px;
+  font-size: 20px;
   font-weight: bold;
   margin-left: 5px;
   margin-top: 15px;
 }
-.article-birth{
+.article-birth {
   display: flex;
   position: relative;
   margin-left: 350px;
@@ -3379,14 +3200,14 @@ ul li {
   width: 200px;
   height: 40px;
 }
-.article-birth label{
+.article-birth label {
   color: #aaaaaa;
-  font-size:16px;
+  font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
   margin-left: 15px;
 }
-.article-pic{
+.article-pic {
   border-radius: 20px;
   width: 180px;
   height: 100%;
@@ -3394,229 +3215,10 @@ ul li {
   display: flex;
   overflow: hidden;
   margin-left: 25px;
-  }
+}
 /*reservation-area*/
-.reservation-area{
-  display: flex;
-  justify-content: center;
-  height: 1500px;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 900px;
-}
-.reservation-item{
-  display: flex;
-  position: relative;
-  margin-top: 30px;
-  height: 180px;
-  width: 70%;
-  border: 1px solid #dfd9d9;
-  box-shadow:1px 1px #b6b5b5;
-}
-.reservation-pic-div{
-  height: 20%;
-  width: 20%;
-  background:white;
-  margin-top: 15px;
-  margin-left: 15px;
-}
-.reservation-pic{
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.reservation-title{
-  position: absolute;
-  border-bottom: 1px solid;
-  left: 190px;
-  top: 20px;
-}
-.reservation-title a{
-  font-size: 20px;
-  color: #007bff;
-}
-.reservation-title b{
-  font-size: 16px;
-}
-.reservation-star{
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  width: 130px;
-  align-items: center;
-}
-.reservation-star i{
-  color: rgb(251, 177, 5);
-}
-.reservation-body{
-  position: absolute;
-  border-bottom: 1px solid;
-  font-size: 20px;
-  left: 190px;
-  top: 60px;
-  width: 520px;
-}
-.reservation-body b{
-  margin-right: 10px;
-}
-.re-la1{
-  margin-left: 57px;
-}
-.reservation-footer{
-  position: absolute;
-  font-size: 20px;
-  right: 50px;
-  top: 140px;
-}
-.reservation-footer b{
-  color: green;
-}
-.reservation-footer i{
-  color: green;
-}
-.reservation-footer button{
-  display: inline-flex;
-  height: 30px;
-  width: 78px;
-  align-items:center;
-  letter-spacing: 10px;
-  font-size: 20px;
-}
-.res-cancel b{
-  color: red;
-}
-.res-cancel i{
-  color: red;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 80%;
-    height: 200px;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:690px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-    width: 500px;
-  }
-  .reservation-title a{
-    font-size: 20px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 1.3rem;
-    width: 500px;
-  }
-  .re-la1{
-    margin-left: 50px;
-  }
-  .reservation-footer{
-    margin-top: 15px;
-    font-size: 20px;
-  }
-  .reservation-footer button{
-    font-size: 20px;
-    width: 80px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 100%;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:640px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-  }
-  .reservation-title a{
-    font-size: 16px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 16px;
-    width: 470px;
-  }
-  .re-la1{
-    margin-left: 45px;
-  }
-  .reservation-footer{
-    font-size: 16px;
-  }
-  .reservation-footer button{
-    font-size: 16px;
-    width: 65px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 100%;
-    height: 220px;
-  }
-  .pic-li{
-    width:290px;
-  }
-  .reservation-pic-div{
-    height: 40%;
-    width: 40%;
-    margin-top: 20px;
-  }
-  .reservation-title{
-    width: 160px;
-    left:10px;
-    top: 140px;
-    border: none;
-  }
-  .reservation-title a{
-    font-size: 12px;
-  }
-  .reservation-title b{
-    font-size: 8px;
-  }
-  .reservation-star{
-    width: 110px;
-  }
-  .reservation-body{
-    font-size: 8px;
-    left: 170px;
-    top: 50px;
-    width: 160px;
-    border: none;
-  }
-  .re-la1{
-    margin-left: 0px;
-  }
-  .reservation-footer{
-    font-size: 16px;
-    right: 20px;
-    top: 180px;
-  }
-  .reservation-footer button{
-    width: 65px;
-    font-size: 16px;
-  }
-}
-
-/*point-area*/
-.point-area{
+.reservation-area {
+  border: solid;
   display: flex;
   justify-content: center;
   height: 1500px;
@@ -3624,61 +3226,71 @@ ul li {
   padding-top: 20px;
   padding-bottom: 500px;
 }
-.point-form{
+
+/*point-area*/
+.point-area {
+  display: flex;
+  justify-content: center;
+  height: 1500px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 500px;
+}
+.point-form {
   display: flex;
   position: relative;
   margin-top: 30px;
-  border:solid;
+  border: solid;
   height: 780px;
   width: 70%;
   overflow: hidden;
   border: 1px solid #dfd9d9;
   box-shadow: 0 0 10px 10px #72717130;
 }
-.point-pic{
+.point-pic {
   margin-left: 50px;
 }
-.point-info-group{
+.point-info-group {
   width: 380px;
   height: 260px;
 }
-.point-info{
+.point-info {
   display: flex;
   border-bottom: 1px solid #dfd9d9;
   margin-left: 20px;
   margin-top: 40px;
 }
-.point-info b{
+.point-info b {
   font-size: 20px;
-  color: #DA627D;
+  color: #da627d;
 }
-.point-money{
+.point-money {
   display: inline-block;
   width: 240px;
   text-align: right;
 }
-.point-money b{
+.point-money b {
   color: #f5aa08;
 }
-.point-Tab-group{
-  position:absolute;
+.point-Tab-group {
+  position: absolute;
   left: 63px;
   top: 270px;
   width: 350px;
 }
-.point-Tab{
+.point-Tab {
   display: inline-block;
   cursor: pointer;
   margin-right: 5px;
 }
-.point-Tab b{
+.point-Tab b {
   font-size: 20px;
-  color: #DA627D;
+  color: #da627d;
 }
-.point-click{
+.point-click {
   border-bottom: 1px solid #dfd9d9;
 }
-.point-record-group{
+.point-record-group {
   position: absolute;
   left: 0px;
   top: 330px;
@@ -3686,14 +3298,14 @@ ul li {
   height: 450px;
   overflow: hidden;
 }
-.point-record{
+.point-record {
   display: flex;
   position: relative;
   border-bottom: 1px solid #dfd9d9;
   height: 150px;
   width: 100%;
 }
-.point-record-pic{
+.point-record-pic {
   border-radius: 50px;
   width: 120px;
   height: 120px;
@@ -3703,20 +3315,20 @@ ul li {
   margin-left: 25px;
   margin-top: 10px;
 }
-.point-record-title{
+.point-record-title {
   display: inline-flex;
   width: 400px;
   height: 50px;
   margin-top: 30px;
   padding-left: 15px;
 }
-.point-record-address{
+.point-record-address {
   width: 400px;
   height: 50px;
   margin-top: 5px;
   padding-left: 15px;
 }
-.point-record-money{
+.point-record-money {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -3726,209 +3338,59 @@ ul li {
   margin-left: 50px;
   margin-top: 20px;
 }
-.point-record-money b{
+.point-record-money b {
   font-size: 40px;
   color: #f5aa08;
 }
 
 /*evaluate-area*/
-.evaluate-area{
+.evaluate-area {
+  border: solid;
   display: flex;
   justify-content: center;
   height: 1500px;
   width: 100%;
   padding-top: 20px;
-  padding-bottom: 1000px;
+  padding-bottom: 500px;
 }
-.evaluate-item{
-  display: flex;
-  position: relative;
-  margin-top: 30px;
-  height: 180px;
-  width: 60%;
-  border-bottom: 1px solid #dfd9d9;
-}
-.evaluate-title{
-  font-size: 20px;
-  width: 100px;
-}
-.evaluate-star{
-  position: relative;
-  font-size: 24px;
-  width: 180px;
-  margin-left: 70px;
-  top:30px;
-}
-.evaluate-star i{
-  color: rgb(251, 177, 5);
-}
-.evaluate-body{
-  position: relative;
-  height: 140px;
-  width: 310px;
-  font-size: 16px;
-  padding-top: 30px;
-  left: 320px;
-  top: -50px;
-}
-.evaluate-footer{
-  margin-top: -50px;
-  color: #9c9c9c;
-}
-.pos-label{
-  margin-left: 350px;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .evaluate-item{
-    width: 80%;
-    height: 180px;
-  }
-  .pos-label{
-    margin-left: 400px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .evaluate-item{
-    width: 100%;
-    height: 180px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .evaluate-item{
-    width: 100%;
-    height: 250px;
-  }
-  .evaluate-star{
-    font-size: 20px;
-    margin-left: 20px;
-    top:10px;
-  }
-  .evaluate-body{
-    font-size: 14px;
-    left: 20px;
-    top: -10px;
-  }
-  .evaluate-footer{
-    margin-top: 10px;
-  }
-  .pos-label{
-    margin-left: 10px;
-  }
-}
+
 /*reserve-menu*/
-.reserve-menu{
+.reserve-menu {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+.reserve-menu button {
+  color: #000000;
+  background-color: #ffffff;
+  border: 1px solid rgb(206, 203, 203);
+  font-family: "Times New Roman", Times, serif;
+}
+.date-btn {
+  display: inline-block;
+  width: 20%;
   margin-left: 5px;
 }
-.reserve-menu label{
-  width: 80px;
+.date-range {
+  display: inline-block;
+  width: 50%;
+  padding-top: 7px;
+  margin-left: -60px;
   font-size: 20px;
-  margin-top: 5px;
-}
-.reserve-menu input{
-  width: 140px;
-  height: 35px;
-  margin-left: -10px;
-  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
 }
 /*reserve-manage-area*/
-.reserve-manage-area{
+.reserve-manage-area {
   text-align: center;
 }
-.reserve-manage-area a{
+
+.reserve-manage-area a {
   font-size: 16px;
   color: blue;
 }
-.close-a{
+.close-a {
   padding-top: 5px;
 }
-.reserve-manage-area button{
-    font-size: 10px;
-}
-/*update-user-info*/
-.add-col{
-  display: inline-block;
-}
-.addin{
-  display: inline-block;
-  width: 90%;
-  margin-left: 10px;
-}
-.addcopy{
-  width: 90%;
-  margin-left: 25px;
-}
-.modal-footer{
-  display: flex;
-  justify-content: center;
-}
-/*reservation-evaluate*/
-.main-body{
-  display: block;
-  text-align: center;
-}
-.main-star{
-  position: relative;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.main-star img{
-  width: 50px;
-}
-.write-body{
-  position: relative;
-  font-size: 16px;
-  margin-top: 10px;
-}
 
-/*update-user-design*/
-.designpreview{
-  display: block;
-  position: relative;
-  width: 350px;
-  height: 350px;
-}
-.design-modal{
-  height: 350px;
-  width: 300px;
-  margin-left:80px;
-  overflow: hidden;
-}
-#design-info{
-  margin-left: 80px;
-}
-.modal-body h4{
-  margin-top: 10px;
-  margin-left: 180px;
-}
-/*update-user-pic*/
-.userpreview{
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.userpreviewdiv{
-  width: 270px;
-  height: 270px;
-  padding: 5px;
-  margin-left:90px;
-}
-@media only screen and (max-width: 767px){
-  .design-modal{
-    margin-top: 5px;
-    margin-left:20px;
-  }
-  #design-info{
-    margin-left: 20px;
-  }
-  .modal-body h4{
-    margin-left: 110px;
-  }
-  .userpreviewdiv{
-    margin-left:30px;
-  }
+.reserve-manage-area button {
+  font-size: 10px;
 }

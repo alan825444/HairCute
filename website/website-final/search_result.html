@@ -21,11 +21,17 @@
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- timePicker -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
-
     <!-- jquery ui -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- autoComplete -->
+    <link rel="stylesheet" href="Autocomplete/tokenize2.css">
+
+    <!-- Animate.css -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 
 </head>
 
@@ -94,100 +100,82 @@
 
     <!-- ***** search bar Area Start ***** -->
     <div class="container searchBar d-flex align-items-center shadow">
-
         <form class="row col-md-12 gy-2 gx-3 align-items-center justify-content-center">
             <div class="col-12 col-md-2 text-center">
                 <div class="location-dropdown">
                     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class="fas fa-map-marker-alt mr-2"></i>地區
+                        縣市
                     </button>
                     <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
                         <li>
                             <a class="dropdown-item" href="#">
-                                台北市 &raquo;
+                                台北市
                             </a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                                <li>
-                                    <a class="dropdown-item" href="#">大安區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">中正區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">信義區</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">
-                                台中市 &raquo;
+                                台中市
                             </a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                                <li>
-                                    <a class="dropdown-item" href="#">東區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">西區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">南區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">北區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">中區</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a class="dropdown-item" href="#">
-                                高雄市 &raquo;
+                                高雄市
                             </a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                                <li>
-                                    <a class="dropdown-item" href="#">左營區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">三民區</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">新興區</a>
-                                </li>
-                            </ul>
                         </li>
                     </ul>
-                    </li>
-                    </ul>
+
                 </div>
             </div>
-            <div class="col-md-2">
-                <input type="text" name="date" class="datepicker text-center">
+            <div class="col-md-2 col-12">
+                <div class="location-dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        地區
+                    </button>
+                    <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                台北市
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                台中市
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                高雄市
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
 
             </div>
-            <div class="col-md-2 ml-3">
-                <input type="text" class="timepicker text-center">
+            <div class="col-md-5 ml-3 d-md-inline-flex">
+                <div class="col-md-3 d-flex align-items-center">
+                <!-- <label for="tag_search" class="tag_search_label"><i class="fas fa-hashtag mr-1"></i>關鍵字</label> -->
+                <h4><span class="badge rounded-pill bg-info px-3 py-1">關鍵字 <i class="fas fa-angle-double-right ml-1 animate__animated animate__shakeX"></i></span></h4>
+            </div>
+                <div class="col-md-9">
+                <select class="tag_search" multiple>
+                    <option value="1">Acura</option>
+                    <option value="2">Audi</option>
+                    <option value="3">BMW</option>
+                    <option value="4">Cadillac</option>
+                    <option value="5">Chevrolet</option>
+                    <option value="6">Ferrari</option>
+                    <option value="7">Ford</option>
+                    <option value="8">Honda</option>
+                    <option value="9">Lexus</option>
+                    <option value="10">Mercedes-Benz</option>
+                </select>
+            </div>
             </div>
 
-            <div class="form-check col-md-auto ml-5">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                    剪
-                </label>
-            </div>
-            <div class="form-check col-md-auto">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    染
-                </label>
-            </div>
-            <div class="form-check col-md-auto">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                <label class="form-check-label" for="flexCheckChecked">
-                    燙
-                </label>
-            </div>
+
             <div class="col-md-auto mx-3">
                 <button type="submit" class="btn btn-search">搜尋</button>
             </div>
@@ -626,9 +614,9 @@
     <script src="js/mona.bundle.js"></script>
     <!-- Active js -->
     <script src="js/default-assets/active.js"></script>
+    <!-- autoComplete -->
+    <script src="Autocomplete/tokenize2.js"></script>
 
-    <!-- TimePicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
     <script>
         // location jquery
@@ -638,27 +626,26 @@
             $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
 
         });
+        //autoComplete
+        $('.tag_search').tokenize2();
 
-        //DateTimePicker
-        $(document).ready(function () {
-            $('input.timepicker').timepicker({});
+        //用Ajax連接資料庫
+        // $('.tag_search').tokenize2({
+        //     dataSource: ''
+        // });
+        // JSON
+        // [
+        //     { "text": "Afghanistan", "value": "AF" },
+        //     { "text": "Åland Islands", "value": "AX" },
+        //     { "text": "Albania", "value": "AL" },
+        //     { "text": "Algeria", "value": "DZ" },
+        //     { "text": "American Samoa", "value": "AS" },
+        //     { "text": "Andorra", "value": "AD" },
+        //     { "text": "Angola", "value": "AO" }
+        // ]
 
-        });
-        $(function () {
-            $(".datepicker").datepicker();
-            $(".datepicker").datepicker('setDate', 'today');
-        });
-        $(".timepicker").timepicker({
-            timeFormat: "h:mm p", // 時間隔式
-            interval: 30, //時間間隔
-            minTime: "10", //最小時間
-            maxTime: "10:00pm", //最大時間
-            defaultTime: "10", //預設起始時間
-            startTime: "01:00", // 開始時間
-            dynamic: true, //是否顯示項目，使第一個項目按時間順序緊接在所選時間之後
-            dropdown: true, //是否顯示時間條目的下拉列表
-            scrollbar: false //是否顯示捲軸
-        });
+
+
     </script>
 
 </body>
