@@ -38,7 +38,7 @@ namespace Haircute.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.Message = "此帳號已有人使用";
-            return RedirectToAction("RGFDesigner");
+            return View();
         }
 
         [HttpPost]
