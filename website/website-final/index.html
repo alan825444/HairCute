@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
@@ -24,6 +24,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- jquery ui -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- autoComplete -->
+  <link rel="stylesheet" href="Autocomplete/tokenize2.css">
 
 </head>
 
@@ -60,7 +68,7 @@
 
               <ul id="nav">
 
-                <li><a href="#" data-toggle="modal" data-target="#log-in">登入</a>
+                <li><a href="login.html">登入</a>
 
                 </li>
                 <li><a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
@@ -78,8 +86,8 @@
               </ul>
 
               <!-- Search Icon -->
-              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
-                <i class="icon_search"></i>
+              <div class="search-icon">
+                <a href="#search-bar"><i class="icon_search"></i></a>
               </div>
             </div>
             <!-- Nav End -->
@@ -90,28 +98,6 @@
     </div>
   </header>
   <!-- ***** Header Area End ***** -->
-
-  <!-- ***** Top Search Area Start ***** -->
-  <div class="top-search-area">
-    <!-- Search Modal -->
-    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-body">
-            <!-- Close Button -->
-            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
-            <!-- Form -->
-            <form action="index.html" method="post">
-              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
-              <button type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- ***** Top Search Area End ***** -->
-
 
   <!-- ***** register Area Start ***** -->
   <div class="register-select">
@@ -147,21 +133,9 @@
   <!-- ***** register Area End ***** -->
 
   <!-- ***** login Area Start ***** -->
-<<<<<<< HEAD
-  <div class="log-in">
-    <!-- register Modal -->
-    <div class="modal fade" id="log-in" tabindex="-1">
-=======
   <!-- <div class="log-in"> -->
-    <!-- register Modal -->
-    <!-- <div class="modal fade" id="log-in" tabindex="-1">
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 2f24f8b (update_10/16)
-=======
->>>>>>> parent of 2f24f8b (update_10/16)
-=======
->>>>>>> parent of 2f24f8b (update_10/16)
+  <!-- register Modal -->
+  <!-- <div class="modal fade" id="log-in" tabindex="-1">
       <div class="modal-dialog">
         <div class="modal-content login-area">
           <div class="modal-header border-0">
@@ -191,7 +165,6 @@
                       <label class="form-check-label" for="inlineFormCheck">
                         記住帳號
                       </label>
-                      <!-- <a href="#">忘記密碼</a> -->
                     </div>
                     
                   </div>
@@ -212,8 +185,10 @@
 
   </div>
 
-  </div>
+  </div> -->
   <!-- ***** login Area End ***** -->
+
+
   <!-- ***** Welcome Area Start ***** -->
   <section class="welcome-area">
     <!-- Welcome Slides -->
@@ -227,7 +202,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div>
+          <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -271,7 +246,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div>
+          <!-- <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div> -->
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -315,7 +290,7 @@
         <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
           <div class="store-img-container">
           </div>
-          <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div>
+          <!-- <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div> -->
           <div class="hair-style-img shadow">
           </div>
           <div class="hair-style-img2 shadow">
@@ -352,46 +327,86 @@
       </div>
 
     </div>
-  </section><br><br><br>
+  </section>
   <!-- ***** Welcome Area End ***** -->
 
   <!--Search-->
-  <section class="hero spad set-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <form action="#" class="filter__form d-flex align-items-center">
-            <div class="filter__form__item col-md-3">
-              <p>Location</p>
-              <div class="filter__form__input">
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Choose...</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-            </div>
-            <div class="filter__form__item col-md-3">
-              <p>Date</p>
-              <input type="datetime-local" class="form-control mx-2" name="date" id="date" />
-            </div>
-            <div class="filter__form__item col-md-3">
-              <p>Keywords</p>
-              <input class="form-control me-2" type="search" placeholder="關鍵字搜尋" aria-label="Search" />
-            </div>
-            <div class="filter__form__item col-md-3 mx-5">
-              <div class="form_btn shadow">
-                <a href="search_result.html" role="button">預約搜尋</a>
-              </div>
-            </div>
-        </div>
-
-        </form>
+  <span id="search-bar"></span>
+  <div class="container search-bar">
+    <form class="row">
+      <div class="location-dropdown col-md-2 col-sm-10">
+        <button class="btn dropdown-toggle col-10 " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          縣市
+        </button>
+        <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+          <li>
+            <a class="dropdown-item" href="#">
+              台北市
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              台中市
+            </a>
+          <li>
+            <a class="dropdown-item" href="#">
+              高雄市
+            </a>
+          </li>
+        </ul>
       </div>
-    </div>
-    </div>
-  </section>
+      <div class="location-dropdown col-md-2 col-sm-10">
+        <button class="btn dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          地區
+        </button>
+        <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+          <li>
+            <a class="dropdown-item" href="#">
+              台北市
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              台中市
+            </a>
+          <li>
+            <a class="dropdown-item" href="#">
+              高雄市
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-5 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+        <div class="col-md-4 col-sm-2 keyword">
+            <h4><span class="badge rounded-pill bg-info px-3 py-2">關鍵字 <i
+                        class="fas fa-angle-double-right mx-1 animate__animated animate__slower animate__shakeX animate__infinite"></i>
+                        <i
+                        class="fas fa-angle-double-down mx-1 animate__animated animate__slower animate__shakeY animate__infinite"></i>
+                    </span>
+            </h4>
+        </div>
+        <div class="col-md-8 col-sm-10">
+            <select class="tag_search" multiple>
+                <option value="1">Acura</option>
+                <option value="2">Audi</option>
+                <option value="3">BMW</option>
+                <option value="4">Cadillac</option>
+                <option value="5">Chevrolet</option>
+                <option value="6">Ferrari</option>
+                <option value="7">Ford</option>
+                <option value="8">Honda</option>
+                <option value="9">Lexus</option>
+                <option value="10">Mercedes-Benz</option>
+            </select>
+        </div>
+      </div>
+      <div class="search-btn align-items-center col-md-3 col-sm-10">
+        <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+      </div>
+    </form>
+  </div>
 
   <!--Search End-->
 
@@ -1101,8 +1116,8 @@
   <section class="clients-feedback-area section-padding-80 clearfix">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-          <div class="quote-icon d-flex flex-row justify-content-center align-items-center">
+        <div class="col-12 col-md-10 review-title">
+          <div class="quote-icon d-flex flex-row justify-content-center align-items-center mt-0 mb-2">
             <i class="icon_quotations mx-2" aria-hidden="true"></i>
             <h2>近期評論</h2>
             <i class="icon_quotations mx-2" aria-hidden="true"></i>
@@ -1345,58 +1360,12 @@
   <!-- ***** Blog Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area py-3">
-    <div class="container">
-      <div class="row">
-
-        <!-- Single Footer Widget -->
-        <div class="col-12 col-sm-6">
-          <div class="single-footer-widget ">
-            <!-- Logo -->
-            <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
-            <div class="copywrite-text">
-              <p>&copy;
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved. <br> This template is
-                made
-                with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Single Footer Widget -->
-        <div class="col-12 col-sm-6">
-          <div class="single-footer-widget">
-            <!-- Widget Title -->
-            <h4 class="widget-title mt-3">聯絡方式</h4>
-            <!-- Footer Content -->
-            <div class="footer-content mb-3">
-              <h4>07-969-9885</h4>
-              <h6>高雄市前金區中正四路211號8樓</h6>
-            </div>
-            <!-- Social Info -->
-            <div class="footer-social-info">
-              <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                  class="fab fa-facebook-square"></i></a>
-              <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i
-                  class="fab fa-twitter-square"></i></a>
-              <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                  class="fab fa-instagram-square"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-  <!-- ***** Footer Area End ***** -->
+  <div footer-html="footer.html"></div>
+   <!-- ***** Footer Area End ***** -->
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="js/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <!-- Popper js -->
   <script src="js/popper.min.js"></script>
   <!-- Bootstrap js -->
@@ -1408,6 +1377,42 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
+  <!-- import js -->
+  <script src="import.js"></script>
+  <!-- autoComplete -->
+  <script src="Autocomplete/tokenize2.js"></script>
+
+  <script>
+    // location jquery
+    $(".location-menu li a").click(function () {
+
+      $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
+      $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
+
+    });
+
+    //autoComplete
+    $('.tag_search').tokenize2();
+
+//用Ajax連接資料庫
+// $('.tag_search').tokenize2({
+//     dataSource: ''
+// });
+// JSON
+// [
+//     { "text": "Afghanistan", "value": "AF" },
+//     { "text": "Åland Islands", "value": "AX" },
+//     { "text": "Albania", "value": "AL" },
+//     { "text": "Algeria", "value": "DZ" },
+//     { "text": "American Samoa", "value": "AS" },
+//     { "text": "Andorra", "value": "AD" },
+//     { "text": "Angola", "value": "AO" }
+// ]
+
+    //footer
+    includeFooter();
+
+  </script>
 
 </body>
 
