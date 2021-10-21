@@ -2664,47 +2664,21 @@ ul li {
   border-radius: 1rem;
 }
 
-.dropdown-menu li {
-  position: relative;
-}
-.dropdown-menu .dropdown-submenu {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: -7px;
-}
-
 .dropdown-toggle,
-.location-menu,
-.dropdown-submenu {
+.location-menu {
   border: rgba(128, 128, 128, 0.3) 1px solid;
   border-radius: 1rem;
 }
 
-.dropdown-menu .dropdown-submenu-left {
-  right: 100%;
-  left: auto;
-}
-.dropdown-menu > li:hover > .dropdown-submenu {
-  display: block;
-}
-
-.searchBar .datepicker,
-.timepicker {
-  height: 5vh;
-  width: 12vw;
-  font-size: 0.9rem;
-  border-radius: 0.8rem;
-  border: rgba(128, 128, 128, 0.3) 1px solid;
-}
-
-.searchBar .form-check-input {
+.searchBar .tag_search_label, .tag_search_label i{
   font-size: 1rem;
+  
 }
-.searchBar .form-check label {
-  font-size: 1.2rem;
-  color: rgb(70, 68, 68);
+
+.animate__shakeX{
+  --animation-duration: 30s;
 }
+
 
 .searchBar .btn-search {
   border: #ed489d 1px solid;
