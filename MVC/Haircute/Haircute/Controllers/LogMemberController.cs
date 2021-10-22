@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Haircute.Controllers
 {
+    [Authorize]
     public class LogMemberController : Controller
     {
 
@@ -13,7 +14,7 @@ namespace Haircute.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            return View();
+            return View("../Home/Index", "_LayourMember");
         }
     }
 }
