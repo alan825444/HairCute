@@ -1,0 +1,115 @@
+﻿@model Haircute.tMember
+
+@{
+    ViewBag.Title = "RGFDesigner";
+}
+
+
+<!-- ***** register Form Area Start ***** -->
+<section class="register-form-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="register-head">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">設計師</li>
+                            <li class="breadcrumb-item active" aria-current="page">註冊</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- register Form -->
+            <div class="col-md-5">
+                <img src="~/img/register.png" class="register-Form-img mb-3">
+            </div>
+
+            <div class="col-md-7 ">
+                <div class="register-from">
+                    <form action="#" method="POST">
+                        <div class="row">
+                            <div class="col-12">
+                                <input type="hidden" name="fDesign" value="@ViewBag.DS" />
+                                <label class="form-label">E-mail</label>
+                                <input type="text" id="fEmail" name="fEmail" value="" maxlength="50" class="form-control" placeholder="請填寫有效的Email">
+                                <span id="emailaddress_msg" class="text-danger">@ViewBag.Message</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label">密碼</label>
+                                <input type="password" name="fPwd" id="fPwd" value="" maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                                       class="form-control">
+                                <span id="pwd_msg"></span>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-8">
+                                <label class="form-label">姓名</label>
+                                <input type="text" name="fUsername" id="fUsername" value="" maxlength="20" placeholder="請填寫真實姓名"
+                                       class="form-control">
+                                <span id="username_msg"></span>
+                            </div>
+                            <div class="col-md-3 col-4">
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="fGender"
+                                           value="1">
+                                    <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="fGender"
+                                           value="2">
+                                    <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                </div>
+                            </div>
+                            <div class="col-md-5 c0l-12">
+                                <label class="form-label">暱稱</label>
+                                <input type="text" name="fNickname" id="fNickname" value="" maxlength="20" placeholder="顯示在網站上的名稱"
+                                       class="form-control">
+                                <span id="usernickname_msg"></span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label">生日</label>
+                                <input type="text" name="fBirth" id="fBirth" value="" class="form-control datepicker">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="form-label">地址</label>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select", id = "fCity" })
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <select class="form-select" aria-label="Default select example" name="fArea" id="fArea">
+                                    <option>--------</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row d-flex align-items-center flex-wrap">
+                            <div class="col-md-8 col-12">
+                                <label class="form-label">手機號碼</label>
+                                <input type="text" name="fPhone" id="fPhone" value="" maxlength="10" placeholder="請輸入手機號碼進行認證"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 register-btns">
+                                <input type="reset" value="重置資料" class="btn btn-outline-danger">
+                                <input type="submit" value="立即註冊" class="btn btn-outline-success">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/CItyAreajs.js"></script>
+
