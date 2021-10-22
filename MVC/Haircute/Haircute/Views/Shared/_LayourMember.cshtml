@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
-<html lang="zh-Hant">
+﻿
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>髮CUTE | 預剪美好的一天</title>
-    <meta name="author" content="Aubrey Lin">
-    <meta name="robots" content="index, follow">
-    <meta name="description" content="">
+    <meta name="description" content="Mona - Model Agency HTML5 Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title -->
     <title>髮CUTE | 預剪美好的一天</title>
@@ -65,11 +64,11 @@
                             <ul id="nav">
 
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#log-in">登入</a>
+                                    <a href="#" data-toggle="modal" data-target="#log-in">@Session["FName"]</a>
 
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+                                    <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
 
                                 </li>
 
@@ -121,18 +120,16 @@
                         <div class="classycloseIcon">
                             <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                         </div>
-
-                        <!-- Nav Start -->
                         <div class="classynav">
 
                             <ul id="nav">
 
                                 <li>
-                                    <a href="~/Home/Login">登入</a>
+                                    <a href="#">@Session["FName"]</a>
 
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+                                    <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
 
                                 </li>
 
@@ -146,51 +143,17 @@
 
 
                             </ul>
-
-                            <!-- Search Icon -->
                             <div class="search-icon">
                                 <a href="#search-bar"><i class="icon_search"></i></a>
                             </div>
                         </div>
-                        <!-- Nav End -->
-
                     </div>
                 </nav>
             </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
-    <!-- ***** register Area Start ***** -->
-    <div class="register-select">
-        <!-- register Modal -->
-        <div class="modal fade" id="register-select" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content register-cardarea">
-                    <div class="modal-header border-0">
-                        <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="register-select">
-                        <div class="register-card shadow">
-                            <a href="~/Home/RGFDesigner">
-                                <div class="register-cardHead" id="banner01">設計師</div>
-                                <div class="register-cardBody"><img src="../img/register-store.png"></div>
-                            </a>
-                        </div>
-                        <div class="register-card shadow">
-                            <a href="register.html">
-                                <div class="register-cardHead" id="banner02">消費者</div>
-                                <div class="register-cardBody"><img src="../img/register-customer.png"></div>
-                            </a>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
+    
     @RenderBody()
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area py-3" id="Lfooter">

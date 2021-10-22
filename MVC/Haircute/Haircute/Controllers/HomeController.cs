@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-
 namespace Haircute.Controllers
 {
     public class HomeController : Controller
@@ -29,11 +28,19 @@ namespace Haircute.Controllers
         [HttpPost]
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
-            db.tMember.Add(m.Member);
-            db.SaveChanges();
-            new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-            return RedirectToAction("Index");
+            var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+            if (member == null)
+            {
+                db.tMember.Add(m.Member);
+                db.SaveChanges();
+                new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Message = "此帳號已有人使用";
+            return View();
         }
 
         [HttpPost]
@@ -75,19 +82,20 @@ namespace Haircute.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string txtAcc, string txtPwd)
+        public ActionResult Login(string fEmail, string fPwd)
         {
             demodbEntities db = new demodbEntities();
-
-            var q = db.tMember.Where(m => m.fEmail == txtAcc && m.fPwd == txtPwd).FirstOrDefault();
-            if (q == null)
+            var member = db.tMember.Where(m => m.fEmail == fEmail && m.fPwd == fPwd).FirstOrDefault();
+            if (member == null)
             {
-                ViewBag.message = "請確認輸入的帳號密碼正確性";
-                return RedirectToAction("Login");
+                ViewBag.Message = "帳號密碼錯誤";
+                return View();
             }
-            FormsAuthentication.RedirectFromLoginPage(q.fID.ToString(),true);
-            Session["Member"] = q.fNickname;
-            return RedirectToAction("Index");
+            //Session["FID"] = member.fID.ToString();
+            Session["FName"] = member.fNickname;
+            FormsAuthentication.RedirectFromLoginPage(member.fID.ToString(), true);
+            return RedirectToAction("Index", "LogMember");
         }
+
     }
 }

@@ -1,3 +1,6 @@
 
 *.dll
 MVC/Haircute/Haircute/bin/roslyn/VBCSCompiler.exe
+MVC/Haircute/.vs/Haircute/v16/.suo
+MVC/Haircute/Haircute/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+MVC/Haircute/Haircute/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache

@@ -201,6 +201,7 @@
     <Content Include="img\bg-img\8.jpg" />
     <Content Include="img\bg-img\9.jpg" />
     <Content Include="img\bg-img\banner.png" />
+    <Content Include="img\bg-img\log-in.jpg" />
     <Content Include="img\core-img\curve.png" />
     <Content Include="img\core-img\favicon.ico" />
     <Content Include="img\core-img\logo.png" />
@@ -226,7 +227,8 @@
     <Content Include="img\user-img\rectangle.png" />
     <Content Include="img\user-img\reserve.png" />
     <Content Include="img\user-img\reservew.png" />
-    <Content Include="img\user-img\star %281%29.png" />
+    <Content Include="img\user-img\star-black.png" />
+    <Content Include="img\user-img\star-yellow.png" />
     <Content Include="img\user-img\star.png" />
     <Content Include="img\user-img\starw.png" />
     <Content Include="img\user-img\store2.jpg" />
@@ -268,6 +270,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LogMemberController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -310,9 +313,6 @@
     <Content Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="img\.DS_Store" />
-    <Content Include="img\banner-img\.DS_Store" />
-    <Content Include="img\bg-img\.DS_Store" />
     <Content Include="fonts\classy.eot" />
     <Content Include="fonts\classy.ttf" />
     <Content Include="fonts\classy.woff" />
@@ -353,6 +353,9 @@
     <Content Include="fonts\HKGrotesk-SemiBoldItalic.ttf" />
     <Content Include="fonts\HKGrotesk-SemiBoldItalic.woff" />
     <Content Include="fonts\HKGrotesk-SemiBoldItalic.woff2" />
+    <Content Include="img\.DS_Store" />
+    <Content Include="img\banner-img\.DS_Store" />
+    <Content Include="img\bg-img\.DS_Store" />
     <Content Include="Content\css\.DS_Store" />
     <Content Include="Content\css\fonts\ElegantIcons.eot" />
     <Content Include="Content\css\fonts\ElegantIcons.ttf" />
@@ -395,6 +398,7 @@
     <Content Include="Views\Home\package.json" />
     <Content Include="Views\Home\RGFDesigner.cshtml" />
     <Content Include="Views\Home\mailtest.cshtml" />
+    <Content Include="Views\Shared\_LayourMember.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -405,6 +409,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\LogMember\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
