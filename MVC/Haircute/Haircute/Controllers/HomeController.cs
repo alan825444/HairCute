@@ -37,7 +37,7 @@ namespace Haircute.Controllers
                 db.tMember.Add(m.Member);
                 db.SaveChanges();
                 new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-                return RedirectToAction("Index");
+                return RedirectToAction("ConfirmPage");
             }
             ViewBag.Message = "此帳號已有人使用";
             return View();
@@ -120,5 +120,9 @@ namespace Haircute.Controllers
             return RedirectToAction("Index", "LogMember");
         }
 
+        public ActionResult ConfirmPage()
+        {
+            return View();
+        }
     }
 }
