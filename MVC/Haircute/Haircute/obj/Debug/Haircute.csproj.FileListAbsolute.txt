@@ -186,3 +186,7 @@ C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.pdb
 C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.xml
 C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.pdb
 C:\Users\alan8\Documents\GitHub\HairCute\MVC\Haircute\Haircute\bin\SendGrid.SmtpApi.xml
+C:\Users\franc\OneDrive\桌面\HairCute專題\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.AssemblyReference.cache
+C:\Users\franc\OneDrive\桌面\HairCute專題\MVC\Haircute\Haircute\obj\Debug\Haircute.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\桌面\HairCute專題\MVC\Haircute\Haircute\obj\Debug\Haircute.dll
+C:\Users\franc\OneDrive\桌面\HairCute專題\MVC\Haircute\Haircute\obj\Debug\Haircute.pdb

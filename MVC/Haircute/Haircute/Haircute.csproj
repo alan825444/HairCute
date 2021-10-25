@@ -398,6 +398,7 @@
     <Content Include="Views\Home\RGFDesigner.cshtml" />
     <Content Include="Views\Home\mailtest.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\DesignerPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -89,5 +89,10 @@ namespace Haircute.Controllers
             Session["Member"] = q.fNickname;
             return RedirectToAction("Index");
         }
+
+        public ActionResult DesignerPage()
+        {
+            return View();
+        }
     }
 }
