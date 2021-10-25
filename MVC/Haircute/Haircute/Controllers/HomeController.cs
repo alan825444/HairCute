@@ -30,10 +30,39 @@ namespace Haircute.Controllers
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
             demodbEntities db = new demodbEntities();
-            db.tMember.Add(m.Member);
-            db.SaveChanges();
-            new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-            return RedirectToAction("Index");
+            var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+            if (member == null)
+            {
+                db.tMember.Add(m.Member);
+                db.SaveChanges();
+                new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                return RedirectToAction("ConfirmPage");
+            }
+            ViewBag.Message = "此帳號已有人使用";
+            return View();
+        }
+
+        public ActionResult UserRG() 
+        {
+            ViewBag.DS = "F";
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UserRG(CMenberViewModel m)
+        {
+            demodbEntities db = new demodbEntities();
+            var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+            if (member == null)
+            {
+                db.tMember.Add(m.Member);
+                db.SaveChanges();
+                return RedirectToAction("Login");
+            }
+            ViewBag.Message = "此帳號已有人使用";
+            return View();
         }
 
         [HttpPost]
@@ -87,10 +116,11 @@ namespace Haircute.Controllers
             }
             FormsAuthentication.RedirectFromLoginPage(q.fID.ToString(),true);
             Session["Member"] = q.fNickname;
-            return RedirectToAction("Index");
+            Session["ID"] = q.fID.ToString();
+            return RedirectToAction("Index", "LogMember");
         }
 
-        public ActionResult DesignerPage()
+        public ActionResult ConfirmPage()
         {
             return View();
         }
