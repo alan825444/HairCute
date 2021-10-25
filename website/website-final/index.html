@@ -26,7 +26,12 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- jquery ui -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- autoComplete -->
+  <link rel="stylesheet" href="Autocomplete/tokenize2.css">
 
 </head>
 
@@ -329,92 +334,73 @@
   <span id="search-bar"></span>
   <div class="container search-bar">
     <form class="row">
-      <div class="index-location-dropdown col-md-3 col-sm-10">
-        <button class="btn index-dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+      <div class="location-dropdown col-md-2 col-sm-10">
+        <button class="btn dropdown-toggle col-10 " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
           aria-expanded="false">
-          <i class="fas fa-map-marker-alt mr-2"></i>地區
+          縣市
         </button>
         <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
           <li>
             <a class="dropdown-item" href="#">
-              台北市 &raquo;
+              台北市
             </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">大安區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">中正區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">信義區</a>
-              </li>
-            </ul>
           </li>
           <li>
             <a class="dropdown-item" href="#">
-              台中市 &raquo;
+              台中市
             </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">東區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">西區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">南區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">北區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">中區</a>
-              </li>
-            </ul>
-          </li>
           <li>
             <a class="dropdown-item" href="#">
-              高雄市 &raquo;
+              高雄市
             </a>
-            <ul class="dropdown-menu dropdown-submenu">
-              <li>
-                <a class="dropdown-item" href="#">左營區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">三民區</a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">新興區</a>
-              </li>
-            </ul>
           </li>
         </ul>
       </div>
-      <div class="datepicker-area  col-sm-10 col-md-3 ">
-        <input type="text" name="date" class="datepicker text-center col-10">
+      <div class="location-dropdown col-md-2 col-sm-10">
+        <button class="btn dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          地區
+        </button>
+        <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+          <li>
+            <a class="dropdown-item" href="#">
+              台北市
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#">
+              台中市
+            </a>
+          <li>
+            <a class="dropdown-item" href="#">
+              高雄市
+            </a>
+          </li>
+        </ul>
       </div>
-      <div class="col-md-3 col-sm-10 d-flex flex-md-row pt-1 checkboxes">
-        <div class="col-10 d-flex flex-row">
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">
-            剪
-          </label>
+      <div class="col-md-5 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+        <div class="col-md-4 col-sm-2 keyword">
+            <h4><span class="badge rounded-pill bg-info px-3 py-2">關鍵字 <i
+                        class="fas fa-angle-double-right mx-1 animate__animated animate__slower animate__shakeX animate__infinite"></i>
+                        <i
+                        class="fas fa-angle-double-down mx-1 animate__animated animate__slower animate__shakeY animate__infinite"></i>
+                    </span>
+            </h4>
         </div>
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-          <label class="form-check-label" for="flexCheckChecked">
-            染
-          </label>
+        <div class="col-md-8 col-sm-10">
+            <select class="tag_search" multiple>
+                <option value="1">Acura</option>
+                <option value="2">Audi</option>
+                <option value="3">BMW</option>
+                <option value="4">Cadillac</option>
+                <option value="5">Chevrolet</option>
+                <option value="6">Ferrari</option>
+                <option value="7">Ford</option>
+                <option value="8">Honda</option>
+                <option value="9">Lexus</option>
+                <option value="10">Mercedes-Benz</option>
+            </select>
         </div>
-        <div class="form-check col-md-auto">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-          <label class="form-check-label" for="flexCheckChecked">
-            燙
-          </label>
-        </div>
-      </div>
       </div>
       <div class="search-btn align-items-center col-md-3 col-sm-10">
         <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
@@ -1374,58 +1360,11 @@
   <!-- ***** Blog Area End ***** -->
 
   <!-- ***** Footer Area Start ***** -->
-  <footer class="footer-area py-3">
-    <div class="container">
-      <div class="row">
-
-        <!-- Single Footer Widget -->
-        <div class="col-12 col-sm-6">
-          <div class="single-footer-widget ">
-            <!-- Logo -->
-            <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
-            <div class="copywrite-text">
-              <p>&copy;
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                Copyright &copy;
-                <script>document.write(new Date().getFullYear());</script> All rights reserved. <br> This template is
-                made
-                with by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- Single Footer Widget -->
-        <div class="col-12 col-sm-6">
-          <div class="single-footer-widget">
-            <!-- Widget Title -->
-            <h4 class="widget-title mt-3">聯絡方式</h4>
-            <!-- Footer Content -->
-            <div class="footer-content mb-3">
-              <h4>07-969-9885</h4>
-              <h6>高雄市前金區中正四路211號8樓</h6>
-            </div>
-            <!-- Social Info -->
-            <div class="footer-social-info">
-              <a href="#" class="facebook" data-toggle="tooltip" data-placement="top" title="Facebook"><i
-                  class="fab fa-facebook-square"></i></a>
-              <a href="#" class="twitter" data-toggle="tooltip" data-placement="top" title="Twitter"><i
-                  class="fab fa-twitter-square"></i></a>
-              <a href="#" class="instagram" data-toggle="tooltip" data-placement="top" title="Instagram"><i
-                  class="fab fa-instagram-square"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </footer>
-  <!-- ***** Footer Area End ***** -->
+  <div footer-html="footer.html"></div>
+   <!-- ***** Footer Area End ***** -->
 
   <!-- ******* All JS ******* -->
   <!-- jQuery js -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <!-- Popper js -->
   <script src="js/popper.min.js"></script>
@@ -1438,21 +1377,40 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
+  <!-- import js -->
+  <script src="import.js"></script>
+  <!-- autoComplete -->
+  <script src="Autocomplete/tokenize2.js"></script>
 
   <script>
     // location jquery
     $(".location-menu li a").click(function () {
 
-      $(this).parents(".index-location-dropdown").find('#dropdownMenuButton').text($(this).text());
-      $(this).parents(".index-location-dropdown").find('#dropdownMenuButton').val($(this).text());
+      $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
+      $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
 
     });
 
-    //DateTimePicker
-    $(function () {
-      $(".datepicker").datepicker();
-      $(".datepicker").datepicker('setDate', 'today');
-    });
+    //autoComplete
+    $('.tag_search').tokenize2();
+
+//用Ajax連接資料庫
+// $('.tag_search').tokenize2({
+//     dataSource: ''
+// });
+// JSON
+// [
+//     { "text": "Afghanistan", "value": "AF" },
+//     { "text": "Åland Islands", "value": "AX" },
+//     { "text": "Albania", "value": "AL" },
+//     { "text": "Algeria", "value": "DZ" },
+//     { "text": "American Samoa", "value": "AS" },
+//     { "text": "Andorra", "value": "AD" },
+//     { "text": "Angola", "value": "AO" }
+// ]
+
+    //footer
+    includeFooter();
 
   </script>
 
