@@ -1,6 +1,4 @@
-
-MVC/Haircute/Haircute/Models/cDiction.cs
-MVC/Haircute/.vs/Haircute/v16/.suo
-MVC/Haircute/.vs/Haircute/v16/.suo
-MVC/Haircute/Haircute/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-MVC/Haircute/Haircute/obj/Debug/Haircute.csproj.AssemblyReference.cache
+MVC\Haircute\.vs
+MVC\Haircute\packages
+MVC\Haircute\\HaircuteTests\obj
+MVC\Haircute\Haircute\obj
