@@ -20,6 +20,27 @@
           <Property Name="fID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fCity" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <EntityType Name="tDesigner">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fStore" Type="nvarchar" MaxLength="50" />
+          <Property Name="fAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="fHeadSticker" Type="nvarchar" MaxLength="200" />
+          <Property Name="fk_Member" Type="int" />
+        </EntityType>
+        <EntityType Name="tEvaluate">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fStar" Type="nvarchar" MaxLength="50" />
+          <Property Name="fEvaluate" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_Designer" Type="int" />
+          <Property Name="fk_Member" Type="int" />
+          <Property Name="fk_Order" Type="int" />
+        </EntityType>
         <EntityType Name="tMember">
           <Key>
             <PropertyRef Name="fID" />
@@ -39,6 +60,28 @@
           <Property Name="fk_Designer" Type="int" />
           <Property Name="fk_Memorder" Type="int" />
         </EntityType>
+        <EntityType Name="tOrder">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fDate" Type="date" />
+          <Property Name="fSentTime" Type="datetime" />
+          <Property Name="fStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_Designer" Type="int" />
+          <Property Name="fk_Member" Type="int" />
+          <Property Name="fk_Service" Type="int" />
+          <Property Name="fk_Evaluate" Type="int" />
+        </EntityType>
+        <EntityType Name="tService">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fServicN" Type="nvarchar" MaxLength="50" />
+          <Property Name="fprice" Type="nvarchar" MaxLength="50" />
+          <Property Name="fk_Designer" Type="int" />
+        </EntityType>
         <Association Name="FK_tArea_tCity">
           <End Role="tCity" Type="Self.tCity" Multiplicity="0..1" />
           <End Role="tArea" Type="Self.tArea" Multiplicity="*" />
@@ -51,13 +94,49 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_tDesigner_tMember">
+          <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
+          <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tMember">
+              <PropertyRef Name="fID" />
+            </Principal>
+            <Dependent Role="tDesigner">
+              <PropertyRef Name="fk_Member" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tService_tDesigner1">
+          <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="0..1" />
+          <End Role="tService" Type="Self.tService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tDesigner">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="tService">
+              <PropertyRef Name="fk_Designer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="demodbModelStoreContainer">
           <EntitySet Name="tArea" EntityType="Self.tArea" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tCity" EntityType="Self.tCity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tDesigner" EntityType="Self.tDesigner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tEvaluate" EntityType="Self.tEvaluate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tMember" EntityType="Self.tMember" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tOrder" EntityType="Self.tOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tService" EntityType="Self.tService" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_tArea_tCity" Association="Self.FK_tArea_tCity">
             <End Role="tCity" EntitySet="tCity" />
             <End Role="tArea" EntitySet="tArea" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tDesigner_tMember" Association="Self.FK_tDesigner_tMember">
+            <End Role="tMember" EntitySet="tMember" />
+            <End Role="tDesigner" EntitySet="tDesigner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tService_tDesigner1" Association="Self.FK_tService_tDesigner1">
+            <End Role="tDesigner" EntitySet="tDesigner" />
+            <End Role="tService" EntitySet="tService" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -82,6 +161,7 @@
           <Property Name="fNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fconfirmation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tMember" ToRole="tDesigner" />
         </EntityType>
         <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tMember" EntityType="Self.tMember" />
@@ -90,6 +170,18 @@
           <AssociationSet Name="FK_tArea_tCity" Association="demodbModel.FK_tArea_tCity">
             <End Role="tCity" EntitySet="tCity" />
             <End Role="tArea" EntitySet="tArea" />
+          </AssociationSet>
+          <EntitySet Name="tDesigner" EntityType="demodbModel.tDesigner" />
+          <EntitySet Name="tEvaluate" EntityType="demodbModel.tEvaluate" />
+          <EntitySet Name="tOrder" EntityType="demodbModel.tOrder" />
+          <EntitySet Name="tService" EntityType="demodbModel.tService" />
+          <AssociationSet Name="FK_tDesigner_tMember" Association="demodbModel.FK_tDesigner_tMember">
+            <End Role="tMember" EntitySet="tMember" />
+            <End Role="tDesigner" EntitySet="tDesigner" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tService_tDesigner1" Association="demodbModel.FK_tService_tDesigner1">
+            <End Role="tDesigner" EntitySet="tDesigner" />
+            <End Role="tService" EntitySet="tService" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="tArea">
@@ -118,6 +210,76 @@
             </Principal>
             <Dependent Role="tArea">
               <PropertyRef Name="fk_City" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tDesigner">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fStore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fk_Member" Type="Int32" />
+          <NavigationProperty Name="tMember" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tDesigner" ToRole="tMember" />
+          <NavigationProperty Name="tService" Relationship="demodbModel.FK_tService_tDesigner1" FromRole="tDesigner" ToRole="tService" />
+          <Property Name="fHeadSticker" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tEvaluate">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fStar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fEvaluate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_Designer" Type="Int32" />
+          <Property Name="fk_Member" Type="Int32" />
+          <Property Name="fk_Order" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tOrder">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fDate" Type="DateTime" Precision="0" />
+          <Property Name="fSentTime" Type="DateTime" Precision="3" />
+          <Property Name="fStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_Designer" Type="Int32" />
+          <Property Name="fk_Member" Type="Int32" />
+          <Property Name="fk_Service" Type="Int32" />
+          <Property Name="fk_Evaluate" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tService">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fServicN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fk_Designer" Type="Int32" />
+          <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tService_tDesigner1" FromRole="tService" ToRole="tDesigner" />
+        </EntityType>
+        <Association Name="FK_tDesigner_tMember">
+          <End Type="demodbModel.tMember" Role="tMember" Multiplicity="0..1" />
+          <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tMember">
+              <PropertyRef Name="fID" />
+            </Principal>
+            <Dependent Role="tDesigner">
+              <PropertyRef Name="fk_Member" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tService_tDesigner1">
+          <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="0..1" />
+          <End Type="demodbModel.tService" Role="tService" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tDesigner">
+              <PropertyRef Name="fid" />
+            </Principal>
+            <Dependent Role="tService">
+              <PropertyRef Name="fk_Designer" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -161,6 +323,53 @@
               <MappingFragment StoreEntitySet="tCity">
                 <ScalarProperty Name="fCity" ColumnName="fCity" />
                 <ScalarProperty Name="fID" ColumnName="fID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tDesigner">
+            <EntityTypeMapping TypeName="demodbModel.tDesigner">
+              <MappingFragment StoreEntitySet="tDesigner">
+                <ScalarProperty Name="fHeadSticker" ColumnName="fHeadSticker" />
+                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+                <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+                <ScalarProperty Name="fStore" ColumnName="fStore" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tEvaluate">
+            <EntityTypeMapping TypeName="demodbModel.tEvaluate">
+              <MappingFragment StoreEntitySet="tEvaluate">
+                <ScalarProperty Name="fk_Order" ColumnName="fk_Order" />
+                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+                <ScalarProperty Name="fEvaluate" ColumnName="fEvaluate" />
+                <ScalarProperty Name="fStar" ColumnName="fStar" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tOrder">
+            <EntityTypeMapping TypeName="demodbModel.tOrder">
+              <MappingFragment StoreEntitySet="tOrder">
+                <ScalarProperty Name="fk_Evaluate" ColumnName="fk_Evaluate" />
+                <ScalarProperty Name="fk_Service" ColumnName="fk_Service" />
+                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+                <ScalarProperty Name="fStatus" ColumnName="fStatus" />
+                <ScalarProperty Name="fSentTime" ColumnName="fSentTime" />
+                <ScalarProperty Name="fDate" ColumnName="fDate" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tService">
+            <EntityTypeMapping TypeName="demodbModel.tService">
+              <MappingFragment StoreEntitySet="tService">
+                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+                <ScalarProperty Name="fprice" ColumnName="fprice" />
+                <ScalarProperty Name="fServicN" ColumnName="fServicN" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

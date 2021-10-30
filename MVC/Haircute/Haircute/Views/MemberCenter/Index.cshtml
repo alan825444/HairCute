@@ -1,0 +1,18 @@
+﻿@using Haircute.Models
+@model List<設計師服務品項>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
+@foreach (var item in Model)
+{
+    <div>
+        <p>@item.服務項目</p>
+        <p>@item.價格</p>
+    </div>
+}
+
+
+
+

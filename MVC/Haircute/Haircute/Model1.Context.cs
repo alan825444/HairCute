@@ -28,5 +28,9 @@ namespace Haircute
         public virtual DbSet<tMember> tMember { get; set; }
         public virtual DbSet<tArea> tArea { get; set; }
         public virtual DbSet<tCity> tCity { get; set; }
+        public virtual DbSet<tDesigner> tDesigner { get; set; }
+        public virtual DbSet<tEvaluate> tEvaluate { get; set; }
+        public virtual DbSet<tOrder> tOrder { get; set; }
+        public virtual DbSet<tService> tService { get; set; }
     }
 }
