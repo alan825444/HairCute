@@ -6,12 +6,12 @@ using Haircute.ViewModel;
 
 namespace Haircute.Models
 {
-    
+
     public class 用戶crud
     {
         demodbEntities db = new demodbEntities();
 
-        public bool 註冊 (CMenberViewModel m) 
+        public bool 註冊(CMenberViewModel m)
         {
             var 註冊 = db.tMember.Where(c => c.fEmail == m.fEmail).FirstOrDefault();
             if (註冊 == null)
@@ -21,12 +21,12 @@ namespace Haircute.Models
                 return true;
             }
             return false;
-            
+
         }
 
-        
 
-        public 用戶 用戶資料(int ID) 
+
+        public 用戶 用戶資料(int ID)
         {
             List<用戶> list = new List<用戶>();
             var 用戶資料 = db.tMember.Where(m => m.fID == ID).FirstOrDefault();
@@ -49,6 +49,8 @@ namespace Haircute.Models
             });
             return list[0];
         }
+
+        
 
         
     }

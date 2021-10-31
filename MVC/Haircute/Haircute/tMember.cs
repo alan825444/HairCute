@@ -11,6 +11,7 @@ namespace Haircute
 {
     using System;
     using System.Collections.Generic;
+    using Haircute.Models;
     
     public partial class tMember
     {
@@ -37,5 +38,6 @@ namespace Haircute
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tDesigner> tDesigner { get; set; }
+
     }
 }
