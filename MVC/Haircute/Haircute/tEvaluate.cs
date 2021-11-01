@@ -12,14 +12,13 @@ namespace Haircute
     using System;
     using System.Collections.Generic;
     
-    public partial class tLike
+    public partial class tEvaluate
     {
         public int fid { get; set; }
-        public string fLike { get; set; }
-        public Nullable<int> fk_Photo { get; set; }
+        public string fStar { get; set; }
+        public string fEvaluate { get; set; }
+        public Nullable<int> fk_Designer { get; set; }
         public Nullable<int> fk_Member { get; set; }
-    
-        public virtual tMember tMember { get; set; }
-        public virtual tPhoto tPhoto { get; set; }
+        public Nullable<int> fk_Order { get; set; }
     }
 }

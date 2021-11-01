@@ -12,14 +12,15 @@ namespace Haircute
     using System;
     using System.Collections.Generic;
     
-    public partial class tWork
+    public partial class tOrder
     {
         public int fid { get; set; }
-        public Nullable<System.TimeSpan> fStartTime { get; set; }
-        public Nullable<System.TimeSpan> fEndTime { get; set; }
-        public Nullable<System.DateTime> fRestDate { get; set; }
+        public Nullable<System.DateTime> fDate { get; set; }
+        public Nullable<System.DateTime> fSentTime { get; set; }
+        public string fStatus { get; set; }
         public Nullable<int> fk_Designer { get; set; }
-    
-        public virtual tDesigner tDesigner { get; set; }
+        public Nullable<int> fk_Member { get; set; }
+        public Nullable<int> fk_Service { get; set; }
+        public Nullable<int> fk_Evaluate { get; set; }
     }
 }

@@ -18,10 +18,6 @@ namespace Haircute
         public tDesigner()
         {
             this.tService = new HashSet<tService>();
-            this.tBook = new HashSet<tBook>();
-            this.tComment = new HashSet<tComment>();
-            this.tPhoto = new HashSet<tPhoto>();
-            this.tWork = new HashSet<tWork>();
         }
     
         public int fid { get; set; }
@@ -29,19 +25,9 @@ namespace Haircute
         public string fAddress { get; set; }
         public Nullable<int> fk_Member { get; set; }
         public string fHeadSticker { get; set; }
-        public string fStoreCity { get; set; }
-        public string fStoreArea { get; set; }
     
         public virtual tMember tMember { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tService> tService { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tBook> tBook { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tComment> tComment { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tPhoto> tPhoto { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tWork> tWork { get; set; }
     }
 }
