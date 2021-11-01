@@ -282,6 +282,10 @@
         phonemsg.innerHTML="<span class='Okstatus'><i class='fas fa-check-circle'></i></span>";
       }
     }
+    $(function () {
+      $(".datepicker").datepicker();
+      $(".datepicker").datepicker('setDate', 'today');
+    });
   </script>
 
 

@@ -12,21 +12,17 @@ namespace Haircute
     using System;
     using System.Collections.Generic;
     
-    public partial class tService
+    public partial class tComment
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tService()
-        {
-            this.tBook = new HashSet<tBook>();
-        }
-    
         public int fid { get; set; }
-        public string fServicN { get; set; }
-        public string fprice { get; set; }
+        public string fComment { get; set; }
+        public Nullable<double> fScore { get; set; }
+        public Nullable<int> fk_Member { get; set; }
         public Nullable<int> fk_Designer { get; set; }
+        public Nullable<int> fk_Book { get; set; }
     
+        public virtual tBook tBook { get; set; }
         public virtual tDesigner tDesigner { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tBook> tBook { get; set; }
+        public virtual tMember tMember { get; set; }
     }
 }

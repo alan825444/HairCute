@@ -43,8 +43,6 @@ namespace Haircute.Models
                 fCity = 用戶資料.fCity,
                 fconfirmation = 用戶資料.fconfirmation,
                 fNickname = 用戶資料.fNickname,
-                fk_Designer = 用戶資料.fk_Designer,
-                fk_Memorder = 用戶資料.fk_Memorder
 
             });
             return list[0];

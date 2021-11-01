@@ -13,9 +13,6 @@ namespace Haircute.Controllers
         
         public ActionResult Index()
         {
-            var A = 資料庫.查詢<tMember>(1000);
-            var B = 資料庫.查詢<tDesigner>(A.fk_Designer).tService;
-            ViewBag.C = B;
             return View();
         }
     }

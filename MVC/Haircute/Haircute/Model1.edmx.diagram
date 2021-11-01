@@ -10,11 +10,24 @@
         <EntityTypeShape EntityType="demodbModel.tCity" Width="1.5" PointX="3.375" PointY="1" />
         <AssociationConnector Association="demodbModel.FK_tArea_tCity" />
         <EntityTypeShape EntityType="demodbModel.tDesigner" Width="1.5" PointX="3.375" PointY="3.625" />
-        <EntityTypeShape EntityType="demodbModel.tEvaluate" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="demodbModel.tOrder" Width="1.5" PointX="2.75" PointY="6.75" />
         <EntityTypeShape EntityType="demodbModel.tService" Width="1.5" PointX="5.625" PointY="3.625" />
         <AssociationConnector Association="demodbModel.FK_tDesigner_tMember" />
         <AssociationConnector Association="demodbModel.FK_tService_tDesigner1" />
+        <EntityTypeShape EntityType="demodbModel.tBook" Width="1.5" PointX="7.875" PointY="2.25" />
+        <EntityTypeShape EntityType="demodbModel.tComment" Width="1.5" PointX="10.125" PointY="2.5" />
+        <EntityTypeShape EntityType="demodbModel.tLike" Width="1.5" PointX="7.875" PointY="6.875" />
+        <EntityTypeShape EntityType="demodbModel.tPhoto" Width="1.5" PointX="5.625" PointY="6.75" />
+        <EntityTypeShape EntityType="demodbModel.tWork" Width="1.5" PointX="5.625" PointY="9.75" />
+        <AssociationConnector Association="demodbModel.FK_tBook_tDesigner" />
+        <AssociationConnector Association="demodbModel.FK_tBook_tMember" />
+        <AssociationConnector Association="demodbModel.FK_tBook_tService" />
+        <AssociationConnector Association="demodbModel.FK_tComment_tBook" />
+        <AssociationConnector Association="demodbModel.FK_tComment_tDesigner" />
+        <AssociationConnector Association="demodbModel.FK_tComment_tMember" />
+        <AssociationConnector Association="demodbModel.FK_tPhoto_tDesigner" />
+        <AssociationConnector Association="demodbModel.FK_tWork_tDesigner" />
+        <AssociationConnector Association="demodbModel.FK_tLike_tMember" />
+        <AssociationConnector Association="demodbModel.FK_tLike_tPhoto" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

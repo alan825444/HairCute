@@ -259,6 +259,7 @@
     <Content Include="js\mona.bundle.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\popper.min.js" />
+    <Content Include="js\Registejs.js" />
     <Content Include="js\waypoints.min.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="Model1.Context.tt">
@@ -308,22 +309,31 @@
     <Compile Include="tArea.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tBook.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tCity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tComment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tDesigner.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tEvaluate.cs">
+    <Compile Include="tLike.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tMember.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="tOrder.cs">
+    <Compile Include="tPhoto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tWork.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\CMenberViewModel.cs" />

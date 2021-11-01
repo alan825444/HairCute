@@ -301,7 +301,14 @@
 
     </script>
 
+    @*<script>
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".datepicker").datepicker('setDate', 'today');
+        });
+    </script>*@
     <script src="~/js/CItyAreajs.js"></script>
+    @RenderSection("Register", required:false);
 </body>
 
 </html>
