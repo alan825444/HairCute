@@ -114,9 +114,9 @@ namespace Haircute.Controllers
                 ViewBag.Message = "帳號密碼錯誤";
                 return View();
             }
-            FormsAuthentication.RedirectFromLoginPage(q.fID.ToString(),true);
-            Session["Member"] = q.fNickname;
-            Session["ID"] = q.fID.ToString();
+            FormsAuthentication.RedirectFromLoginPage(member.fID.ToString(),true);
+            Session["Member"] = member.fNickname;
+            Session["ID"] = member.fID.ToString();
             return RedirectToAction("Index", "LogMember");
         }
 
