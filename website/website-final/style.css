@@ -4083,7 +4083,7 @@ color: rgb(251, 177, 5);
 .Edit-area{
   margin-top: 30px;
   margin-left: 200px;
-  width: 60%;
+  width: 70%;
 }
 .Edit-pic{
   width: 270px;
@@ -4103,5 +4103,7 @@ color: rgb(251, 177, 5);
 .fas{
   cursor: pointer;
 }
-
+.Edit-from{
+  margin-left: 30px;
+}
 
