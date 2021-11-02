@@ -15,6 +15,8 @@ namespace Haircute.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             return View();
         }
 
