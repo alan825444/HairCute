@@ -8,9 +8,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Title -->
-    <title>髮CUTE | 預剪美好的一天</title>
-
     <!-- Favicon -->
     <link rel="icon" href="~/img/core-img/favicon.ico">
 
@@ -26,6 +23,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jquery ui -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- autoComplete -->
+    <link rel="stylesheet" href="~/Content/Autocomplete/tokenize2.css">
 
 
 </head>
@@ -96,72 +101,65 @@
         </div>
     </header>
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area">
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <!-- Classy Menu -->
-                <nav class="classy-navbar justify-content-between" id="monaNav">
+    <!--<header class="header-area">-->
+    <!-- Main Header Start -->
+    <!--<div class="main-header-area">
+        <div class="classy-nav-container breakpoint-off">-->
+    <!-- Classy Menu -->
+    <!--<nav class="classy-navbar justify-content-between" id="monaNav">-->
+    <!-- Background Curve -->
+    <!--<div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>-->
+    <!-- Logo -->
+    <!--<a class="nav-brand" href="index.html"><img src="../img/banner-img/logo.png" alt=""></a>-->
+    <!-- Navbar Toggler -->
+    <!--<div class="classy-navbar-toggler">
+        <span class="navbarToggler"><span></span><span></span><span></span></span>
+    </div>-->
+    <!-- Menu -->
+    <!--<div class="classy-menu">-->
+    <!-- Menu Close Button -->
+    <!--<div class="classycloseIcon">
+        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+    </div>-->
+    <!-- Nav Start -->
+    <!--<div class="classynav">
 
-                    <!-- Background Curve -->
-                    <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+        <ul id="nav">
 
-                    <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="../img/banner-img/logo.png" alt=""></a>
+            <li>
+                <a href="#">@Session["Member"]</a>
+                <ul class="dropdown">
+                    <li><a href="#">- 會員中心</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
 
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
+            </li>
 
-                    <!-- Menu -->
-                    <div class="classy-menu">
-                        <!-- Menu Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
-
-                        <!-- Nav Start -->
-                        <div class="classynav">
-
-                            <ul id="nav">
-
-                                <li>
-                                    <a href="#">@Session["Member"]</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">- 會員中心</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
-
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">- 台中</a></li>
-                                        <li><a href="#">- 高雄</a></li>
-                                    </ul>
-                                </li>
+            <li>
+                <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                <ul class="dropdown">
+                    <li><a href="#">- 台中</a></li>
+                    <li><a href="#">- 高雄</a></li>
+                </ul>
+            </li>
 
 
-                            </ul>
-
-                            <!-- Search Icon -->
-                            <div class="search-icon">
-                                <a href="#search-bar"><i class="icon_search"></i></a>
-                            </div>
-                        </div>
-                        <!-- Nav End -->
-
-                    </div>
+        </ul>-->
+    <!-- Search Icon -->
+    <!--<div class="search-icon">
+            <a href="#search-bar"><i class="icon_search"></i></a>
+        </div>
+    </div>-->
+    <!-- Nav End -->
+    <!--</div>
                 </nav>
             </div>
         </div>
-    </header>
+    </header>-->
     <!-- ***** Header Area End ***** -->
-    
+
     @RenderBody()
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area py-3" id="Lfooter">
@@ -218,7 +216,7 @@
     <!-- ***** Footer Area End ***** -->
     <!-- ******* All JS ******* -->
     <!-- jQuery js -->
-    <script src="~/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Popper js -->
     <script src="~/js/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -230,6 +228,50 @@
     <script src="~/js/mona.bundle.js"></script>
     <!-- Active js -->
     <script src="~/js/default-assets/active.js"></script>
+    <!-- import js -->
+    <script src="~/js/import.js"></script>
+    <!-- autoComplete -->
+    <script src="~/Content/Autocomplete/tokenize2.js"></script>
+    <script>
+        // location jquery
+        $(".location-menu li a").click(function () {
+
+            $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
+            $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
+
+        });
+
+        //autoComplete
+        $('.tag_search').tokenize2();
+
+        //用Ajax連接資料庫
+        // $('.tag_search').tokenize2({
+        //     dataSource: ''
+        // });
+        // JSON
+        // [
+        //     { "text": "Afghanistan", "value": "AF" },
+        //     { "text": "Åland Islands", "value": "AX" },
+        //     { "text": "Albania", "value": "AL" },
+        //     { "text": "Algeria", "value": "DZ" },
+        //     { "text": "American Samoa", "value": "AS" },
+        //     { "text": "Andorra", "value": "AD" },
+        //     { "text": "Angola", "value": "AO" }
+        // ]
+
+        //footer
+        includeFooter();
+
+    </script>
+
+    @*<script>
+            $(function () {
+                $(".datepicker").datepicker();
+                $(".datepicker").datepicker('setDate', 'today');
+            });
+        </script>*@
+    <script src="~/js/CItyAreajs.js"></script>
+    @RenderSection("Register", required: false);
 
 </body>
 

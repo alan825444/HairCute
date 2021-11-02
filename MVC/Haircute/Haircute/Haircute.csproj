@@ -283,6 +283,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogMemberController.cs" />
     <Compile Include="Controllers\MemberCenterController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -447,6 +448,7 @@
     <Content Include="Views\Home\UserRG.cshtml" />
     <Content Include="Views\Home\ConfirmPage.cshtml" />
     <Content Include="Views\MemberCenter\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

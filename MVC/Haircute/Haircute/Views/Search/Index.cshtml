@@ -1,0 +1,542 @@
+﻿
+@{
+    ViewBag.Title = "髮Cute搜尋";
+}
+
+<!-- ***** search bar Area Start ***** -->
+<div class="container search-bar" id="search-bar">
+    <form class="row">
+        <div class="location-dropdown col-md-2 col-sm-10">
+            <button class="btn dropdown-toggle col-10 " type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                縣市
+            </button>
+            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台北市
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台中市
+                    </a>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        高雄市
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="location-dropdown col-md-2 col-sm-10">
+            <button class="btn dropdown-toggle col-10" type="button" id="dropdownMenuButton"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                地區
+            </button>
+            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台北市
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        台中市
+                    </a>
+                <li>
+                    <a class="dropdown-item" href="#">
+                        高雄市
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-5 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+            <div class="col-md-4 col-sm-2 keyword">
+                <h4>
+                    <span class="badge rounded-pill bg-info px-3 py-2">
+                        關鍵字 <i class="fas fa-angle-double-right mx-1 animate__animated animate__slower animate__shakeX animate__infinite"></i>
+                        <i class="fas fa-angle-double-down mx-1 animate__animated animate__slower animate__shakeY animate__infinite"></i>
+                    </span>
+                </h4>
+            </div>
+            <div class="col-md-8 col-sm-10">
+                <select class="tag_search" multiple>
+                    <option value="1">Acura</option>
+                    <option value="2">Audi</option>
+                    <option value="3">BMW</option>
+                    <option value="4">Cadillac</option>
+                    <option value="5">Chevrolet</option>
+                    <option value="6">Ferrari</option>
+                    <option value="7">Ford</option>
+                    <option value="8">Honda</option>
+                    <option value="9">Lexus</option>
+                    <option value="10">Mercedes-Benz</option>
+                </select>
+            </div>
+        </div>
+        <div class="search-btn align-items-center col-md-3 col-sm-10">
+            <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+        </div>
+    </form>
+</div>
+<!-- ***** search bar Area End ***** -->
+<!-- ***** register Area Start ***** -->
+<div class="register-select">
+    <!-- register Modal -->
+    <div class="modal fade" id="register-select" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content register-cardarea">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close text-end" data-dismiss="modal"
+                            aria-label="Close"></button>
+                </div>
+                <div class="register-select">
+                    <div class="register-card shadow">
+                        <a href="register.html">
+                            <div class="register-cardHead" id="banner01">設計師</div>
+                            <div class="register-cardBody"><img src="~/img/register-store.png"></div>
+                        </a>
+                    </div>
+                    <div class="register-card shadow">
+                        <a href="register.html">
+                            <div class="register-cardHead" id="banner02">消費者</div>
+                            <div class="register-cardBody"><img src="~/img/register-customer.png"></div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<!-- ***** register Area End ***** -->
+<!-- ***** Result list Area Start ***** -->
+
+<section id="search-result" class="pb-5">
+    <div class="container">
+        <h3 class="section-title"><span>搜尋結果</span></h3>
+        <div class="row">
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image mt-2">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center ">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center ">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center ">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+            <!-- store card -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <div id="carouselExampleControls" class="carousel slide"
+                                         data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <div class="image-flip">
+                                                    <a href="storeInfo.html">
+                                                        <img src="~/img/hair2.jpeg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="card-title mt-3">Happy hair</h4>
+                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
+                                    <li class="list_store_review text-center mt-2">
+                                        <a href="#">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1">4.9</span>
+                                        </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center ">
+                                    <a href="storeInfo.html">
+                                        <img src="~/img/banner-img/store2.jpg"
+                                             class="img-thumbnail img-fluid rounded-circle store_image">
+                                    </a>
+                                    <h4 class="card-title">查理</h4>
+                                    <a href="#" class="btn">自然卷</a>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- store card end -->
+        </div>
+    </div>
+</section>
+<!-- ***** Result list Area End ***** -->
+<!-- ***** Page navigation Area ***** -->
+<div class="container">
+    <div class="row">
+        <div class="page-nav d-flex justify-content-center my-5">
+            <nav class="pagination-outer" aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a href="#" class="page-link" aria-label="Previous">
+                            <span aria-hidden="true">«</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">4</a></li>
+                    <li class="page-item"><a class="page-link" href="#">5</a></li>
+                    <li class="page-item">
+                        <a href="#" class="page-link" aria-label="Next">
+                            <span aria-hidden="true">»</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- ***** Page navigation Area End ***** -->
