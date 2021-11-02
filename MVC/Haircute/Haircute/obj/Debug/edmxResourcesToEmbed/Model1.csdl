@@ -18,6 +18,8 @@
     <Property Name="fNickname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="fconfirmation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tMember_tDesigner" FromRole="tMember" ToRole="tDesigner" />
+    <NavigationProperty Name="tDesigner1" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tMember" ToRole="tDesigner" />
   </EntityType>
   <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tMember" EntityType="Self.tMember" />
@@ -27,6 +29,22 @@
       <End Role="tCity" EntitySet="tCity" />
       <End Role="tArea" EntitySet="tArea" />
     </AssociationSet>
+    <EntitySet Name="tDesigner" EntityType="demodbModel.tDesigner" />
+    <EntitySet Name="tService" EntityType="demodbModel.tService" />
+    <AssociationSet Name="FK_tMember_tDesigner" Association="demodbModel.FK_tMember_tDesigner">
+      <End Role="tDesigner" EntitySet="tDesigner" />
+      <End Role="tMember" EntitySet="tMember" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tService_tDesigner1" Association="demodbModel.FK_tService_tDesigner1">
+      <End Role="tDesigner" EntitySet="tDesigner" />
+      <End Role="tService" EntitySet="tService" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDesigner_tMember" Association="demodbModel.FK_tDesigner_tMember">
+      <End Role="tMember" EntitySet="tMember" />
+      <End Role="tDesigner" EntitySet="tDesigner" />
+    </AssociationSet>
+    <EntitySet Name="tEvaluate" EntityType="demodbModel.tEvaluate" />
+    <EntitySet Name="tBook" EntityType="demodbModel.tBook" />
   </EntityContainer>
   <EntityType Name="tArea">
     <Key>
@@ -57,4 +75,89 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="tDesigner">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fStore" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tMember" Relationship="demodbModel.FK_tMember_tDesigner" FromRole="tDesigner" ToRole="tMember" />
+    <NavigationProperty Name="tService" Relationship="demodbModel.FK_tService_tDesigner1" FromRole="tDesigner" ToRole="tService" />
+    <Property Name="fk_Member" Type="Int32" />
+    <NavigationProperty Name="tMember1" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tDesigner" ToRole="tMember" />
+    <Property Name="fHeadSticker" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tService">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fServicN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fprice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fk_Designer" Type="Int32" />
+    <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tService_tDesigner1" FromRole="tService" ToRole="tDesigner" />
+  </EntityType>
+  <Association Name="FK_tMember_tDesigner">
+    <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="0..1" />
+    <End Type="demodbModel.tMember" Role="tMember" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDesigner">
+        <PropertyRef Name="fid" />
+      </Principal>
+      <Dependent Role="tMember">
+        <PropertyRef Name="fk_Designer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tService_tDesigner1">
+    <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="0..1" />
+    <End Type="demodbModel.tService" Role="tService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDesigner">
+        <PropertyRef Name="fid" />
+      </Principal>
+      <Dependent Role="tService">
+        <PropertyRef Name="fk_Designer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tDesigner_tMember">
+    <End Type="demodbModel.tMember" Role="tMember" Multiplicity="0..1" />
+    <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMember">
+        <PropertyRef Name="fID" />
+      </Principal>
+      <Dependent Role="tDesigner">
+        <PropertyRef Name="fk_Member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tEvaluate">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fStar" Type="Int32" Nullable="false" />
+    <Property Name="fEvaluate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fk_Designer" Type="Int32" />
+    <Property Name="fk_Member" Type="Int32" />
+    <Property Name="fk_Order" Type="Int32" />
+    <Property Name="fk_Service" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tBook">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fDateTime" Type="DateTime" Precision="0" />
+    <Property Name="fPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fBookNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fk_Service" Type="Int32" />
+    <Property Name="fk_Member" Type="Int32" />
+    <Property Name="fk_Designer" Type="Int32" />
+  </EntityType>
 </Schema>

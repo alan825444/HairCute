@@ -8,12 +8,48 @@
     <Property Name="fArea" Type="nvarchar" MaxLength="50" />
     <Property Name="fk_City" Type="int" />
   </EntityType>
+  <EntityType Name="tBook">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fDateTime" Type="date" />
+    <Property Name="fPhone" Type="varchar" MaxLength="50" />
+    <Property Name="fAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="fName" Type="nvarchar" MaxLength="50" />
+    <Property Name="fBookNumber" Type="varchar" MaxLength="50" />
+    <Property Name="fk_Service" Type="int" />
+    <Property Name="fk_Member" Type="int" />
+    <Property Name="fk_Designer" Type="int" />
+  </EntityType>
   <EntityType Name="tCity">
     <Key>
       <PropertyRef Name="fID" />
     </Key>
     <Property Name="fID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="fCity" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tDesigner">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fStore" Type="nvarchar" MaxLength="50" />
+    <Property Name="fAddress" Type="nvarchar" MaxLength="200" />
+    <Property Name="fHeadSticker" Type="nvarchar" MaxLength="200" />
+    <Property Name="fk_Member" Type="int" />
+  </EntityType>
+  <EntityType Name="tEvaluate">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fStar" Type="int" Nullable="false" />
+    <Property Name="fEvaluate" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_Designer" Type="int" />
+    <Property Name="fk_Member" Type="int" />
+    <Property Name="fk_Order" Type="int" />
+    <Property Name="fk_Service" Type="int" />
   </EntityType>
   <EntityType Name="tMember">
     <Key>
@@ -34,6 +70,15 @@
     <Property Name="fk_Designer" Type="int" />
     <Property Name="fk_Memorder" Type="int" />
   </EntityType>
+  <EntityType Name="tService">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fServicN" Type="nvarchar" MaxLength="50" />
+    <Property Name="fprice" Type="nvarchar" MaxLength="50" />
+    <Property Name="fk_Designer" Type="int" />
+  </EntityType>
   <Association Name="FK_tArea_tCity">
     <End Role="tCity" Type="Self.tCity" Multiplicity="0..1" />
     <End Role="tArea" Type="Self.tArea" Multiplicity="*" />
@@ -46,13 +91,49 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_tDesigner_tMember">
+    <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
+    <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tMember">
+        <PropertyRef Name="fID" />
+      </Principal>
+      <Dependent Role="tDesigner">
+        <PropertyRef Name="fk_Member" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tService_tDesigner1">
+    <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="0..1" />
+    <End Role="tService" Type="Self.tService" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tDesigner">
+        <PropertyRef Name="fid" />
+      </Principal>
+      <Dependent Role="tService">
+        <PropertyRef Name="fk_Designer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="demodbModelStoreContainer">
     <EntitySet Name="tArea" EntityType="Self.tArea" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tBook" EntityType="Self.tBook" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tCity" EntityType="Self.tCity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tDesigner" EntityType="Self.tDesigner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tEvaluate" EntityType="Self.tEvaluate" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tMember" EntityType="Self.tMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tService" EntityType="Self.tService" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_tArea_tCity" Association="Self.FK_tArea_tCity">
       <End Role="tCity" EntitySet="tCity" />
       <End Role="tArea" EntitySet="tArea" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tDesigner_tMember" Association="Self.FK_tDesigner_tMember">
+      <End Role="tMember" EntitySet="tMember" />
+      <End Role="tDesigner" EntitySet="tDesigner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tService_tDesigner1" Association="Self.FK_tService_tDesigner1">
+      <End Role="tDesigner" EntitySet="tDesigner" />
+      <End Role="tService" EntitySet="tService" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

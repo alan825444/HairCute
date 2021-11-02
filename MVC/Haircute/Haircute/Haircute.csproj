@@ -269,6 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DesignerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogMemberController.cs" />
     <Compile Include="Global.asax.cs">
@@ -296,12 +297,25 @@
     <Compile Include="tArea.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tBook.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="tCity.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tDesigner.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tEvaluate.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="tMember.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="tService.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CDesignerViewModel.cs" />
     <Compile Include="ViewModel\CMenberViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -401,6 +415,7 @@
     <Content Include="Views\Shared\_LayourMember.cshtml" />
     <Content Include="Views\Home\UserRG.cshtml" />
     <Content Include="Views\Home\ConfirmPage.cshtml" />
+    <Content Include="Views\Designer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

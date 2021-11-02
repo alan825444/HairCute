@@ -14,6 +14,12 @@ namespace Haircute
     
     public partial class tMember
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tMember()
+        {
+            this.tDesigner1 = new HashSet<tDesigner>();
+        }
+    
         public int fID { get; set; }
         public string fPwd { get; set; }
         public string fUsername { get; set; }
@@ -28,5 +34,9 @@ namespace Haircute
         public string fNickname { get; set; }
         public string fCity { get; set; }
         public string fconfirmation { get; set; }
+    
+        public virtual tDesigner tDesigner { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tDesigner> tDesigner1 { get; set; }
     }
 }
