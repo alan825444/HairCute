@@ -4106,4 +4106,9 @@ color: rgb(251, 177, 5);
 .Edit-from{
   margin-left: 25px;
 }
-
+.Errorstatus{
+  color: red;
+}
+.Okstatus{
+  color: green;
+}
