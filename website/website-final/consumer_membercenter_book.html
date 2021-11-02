@@ -20,6 +20,9 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
+  <!--Order Css-->
+  <link rel="stylesheet" href="css/bookHairCute.css"/>
+
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -29,11 +32,7 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-      
-    </script>
 
-
-    
 </head>
 
 <body>
@@ -229,192 +228,84 @@
       <div id="reservation-area">
         <article>
           <div class="row reservation-area">
-              <div class="reservation-item">
-                <ul>
-                  <li class="pic-li">
-                    <div class="reservation-pic-div">
-                      <img src="img/user-img/store2.jpg" class="reservation-pic">
-                    </div>
-                  </li>
-                </ul>
-                <ul>
-                  <div>
-                    <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
-                  </div>
-                  <li>
-                    <div class="reservation-title">
-                      <a href="#">查理</a>
-                      <div class="reservation-star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="ml-1"><b>4.9</b></span>
-                      </div>
-                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-body">
-                      <label>預約日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                      <label>預約時間：</label><b>09:00</b>
-                      <label class="re-la1">項目金額：</label><b>$499元</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-footer">
-                      <label>預約狀態:</label>
-                      <span>
-                        <b>已確認</b><i class="fas fa-check-circle"></i>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="reservation-item">
-                <ul>
-                  <li class="pic-li">
-                    <div class="reservation-pic-div">
-                      <img src="img/user-img/store2.jpg" class="reservation-pic">
-                    </div>
-                  </li>
-                </ul>
-                <ul>
-                  <div>
-                    <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
-                  </div>
-                  <li>
-                    <div class="reservation-title">
-                      <a href="#">查理</a>
-                      <div class="reservation-star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="ml-1"><b>4.9</b></span>
-                      </div>
-                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-body">
-                      <label>預約日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                      <label>預約時間：</label><b>09:00</b>
-                      <label class="re-la1">項目金額：</label><b>$499元</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-footer">
-                      <label>預約狀態:</label>
-                      <span id="res-evaluation">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reservation-evaluate">評價</button>
-                      </span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div class="reservation-item">
-                <ul>
-                  <li class="pic-li">
-                    <div class="reservation-pic-div">
-                      <img src="img/user-img/store2.jpg" class="reservation-pic">
-                    </div>
-                  </li>
-                </ul>
-                <ul>
-                  <div>
-                    <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
-                  </div>
-                  <li>
-                    <div class="reservation-title">
-                      <a href="#">查理</a>
-                      <div class="reservation-star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="ml-1"><b>4.9</b></span>
-                      </div>
-                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-body">
-                      <label>預約日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                      <label>預約時間：</label><b>09:00</b>
-                      <label class="re-la1">項目金額：</label><b>$499元</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-footer">
-                      <label>預約狀態:</label>
-                      <span id="res-ok">
-                        <b>已完成</b><i class="fas fa-check-circle"></i>
-                      </span>
-                    </div>                  
-                </ul>
-              </div>
-              <div class="reservation-item">
-                <ul>
-                  <li class="pic-li">
-                    <div class="reservation-pic-div">
-                      <img src="img/user-img/store2.jpg" class="reservation-pic">
-                    </div>
-                  </li>
-                </ul>
-                <ul>
-                  <div>
-                    <button type="button" class="btn close-btn" id="cancelbtn"><i class="fa fa-times"></i></button>
-                  </div>
-                  <li>
-                    <div class="reservation-title">
-                      <a href="#">查理</a>
-                      <div class="reservation-star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span class="ml-1"><b>4.9</b></span>
-                      </div>
-                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-body">
-                      <label>預約日期：</label><b>2021/10/12</b>
-                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                      <label>預約時間：</label><b>09:00</b>
-                      <label class="re-la1">項目金額：</label><b>$499元</b>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="reservation-footer">
-                      <label>預約狀態:</label>
-                      <span id="res-cancel" class="res-cancel">
-                        <b>已取消</b><i class="fas fa-times-circle"></i>
-                      </span>
-                    </div>                  
-                </ul>
-              </div>
+            <div class="notice">
+              <div class="occupied">&nbsp;&nbsp;</div>被預約
+              <div class="outtime">&nbsp;&nbsp;</div>已過期
+              <div class="useable">&nbsp;&nbsp;</div>可預約
+            </div>
+            <table >
+            <tbody id="resourceTable">
+            <!-- 以下js生成 -->
+              <tr>
+                <th></th>
+                <th>Order1</th>
+                <th>Order2</th>
+                <th>Order3</th>
+                <th>Order4</th>
+                <th>Order5</th>
+                <th>Order6</th>
+                <th>Order7</th>
+                <th>Order8</th>
+                <th>Order9</th>
+              </tr>
+              <tr>
+                <th>9:00-10:00</th>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="occupied"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+              </tr>
+              <tr>
+                <th>10:00-11:00</th>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="occupied"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+                <td class="outtime"></td>
+              </tr>
+              <tr>
+                <th>11:00-12:00</th>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="useable"></td>
+                <td class="occupied"></td>
+                <td class="occupied"></td>
+              </tr>
+            </tbody>
+            </table>
+            <div class="btn-area">
+              <input type="button" name="btn-reserve" value="預約"/>
+              <input type="button" name="btn-my" value="查看預約"/>
+            </div>
+            <div class="reserveResult">
+            </div>
+          
           </div>
         </article> 
       </div>
-      <script>
-        $(document).ready(function(){
-          if($('#res-cancel,#res-ok,#res-evaluation')){
-            $('#cancelbtn').hide();
-            $('#okbtn').hide();
-            $('#evaluationbtn').hide();
-          }
-        })
-      </script>
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+      
       <!--reservation-area End-->
 
       <!--point-area start-->
@@ -708,7 +599,7 @@
         </article>
       </div>-->
       <!--point-area End-->
-
+      
       <!--evaluate-area start-->
       <div id="evaluate-area">
         <article>
@@ -1026,7 +917,9 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
-
+  <!--Order js-->
+  <script src="js/bookHairCute.js"></script>
+  
 </body>
 
 </html>

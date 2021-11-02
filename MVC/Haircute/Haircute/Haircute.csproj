@@ -402,6 +402,7 @@
     <Content Include="Views\Shared\_LayourMember.cshtml" />
     <Content Include="Views\Home\UserRG.cshtml" />
     <Content Include="Views\Home\ConfirmPage.cshtml" />
+    <Content Include="Views\Home\DesignerPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

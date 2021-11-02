@@ -124,5 +124,10 @@ namespace Haircute.Controllers
         {
             return View();
         }
+
+        public ActionResult DesignerPage()
+        {
+            return View();
+        }
     }
 }
