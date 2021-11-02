@@ -302,13 +302,15 @@
     </script>
 
     @*<script>
-        $(function () {
-            $(".datepicker").datepicker();
-            $(".datepicker").datepicker('setDate', 'today');
-        });
-    </script>*@
+            $(function () {
+                $(".datepicker").datepicker();
+                $(".datepicker").datepicker('setDate', 'today');
+            });
+        </script>*@
     <script src="~/js/CItyAreajs.js"></script>
-    @RenderSection("Register", required:false);
+    @RenderSection("Register", required: false);
+    @RenderSection("DesignerPage", required: false);
+    @RenderSection("UserpageJs", required: false);
 </body>
 
 </html>
