@@ -89,7 +89,7 @@
           </Key>
           <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fTag" Type="nvarchar" MaxLength="50" />
-          <Property Name="fPath" Type="varchar" MaxLength="50" />
+          <Property Name="fPath" Type="nvarchar" MaxLength="200" />
           <Property Name="fDateTime" Type="datetime" />
           <Property Name="fk_Designer" Type="int" />
         </EntityType>
@@ -552,7 +552,7 @@
           </Key>
           <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fTag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fPath" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fPath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="fDateTime" Type="DateTime" Precision="3" />
           <Property Name="fk_Designer" Type="Int32" />
           <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tPhoto_tDesigner" FromRole="tPhoto" ToRole="tDesigner" />

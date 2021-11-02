@@ -24,7 +24,7 @@
             <div class="col-12">
                 <div class="consumer-pic">
                     <button class="uesr-btn-cos">
-                        <img src="~/img/PhotoDesigner_20211102235131643_e27e02550ef14931acf66397ebeb3ebd.png" class="uesr-pic-cos"/>
+                        <img src="~/Images/@ViewBag.HImg" class="uesr-pic-cos"/>
                     </button>
                 </div>
                 <div class="Backstage-edit">
@@ -206,13 +206,18 @@
                     </div>
                 </div>
                 <div class="row design-area">
-                    <div class="col-sm-3   design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/25.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮<br>#####</div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3  design-item">
+                    @foreach (var item in ViewBag.Dphoto)
+                    {
+                        <div class="col-sm-3 design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
+                                <div class="design-body">#@item.fTag</div>
+                            </a>
+                        </div>
+                    }
+
+
+                    @*<div class="col-sm-3  design-item">
                         <a href="#" data-toggle="modal" data-target="#update-user-design-info">
                             <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
                             <div class="design-body">#俏麗短髮</div>
@@ -229,7 +234,7 @@
                             <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
                             <div class="design-body">#俏麗短髮</div>
                         </a>
-                    </div>
+                    </div>*@
                 </div>
             </article>
         </div>
@@ -320,7 +325,7 @@
             formData.append('blob', blob);
             var myAppUrlSettings =
             {
-                MyUsefulUrl: '@Url.Action("photoupdate", "MemberCenter")'
+                MyUsefulUrl: '@Url.Action("Headupbdate", "MemberCenter")'
             }
 
             var request = new XMLHttpRequest();
@@ -347,8 +352,8 @@
     <script>
         var basic = $('#main-cropper').croppie
             ({
-                viewport: { width: 300, height: 450 }, // 裁切區塊
-                boundary: { width: 400, height: 500 }, // 預覽區塊
+                viewport: { width: 400, height: 500 }, // 裁切區塊
+                boundary: { width: 425, height: 625 }, // 預覽區塊
                 showZoomer: true, //隱藏或顯示縮放滑塊
                 url: '/img/preview.jpg', //預設圖片
                 format: 'png' //'jpeg'|'png'|'webp'
@@ -380,6 +385,7 @@
 
             formData.append('filename', 'FileName.png');
             formData.append('blob', blob);
+            formData.append('Keyword', $("#design-info").val() );
             var myAppUrlSettings =
             {
                 MyUsefulUrl: '@Url.Action("photoupdate", "MemberCenter")'

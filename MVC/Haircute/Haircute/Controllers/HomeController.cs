@@ -112,10 +112,10 @@ namespace Haircute.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(string fEmail, string fPwd)
+        public ActionResult Login(string txtAcc, string txtPwd)
         {
             demodbEntities db = new demodbEntities();
-            var member = db.tMember.Where(m => m.fEmail == fEmail && m.fPwd == fPwd).FirstOrDefault();
+            var member = db.tMember.Where(m => m.fEmail == txtAcc && m.fPwd == txtPwd).FirstOrDefault();
             if (member == null)
             {
                 ViewBag.Message = "帳號密碼錯誤";

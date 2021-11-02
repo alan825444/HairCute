@@ -3224,7 +3224,7 @@ section .section-title span {
   margin: 10px 0;
 }
 .design-pic {
-  min-height: 100%;
+  min-height: 90%;
 }
 .design-head:hover {
   box-shadow: rgba(102, 102, 102, 0.5) 5px 5px 5px;
