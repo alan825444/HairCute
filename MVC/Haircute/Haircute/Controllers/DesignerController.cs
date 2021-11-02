@@ -68,6 +68,24 @@ namespace Haircute.Controllers
                        }).ToList();
             return res;
         }
-        
+        public ActionResult Edit(int fid)
+        {
+            var des = from d in db.tDesigner
+                      where d.fid == fid
+                      join s in db.tService on d.fid equals s.fk_Designer
+                      select new 設計師編輯
+                      {
+                          店名 = d.fStore,
+                          店址 = d.fAddress,
+                          服務 = s.fServicN,
+                          費用 = s.fprice
+                      };
+            return View(des);
+        }
+        [HttpPost]
+        public ActionResult Edit()
+        {
+
+        }
     }
 }

@@ -36,4 +36,16 @@ namespace Haircute.ViewModel
         public string Time { get; set; }
         public string Status { get; set; }
     }
+
+    public class 設計師編輯
+    {
+        public string 設計師大頭貼 { get; set; }
+        public string 店名 { get; set;}
+        public string 縣市 { get; set; }
+        public string 地區 { get; set; }
+        public string 店址 { get; set; }
+        public string 服務 { get; set; }
+        public string 費用 { get; set; }
+        
+    }
 }

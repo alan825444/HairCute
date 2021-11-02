@@ -416,6 +416,7 @@
     <Content Include="Views\Home\UserRG.cshtml" />
     <Content Include="Views\Home\ConfirmPage.cshtml" />
     <Content Include="Views\Designer\Index.cshtml" />
+    <Content Include="Views\Designer\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
