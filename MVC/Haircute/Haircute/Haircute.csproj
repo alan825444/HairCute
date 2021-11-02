@@ -119,6 +119,7 @@
     <Content Include="Content\Autocomplete\dist\tokenize2.min.js" />
     <Content Include="Content\Autocomplete\tokenize2.css" />
     <Content Include="Content\Autocomplete\tokenize2.js" />
+    <Content Include="Content\croppie.css" />
     <Content Include="Content\css\animate.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\default-assets\classy-nav.css" />
@@ -221,6 +222,8 @@
     <Content Include="img\hair5.jpeg" />
     <Content Include="img\hair6.jpeg" />
     <Content Include="img\logo-white.png" />
+    <Content Include="img\PhotoDesigner_20211102235131643_e27e02550ef14931acf66397ebeb3ebd.png" />
+    <Content Include="img\preview.jpg" />
     <Content Include="img\register-customer.png" />
     <Content Include="img\register-store.png" />
     <Content Include="img\register.jpg" />
@@ -246,6 +249,7 @@
     <Content Include="img\user-img\writingw.png" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\CItyAreajs.js" />
+    <Content Include="js\croppie.min.js" />
     <Content Include="js\default-assets\active.js" />
     <Content Include="js\default-assets\avoid.console.error.js" />
     <Content Include="js\default-assets\classynav.js" />
@@ -465,6 +469,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
     <Folder Include="Views\LogMember\" />
   </ItemGroup>
   <ItemGroup>

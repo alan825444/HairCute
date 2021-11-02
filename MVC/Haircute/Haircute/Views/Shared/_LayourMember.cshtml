@@ -32,6 +32,11 @@
     <!-- autoComplete -->
     <link rel="stylesheet" href="~/Content/Autocomplete/tokenize2.css">
 
+    <!--clockpicker-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.css" integrity="sha512-BB0bszal4NXOgRP9MYCyVA0NNK2k1Rhr+8klY17rj4OhwTmqdPUQibKUDeHesYtXl7Ma2+tqC6c7FzYuHhw94g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--croppie-->
+    <link href="~/Content/croppie.css" rel="stylesheet" />
 
 </head>
 
@@ -271,9 +276,12 @@
             });
         </script>*@
     <script src="~/js/CItyAreajs.js"></script>
+    <script src="~/js/croppie.min.js"></script>
     @RenderSection("Register", required: false);
     @RenderSection("DesignerPage", required: false);
     @RenderSection("UserpageJs", required: false);
+    @RenderSection("Backstage", required: false);
+
 </body>
 
 </html>
