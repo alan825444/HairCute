@@ -3379,41 +3379,42 @@ section .section-title span {
 }
 .evaluate-title {
   font-size: 20px;
-  width: 100px;
+  /* width: 100px; */
 }
+
+.review-content{
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 15px 0 25px 0;
+}
+
 .evaluate-star {
-  /* position: relative;
-  font-size: 24px;
-  width: 180px;
-  margin-left: 70px;
-  top: 30px; */
+  display: flex;
+  justify-content: center;
+  font-size: 1.3rem;
 }
 .evaluate-star i {
   color: rgb(251, 177, 5);
 }
 .evaluate-body {
-  /* position: relative; */
-  /* height: 140px;
-  width: 310px; */
   font-size: 16px;
-  /* padding-top: 30px; */
-  /* left: 320px;
-  top: -50px; */
 }
 .evaluate-footer {
-  margin-top: -50px;
+  display: flex;
+  flex-direction: row;
   color: #9c9c9c;
 }
 .pos-label {
-  margin-left: 350px;
+  text-align: end;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .evaluate-item {
-    width: 80%;
-    height: 180px;
+    /* width: 80%;
+    height: 180px; */
   }
   .pos-label {
-    margin-left: 400px;
+    /* margin-left: 400px; */
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
