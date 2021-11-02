@@ -6,7 +6,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -56,7 +56,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -106,7 +106,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -160,51 +160,15 @@
 <span id="search-bar"></span>
 <div class="container search-bar">
     <form class="row">
-        <div class="location-dropdown col-md-2 col-sm-10">
-            <button class="btn dropdown-toggle col-10 " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                縣市
-            </button>
-            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台北市
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台中市
-                    </a>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        高雄市
-                    </a>
-                </li>
-            </ul>
+        <div class="location-dropdown col-md-3 col-sm-10">
+            @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select col-10", id = "fCity" })
         </div>
-        <div class="location-dropdown col-md-2 col-sm-10">
-            <button class="btn dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                地區
-            </button>
-            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台北市
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台中市
-                    </a>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        高雄市
-                    </a>
-                </li>
-            </ul>
+        <div class="location-dropdown col-md-3 col-sm-10">
+            <select class="form-select col-10" aria-label="Default select example" name="fArea" id="fArea">
+                <option>--------</option>
+            </select>
         </div>
-        <div class="col-md-5 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+        <div class="col-md-6 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
             <div class="col-md-4 col-sm-2 keyword">
                 <h4>
                     <span class="badge rounded-pill bg-info px-3 py-2">
@@ -213,7 +177,7 @@
                     </span>
                 </h4>
             </div>
-            <div class="col-md-8 col-sm-10">
+            <div class="col-md-8 col-sm-12">
                 <select class="tag_search" multiple>
                     <option value="1">Acura</option>
                     <option value="2">Audi</option>
@@ -228,10 +192,11 @@
                 </select>
             </div>
         </div>
-        <div class="search-btn align-items-center col-md-3 col-sm-10">
-            <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+        <div class="search-btn align-self-center col-md-12 col-sm-10">
+             <a href="~/Search/Index" role="button" class="col-6">預約搜尋</a>
         </div>
     </form>
+    
 </div>
 
 <!--Search End-->

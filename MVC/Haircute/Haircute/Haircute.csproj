@@ -208,7 +208,10 @@
     <Content Include="img\bg-img\8.jpg" />
     <Content Include="img\bg-img\9.jpg" />
     <Content Include="img\bg-img\banner.png" />
+    <Content Include="img\bg-img\dye-hair.jpg" />
+    <Content Include="img\bg-img\hair-cut.jpg" />
     <Content Include="img\bg-img\log-in.jpg" />
+    <Content Include="img\bg-img\perm-hair.jpg" />
     <Content Include="img\core-img\curve.png" />
     <Content Include="img\core-img\favicon.ico" />
     <Content Include="img\core-img\logo.png" />
@@ -256,6 +259,10 @@
     <Content Include="js\jquery.easing.min.js" />
     <Content Include="js\jquery.magnific-popup.min.js" />
     <Content Include="js\jquery.min.js" />
+    <None Include="js\jquery.validate-vsdoc.js" />
+    <Content Include="js\jquery.validate.min.js" />
+    <Content Include="js\jquery.validate.unobtrusive.js" />
+    <Content Include="js\jquery.validate.unobtrusive.min.js" />
     <Content Include="js\mona.bundle.js" />
     <Content Include="js\owl.carousel.min.js" />
     <Content Include="js\popper.min.js" />
@@ -276,9 +283,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DesgnerPageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogMemberController.cs" />
     <Compile Include="Controllers\MemberCenterController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\UserCenterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -443,6 +453,9 @@
     <Content Include="Views\Home\UserRG.cshtml" />
     <Content Include="Views\Home\ConfirmPage.cshtml" />
     <Content Include="Views\MemberCenter\Index.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\DesgnerPage\DesignerPage.cshtml" />
+    <Content Include="Views\UserCenter\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

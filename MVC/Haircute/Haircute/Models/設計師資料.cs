@@ -58,6 +58,17 @@ namespace Haircute.Models
             return data;
         }
 
+        public void 測試() 
+        {
+            var q3 = db.tBook.GroupBy(c => c.fk_Designer).Select(c => new { 設計師ID = c.Key, 數量 = c.Count() }).OrderByDescending(m => m.數量).Take(10);
+            List<int> 設計師 = new List<int>();
+            foreach (var item in q3)
+            {
+                
+            }
+
+        }
+
 
 
     }
