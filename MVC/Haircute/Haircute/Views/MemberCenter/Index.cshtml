@@ -1,0 +1,26 @@
+﻿@using Haircute.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
+@foreach (var item in ViewBag.C)
+{
+    <div>
+        <p>@item.tDesigner.fStore</p>
+        <p>@item.tDesigner.fAddress</p>
+    </div>
+    break;
+}
+
+@foreach (var item in ViewBag.C)
+{
+    <div>
+        <p>@item.fServicN</p>
+        <p>@item.fprice</p>
+    </div>
+}
+
+
+
+

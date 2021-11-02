@@ -54,6 +54,8 @@ namespace Haircute.Controllers
         [HttpPost]
         public ActionResult UserRG(CMenberViewModel m)
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if (member == null)
@@ -96,6 +98,9 @@ namespace Haircute.Controllers
             tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
             認證.fconfirmation = "Y";
             db.SaveChanges();
+            FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(),true);
+            Session["Member"] = 認證.fNickname;
+            Session["ID"] = 認證.fID.ToString();
             return RedirectToAction("Index");
         }
 

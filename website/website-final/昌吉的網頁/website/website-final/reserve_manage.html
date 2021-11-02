@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Mona - Model Agency HTML5 Template">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title -->
+  <title>髮CUTE | 預約管理</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="./img/core-img/favicon.ico">
+
+  
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+
+    
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- jQuery js -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  
+      
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <script>
+       $(document).ready(function () {
+        $(".datepicker").datepicker();
+        $(".datepicker").datepicker('setDate', 'today');
+        });
+    </script>   
+</head>
+
+<body>
+  
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar justify-content-between" id="monaNav">
+
+          <!-- Background Curve -->
+          <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+
+          <!-- Logo -->
+          <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt=""></a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+            <!-- Menu Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+
+              <ul id="nav">
+
+                <li><a href="#" data-toggle="modal" data-target="#log-in-select">登入</a>
+                  
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#log-in-select">註冊</a>
+                  
+                </li>
+
+                <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                  <ul class="dropdown">
+                    <li><a href="#">- 台中</a></li>
+                    <li><a href="#">- 高雄</a></li>
+                  </ul>
+                </li>
+
+
+              </ul>
+
+              <!-- Search Icon -->
+              <div class="search-icon" data-toggle="modal" data-target="#searchModal">
+                <i class="icon_search"></i>
+              </div>
+            </div>
+            <!-- Nav End -->
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Top Search Area Start ***** -->
+  <div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="index.html" method="post">
+              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Top Search Area End ***** -->
+
+
+  <!-- ***** log-in Area Start ***** -->
+  <div class="log-in-select">
+    <!-- Search Modal -->
+    <div class="modal fade" id="log-in-select" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content register-cardarea">
+          <div class="modal-header border-0">
+            <!-- <h5 class="text-center">註冊</h5> -->
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="register-select">
+            <div class="register-card shadow">
+              <a href="#">
+                <div class="register-cardHead" id="banner01">設計師</div>
+                <div class="register-cardBody"><img src="img/register-store.png"></div>
+              </a>
+            </div>
+            <div class="register-card shadow">
+              <a href="#">
+                <div class="register-cardHead" id="banner02">消費者</div>
+                <div class="register-cardBody"><img src="img/register-customer.png"></div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** log-in Area End ***** -->
+
+  <!-- ***** reserve-manage Area start ***** -->
+  <main class="membercenter-area">
+    <div class="container h-100 ">
+      <div class="row align-items-end h-50">
+        <div class="col-12">
+          <div class="breadcumb--con">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> 會員中心</a></li>
+                <li class="breadcrumb-item active" aria-current="page">預約管理</li>
+              </ol>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div>
+        <div class="row reserve-menu">
+          <label>日期:</label>
+          <input type="text" class="datepicker">
+        </div>
+        <div class="row reserve-manage-area">
+          <div class="col-sm-12">
+            <table class="table">
+              <thead>
+                <th >時間表</th>
+                <th >10/11</th>
+                <th >10/12</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <th>09:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <button class="btn btn-secondary" data-toggle="modal" data-target="#open">時段關閉</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>10:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>11:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>12:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>13:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>14:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>15:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>16:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>17:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div>
+                      <button class="btn btn-danger" data-toggle="modal" data-target="#unconfirmed">預約未確認</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>18:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>19:00</th>
+                  <td>
+                    <div>
+                      <button class="btn btn-success" data-toggle="modal" data-target="#confirm">預約確認</button>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>20:00</th>               
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="close-a">
+                      <a href="#" data-toggle="modal" data-target="#close">空閒</a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="modal" id="unconfirmed">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">預約未確認</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <label>預約人:</label><a href="#">查理2號</a><br>
+                <label>預約服務:</label><b>造型頭髮+洗頭</b><br>
+                <label>預約狀態:</label><b>尚未確認</b>
+              </div>
+            </div>
+            <div class="modal-footer">
+                    <a href="#" class="btn btn-success" target="_new">確認預約</a>
+                    <a href="#" class="btn btn-danger" target="_new">拒絕預約</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal" id="confirm">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">預約確認</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <label>預約人:</label><a href="#">查理2號</a><br>
+                <label>預約服務:</label><b>造型頭髮+洗頭</b><br>
+                <label>預約狀態:</label><b>已確認</b>
+              </div>
+            </div>
+
+        </div>
+    </div>
+  </div>
+  <div class="modal" id="open">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">時段開啟</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <p>
+                  請確認是否要將此時段開啟?
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+                    <a href="#" class="btn btn-primary" target="_new">時段開啟</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="modal" id="close">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">時段關閉</h3>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div >
+                <p>
+                  請確認是否要將此時段關閉?
+                </p>
+              </div>
+            </div>
+            <div class="modal-footer">
+                    <a href="#" class="btn btn-secondary" target="_new">時段關閉</a>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- ***** reserve-manage Area End ***** -->
+
+  <!-- ******* All JS ******* -->
+  <!-- Popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <!-- All js -->
+  <script src="js/mona.bundle.js"></script>
+  <!-- Active js -->
+  <script src="js/default-assets/active.js"></script>
+
+</body>
+
+</html>

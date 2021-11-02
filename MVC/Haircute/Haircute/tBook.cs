@@ -14,6 +14,12 @@ namespace Haircute
     
     public partial class tBook
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tBook()
+        {
+            this.tComment = new HashSet<tComment>();
+        }
+    
         public int fid { get; set; }
         public Nullable<System.DateTime> fDateTime { get; set; }
         public string fPhone { get; set; }
@@ -23,5 +29,11 @@ namespace Haircute
         public Nullable<int> fk_Service { get; set; }
         public Nullable<int> fk_Member { get; set; }
         public Nullable<int> fk_Designer { get; set; }
+    
+        public virtual tDesigner tDesigner { get; set; }
+        public virtual tMember tMember { get; set; }
+        public virtual tService tService { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tComment> tComment { get; set; }
     }
 }
