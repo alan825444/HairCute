@@ -25,5 +25,18 @@ namespace Haircute.Models
                 return q.ToList();
             }
         }
+
+        //public IEnumerable<tArea> GetAreabytext(string City)
+        //{
+        //    using (demodbEntities db = new demodbEntities())
+        //    {
+        //        var q = db.tCity.Join(db.tArea,c=>c.fID,a=>a.fk_City,(c,a)=>new { 
+                
+        //        });
+                
+        //        return q.ToList();
+        //    }
+        //}
+
     }
 }

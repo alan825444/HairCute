@@ -15,18 +15,12 @@ namespace Haircute.Controllers
         public ActionResult Index()
         {
             int SSID = Convert.ToInt32(User.Identity.Name);
-            tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
-            string HeadImg = q.fHeadSticker;
-
-            var q2 = db.tPhoto.Where(m => m.fk_Designer == SSID);
-            List<tPhoto> data = new List<tPhoto>();
-            foreach (var item in q2)
-            {
-                data.Add(new tPhoto { fk_Designer = item.fk_Designer, fPath = item.fPath, fTag = item.fTag, fDateTime = item.fDateTime });
-            }
-
-            ViewBag.HImg = HeadImg;
-            ViewBag.Dphoto = data;
+            
+            ViewBag.HImg = new 資料產生器().取得會員大頭貼(SSID);
+            ViewBag.Dphoto = new 資料產生器().取得設計師作品(SSID);
+            ViewBag.selectCity = new 資料產生器().selectedCity(SSID);
+            ViewBag.selectArea = new 資料產生器().selectedArea(SSID);
+            ViewBag.店鋪資訊 = new 資料產生器().店鋪資訊(SSID);
             return View();
         }
 
@@ -75,6 +69,22 @@ namespace Haircute.Controllers
             if (fileTypeName == null) throw new ArgumentNullException(nameof(fileTypeName));
             if (fileextenstion == null) throw new ArgumentNullException(nameof(fileextenstion));
             return $"{fileTypeName}_{DateTime.Now:yyyyMMddHHmmssfff}_{Guid.NewGuid():N}{fileextenstion}";
+        }
+        [HttpPost]
+        public ActionResult StoreBasicInf(設計師資料 m) 
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name);
+            string result = new 資料儲存器().店鋪及營業時間儲存(SSID, m);
+
+            if (result =="OK")
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.Message = "儲存失敗";
+            return RedirectToAction("Index");
+
+
+
         }
     }
 }

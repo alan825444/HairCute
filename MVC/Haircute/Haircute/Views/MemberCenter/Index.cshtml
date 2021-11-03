@@ -24,7 +24,7 @@
             <div class="col-12">
                 <div class="consumer-pic">
                     <button class="uesr-btn-cos">
-                        <img src="~/Images/@ViewBag.HImg" class="uesr-pic-cos"/>
+                        <img src="~/Images/@ViewBag.HImg" class="uesr-pic-cos" />
                     </button>
                 </div>
                 <div class="Backstage-edit">
@@ -62,184 +62,178 @@
 
 
         <!--store-area start-->
-        <div class="container back-area" style="margin-bottom:50px" id="store-area">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="register-from back-form">
-                        <form action="#" method="POST">
-                            <div class="row">
-                                <div class="col-md-12 col-12">
-                                    <label class="form-label">店名</label>
-                                    <input type="text" class="form-control ">
+        @foreach (var item in ViewBag.店鋪資訊)
+        {
+            <div class="container back-area" style="margin-bottom:50px" id="store-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="register-from back-form">
+                            <form action="/MemberCenter/StoreBasicInf" method="POST">
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label class="form-label">店名</label>
+                                        <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
+                                    </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label class="form-label">店址</label>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="form-label">營業時間</label>
+                                    </div>
+                                    <div class="col-md-6 col-12  clockpicker" data-placement="top">
+                                        <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
+                                    </div>
+                                    <div class="col-md-6 col-12 clockpicker" data-placement="top">
+                                        <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 register-btns mb-2">
+                                        <input type="submit" value="儲存" class="btn btn-outline-success">
+                                        <p class="text-danger">@ViewBag.Message</p>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+            <!--store-area End-->
+            <!--service-area start-->
+            <div class="container back-area" style="margin-bottom:50px" id="service-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="register-from back-form">
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目1</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目2</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目3</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目4</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目5</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目6</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 register-btns mb-2">
+                                        <input type="submit" value="儲存" class="btn btn-outline-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--service-area End-->
+            <!--item-area start-->
+            <div id="item-area" style="margin-bottom:150px">
+                <article>
+                    <div class="row ">
+                        <div class="col-12 Backstage-edit">
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
+                        </div>
+                    </div>
+                    <div class="row design-area">
+                        @foreach (var item in ViewBag.Dphoto)
+                        {
+                            <div class="col-sm-3 design-item">
+                                <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                    <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
+                                    <div class="design-body">#@item.fTag</div>
+                                </a>
                             </div>
-                            <div class="row">
-                                <div class="col-md-12 col-12">
-                                    <label class="form-label">店址</label>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>縣市</option>
-                                        <option value="1">台北市</option>
-                                        <option value="2">台中市</option>
-                                        <option value="3">高雄市</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6 col-12">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>區域</option>
-                                        <option value="1">大安區</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <label class="form-label">營業時間</label>
-                                </div>
-                                <div class="col-md-6 col-12  clockpicker" data-placement="top">
-                                    <input type="text" class="form-control" value="09:30">
-                                </div>
-                                <div class="col-md-6 col-12 clockpicker" data-placement="top">
-                                    <input type="text" class="form-control" value="20:30">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 register-btns mb-2">
-                                    <input type="submit" value="儲存" class="btn btn-outline-success">
-                                </div>
-                            </div>
+                        }
 
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--store-area End-->
-        <!--service-area start-->
-        <div class="container back-area" style="margin-bottom:50px" id="service-area">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="register-from back-form">
-                        <form action="#" method="POST">
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目1</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目2</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目3</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目4</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目5</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <label class="form-label">服務項目6</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control ">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 register-btns mb-2">
-                                    <input type="submit" value="儲存" class="btn btn-outline-success">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--service-area End-->
-        <!--item-area start-->
-        <div id="item-area" style="margin-bottom:150px">
-            <article>
-                <div class="row ">
-                    <div class="col-12 Backstage-edit">
-                        <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
-                    </div>
-                </div>
-                <div class="row design-area">
-                    @foreach (var item in ViewBag.Dphoto)
-                    {
-                        <div class="col-sm-3 design-item">
+
+                        @*<div class="col-sm-3  design-item">
                             <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                                <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
-                                <div class="design-body">#@item.fTag</div>
+                                <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
                             </a>
                         </div>
-                    }
-
-
-                    @*<div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>*@
                     </div>
-                    <div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
-                    </div>*@
-                </div>
-            </article>
+                </article>
+            </div>
+            <!--item-area End-->
         </div>
-        <!--item-area End-->
-    </div>
 </main>
 <!-- ***** backstage Area Start ***** -->
 <!--update-user-pic start-->
