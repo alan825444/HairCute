@@ -62,63 +62,59 @@
 
 
         <!--store-area start-->
-        @{
-            if (Enumerable.Count(ViewBag.店鋪資訊) > 0)
+        @if (ViewBag.店鋪資訊 != null)
+        {
+            foreach (var item in ViewBag.店鋪資訊)
             {
-                foreach (var item in ViewBag.店鋪資訊)
-                {
-                    <div class="container back-area" style="margin-bottom:50px" id="store-area">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="register-from back-form">
-                                    <form action="/MemberCenter/StoreBasicInf" method="POST">
-                                        <div class="row">
-                                            <div class="col-md-12 col-12">
-                                                <label class="form-label">店名</label>
-                                                <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
-                                            </div>
+                <div class="container back-area" style="margin-bottom:50px" id="store-area">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="register-from back-form">
+                                <form action="/MemberCenter/StoreBasicInf" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <label class="form-label">店名</label>
+                                            <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md-12 col-12">
-                                                <label class="form-label">店址</label>
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
-                                            </div>
-                                            <div class="col-md-6 col-12">
-                                                @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
-                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <label class="form-label">店址</label>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <label class="form-label">營業時間</label>
-                                            </div>
-                                            <div class="col-md-6 col-12  clockpicker" data-placement="top">
-                                                <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
-                                            </div>
-                                            <div class="col-md-6 col-12 clockpicker" data-placement="top">
-                                                <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
-                                            </div>
+                                        <div class="col-md-6 col-12">
+                                            @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12 register-btns mb-2">
-                                                <input type="submit" value="儲存" class="btn btn-outline-success">
-                                                <p class="text-danger">@ViewBag.Message</p>
-                                            </div>
+                                        <div class="col-md-6 col-12">
+                                            @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
                                         </div>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="form-label">營業時間</label>
+                                        </div>
+                                        <div class="col-md-6 col-12  clockpicker" data-placement="top">
+                                            <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
+                                        </div>
+                                        <div class="col-md-6 col-12 clockpicker" data-placement="top">
+                                            <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 register-btns mb-2">
+                                            <input type="submit" value="儲存" class="btn btn-outline-success">
+                                            <p class="text-danger">@ViewBag.Message</p>
+                                        </div>
+                                    </div>
 
-                                    </form>
-                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
-                }
+                </div>
             }
-            else
-            {
     <div class="container back-area" style="margin-bottom:50px" id="store-area">
         <div class="row">
             <div class="col-md-12">
@@ -167,10 +163,8 @@
             </div>
         </div>
     </div>
-            }
         }
         
-
 
         <!--store-area End-->
         <!--service-area start-->
