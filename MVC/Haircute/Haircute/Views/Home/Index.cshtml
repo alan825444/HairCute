@@ -6,7 +6,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -56,7 +56,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -106,7 +106,7 @@
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
-            <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+            <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
@@ -160,97 +160,43 @@
 <span id="search-bar"></span>
 <div class="container search-bar">
     <form class="row">
-        <div class="index-location-dropdown col-md-3 col-sm-10">
-            <button class="btn index-dropdown-toggle col-10" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                <i class="fas fa-map-marker-alt mr-2"></i>地區
-            </button>
-            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台北市 &raquo;
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="#">大安區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">中正區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">信義區</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台中市 &raquo;
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="#">東區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">西區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">南區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">北區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">中區</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        高雄市 &raquo;
-                    </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                        <li>
-                            <a class="dropdown-item" href="#">左營區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">三民區</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">新興區</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="location-dropdown col-md-3 col-sm-10">
+            @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select col-10", id = "fCity" })
         </div>
-        <div class="datepicker-area  col-sm-10 col-md-3 ">
-            <input type="text" name="date" class="datepicker text-center col-10">
+        <div class="location-dropdown col-md-3 col-sm-10">
+            <select class="form-select col-10" aria-label="Default select example" name="fArea" id="fArea">
+                <option>--------</option>
+            </select>
         </div>
-        <div class="col-md-3 col-sm-10 d-flex flex-md-row pt-1 checkboxes">
-            <div class="col-10 d-flex flex-row">
-                <div class="form-check col-md-auto">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        剪
-                    </label>
-                </div>
-                <div class="form-check col-md-auto">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
-                        染
-                    </label>
-                </div>
-                <div class="form-check col-md-auto">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                    <label class="form-check-label" for="flexCheckChecked">
-                        燙
-                    </label>
-                </div>
+        <div class="col-md-6 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+            <div class="col-md-4 col-sm-2 keyword">
+                <h4>
+                    <span class="badge rounded-pill bg-info px-3 py-2">
+                        關鍵字 <i class="fas fa-angle-double-right mx-1 animate__animated animate__slower animate__shakeX animate__infinite"></i>
+                        <i class="fas fa-angle-double-down mx-1 animate__animated animate__slower animate__shakeY animate__infinite"></i>
+                    </span>
+                </h4>
+            </div>
+            <div class="col-md-8 col-sm-12">
+                <select class="tag_search" multiple>
+                    <option value="1">Acura</option>
+                    <option value="2">Audi</option>
+                    <option value="3">BMW</option>
+                    <option value="4">Cadillac</option>
+                    <option value="5">Chevrolet</option>
+                    <option value="6">Ferrari</option>
+                    <option value="7">Ford</option>
+                    <option value="8">Honda</option>
+                    <option value="9">Lexus</option>
+                    <option value="10">Mercedes-Benz</option>
+                </select>
             </div>
         </div>
-        <div class="search-btn align-items-center col-md-3 col-sm-10">
-            <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+        <div class="search-btn align-self-center col-md-12 col-sm-10">
+             <a href="~/Search/Index" role="button" class="col-6">預約搜尋</a>
         </div>
     </form>
+    
 </div>
 
 <!--Search End-->

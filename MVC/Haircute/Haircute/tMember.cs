@@ -14,6 +14,15 @@ namespace Haircute
     
     public partial class tMember
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tMember()
+        {
+            this.tBook = new HashSet<tBook>();
+            this.tComment = new HashSet<tComment>();
+            this.tLike = new HashSet<tLike>();
+            this.tDesigner = new HashSet<tDesigner>();
+        }
+    
         public int fID { get; set; }
         public string fPwd { get; set; }
         public string fUsername { get; set; }
@@ -23,10 +32,17 @@ namespace Haircute
         public Nullable<System.DateTime> fBirth { get; set; }
         public string fArea { get; set; }
         public string fDesign { get; set; }
-        public Nullable<int> fk_Designer { get; set; }
-        public Nullable<int> fk_Memorder { get; set; }
         public string fNickname { get; set; }
         public string fCity { get; set; }
         public string fconfirmation { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tBook> tBook { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tComment> tComment { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tLike> tLike { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tDesigner> tDesigner { get; set; }
     }
 }

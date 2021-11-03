@@ -1,0 +1,437 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
+<!-- ***** backstage Area Start ***** -->
+<main class="membercenter-area-cos">
+    <div class="container h-100 ">
+        <div class="row align-items-end h-50">
+            <div class="col-12">
+                <div class="breadcumb--con">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i> 首頁</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">會員中心</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row membercenter-header-cos">
+            <div class="col-12">
+                <div class="consumer-pic">
+                    <button class="uesr-btn-cos">
+                        <img src="~/Images/@ViewBag.HImg" class="uesr-pic-cos" />
+                    </button>
+                </div>
+                <div class="Backstage-edit">
+                    <ul>
+                        <button class="btn btn-light" data-toggle="modal" data-target="#update-user-pic">選擇大頭貼</button>
+                    </ul>
+                </div>
+                <div class="Backstage-user">
+                    <ul>
+                        <li>
+                            <div class="consumer-name">
+                                <h2>查理</h2>
+                            </div>
+                            <div class="consumer-star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ml-1"><b>4.9</b></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <div class="row Backstage-Tab-cos">
+            <div class="col-12">
+                <a href="#"><div class="Tab1-back"><span>店家</span></div></a>
+                <a href="#"><div class="Tab2-back"><span>服務</span></div></a>
+                <a href="#"><div class="Tab3-back"><span>作品</span></div></a>
+            </div>
+        </div>
+
+
+        <!--store-area start-->
+        @foreach (var item in ViewBag.店鋪資訊)
+        {
+            <div class="container back-area" style="margin-bottom:50px" id="store-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="register-from back-form">
+                            <form action="/MemberCenter/StoreBasicInf" method="POST">
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label class="form-label">店名</label>
+                                        <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 col-12">
+                                        <label class="form-label">店址</label>
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
+                                    </div>
+                                    <div class="col-md-6 col-12">
+                                        @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="form-label">營業時間</label>
+                                    </div>
+                                    <div class="col-md-6 col-12  clockpicker" data-placement="top">
+                                        <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
+                                    </div>
+                                    <div class="col-md-6 col-12 clockpicker" data-placement="top">
+                                        <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 register-btns mb-2">
+                                        <input type="submit" value="儲存" class="btn btn-outline-success">
+                                        <p class="text-danger">@ViewBag.Message</p>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+            <!--store-area End-->
+            <!--service-area start-->
+            <div class="container back-area" style="margin-bottom:50px" id="service-area">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="register-from back-form">
+                            <form action="#" method="POST">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目1</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目2</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目3</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目4</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目5</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <label class="form-label">服務項目6</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 register-btns mb-2">
+                                        <input type="submit" value="儲存" class="btn btn-outline-success">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--service-area End-->
+            <!--item-area start-->
+            <div id="item-area" style="margin-bottom:150px">
+                <article>
+                    <div class="row ">
+                        <div class="col-12 Backstage-edit">
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
+                        </div>
+                    </div>
+                    <div class="row design-area">
+                        @foreach (var item in ViewBag.Dphoto)
+                        {
+                            <div class="col-sm-3 design-item">
+                                <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                    <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
+                                    <div class="design-body">#@item.fTag</div>
+                                </a>
+                            </div>
+                        }
+
+
+                        @*<div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>*@
+                    </div>
+                </article>
+            </div>
+            <!--item-area End-->
+        </div>
+</main>
+<!-- ***** backstage Area Start ***** -->
+<!--update-user-pic start-->
+<div class="modal fade" id="update-user-pic">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">變更大頭貼</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="Head-cropper"></div>
+                <input type="file" name="fileupload2" id="fileupload2" accept="image/*" onchange="userpicFile()">
+            </div>
+            <div class="modal-footer">
+                <input type="submit" id="btnupload2" class="btn btn-success" value="儲存修改">
+            </div>
+        </div>
+    </div>
+</div>
+<!--update-user-pic end-->
+<!--update-user-design start-->
+<div class="modal fade" id="update-user-design">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">上傳作品</h3>
+            </div>
+            <div class="modal-body ">
+                <div id="main-cropper"></div>
+                <input type="file" name="fileupload" id="fileupload" accept="image/*" onchange="updesignFile()">
+                <h4>作品說明</h4>
+                <textarea name="design-info" id="design-info" cols="40" rows="3" placeholder="限20字元" maxlength="20"></textarea>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" id="btnupload" class="btn btn-success" value="確認上傳">
+            </div>
+        </div>
+    </div>
+</div>
+<!--update-user-design end-->
+
+@section Backstage{
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.min.js" integrity="sha512-x0qixPCOQbS3xAQw8BL9qjhAh185N7JSw39hzE/ff71BXg7P1fkynTqcLYMlNmwRDtgdoYgURIvos+NJ6g0rNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    @*croppie for 大頭貼*@
+    <script>
+        var basic2 = $('#Head-cropper').croppie
+            ({
+                viewport: { width: 300, height: 300, type: 'circle'}, // 裁切區塊
+                boundary: { width: 400, height: 400 }, // 預覽區塊
+                showZoomer: true, //隱藏或顯示縮放滑塊
+                url: '/img/preview.jpg', //預設圖片
+                format: 'png' //'jpeg'|'png'|'webp'
+            });
+
+        //Reading the contents of the specified Blob or File
+        function readFile1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#Head-cropper').croppie('bind', {
+                        url: e.target.result
+                    });
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Change Event to Read file content from File input
+        $('#fileupload2').on('change', function () { readFile1(this); });
+
+        // Upload button to Post Cropped Image to Store.
+    $('#btnupload2').on('click', function ()
+    {
+        basic2.croppie('result', 'blob').then(function (blob)
+        {
+            var formData = new FormData();
+
+            formData.append('filename', 'FileName.png');
+            formData.append('blob', blob);
+            var myAppUrlSettings =
+            {
+                MyUsefulUrl: '@Url.Action("Headupbdate", "MemberCenter")'
+            }
+
+            var request = new XMLHttpRequest();
+
+            request.open('POST', myAppUrlSettings.MyUsefulUrl);
+            request.send(formData);
+            request.onreadystatechange = function () { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200)
+                {
+                    if (request.responseText.Message == "OK") {
+
+                    }
+                        alert('Photo Cropped Successfully!');
+                        window.location.reload();
+
+                }
+            }
+        });
+    });
+    </script>
+
+
+    @*croppie for 作品集*@
+    <script>
+        var basic = $('#main-cropper').croppie
+            ({
+                viewport: { width: 400, height: 500 }, // 裁切區塊
+                boundary: { width: 425, height: 625 }, // 預覽區塊
+                showZoomer: true, //隱藏或顯示縮放滑塊
+                url: '/img/preview.jpg', //預設圖片
+                format: 'png' //'jpeg'|'png'|'webp'
+            });
+
+        //Reading the contents of the specified Blob or File
+        function readFile(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#main-cropper').croppie('bind', {
+                        url: e.target.result
+                    });
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Change Event to Read file content from File input
+        $('#fileupload').on('change', function () { readFile(this); });
+
+        // Upload button to Post Cropped Image to Store.
+    $('#btnupload').on('click', function ()
+    {
+        basic.croppie('result', 'blob').then(function (blob)
+        {
+            var formData = new FormData();
+
+            formData.append('filename', 'FileName.png');
+            formData.append('blob', blob);
+            formData.append('Keyword', $("#design-info").val() );
+            var myAppUrlSettings =
+            {
+                MyUsefulUrl: '@Url.Action("photoupdate", "MemberCenter")'
+            }
+
+            var request = new XMLHttpRequest();
+
+            request.open('POST', myAppUrlSettings.MyUsefulUrl);
+            request.send(formData);
+            request.onreadystatechange = function () { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200)
+                {
+                    if (request.responseText.Message == "OK") {
+
+                    }
+                        alert('Photo Cropped Successfully!');
+                        window.location.reload();
+
+                }
+            }
+        });
+    });
+    </script>
+
+    <script>
+
+        //Tab function
+        $(document).ready(function () {
+            $(".Tab1-back").addClass('change');
+            $('#service-area,#item-area').hide();
+        })
+        $(".Tab1-back").click(function () {
+            $(".Tab3-back,.Tab2-back").removeClass('change');
+            $(this).addClass('change');
+            $('#store-area').fadeIn();
+            $('#service-area,#item-area').fadeOut();
+        })
+        $(".Tab2-back").click(function () {
+            $(".Tab3-back,.Tab1-back").removeClass('change');
+            $(this).addClass('change');
+            $('#service-area').fadeIn();
+            $('#store-area,#item-area').fadeOut();
+        })
+        $(".Tab3-back").click(function () {
+            $(".Tab2-back,.Tab1-back").removeClass('change');
+            $(this).addClass('change');
+            $('#item-area').fadeIn();
+            $('#service-area,#store-area').fadeOut();
+        })
+
+        //clockpicker
+        $('.clockpicker').clockpicker();
+    </script>
+
+}

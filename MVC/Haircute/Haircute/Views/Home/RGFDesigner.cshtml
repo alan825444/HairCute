@@ -78,6 +78,7 @@
                             <div class="col-12">
                                 <label class="form-label">生日</label>
                                 <input type="text" name="fBirth" id="fBirth" value="" class="form-control datepicker">
+                                <span id="date_msg"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -91,11 +92,13 @@
                                 </select>
                             </div>
                         </div>
+                        <span id="address_msg"></span>
                         <div class="row d-flex align-items-center flex-wrap">
                             <div class="col-md-8 col-12">
                                 <label class="form-label">手機號碼</label>
                                 <input type="text" name="fPhone" id="fPhone" value="" maxlength="10" placeholder="請輸入手機號碼進行認證"
                                        class="form-control">
+                                <span id="phonenumber_msg"></span>
                             </div>
                         </div>
                         <div class="row">
@@ -110,5 +113,9 @@
         </div>
     </div>
 </section>
-<script src="~/js/jquery.min.js"></script>
-<script src="~/js/CItyAreajs.js"></script>
+@section Register{
+    
+    <script src="~/js/Registejs.js"></script>
+}
+
+

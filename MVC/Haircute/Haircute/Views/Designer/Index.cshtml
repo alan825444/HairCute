@@ -1,0 +1,320 @@
+﻿@model Haircute.ViewModel.設計師主頁ViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="membercenter-area">
+    <div class="container h-100 ">
+        <div class="row align-items-end h-50">
+            <div class="col-12">
+                <div class="breadcumb--con">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <i class="fa fa-home">
+                                    </i> 首頁
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">會員中心</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row membercenter-header">
+            <div class="col-3 membercenter-pic">
+                <button class="uesr-btn" data-toggle="modal" data-target="#update-user-pic">
+                    <img src="~/img/user-img/store2.jpg" class="uesr-pic">
+                </button>
+            </div>
+            <div class="col-6 membercenter-user">
+                <ul>
+                    <li>
+                        <div class="user-name">
+                            <h2>@ViewBag.Name</h2>
+                        </div>
+                        <div class="user-star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1"><b>4.9</b></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="desAddress">
+                            @foreach (var item in Model.設計師表)
+                            {
+                                <a href="https://www.google.com.tw/maps/place/@item.fAddress"
+                                   target="_blank">
+                                    <b>@item.fStore / @item.fAddress</b>
+                                </a>
+                            }
+                        </div>
+                    </li>
+                    <li>
+                        <div class="user-service">
+                            <h4>服務項目</h4>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="service-edit">
+                            @foreach (var item in Model.服務表)
+                            {
+                                <b>@item.fServicN  $@item.fprice 元、</b>
+                            }
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-3 membercenter-edit">
+                <ul>
+                    <a href="#" data-toggle="modal" data-target="#update-user-info">
+                        <div class="userinfo-edit">編輯個人資料</div>
+                    </a>
+                    <a href="#" data-toggle="modal" data-target="#update-user-design">
+                        <div class="userinfo-edit">上傳作品</div>
+                    </a>
+                    <a href="reserve_manage.html" target="_new">
+                        <div class="userinfo-edit">預約管理</div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        <div class="row membercenter-Tab">
+            <div class="col-12" id="membercenter-Tab">
+                <a href="#"><div class="Tab1"><img src="~/img/user-img/photos.png"><span>作品集</span></div></a>
+                <a href="#"><div class="Tab2"><img src="~/img/user-img/reserve.png"><span>我的預約</span></div></a>
+                <a href="#"><div class="Tab3"><img src="~/img/user-img/star.png"><span>評價</span></div></a>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(".Tab1").addClass('change');
+                $('#article-area,#reservation-area,#point-area,#evaluate-area').hide();
+            })
+            $(".Tab1").click(function () {
+                $(".Tab2,.Tab3,.Tab4,.Tab5").removeClass('change');
+                $(this).addClass('change');
+                $('#design-area').fadeIn();
+                $('#reservation-area,#evaluate-area').fadeOut();
+            })
+            $(".Tab2").click(function () {
+                $(".Tab1,.Tab3,.Tab4,.Tab5").removeClass('change');
+                $(this).addClass('change');
+                $('#reservation-area').fadeIn();
+                $('#design-area,#evaluate-area').fadeOut();
+            })
+            $(".Tab3").click(function () {
+                $(".Tab2,.Tab1,.Tab4,.Tab5").removeClass('change');
+                $(this).addClass('change');
+                $('#evaluate-area').fadeIn();
+                $('#design-area,#reservation-area').fadeOut();
+            })
+
+        </script>
+
+        <!--design-area start-->
+        <div id="design-area">
+            <article>
+                <div class="row design-area">
+                    <div class="col-sm-3   design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/25.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮<br>#####</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row design-area">
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/29.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/30.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/31.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/32.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row design-area">
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/33.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/34.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/35.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3 design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/36.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <!--reservation-area start-->
+        <div id="reservation-area">
+            <article>
+                <div class="row reservation-area">
+                    @for (int i = 0; i < Model.預約Tab.Count; i++)
+                    {
+                        <div class="reservation-item">
+                            <ul>
+                                <li class="pic-li">
+                                    <div class="reservation-pic-div">
+                                        <img src="~/img/user-img/store2.jpg" class="reservation-pic">
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul>
+                                <li>
+                                    <button type="button" class="btn close-btn" data-toggle="modal" data-target="#reservation-cancel"><i class="fa fa-times"></i></button>
+                                </li>
+                                <li>
+                                    <div class="reservation-title">
+                                        <a href="#">@Model.預約Tab[i].Name</a>
+                                        <div class="reservation-star">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span class="ml-1"><b>4.9</b></span>
+                                        </div>
+                                        <b>@Model.預約Tab[i].Store /@Model.預約Tab[i].Address</b>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reservation-body">
+                                        <label>預約日期：</label><b>@Model.預約Tab[i].Date</b>
+                                        <label>服務項目：</label><b>@Model.預約Tab[i].Service</b><br>
+                                        <label>預約時間：</label><b></b>
+                                        <label class="re-la1">項目金額：</label>
+                                        <b>$ @Model.預約Tab[i].Price</b>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="reservation-footer">
+                                        <label>預約狀態:</label>
+                                        <span>
+                                            <b>@Model.預約Tab[i].Status</b>
+                                            <i class="fas fa-check-circle"></i>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+
+                </div>
+            </article>
+        </div>
+        <script>
+            $(document).ready(function () {
+                if ($('#res-cancel,#res-ok,#res-evaluation')) {
+                    $('#cancelbtn').hide();
+                    $('#okbtn').hide();
+                    $('#evaluationbtn').hide();
+                }
+            })
+        </script>
+        <div id="evaluate-area">
+            <article>
+                <div class="row evaluate-area">
+                    @for (int i = 0; i < Model.評價Tab.Count; i++)
+                    {
+                        <div class="evaluate-item">
+                            <ul>
+                                <li>
+                                    <div class="evaluate-title">
+                                        <i class="fas fa-user-circle"></i>
+                                        <b>@Model.評價Tab[i].Nickname</b>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="evaluate-star">
+                                      
+                                        <span>
+                                            @for (int j = 0; j < Model.評價Tab[i].Star; j++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                            @for (int k = 0; k < 5-Model.評價Tab[i].Star; k++)
+                                            {
+                                                <i class="far fa-star"></i>
+                                            }
+                                        </span>
+                                    </div>
+                                    <div class="evaluate-body">
+                                        @Model.評價Tab[i].Evaluate
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="evaluate-footer">
+                                        <label>日期：</label>
+                                        <b>@Model.評價Tab[i].Date</b>
+                                        <span class="pos-label">
+                                            <label>服務項目：</label><b>@Model.評價Tab[i].Service</b>
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </article>
+        </div>
+        <!--evaluate-area End-->
+    </div>
+</main>

@@ -11,7 +11,7 @@ function ChangeCity() {
 
 function GetArea(CityID) {
     $.ajax({
-        url: "Area",
+        url: "/Home/Area",
         data: { CityID: CityID },
         type: 'post',
         cache: false,

@@ -26,7 +26,15 @@
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
- 
+    <!-- jquery ui -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- autoComplete -->
+    <link rel="stylesheet" href="~/Content/Autocomplete/tokenize2.css">
+
+
 </head>
 
 <body>
@@ -103,10 +111,10 @@
                 <nav class="classy-navbar justify-content-between" id="monaNav">
 
                     <!-- Background Curve -->
-                    <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+                    <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="../img/banner-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="index.html"><img src="~/img/banner-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -189,7 +197,7 @@
         </div>
 
     </div>
-        @RenderBody()
+    @RenderBody()
     <!-- ***** Footer Area Start ***** -->
     <footer class="footer-area py-3" id="Lfooter">
         <div class="container">
@@ -245,7 +253,7 @@
     <!-- ***** Footer Area End ***** -->
     <!-- ******* All JS ******* -->
     <!-- jQuery js -->
-    <script src="~/js/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <!-- Popper js -->
     <script src="~/js/popper.min.js"></script>
     <!-- Bootstrap js -->
@@ -257,7 +265,52 @@
     <script src="~/js/mona.bundle.js"></script>
     <!-- Active js -->
     <script src="~/js/default-assets/active.js"></script>
+    <!-- import js -->
+    <script src="~/js/import.js"></script>
+    <!-- autoComplete -->
+    <script src="~/Content/Autocomplete/tokenize2.js"></script>
+    <script>
+        // location jquery
+        $(".location-menu li a").click(function () {
 
+            $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
+            $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
+
+        });
+
+        //autoComplete
+        $('.tag_search').tokenize2();
+
+        //用Ajax連接資料庫
+        // $('.tag_search').tokenize2({
+        //     dataSource: ''
+        // });
+        // JSON
+        // [
+        //     { "text": "Afghanistan", "value": "AF" },
+        //     { "text": "Åland Islands", "value": "AX" },
+        //     { "text": "Albania", "value": "AL" },
+        //     { "text": "Algeria", "value": "DZ" },
+        //     { "text": "American Samoa", "value": "AS" },
+        //     { "text": "Andorra", "value": "AD" },
+        //     { "text": "Angola", "value": "AO" }
+        // ]
+
+        //footer
+        includeFooter();
+
+    </script>
+
+    @*<script>
+            $(function () {
+                $(".datepicker").datepicker();
+                $(".datepicker").datepicker('setDate', 'today');
+            });
+        </script>*@
+    <script src="~/js/CItyAreajs.js"></script>
+    @RenderSection("Register", required: false);
+    @RenderSection("DesignerPage", required: false);
+    @RenderSection("UserpageJs", required: false);
 </body>
 
 </html>

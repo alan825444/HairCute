@@ -7,7 +7,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
-
 namespace Haircute.Controllers
 {
     public class HomeController : Controller
@@ -15,6 +14,8 @@ namespace Haircute.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             return View();
         }
 
@@ -29,6 +30,8 @@ namespace Haircute.Controllers
         [HttpPost]
         public ActionResult RGFDesigner(CMenberViewModel m)
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if (member == null)
@@ -53,6 +56,8 @@ namespace Haircute.Controllers
         [HttpPost]
         public ActionResult UserRG(CMenberViewModel m)
         {
+            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+            ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if (member == null)
@@ -95,6 +100,9 @@ namespace Haircute.Controllers
             tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
             認證.fconfirmation = "Y";
             db.SaveChanges();
+            FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(),true);
+            Session["Member"] = 認證.fNickname;
+            Session["ID"] = 認證.fID.ToString();
             return RedirectToAction("Index");
         }
 
@@ -107,25 +115,19 @@ namespace Haircute.Controllers
         public ActionResult Login(string txtAcc, string txtPwd)
         {
             demodbEntities db = new demodbEntities();
-
-            var q = db.tMember.Where(m => m.fEmail == txtAcc && m.fPwd == txtPwd).FirstOrDefault();
-            if (q == null)
+            var member = db.tMember.Where(m => m.fEmail == txtAcc && m.fPwd == txtPwd).FirstOrDefault();
+            if (member == null)
             {
-                ViewBag.message = "請確認輸入的帳號密碼正確性";
-                return RedirectToAction("Login");
+                ViewBag.Message = "帳號密碼錯誤";
+                return View();
             }
-            FormsAuthentication.RedirectFromLoginPage(q.fID.ToString(),true);
-            Session["Member"] = q.fNickname;
-            Session["ID"] = q.fID.ToString();
+            FormsAuthentication.RedirectFromLoginPage(member.fID.ToString(),true);
+            Session["Member"] = member.fNickname;
+            Session["ID"] = member.fID.ToString();
             return RedirectToAction("Index", "LogMember");
         }
 
         public ActionResult ConfirmPage()
-        {
-            return View();
-        }
-
-        public ActionResult DesignerPage()
         {
             return View();
         }
