@@ -47,5 +47,22 @@ namespace Haircute.Models
             
 
         }
+
+        public string 店鋪及營業時間儲存(int SSID, List<Service> data)
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tDesigner.Where(x => x.fk_Member == SSID).FirstOrDefault();
+            var q2 = db.tService.Where(x => x.fk_Designer == q.fid);
+            if (q2 == null)
+            {
+                for (int i = 0; i < 6; i++)
+                {
+                    db.tService.Add(new tService { fk_Designer = q.fid});
+                }
+            }
+            
+
+            return "OK";
+        }
     }
 }
