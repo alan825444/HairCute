@@ -48,21 +48,31 @@ namespace Haircute.Models
 
         }
 
-        public string 店鋪及營業時間儲存(int SSID, List<Service> data)
+        public string 項目儲存 (int SSID, List<Service> data)
         {
             demodbEntities db = new demodbEntities();
             var q = db.tDesigner.Where(x => x.fk_Member == SSID).FirstOrDefault();
-            var q2 = db.tService.Where(x => x.fk_Designer == q.fid);
-            if (q2 == null)
+            foreach (var item in data)
             {
-                for (int i = 0; i < 6; i++)
+                if ((item.ID == null) && (item.Item != null) && (item.Price != null))
                 {
-                    db.tService.Add(new tService { fk_Designer = q.fid});
+                    db.tService.Add(new tService { fk_Designer = q.fid, fServicN = item.Item, fprice = item.Price });
+                    db.SaveChanges();
+                }
+                else if ((item.ID != null) && (item.Item != null) && (item.Price != null))
+                {
+                    int id = Convert.ToInt32(item.ID);
+                    db.tService.Where(x => x.fid == id).FirstOrDefault().fServicN = item.Item;
+                    db.tService.Where(x => x.fid == id).FirstOrDefault().fprice = item.Price;
+                    db.SaveChanges();
+                }
+                else if ((item.ID == null) && (item.Item == null) && (item.Price == null))
+                {
+                    db.tService.Add(new tService { fk_Designer = q.fid, fServicN = item.Item, fprice = item.Price });
+                    db.SaveChanges();
                 }
             }
-            
-
-            return "OK";
+            return "ok";
         }
     }
 }

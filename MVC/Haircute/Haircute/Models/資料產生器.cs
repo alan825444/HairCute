@@ -109,6 +109,19 @@ namespace Haircute.Models
             return data;
             
         }
+
+        public List<Service> 服務項目(int SSID) 
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tDesigner.Where(x => x.fk_Member == SSID).FirstOrDefault();
+            List<Service> data = new List<Service>();
+            var q2 = db.tService.Where(x => x.fk_Designer == q.fid);
+            foreach (var item in q2)
+            {
+                data.Add(new Service { ID=item.fid.ToString(), Item = item.fServicN, Price = item.fprice });
+            }
+            return data;
+        }
         
         
         
