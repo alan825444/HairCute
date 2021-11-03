@@ -12,9 +12,9 @@ namespace Haircute.Models
         public string 取得會員大頭貼(int SSID)
         {
             tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
-            if (q == null)
+            if (q.fHeadSticker == null)
             {
-                return "nothing";
+                return "preview.jpg";
             }
             return q.fHeadSticker;
             
