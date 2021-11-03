@@ -35,8 +35,8 @@ namespace Haircute.Controllers
                 var fullpath = "~/Images/" + newfileName180;
                 blob.SaveAs(Server.MapPath(fullpath));
 
-                var q = db.tPhoto.Where(m => m.fk_Designer == SSID).FirstOrDefault();
-                tPhoto data = new tPhoto() { fk_Designer = SSID, fPath = newfileName180, fTag = Keyword, fDateTime = DateTime.Now };
+                var DID = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
+                tPhoto data = new tPhoto() { fk_Designer = DID.fid, fPath = newfileName180, fTag = Keyword, fDateTime = DateTime.Now };
                 db.tPhoto.Add(data);
                 db.SaveChanges();
             }
@@ -82,9 +82,13 @@ namespace Haircute.Controllers
             }
             ViewBag.Message = "儲存失敗";
             return RedirectToAction("Index");
+        }
 
-
-
+        [HttpPost]
+        public ActionResult ServiceItem()
+        {
+            
+            return RedirectToAction("Index");
         }
     }
 }

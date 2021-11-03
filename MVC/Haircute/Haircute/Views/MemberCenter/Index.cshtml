@@ -62,178 +62,231 @@
 
 
         <!--store-area start-->
-        @foreach (var item in ViewBag.店鋪資訊)
+        @if (ViewBag.店鋪資訊 != null)
         {
-            <div class="container back-area" style="margin-bottom:50px" id="store-area">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="register-from back-form">
-                            <form action="/MemberCenter/StoreBasicInf" method="POST">
-                                <div class="row">
-                                    <div class="col-md-12 col-12">
-                                        <label class="form-label">店名</label>
-                                        <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
+            foreach (var item in ViewBag.店鋪資訊)
+            {
+                <div class="container back-area" style="margin-bottom:50px" id="store-area">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="register-from back-form">
+                                <form action="/MemberCenter/StoreBasicInf" method="POST">
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <label class="form-label">店名</label>
+                                            <input type="text" class="form-control" name="fStore" id="fStore" value="@item.fStore">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12 col-12">
-                                        <label class="form-label">店址</label>
+                                    <div class="row">
+                                        <div class="col-md-12 col-12">
+                                            <label class="form-label">店址</label>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <label class="form-label">營業時間</label>
+                                        </div>
+                                        <div class="col-md-6 col-12  clockpicker" data-placement="top">
+                                            <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
+                                        </div>
+                                        <div class="col-md-6 col-12 clockpicker" data-placement="top">
+                                            <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-12">
-                                        @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
+                                    <div class="row">
+                                        <div class="col-12 register-btns mb-2">
+                                            <input type="submit" value="儲存" class="btn btn-outline-success">
+                                            <p class="text-danger">@ViewBag.Message</p>
+                                        </div>
                                     </div>
-                                    <div class="col-12">
-                                        <input type="text" class="form-control" name="fAddress" id="fAddress" value="@item.fAddress">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label class="form-label">營業時間</label>
-                                    </div>
-                                    <div class="col-md-6 col-12  clockpicker" data-placement="top">
-                                        <input type="text" class="form-control" name="fStartTime" value="@item.fStartTime" id="fStartTime">
-                                    </div>
-                                    <div class="col-md-6 col-12 clockpicker" data-placement="top">
-                                        <input type="text" class="form-control" name="fEndTime" value="@item.fEndTime" id="fEndTime">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 register-btns mb-2">
-                                        <input type="submit" value="儲存" class="btn btn-outline-success">
-                                        <p class="text-danger">@ViewBag.Message</p>
-                                    </div>
-                                </div>
-                                
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
-            <!--store-area End-->
-            <!--service-area start-->
-            <div class="container back-area" style="margin-bottom:50px" id="service-area">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="register-from back-form">
-                            <form action="#" method="POST">
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目1</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目2</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目3</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目4</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目5</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-8 col-12">
-                                        <label class="form-label">服務項目6</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                    <div class="col-md-4 col-12">
-                                        <label class="form-label">費用</label>
-                                        <input type="text" class="form-control ">
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 register-btns mb-2">
-                                        <input type="submit" value="儲存" class="btn btn-outline-success">
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--service-area End-->
-            <!--item-area start-->
-            <div id="item-area" style="margin-bottom:150px">
-                <article>
-                    <div class="row ">
-                        <div class="col-12 Backstage-edit">
-                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
-                        </div>
-                    </div>
-                    <div class="row design-area">
-                        @foreach (var item in ViewBag.Dphoto)
-                        {
-                            <div class="col-sm-3 design-item">
-                                <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                                    <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
-                                    <div class="design-body">#@item.fTag</div>
-                                </a>
+
+                                </form>
                             </div>
-                        }
-
-
-                        @*<div class="col-sm-3  design-item">
-                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                                <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
-                                <div class="design-body">#俏麗短髮</div>
-                            </a>
                         </div>
-                        <div class="col-sm-3  design-item">
-                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                                <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
-                                <div class="design-body">#俏麗短髮</div>
-                            </a>
-                        </div>
-                        <div class="col-sm-3  design-item">
-                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                                <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
-                                <div class="design-body">#俏麗短髮</div>
-                            </a>
-                        </div>*@
                     </div>
-                </article>
+                </div>
+            }
+    <div class="container back-area" style="margin-bottom:50px" id="store-area">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="register-from back-form">
+                    <form action="/MemberCenter/StoreBasicInf" method="POST">
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <label class="form-label">店名</label>
+                                <input type="text" class="form-control" name="fStore" id="fStore" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+                                <label class="form-label">店址</label>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity, "-鄉鎮市區-", new { @class = "form-select", id = "fCity" })
+                            </div>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea, "-鄉鎮市區-", new { @class = "form-select", id = "fArea" })
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control" name="fAddress" id="fAddress" value="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label">營業時間</label>
+                            </div>
+                            <div class="col-md-6 col-12  clockpicker" data-placement="top">
+                                <input type="text" class="form-control" name="fStartTime" value="" id="fStartTime">
+                            </div>
+                            <div class="col-md-6 col-12 clockpicker" data-placement="top">
+                                <input type="text" class="form-control" name="fEndTime" value="" id="fEndTime">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 register-btns mb-2">
+                                <input type="submit" value="儲存" class="btn btn-outline-success">
+                                <p class="text-danger">@ViewBag.Message</p>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
             </div>
-            <!--item-area End-->
         </div>
+    </div>
+        }
+        
+
+        <!--store-area End-->
+        <!--service-area start-->
+        <div class="container back-area" style="margin-bottom:50px" id="service-area">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="register-from back-form">
+                        <form action="#" method="POST">
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目1</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目2</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目3</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目4</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目5</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <label class="form-label">服務項目6</label>
+                                    <input type="text" class="form-control " name="fService" id="fService">
+                                </div>
+                                <div class="col-md-4 col-12">
+                                    <label class="form-label">費用</label>
+                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 register-btns mb-2">
+                                    <input type="submit" value="儲存" class="btn btn-outline-success" id="Service-sent">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--service-area End-->
+        <!--item-area start-->
+        <div id="item-area" style="margin-bottom:150px">
+            <article>
+                <div class="row ">
+                    <div class="col-12 Backstage-edit">
+                        <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
+                    </div>
+                </div>
+                <div class="row design-area">
+                    @foreach (var item in ViewBag.Dphoto)
+                    {
+                        <div class="col-sm-3 design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
+                                <div class="design-body">#@item.fTag</div>
+                            </a>
+                        </div>
+                    }
+
+
+                    @*<div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>
+                    <div class="col-sm-3  design-item">
+                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                            <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
+                            <div class="design-body">#俏麗短髮</div>
+                        </a>
+                    </div>*@
+                </div>
+            </article>
+        </div>
+        <!--item-area End-->
+    </div>
 </main>
 <!-- ***** backstage Area Start ***** -->
 <!--update-user-pic start-->
@@ -279,6 +332,38 @@
 @section Backstage{
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.min.js" integrity="sha512-x0qixPCOQbS3xAQw8BL9qjhAh185N7JSw39hzE/ff71BXg7P1fkynTqcLYMlNmwRDtgdoYgURIvos+NJ6g0rNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    @*新增/修改服務項目*@
+    <script>
+        $(document).ready(function () {
+            $("#Servicesent").click(function () { 項目json資料組成() })
+        })
+
+        function 項目json資料組成() {
+            var result = [];
+            var length = $("#service-area input[name='fService']").length;
+            var 項目Arr = [];
+            var 價格Arr = [];
+            $("#service-area input[name='fService']").each(function (index) {
+                項目Arr.push($(this).val());
+            })
+            $("#service-area input[name='fPrice']").each(function (index) {
+                價格Arr.push($(this).val());
+            })
+            for (var i = 0; i < length; i++) {
+                result.push({ "Item": 項目Arr[i], "Price": 價格Arr[i] });
+            }
+            $.post(
+                "/MemberCenter/ServiceItem",
+                { "data": result },
+                function (data) {
+                    console.log(data)
+                },
+                "json"
+            )
+        }
+    </script>
 
     @*croppie for 大頭貼*@
     <script>
