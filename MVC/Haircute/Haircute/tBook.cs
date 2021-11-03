@@ -30,10 +30,10 @@ namespace Haircute
         public Nullable<int> fk_Member { get; set; }
         public Nullable<int> fk_Designer { get; set; }
     
-        public virtual tDesigner tDesigner { get; set; }
         public virtual tMember tMember { get; set; }
         public virtual tService tService { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tComment> tComment { get; set; }
+        public virtual tDesigner tDesigner { get; set; }
     }
 }

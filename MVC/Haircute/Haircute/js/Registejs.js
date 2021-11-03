@@ -81,3 +81,4 @@ $(function () {
     $(".datepicker").datepicker();
     $(".datepicker").datepicker('setDate', 'today');
 });
+

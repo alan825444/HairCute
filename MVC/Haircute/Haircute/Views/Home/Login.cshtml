@@ -1,6 +1,6 @@
 ﻿<div class="log-in-area col-10 col-md-8">
     <div class="log-in-form">
-        <form class="row row-cols-lg-auto justify-content-center mt-5" method="post">
+        <form class="row row-cols-lg-auto justify-content-center mt-5" method="post" action="/Home/Login">
             <div class="col-10 mb-3">
                 <label class="visually-hidden" for="inlineFormInputGroupUsername">ID</label>
                 <div class="input-group">
@@ -23,6 +23,7 @@
                             <a href="#">忘記密碼?</a>
                         <li>
                             <input type="submit" class="login-btn" value="登入">
+                            <span>@ViewBag.Message</span>
                         </li>
                         </ul>
                     </div>

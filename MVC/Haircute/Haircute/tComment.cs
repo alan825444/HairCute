@@ -22,7 +22,7 @@ namespace Haircute
         public Nullable<int> fk_Book { get; set; }
     
         public virtual tBook tBook { get; set; }
-        public virtual tDesigner tDesigner { get; set; }
         public virtual tMember tMember { get; set; }
+        public virtual tDesigner tDesigner { get; set; }
     }
 }

@@ -17,10 +17,10 @@ namespace Haircute
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tMember()
         {
-            this.tDesigner = new HashSet<tDesigner>();
             this.tBook = new HashSet<tBook>();
             this.tComment = new HashSet<tComment>();
             this.tLike = new HashSet<tLike>();
+            this.tDesigner = new HashSet<tDesigner>();
         }
     
         public int fID { get; set; }
@@ -37,12 +37,12 @@ namespace Haircute
         public string fconfirmation { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tDesigner> tDesigner { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tBook> tBook { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tComment> tComment { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tLike> tLike { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tDesigner> tDesigner { get; set; }
     }
 }

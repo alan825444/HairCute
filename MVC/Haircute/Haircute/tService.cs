@@ -25,8 +25,8 @@ namespace Haircute
         public string fprice { get; set; }
         public Nullable<int> fk_Designer { get; set; }
     
-        public virtual tDesigner tDesigner { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tBook> tBook { get; set; }
+        public virtual tDesigner tDesigner { get; set; }
     }
 }

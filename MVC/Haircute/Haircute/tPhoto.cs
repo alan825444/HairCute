@@ -26,8 +26,8 @@ namespace Haircute
         public Nullable<System.DateTime> fDateTime { get; set; }
         public Nullable<int> fk_Designer { get; set; }
     
-        public virtual tDesigner tDesigner { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tLike> tLike { get; set; }
+        public virtual tDesigner tDesigner { get; set; }
     }
 }
