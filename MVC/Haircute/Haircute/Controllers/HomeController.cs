@@ -38,7 +38,10 @@ namespace Haircute.Controllers
             {
                 db.tMember.Add(m.Member);
                 db.SaveChanges();
-                new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
+                db.tDesigner.Add(new tDesigner { fk_Member = m.fID });
+                db.SaveChanges();
+                //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
                 return RedirectToAction("ConfirmPage");
             }
             ViewBag.Message = "此帳號已有人使用";

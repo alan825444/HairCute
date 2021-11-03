@@ -20,9 +20,6 @@
   <!-- Core Stylesheet -->
   <link rel="stylesheet" href="style.css">
 
-  <!--Order Css-->
-  <link rel="stylesheet" href="css/bookHairCute.css"/>
-
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -32,13 +29,16 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+      
+    </script>
 
 
-
+    
 </head>
 
 <body>
   
+
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
     <!-- Main Header Start -->
@@ -154,7 +154,7 @@
   <!-- ***** log-in Area End ***** -->
 
   <!-- ***** membercenter Area Start ***** -->
-  <main class="membercenter-area">
+  <main class="membercenter-area-cos">
     <div class="container h-100 ">
       <div class="row align-items-end h-50">
         <div class="col-12">
@@ -170,11 +170,11 @@
       </div>
     </div>
     <div class="container">
-      <div class="row membercenter-header">
+      <div class="row membercenter-header-cos">
         <div class="col-12">
           <div class="consumer-pic">
-            <button class="uesr-btn">
-              <img src="img/user-img/store2.jpg" class="uesr-pic">
+            <button class="uesr-btn-cos">
+              <img src="img/user-img/store2.jpg" class="uesr-pic-cos">
             </button>
           </div>
           <div class="consumer-user">
@@ -194,415 +194,244 @@
               </li>
             </ul>
           </div>
-          <div class="membercenter-edit">
+          <div class="membercenter-edit-cos">
             <ul>
-              <a href="#" data-toggle="modal" data-target="#update-cons-info"><div class="userinfo-edit">編輯個人資料</div></a>
+              <a href="#" data-toggle="modal" data-target="#update-cons-info"><div class="userinfo-edit-cos">編輯個人資料</div></a>
             </ul>
           </div>
         </div>
       </div>
-      <div class="row membercenter-Tab">
+      <div class="row membercenter-Tab-cos">
         <div class="col-12">
-          <a href="#" ><div class="Tab2"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
-          <a href="#" ><div class="Tab3"><img src="img/user-img/star.png" ><span>評價</span></div></a>
+          <a href="#" ><div class="Tab2-cos"><img src="img/user-img/reserve.png" ><span>我的預約</span></div></a>
+          <a href="#" ><div class="Tab3-cos"><img src="img/user-img/star.png" ><span>評價</span></div></a>
         </div>
       </div>
       <script>
         $(document).ready(function(){
-          $(".Tab2").addClass('change');
+          $(".Tab2-cos").addClass('change');
           $('#evaluate-area').hide();
         })
-        $(".Tab2").click(function(){
-          $(".Tab1,.Tab3,.Tab4,.Tab5").removeClass('change');
+        $(".Tab2-cos").click(function(){
+          $(".Tab3-cos").removeClass('change');
           $(this).addClass('change');
-          $('#reservation-area').fadeIn();
-          $('#evaluate-area').fadeOut();
+          $('#reservation-area-cos').fadeIn();
+          $('#evaluate-area-cos').fadeOut();
         })
-        $(".Tab3").click(function(){
-          $(".Tab2,.Tab1,.Tab4,.Tab5").removeClass('change');
+        $(".Tab3-cos").click(function(){
+          $(".Tab2-cos").removeClass('change');
           $(this).addClass('change');
-          $('#evaluate-area').fadeIn();
-          $('#reservation-area').fadeOut();
+          $('#evaluate-area-cos').fadeIn();
+          $('#reservation-area-cos').fadeOut();
         })
       </script>
       <!--reservation-area start-->
-      <div id="reservation-area">
+      <div id="reservation-area-cos">
         <article>
-          <div class="row reservation-area">
-            <div class="notice">
-              <div class="occupied">&nbsp;&nbsp;</div>被預約
-              <div class="outtime">&nbsp;&nbsp;</div>已過期
-              <div class="useable">&nbsp;&nbsp;</div>可預約
-              <div class="useables">&nbsp;&nbsp;</div>已選取
-            </div>
-            
-            <table >
-            <tbody id="resourceTable">
-            <!-- 以下js生成 -->
-              <tr>
-                <th></th>
-                <th>Order1</th>
-                <th>Order2</th>
-                <th>Order3</th>
-                <th>Order4</th>
-                <th>Order5</th>
-                <th>Order6</th>
-              </tr>
-              <tr>
-                <th>9:00-10:00</th>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="occupied"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-              </tr>
-              <tr>
-                <th>10:00-11:00</th>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="occupied"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-              </tr>
-              <tr>
-                <th>11:00-12:00</th>
-                <td class="useable"></td>
-                <td class="useable"></td>
-                <td class="useable"></td>
-                <td class="useable"></td>
-                <td class="useable"></td>
-                <td class="useable"></td>
-              </tr>
-            </tbody>
-            </table>
-            <div class="btn-area">
-              <input type="button" name="btn-reserve" value="預約" class="btn-book"/>
-              <input type="button" name="btn-myBook" value="查看預約" class="btn-book"/>
-            </div>
-            <div class="reserveResult">
-            </div>
-          
+          <div class="row reservation-area-cos">
+              <div class="reservation-item-cos">
+                <ul>
+                  <li class="pic-li-cos">
+                    <div class="reservation-pic-div-cos">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic-cos">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <div>
+                    <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
+                  </div>
+                  <li>
+                    <div class="reservation-title-cos">
+                      <a href="#">查理</a>
+                      <div class="reservation-star-cos">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body-cos">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1-cos">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer-cos">
+                      <label>預約狀態:</label>
+                      <span>
+                        <b>已確認</b><i class="fas fa-check-circle"></i>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="reservation-item-cos">
+                <ul>
+                  <li class="pic-li-cos">
+                    <div class="reservation-pic-div-cos">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic-cos">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <div>
+                    <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
+                  </div>
+                  <li>
+                    <div class="reservation-title-cos">
+                      <a href="#">查理</a>
+                      <div class="reservation-star-cos">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body-cos">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1-cos">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer-cos">
+                      <label>預約狀態:</label>
+                      <span id="res-evaluation">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reservation-evaluate">評價</button>
+                      </span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="reservation-item-cos">
+                <ul>
+                  <li class="pic-li-cos">
+                    <div class="reservation-pic-div-cos">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic-cos">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <div>
+                    <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
+                  </div>
+                  <li>
+                    <div class="reservation-title-cos">
+                      <a href="#">查理</a>
+                      <div class="reservation-star-cos">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body-cos">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1-cos">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer-cos">
+                      <label>預約狀態:</label>
+                      <span id="res-ok">
+                        <b>已完成</b><i class="fas fa-check-circle"></i>
+                      </span>
+                    </div>                  
+                </ul>
+              </div>
+              <div class="reservation-item-cos">
+                <ul>
+                  <li class="pic-li-cos">
+                    <div class="reservation-pic-div-cos">
+                      <img src="img/user-img/store2.jpg" class="reservation-pic-cos">
+                    </div>
+                  </li>
+                </ul>
+                <ul>
+                  <div>
+                    <button type="button" class="btn close-btn" id="cancelbtn"><i class="fa fa-times"></i></button>
+                  </div>
+                  <li>
+                    <div class="reservation-title-cos">
+                      <a href="#">查理</a>
+                      <div class="reservation-star-cos">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-1"><b>4.9</b></span>
+                      </div>
+                      <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-body-cos">
+                      <label>預約日期：</label><b>2021/10/12</b>
+                      <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
+                      <label>預約時間：</label><b>09:00</b>
+                      <label class="re-la1-cos">項目金額：</label><b>$499元</b>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="reservation-footer-cos">
+                      <label>預約狀態:</label>
+                      <span id="res-cancel" class="res-cancel-cos">
+                        <b>已取消</b><i class="fas fa-times-circle"></i>
+                      </span>
+                    </div>                  
+                </ul>
+              </div>
           </div>
         </article> 
       </div>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+      <script>
+        $(document).ready(function(){
+          if($('#res-cancel,#res-ok,#res-evaluation')){
+            $('#cancelbtn').hide();
+            $('#okbtn').hide();
+            $('#evaluationbtn').hide();
+          }
+        })
+      </script>
       <!--reservation-area End-->
 
-      <!--point-area start-->
-      <!--<div id="point-area">
-        <article>
-          <div class="row point-area">
-            <div class="point-form">
-              <ul>
-                <div class="point-pic">
-                  <img src="img/user-img/card.png">
-                </div>
-              </ul>
-              <ul>
-                <div class="point-info-group">
-                  <li>
-                    <div class="point-info">
-                      <b>可用總點數:</b><div class="point-money"><b>$4,000</b></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="point-info">
-                      <b>已使用點數:</b><div class="point-money"><b>$50</b></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="point-info">
-                      <b>已過期點數:</b><div class="point-money"><b>$50</b></div>
-                    </div>
-                  </li>
-              </div>
-              </ul>
-              <div class="point-Tab-group">
-                <div class="point-Tab" id="point1"><b>所有紀錄</b></div>
-                <div class="point-Tab" id="point2"><b>已使用點數</b></div>
-                <div class="point-Tab" id="point3"><b>已過期點數</b></div>
-              </div>
-              <script>
-                $(document).ready(function(){
-                  $('#point1').addClass('point-click');
-                  $('#point-record-used,#point-record-expired').hide();
-                })
-                $('#point1').click(function(){
-                  $('#point1').addClass('point-click');
-                  $('#point2,#point3').removeClass('point-click');
-                  $('#point-record-all').show();
-                  $('#point-record-used,#point-record-expired').hide();
-                })
-                $('#point2').click(function(){
-                  $('#point2').addClass('point-click');
-                  $('#point1,#point3').removeClass('point-click');
-                  $('#point-record-used').show();
-                  $('#point-record-all,#point-record-expired').hide();
-                })
-                $('#point3').click(function(){
-                  $('#point3').addClass('point-click');
-                  $('#point1,#point2').removeClass('point-click');
-                  $('#point-record-expired').show();
-                  $('#point-record-used,#point-record-all').hide();
-                })
-              </script>-->
-              <!--point-record-area start-->
-              <!--<div class="point-record-group" id="point-record-all">
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>+470</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>+75</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>+75</b>
-                    </div>
-                  </ul>       
-                </div>
-              </div>-->
-              <!--point-record-area start-->
-              <!--point-record-area start-->
-              <!--<div class="point-record-group" id="point-record-used">
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>-100</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>-5</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>-10</b>
-                    </div>
-                  </ul>       
-                </div>
-              </div>-->
-              <!--point-record-area start-->
-              <!--point-record-area start-->
-              <!--<div class="point-record-group" id="point-record-expired">
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>$15</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>$20</b>
-                    </div>
-                  </ul>       
-                </div>
-                <div class="point-record">
-                  <ul>
-                    <div class="point-record-pic">
-                      <img src="img/user-img/store2.jpg">
-                    </div>
-                  </ul>
-                  <ul>
-                    <li>
-                      <div class="point-record-title">
-                        <h3>查理</h3>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="point-record-address">
-                        <h6>ARTIST SALON/桃園市楊梅區金山街257號1樓</h6>
-                      </div>
-                    </li>
-                  </ul>
-                  <ul>
-                    <div class="point-record-money">
-                      <b>$30</b>
-                    </div>
-                  </ul>       
-                </div>
-              </div>-->
-              <!--point-record-area start
-            </div>
-          </div>
-        </article>
-      </div>-->
-      <!--point-area End-->
-      
+     
+
       <!--evaluate-area start-->
-      <div id="evaluate-area">
+      <div id="evaluate-area-cos">
         <article>
-          <div class="row evaluate-area">
-            <div class="evaluate-item">                
+          <div class="row evaluate-area-cos">
+            <div class="evaluate-item-cos">                
               <ul>
                 <li>
-                  <div class="evaluate-title">
+                  <div class="evaluate-title-cos">
                     <i class="fas fa-user-circle"></i><b>查理</b>
                   </div>
                 </li>
                 <li>
-                  <div class="evaluate-star">
+                  <div class="evaluate-star-cos">
                     <span>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -611,7 +440,7 @@
                       <i class="far fa-star"></i>
                     </span>
                   </div>
-                  <div class="evaluate-body">
+                  <div class="evaluate-body-cos">
                     服務真的很好
                     環境舒適 造型做得太好了阿
                     超級推薦這位設計師的啦啦啦啦啦啦啦啦
@@ -620,102 +449,9 @@
                   </div>
                 </li>
                 <li>
-                  <div class="evaluate-footer">
+                  <div class="evaluate-footer-cos">
                     <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
-                    <label class="pos-label">日期：</label><b>2021/10/12</b>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="evaluate-item">                
-              <ul>
-                <li>
-                  <div class="evaluate-title">
-                    <i class="fas fa-user-circle"></i><b>查理</b>
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-star">
-                    <span>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </span>
-                  </div>
-                  <div class="evaluate-body">
-                    服務真的很好
-                    環境舒適 造型做得太好了<br>
-                    超級推薦這位設計師的啦啦啦啦啦啦啦啦
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-footer">
-                    <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
-                    <label class="pos-label">日期：</label><b>2021/10/12</b>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="evaluate-item">                
-              <ul>
-                <li>
-                  <div class="evaluate-title">
-                    <i class="fas fa-user-circle"></i><b>查理</b>
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-star">
-                    <span>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                    </span>
-                  </div>
-                  <div class="evaluate-body">
-                    服務真的很好
-                    環境舒適 造型做得太好了<br>
-                    超級推薦這位設計師的啦啦啦啦啦啦啦啦
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-footer">
-                    <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
-                    <label class="pos-label">日期：</label><b>2021/10/12</b>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="evaluate-item">                
-              <ul>
-                <li>
-                  <div class="evaluate-title">
-                    <i class="fas fa-user-circle"></i><b>查理</b>
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-star">
-                    <span>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="far fa-star"></i>
-                    </span>
-                  </div>
-                  <div class="evaluate-body">
-                    服務真的很好
-                    環境舒適 造型做得太好了<br>
-                    超級推薦這位設計師的啦啦啦啦啦啦啦啦
-                  </div>
-                </li>
-                <li>
-                  <div class="evaluate-footer">
-                    <label>服務項目：</label><b>造型剪髮+洗頭</b>                     
-                    <label class="pos-label">日期：</label><b>2021/10/12</b>
+                    <label class="pos-label-cos">日期：</label><b>2021/10/12</b>
                   </div>
                 </li>
               </ul>
@@ -847,6 +583,7 @@
     </div>
   </div>
   <!--reservation-evaluate End-->
+
 <script>
   let star=document.querySelectorAll("img.x");
       for(let img of star){
@@ -906,9 +643,7 @@
   <script src="js/mona.bundle.js"></script>
   <!-- Active js -->
   <script src="js/default-assets/active.js"></script>
-  <!--Order js-->
-  <script src="js/bookHairCute.js"></script>
-  
+
 </body>
 
 </html>
