@@ -313,6 +313,7 @@
     </Compile>
     <Compile Include="Models\cDiction.cs" />
     <Compile Include="Models\CityArea.cs" />
+    <Compile Include="Models\Service.cs" />
     <Compile Include="Models\用戶.cs" />
     <Compile Include="Models\用戶crud.cs" />
     <Compile Include="Models\registFunction.cs" />

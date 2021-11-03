@@ -85,10 +85,10 @@ namespace Haircute.Controllers
         }
 
         [HttpPost]
-        public ActionResult ServiceItem()
+        public ActionResult ServiceItem(List<Service> data)
         {
             
-            return RedirectToAction("Index");
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
     }
 }
