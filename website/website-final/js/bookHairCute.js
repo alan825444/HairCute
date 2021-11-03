@@ -1,6 +1,8 @@
 $(function() {
 
+    submitQuery();
     $("[name='btn-reserve']").click(getReserve);
+    $("[name='btn-myBook']").click(submitQuery);
 
 
 function getReserve() {  
@@ -9,7 +11,7 @@ function getReserve() {
         var time = $(this).parent().find("th").text();  
         var hours = time.split("-")[0].split(":")[0];  
         //var datetime = new Date($("#").attr("date"));
-        var datetime = new Date("2021/11/01");
+        var datetime = new Date("2021/11/05");
         datetime.setHours(parseInt(hours));  
         var startTime = datetime.format("yyyy-MM-dd hh:mm:ss");  
         datetime.setHours(parseInt(hours) + 1);  
@@ -42,7 +44,7 @@ function submitQuery() {
       
     /*獲取查詢的日期和設計師ID*/  
     //var date = $("#").attr("date");
-    var date = new Date("2021/11/01");
+    var date = new Date("2021/11/03");
     var designerId = 1;
       
     /*ajax查詢已經預約的列表*/  
@@ -70,7 +72,7 @@ function submitQuery() {
         $("#resourceTable").empty();  
           
         //設置欄位 
-        var tbRow = "<tr><th></th><th>預約</th></tr>"; 
+        var tbRow = "<tr><th>時間</th><th>預約</th></tr>"; 
         $("#resourceTable").append(tbRow);  
           
         //從開放時間到關閉時間，每一小時為一個預約時間
@@ -84,7 +86,7 @@ function submitQuery() {
         var first_row = openTime;  
         var today = new Date();  
         //判斷預約的時間是否為今天，如果是今天就將過期的時間設置為當前時間(小時)
-        var end_row = today.getDate() < (new Date(date)).getDate()? first_row - 1: parseInt((new Date()).getHours());  
+        var end_row = today.getDate() < (new Date(date)).getDate()? first_row -1 : parseInt((new Date()).getHours()) + 1;  
         //對table的每一行，如果在過期時間之前的時間段，就將這一行所有td的class設置為“outtime”，表示不可預約，否則class設置為“useable”表示可預約  
         $("#resourceTable tr").each(function(i) {  
                 $(this).find("td").addClass(i + first_row <= end_row? "outtime": "useable");  
@@ -123,5 +125,5 @@ Date.prototype.format = function (fmt) {
 	return fmt;
 }
 
-submitQuery();
+
 })

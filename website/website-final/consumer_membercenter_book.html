@@ -33,11 +33,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
+
+
 </head>
 
 <body>
   
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
     <!-- Main Header Start -->
@@ -232,7 +233,9 @@
               <div class="occupied">&nbsp;&nbsp;</div>被預約
               <div class="outtime">&nbsp;&nbsp;</div>已過期
               <div class="useable">&nbsp;&nbsp;</div>可預約
+              <div class="useables">&nbsp;&nbsp;</div>已選取
             </div>
+            
             <table >
             <tbody id="resourceTable">
             <!-- 以下js生成 -->
@@ -244,18 +247,12 @@
                 <th>Order4</th>
                 <th>Order5</th>
                 <th>Order6</th>
-                <th>Order7</th>
-                <th>Order8</th>
-                <th>Order9</th>
               </tr>
               <tr>
                 <th>9:00-10:00</th>
                 <td class="outtime"></td>
                 <td class="outtime"></td>
                 <td class="occupied"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
                 <td class="outtime"></td>
                 <td class="outtime"></td>
                 <td class="outtime"></td>
@@ -268,9 +265,6 @@
                 <td class="outtime"></td>
                 <td class="outtime"></td>
                 <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
-                <td class="outtime"></td>
               </tr>
               <tr>
                 <th>11:00-12:00</th>
@@ -280,15 +274,12 @@
                 <td class="useable"></td>
                 <td class="useable"></td>
                 <td class="useable"></td>
-                <td class="useable"></td>
-                <td class="occupied"></td>
-                <td class="occupied"></td>
               </tr>
             </tbody>
             </table>
             <div class="btn-area">
-              <input type="button" name="btn-reserve" value="預約"/>
-              <input type="button" name="btn-my" value="查看預約"/>
+              <input type="button" name="btn-reserve" value="預約" class="btn-book"/>
+              <input type="button" name="btn-myBook" value="查看預約" class="btn-book"/>
             </div>
             <div class="reserveResult">
             </div>
@@ -296,7 +287,7 @@
           </div>
         </article> 
       </div>
-      
+    
     <br>
     <br>
     <br>
@@ -305,7 +296,6 @@
     <br>
     <br>
     <br>
-      
       <!--reservation-area End-->
 
       <!--point-area start-->
@@ -857,7 +847,6 @@
     </div>
   </div>
   <!--reservation-evaluate End-->
-
 <script>
   let star=document.querySelectorAll("img.x");
       for(let img of star){
