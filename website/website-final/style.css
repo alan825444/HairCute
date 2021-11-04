@@ -2731,7 +2731,7 @@ section .section-title span {
   left: 0;
   z-index: 100;
   border-radius: 1rem;
-  width: 24vw;
+  /*width: 24vw;*/
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -o-transform: rotateY(-180deg);
@@ -3807,6 +3807,9 @@ margin: 15px 0 25px 0;
   border: solid 1px;
   height: 300px;
   max-width: 300px;
+}
+.design-footer{
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
