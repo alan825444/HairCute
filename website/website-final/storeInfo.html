@@ -28,7 +28,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <!-- timepicker -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+  <!-- confirm btn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 
 </head>
 
@@ -151,7 +155,7 @@
       <div class="col-12 col-md-6 d-flex justify-content-md-end storeInfo-pic">
         <img src="img/user-img/store2.jpg" class="uesr-pic">
       </div>
-      <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-sm-center">
+      <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-center">
         <ul>
           <li>
             <div class="userInfo">
@@ -229,47 +233,73 @@
     <!--design-area start-->
     <div class="container" id="design-area">
       <div class="row design-area">
-        <div class="col-6 col-md-3 design-item">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
           <a href="#">
             <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+            <div class="design-body">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
           </a>
         </div>
-        <div class="col-6 col-md-3 design-item">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
           <a href="#">
             <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
 
           </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
         </div>
-        <div class="col-6 col-md-3 design-item">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
           <a href="#">
             <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 design-item">
-          <a href="#">
-            <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 design-item">
-          <a href="#">
-            <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 design-item">
-          <a href="#">
-            <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
 
           </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
         </div>
-        <div class="col-6 col-md-3 design-item">
-          <a href="#">
-            <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
-          </a>
-        </div>
-        <div class="col-6 col-md-3 design-item">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
           <a href="#">
             <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
           </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -300,10 +330,10 @@
           </div>
         </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
         </div>
       </div>
-      <div class="row menu-info mt-3" id="even-num-row">
+      <div class="row menu-info mt-3">
         <div class="menu-img col-md-3">
           <div class="menu-img-container">
             <img src="img/bg-img/perm-hair.jpg">
@@ -326,7 +356,7 @@
           </div>
         </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
         </div>
       </div>
       <div class="row menu-info mt-3">
@@ -352,7 +382,7 @@
           </div>
         </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
         </div>
       </div>
     </div>
@@ -501,7 +531,7 @@
   <!-- import js -->
   <script src="import.js"></script>
   <!-- timepicker -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 
   <script>
@@ -528,6 +558,24 @@
       dynamic: false,
       dropdown: true,
       scrollbar: true
+    });
+
+    //reserve-confirm-btn
+    $('.reserve-confirm').confirm({
+      title: '預約確認',
+      content: '您預訂的是${"date"}的${"time"}</br>確認無誤後',
+      type: 'blue',
+      buttons: {
+        取消: {
+          btnClass: 'btn-red'
+        },
+        預約: {
+          btnClass: 'btn-success',
+          action: function () {
+            $.alert('預約成功');
+          }
+        }
+      }
     });
   </script>
 
