@@ -3808,6 +3808,9 @@ margin: 15px 0 25px 0;
   height: 300px;
   max-width: 300px;
 }
+.design-footer{
+  margin-top: 20px;
+}
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .design-item {
