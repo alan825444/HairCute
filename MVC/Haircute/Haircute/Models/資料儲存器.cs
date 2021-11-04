@@ -74,5 +74,20 @@ namespace Haircute.Models
             }
             return "ok";
         }
+
+        public string 會員資料修改(int SSID, tMember m) 
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+            //"fUsername": 名稱, "fGender": 性別, "fNickname": 暱稱, "fBirth": 生日, "fCity": 城市, "fArea": 區域
+            q.fUsername = m.fUsername;
+            q.fGender = m.fGender;
+            q.fNickname = m.fNickname;
+            q.fBirth = m.fBirth;
+            q.fCity = m.fCity;
+            q.fArea = m.fArea;
+            db.SaveChanges();
+            return "OK";
+        }
     }
 }

@@ -87,6 +87,48 @@ namespace Haircute.Models
             
         }
 
+        public List<SelectListItem> 取得會員City(int SSID)
+        {
+            var city = db.tCity.OrderBy(m => m.fID);
+            List<SelectListItem> data = new List<SelectListItem>();
+            foreach (var item in city)
+            {
+                data.Add(new SelectListItem { Value = item.fID.ToString(), Text = item.fCity });
+            }
+            var 會員資料 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+            if (會員資料==null)
+            {
+                return data;
+            }
+            else
+            {
+                data.Where(x => x.Value == 會員資料.fCity.ToString()).First().Selected = true;
+                
+                return data;
+            }
+        }
+
+        public List<SelectListItem> 取得會員Area(int SSID)
+        { 
+            List<SelectListItem> data = new List<SelectListItem>();
+            var 會員資料 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+            int fcityID = Convert.ToInt32(會員資料.fCity);
+            var area = db.tArea.Where(x=>x.fk_City == fcityID).OrderBy(x=>x.fid);
+            if (會員資料 == null)
+            {
+                return data;
+            }
+            else
+            {
+                foreach (var item in area)
+                {
+                    data.Add(new SelectListItem { Value = item.fid.ToString(), Text = item.fArea });
+                }
+                data.Where(x => x.Value == 會員資料.fArea).First().Selected = true;
+                return data;
+            }
+        }
+
         public List<設計師資料> 店鋪資訊(int SSID)
         {
             var q = db.tDesigner.Where(x => x.fk_Member == SSID).FirstOrDefault();
@@ -122,7 +164,22 @@ namespace Haircute.Models
             }
             return data;
         }
-        
+
+        public List<tMember> 取得會員資料(int SSID)
+        {
+            demodbEntities de = new demodbEntities();
+            var 會員資料 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+            List<tMember> data = new List<tMember>() {
+            new tMember
+            {
+                fUsername = 會員資料.fUsername,
+                fGender = 會員資料.fGender,
+                fNickname = 會員資料.fNickname,
+                fBirth = 會員資料.fBirth,
+            }};
+            return data;
+
+        }
         
         
     }

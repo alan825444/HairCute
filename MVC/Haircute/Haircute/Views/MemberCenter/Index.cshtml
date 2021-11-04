@@ -28,8 +28,16 @@
                     </button>
                 </div>
                 <div class="Backstage-edit">
-                    <ul>
-                        <button class="btn btn-light" data-toggle="modal" data-target="#update-user-pic">選擇大頭貼</button>
+                    <ul class="d-inline-flex">
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-pic">選擇大頭貼</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-data">修改會員資料</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-Pwd">更改密碼</button>
+                        </li>
                     </ul>
                 </div>
                 <div class="Backstage-user">
@@ -207,13 +215,13 @@
                                     {
                                         <div class="row">
                                             <div class="col-md-8 col-12">
-                                                <input type="text" name="fid"  hidden />
+                                                <input type="text" name="fid" hidden />
                                                 <label class="form-label">服務項目 @count</label>
-                                                <input type="text" class="form-control " name="fService" id="fService" >
+                                                <input type="text" class="form-control " name="fService" id="fService">
                                             </div>
                                             <div class="col-md-4 col-12">
                                                 <label class="form-label">費用</label>
-                                                <input type="text" class="form-control " name="fPrice" id="fPrice" >
+                                                <input type="text" class="form-control " name="fPrice" id="fPrice">
                                             </div>
                                         </div>
                                         count++;
@@ -221,71 +229,71 @@
                                 }
                             }
                             @*<div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="5" hidden />
-                                    <label class="form-label">服務項目</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="5" hidden />
+                                        <label class="form-label">服務項目</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
                                 </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="6" hidden />
+                                        <label class="form-label">服務項目2</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="6" hidden />
-                                    <label class="form-label">服務項目2</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="" hidden />
+                                        <label class="form-label">服務項目3</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
                                 </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="" hidden />
+                                        <label class="form-label">服務項目4</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="" hidden />
-                                    <label class="form-label">服務項目3</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="" hidden />
+                                        <label class="form-label">服務項目5</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
                                 </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="" hidden />
-                                    <label class="form-label">服務項目4</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="" hidden />
-                                    <label class="form-label">服務項目5</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-8 col-12">
-                                    <input type="text" name="fid" value="" hidden />
-                                    <label class="form-label">服務項目6</label>
-                                    <input type="text" class="form-control " name="fService" id="fService">
-                                </div>
-                                <div class="col-md-4 col-12">
-                                    <label class="form-label">費用</label>
-                                    <input type="text" class="form-control " name="fPrice" id="fPrice">
-                                </div>
-                            </div>*@
+                                <div class="row">
+                                    <div class="col-md-8 col-12">
+                                        <input type="text" name="fid" value="" hidden />
+                                        <label class="form-label">服務項目6</label>
+                                        <input type="text" class="form-control " name="fService" id="fService">
+                                    </div>
+                                    <div class="col-md-4 col-12">
+                                        <label class="form-label">費用</label>
+                                        <input type="text" class="form-control " name="fPrice" id="fPrice">
+                                    </div>
+                                </div>*@
                             <div class="row">
                                 <div class="col-12 register-btns mb-2">
                                     <input type="submit" value="儲存" class="btn btn-outline-success" id="Service-sent">
@@ -305,7 +313,7 @@
                         <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
                     </div>
                 </div>
-                <div class="row design-area">
+                <div class="row ">
                     @foreach (var item in ViewBag.Dphoto)
                     {
                         <div class="col-sm-3 design-item">
@@ -318,23 +326,23 @@
 
 
                     @*<div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
-                    </div>
-                    <div class="col-sm-3  design-item">
-                        <a href="#" data-toggle="modal" data-target="#update-user-design-info">
-                            <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
-                            <div class="design-body">#俏麗短髮</div>
-                        </a>
-                    </div>*@
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/26.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/27.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>
+                        <div class="col-sm-3  design-item">
+                            <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                                <div class="design-head"><img src="~/img/bg-img/28.jpg" class="design-pic"></div>
+                                <div class="design-body">#俏麗短髮</div>
+                            </a>
+                        </div>*@
                 </div>
             </article>
         </div>
@@ -380,18 +388,168 @@
         </div>
     </div>
 </div>
-<!--update-user-design end-->
+<!--update-user-data end-->
+
+<div class="modal fade" id="update-user-data">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">修改會員資料</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @{
+                foreach (var item in ViewBag.會員資料)
+                {
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-8">
+                                <label class="form-label">姓名</label>
+                                <input type="text" name="fUsername" id="username" value="@item.fUsername" maxlength="20" placeholder="請填寫真實姓名"
+                                       class="form-control">
+                                <span id="username_msg"></span>
+                            </div>
+                            @if (item.fGender == "1         ")
+                            {
+                                <div class="col-md-3 col-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                           value="1" checked>
+                                    <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                           value="2" >
+                                    <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                </div>
+                            </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-3 col-4">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                           value="option1">
+                                    <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                           value="option2" checked>
+                                    <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                </div>
+                            </div>
+                            }
+                            
+                            <div class="col-md-5 c0l-12">
+                                <label class="form-label">暱稱</label>
+                                <input type="text" name="fNickname" id="usernickname" value="@item.fNickname" maxlength="20" placeholder="顯示在網站上的名稱"
+                                       class="form-control">
+                                <span id="usernickname_msg"></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label">生日</label>
+                                <input type="text" name="fBirth" value="@item.fBirth" class="form-control datepicker">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="form-label">地址</label>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity2, "-鄉鎮市區-", new { @class = "form-select", id = "fCity2" })
+                            </div>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea2, "-鄉鎮市區-", new { @class = "form-select", id = "fArea2" })
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            }
+            <div class="modal-footer">
+                <button class="btn btn-success" id="Send-change-data">儲存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+}
+<!--update-user-data end-->
+<!--update-user-Pwd end-->
+
+<div class="modal fade" id="update-user-Pwd">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">修改會員資料</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">密碼</label>
+                        <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                               class="form-control">
+                        <span id="pwd_msg"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">確認密碼</label>
+                        <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
+                               class="form-control">
+                        <span id="doublepwd_msg"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success">儲存修改</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--update-user-Pwd end-->
 
 @section Backstage{
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.min.js" integrity="sha512-x0qixPCOQbS3xAQw8BL9qjhAh185N7JSw39hzE/ff71BXg7P1fkynTqcLYMlNmwRDtgdoYgURIvos+NJ6g0rNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".datepicker").datepicker('setDate', 'today');
+        });
+    </script>
 
     @*新增/修改服務項目*@
     <script>
         $(document).ready(function () {
             $("#Service-sent").click(function () { 項目json資料組成() })
+            $("#Send-change-data").click(function () {會員資料修改()})
         })
+
+        function 會員資料修改() {
+            var 名稱 = $("#update-user-data input[name='fUsername']").val();
+            var 性別 = $("#update-user-data input[name='fGender']:checked").val();
+            var 暱稱 = $("#update-user-data input[name='fNickname']").val();
+            var 生日 = $("#update-user-data input[name='fBirth']").val();
+            var 城市 = $("#update-user-data #fCity2 option:selected").val();
+            var 區域 = $("#update-user-data #fArea2 option:selected").val();
+            console.log(`${名稱},${性別},${暱稱},${生日},${城市},${區域}`)
+            $.post(
+                "/MemberCenter/MemberDataUpdate",
+                {
+                    "fUsername": 名稱, "fGender": 性別, "fNickname": 暱稱, "fBirth": 生日, "fCity": 城市, "fArea": 區域
+                },
+                function (data) {
+                    if (data.Message == "OK") {
+                        swal("資料已更改", "", "success");
+                    }
+                    else {
+                        swal("資料已更改", "", "error");
+                    }
+                },
+                "json"
+            )
+        }
 
 
         function 項目json資料組成() {
@@ -575,6 +733,39 @@
 
         //clockpicker
         $('.clockpicker').clockpicker();
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $("#fCity2").change(function () { ChangeCity(); })
+        });
+
+        function ChangeCity() {
+            var selectedCity = $("#fCity2 option:selected").val();
+            if ($.trim(selectedCity).length > 0) {
+                GetArea(selectedCity)
+            }
+        }
+
+        function GetArea(CityID) {
+            $.ajax({
+                url: "/Home/Area",
+                data: { CityID: CityID },
+                type: 'post',
+                cache: false,
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#fArea2').empty();
+                        $('#fArea2').append($('<option></option>').val('').text('請選擇'));
+                        $.each(data, function (i, item) {
+                            $('#fArea2').append($('<option></option>').val(item.Key).text(item.Value))
+                        })
+                    }
+                }
+            })
+        }
     </script>
 
 }
