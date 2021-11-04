@@ -47,5 +47,32 @@ namespace Haircute.Models
             
 
         }
+
+        public string 項目儲存 (int SSID, List<Service> data)
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tDesigner.Where(x => x.fk_Member == SSID).FirstOrDefault();
+            foreach (var item in data)
+            {
+                if ((item.ID == null) && (item.Item != null) && (item.Price != null))
+                {
+                    db.tService.Add(new tService { fk_Designer = q.fid, fServicN = item.Item, fprice = item.Price });
+                    db.SaveChanges();
+                }
+                else if ((item.ID != null) && (item.Item != null) && (item.Price != null))
+                {
+                    int id = Convert.ToInt32(item.ID);
+                    db.tService.Where(x => x.fid == id).FirstOrDefault().fServicN = item.Item;
+                    db.tService.Where(x => x.fid == id).FirstOrDefault().fprice = item.Price;
+                    db.SaveChanges();
+                }
+                else if ((item.ID == null) && (item.Item == null) && (item.Price == null))
+                {
+                    db.tService.Add(new tService { fk_Designer = q.fid, fServicN = item.Item, fprice = item.Price });
+                    db.SaveChanges();
+                }
+            }
+            return "ok";
+        }
     }
 }

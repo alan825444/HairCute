@@ -21,6 +21,7 @@ namespace Haircute.Controllers
             ViewBag.selectCity = new 資料產生器().selectedCity(SSID);
             ViewBag.selectArea = new 資料產生器().selectedArea(SSID);
             ViewBag.店鋪資訊 = new 資料產生器().店鋪資訊(SSID);
+            ViewBag.服務項目 = new 資料產生器().服務項目(SSID);
             return View();
         }
 
@@ -35,8 +36,8 @@ namespace Haircute.Controllers
                 var fullpath = "~/Images/" + newfileName180;
                 blob.SaveAs(Server.MapPath(fullpath));
 
-                var q = db.tPhoto.Where(m => m.fk_Designer == SSID).FirstOrDefault();
-                tPhoto data = new tPhoto() { fk_Designer = SSID, fPath = newfileName180, fTag = Keyword, fDateTime = DateTime.Now };
+                var DID = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
+                tPhoto data = new tPhoto() { fk_Designer = DID.fid, fPath = newfileName180, fTag = Keyword, fDateTime = DateTime.Now };
                 db.tPhoto.Add(data);
                 db.SaveChanges();
             }
@@ -82,9 +83,14 @@ namespace Haircute.Controllers
             }
             ViewBag.Message = "儲存失敗";
             return RedirectToAction("Index");
+        }
 
-
-
+        [HttpPost]
+        public ActionResult ServiceItem(List<Service> data)
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name);
+            new 資料儲存器().項目儲存(SSID, data);
+            return Json(data,JsonRequestBehavior.AllowGet);
         }
     }
 }
