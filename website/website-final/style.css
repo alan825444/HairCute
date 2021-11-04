@@ -3472,6 +3472,8 @@ margin: 15px 0 25px 0;
 .reserve-manage-area button {
   font-size: 10px;
 }
+
+
 /*membercenter area*/
 .membercenter-area-cos {
   z-index: 1;
@@ -3496,7 +3498,10 @@ margin: 15px 0 25px 0;
   padding: 5px;
   margin-left: 420px;
 }
-
+.consumer-user{
+  margin-left: 30px;
+  margin-top: 20px;
+}
 .consumer-name {
   display: inline-block;
   margin-left: 440px;
@@ -3581,8 +3586,11 @@ margin: 15px 0 25px 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
 }
-
+.membercenter-edit-cos ul{
+  margin-right: 10px;
+}
 .userinfo-edit-cos {
   position: relative;
   border: 1px solid;
@@ -4388,7 +4396,10 @@ color: rgb(251, 177, 5);
 .Backstage-edit{
   display: flex;
   justify-content: center;
-  margin-top:20px ;
+  margin-top:10px ;
+}
+.Backstage-edit ul{
+  margin-left: 10px;
 }
 .Backstage-user{
   margin-left: 30px;

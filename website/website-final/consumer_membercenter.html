@@ -196,7 +196,13 @@
           </div>
           <div class="membercenter-edit-cos">
             <ul>
-              <a href="#" data-toggle="modal" data-target="#update-cons-info"><div class="userinfo-edit-cos">編輯個人資料</div></a>
+              <button class="btn btn-light" data-toggle="modal" data-target="#update-user-pic">選擇大頭貼</button>
+            </ul>
+            <ul>
+              <button class="btn btn-light" data-toggle="modal" data-target="#update-cons-info">編輯個人資料</button>
+            </ul>
+            <ul>
+              <button class="btn btn-light" data-toggle="modal" data-target="#change-pwd">變更密碼</button>
             </ul>
           </div>
         </div>
@@ -210,7 +216,7 @@
       <script>
         $(document).ready(function(){
           $(".Tab2-cos").addClass('change');
-          $('#evaluate-area').hide();
+          $('#evaluate-area-cos').hide();
         })
         $(".Tab2-cos").click(function(){
           $(".Tab3-cos").removeClass('change');
@@ -463,6 +469,7 @@
     </div>
   </main>
   <!-- ***** membercenter Area Start ***** -->
+
   <!--update user-info start-->
   <div>
     <div class=" modal fade" id="update-cons-info" aria-hidden="true" tabindex="-1"  role="dialog">
@@ -478,22 +485,6 @@
                 <label class="form-label">E-mail</label>
                 <input type="text" id="email" value maxlength="50" class="form-control" placeholder="請填寫有效的Email">
                 <span id="emailaddress_msg"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <label class="form-label">密碼</label>
-                <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
-                  class="form-control">
-                <span id="pwd_msg"></span>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <label class="form-label">確認密碼</label>
-                <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
-                  class="form-control">
-                <span id="doublepwd_msg"></span>
               </div>
             </div>
             <div class="row align-items-center">
@@ -554,6 +545,48 @@
     </div>
   <!--update user-info End-->
 
+   <!--change pwd start-->
+   <div>
+    <div class=" modal fade" id="change-pwd" aria-hidden="true" tabindex="-1"  role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title">變更密碼</h3>
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">舊密碼</label>
+                <input type="password" id="userpwd" value maxlength="50" class="form-control" placeholder="請輸入原來的舊密碼">
+                <span id="old_pwd_msg"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">新密碼</label>
+                <input type="password" name="" id="newpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                  class="form-control">
+                <span id="new_pwd_msg"></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <label class="form-label">確認新密碼</label>
+                <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
+                  class="form-control">
+                <span id="doublepwd_msg"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer"> 
+            <button class="btn btn-success">儲存修改</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  <!--change pwd End-->
+
   <!--reservation-evaluate start-->
   <div class="modal fade" id="reservation-evaluate">
     <div class="modal-dialog modal-dialog-centered">
@@ -583,6 +616,30 @@
     </div>
   </div>
   <!--reservation-evaluate End-->
+
+   <!--update-user-pic start-->
+ <div class="modal fade" id="update-user-pic">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">變更大頭貼</h3>
+        <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="post" enctype="multipart/form-data">
+          <input type="file" name="fileupload2" id="fileupload2" accept="image/jpeg,image/gif,image/png" onchange="userpicFile()">
+        </form>
+        <div class="userpreviewdiv">
+          <img src="" id="userpreview" class="userpreview" alt="圖片預覽">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="submit" class="btn btn-success" value="儲存修改">
+      </div>
+    </div>
+  </div>
+</div>
+<!--update-user-pic end-->
 
 <script>
   let star=document.querySelectorAll("img.x");
