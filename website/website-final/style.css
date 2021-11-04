@@ -2731,7 +2731,7 @@ section .section-title span {
   left: 0;
   z-index: 100;
   border-radius: 1rem;
-  width: 24vw;
+  /*width: 24vw;*/
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -o-transform: rotateY(-180deg);
