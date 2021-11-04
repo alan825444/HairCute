@@ -241,30 +241,37 @@
           <a href="#" ><div class="Tab1-back"><span>店家</span></div></a>
           <a href="#" ><div class="Tab2-back"><span>服務</span></div></a>
           <a href="#" ><div class="Tab3-back"><span>作品</span></div></a>
+          <a href="#" ><div class="Tab4-back"><span>預約</span></div></a>
         </div>
       </div>
       <script>
         $(document).ready(function(){
           $(".Tab1-back").addClass('change');
-          $('#service-area,#item-area').hide();
+          $('#service-area,#item-area,#reservation-area').hide();
         })
         $(".Tab1-back").click(function(){
-          $(".Tab3-back,.Tab2-back").removeClass('change');
+          $(".Tab3-back,.Tab2-back,.Tab4-back").removeClass('change');
           $(this).addClass('change');
           $('#store-area').fadeIn();
-          $('#service-area,#item-area').fadeOut();
+          $('#service-area,#item-area,#reservation-area').fadeOut();
         })
         $(".Tab2-back").click(function(){
-          $(".Tab3-back,.Tab1-back").removeClass('change');
+          $(".Tab3-back,.Tab1-back,.Tab4-back").removeClass('change');
           $(this).addClass('change');
           $('#service-area').fadeIn();
-          $('#store-area,#item-area').fadeOut();
+          $('#store-area,#item-area,#reservation-area').fadeOut();
         })
         $(".Tab3-back").click(function(){
-          $(".Tab2-back,.Tab1-back").removeClass('change');
+          $(".Tab2-back,.Tab1-back,.Tab4-back").removeClass('change');
           $(this).addClass('change');
           $('#item-area').fadeIn();
-          $('#service-area,#store-area').fadeOut();
+          $('#service-area,#store-area,#reservation-area').fadeOut();
+        })
+        $(".Tab4-back").click(function(){
+          $(".Tab2-back,.Tab1-back,.Tab3-back").removeClass('change');
+          $(this).addClass('change');
+          $('#reservation-area').fadeIn();
+          $('#service-area,#store-area,#item-area').fadeOut();
         })
       </script>
 
@@ -495,6 +502,146 @@
         </article>
       </div>
       <!--item-area End-->
+
+           <!--reservation-area start-->
+           <div id="reservation-area">
+            <div class="row reservation-area-e">
+              <div class="reservation-item-e col-md-10 col-10 mb-3">
+                <div class="reservation-pic-e col-md-3">
+                  <img src="img/user-img/store2.jpg">
+                </div>
+                <div class="reservation-info-e col-md-9">
+                  <div class="reservation-title-e">
+                    <a href="#">路人甲</a>
+                  </div>
+                  <div class="reservation-body-e">
+                    <ul>
+                      <li>電話：<span>09123123123</span>
+                      </li>
+                      <li>性別：<span>女</span>
+                      </li>
+                      <li>預約日期：<span>2021/10/12</span>
+                      </li>
+                      <li>服務項目：<span>造型剪髮+洗頭</span>
+                      </li>
+                      <li>預約時間：<span>09:00</span>
+                      </li>
+                      <li>金額：<span>$499</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="reservation-footer-e">
+                    <h6>已確認</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
+                    <button class="btn reservation-cancel-btn-e">取消<i class="fas fa-times-circle ml-1 mb-1"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="reservation-item-e col-md-10 col-10 mb-3">
+                <div class="reservation-pic-e col-md-3">
+                  <img src="img/user-img/store2.jpg">
+                </div>
+                <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
+                <div class="reservation-info-e col-md-9">
+                  <div class="reservation-title-e">
+                    <a href="#">路人乙</a>
+                  </div>
+                  <div class="reservation-body-e">
+                    <ul>
+                      <li>電話：<span>09123123123</span>
+                      </li>
+                      <li>性別：<span>女</span>
+                      </li>
+                      <li>預約日期：<span>2021/10/12</span>
+                      </li>
+                      <li>服務項目：<span>造型剪髮+洗頭</span>
+                      </li>
+                      <li>預約時間：<span>09:00</span>
+                      </li>
+                      <li>金額：<span>$499</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="reservation-footer-e">
+                    <span id="res-evaluation">
+                      <button type="button" class="btn btn-warning reveiew-btn" data-toggle="modal"
+                        data-target="#reservation-evaluate">評價</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="reservation-item-e col-md-10 col-10 mb-3">
+                <div class="reservation-pic-e col-md-3">
+                  <img src="img/user-img/store2.jpg" class="reservation-pic-e">
+                </div>
+                <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
+                <div class="reservation-info-e col-md-9">
+                  <div class="reservation-title-e">
+                    <a href="#">路人丙</a>
+                  </div>
+                  <div class="reservation-body-e">
+                    <ul>
+                      <li>電話：<span>09123123123</span>
+                      </li>
+                      <li>性別：<span>女</span>
+                      </li>
+                      <li>預約日期：<span>2021/10/12</span>
+                      </li>
+                      <li>服務項目：<span>造型剪髮+洗頭</span>
+                      </li>
+                      <li>預約時間：<span>09:00</span>
+                      </li>
+                      <li>金額：<span>$499</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="reservation-footer-e reservation-complete-e">
+                    <h6>已完成</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="reservation-item-e col-md-10 col-10 mb-3">
+                <div class="reservation-pic-e col-md-3">
+                  <img src="img/user-img/store2.jpg">
+                </div>
+                <button type="button" class="btn close-btn" id="cancelbtn"><i class="fa fa-times"></i></button>
+                <div class="reservation-info-e col-md-9">
+                  <div class="reservation-title-e">
+                    <a href="#">路人丁</a>
+                  </div>
+                  <div class="reservation-body-e">
+                    <ul>
+                      <li>電話：<span>09123123123</span>
+                      </li>
+                      <li>性別：<span>女</span>
+                      </li>
+                      <li>預約日期：<span>2021/10/12</span>
+                      </li>
+                      <li>服務項目：<span>造型剪髮+洗頭</span>
+                      </li>
+                      <li>預約時間：<span>09:00</span>
+                      </li>
+                      <li>金額：<span>$499</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="reservation-footer-e reservation-canceled-e">
+                    <h6>已取消</h6><i class="fas fa-times-circle ml-1 mb-1"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+          </div>
+          <script>
+            $(document).ready(function () {
+              if ($('#res-cancel,#res-ok,#res-evaluation')) {
+                $('#cancelbtn').hide();
+                $('#okbtn').hide();
+                $('#evaluationbtn').hide();
+              }
+            })
+          </script>
+          <!--reservation-area End-->
     </div>
   </main>
   <!-- ***** backstage Area Start ***** -->
