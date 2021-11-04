@@ -34,7 +34,7 @@ namespace Haircute.Controllers
             ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
-            if (member == null)
+            if ((member == null)&&(m.fCity!=null)&&(m.fArea!=null))
             {
                 db.tMember.Add(m.Member);
                 db.SaveChanges();
@@ -44,7 +44,17 @@ namespace Haircute.Controllers
                 //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
                 return RedirectToAction("ConfirmPage");
             }
+            else if ((member == null) && ((m.fCity == null) || (m.fArea == null)))
+            {
+                ViewBag.Message1 = "請選擇居住區域";
+            }
+            else if ((member != null) && ((m.fCity == null) || (m.fArea == null)))
+            {
+                ViewBag.Message1 = "請選擇居住區域";
+                ViewBag.Message = "此帳號已有人使用";
+            }
             ViewBag.Message = "此帳號已有人使用";
+
             return View();
         }
 
@@ -63,11 +73,20 @@ namespace Haircute.Controllers
             ViewBag.SelectList = selectLists;
             demodbEntities db = new demodbEntities();
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
-            if (member == null)
+            if ((member == null) && (m.fCity != null) && (m.fArea != null))
             {
                 db.tMember.Add(m.Member);
                 db.SaveChanges();
                 return RedirectToAction("Login");
+            }
+            else if ((member == null) && ((m.fCity == null) || (m.fArea == null)))
+            {
+                ViewBag.Message1 = "請選擇居住區域";
+            }
+            else if ((member != null) && ((m.fCity == null) || (m.fArea == null)))
+            {
+                ViewBag.Message1 = "請選擇居住區域";
+                ViewBag.Message = "此帳號已有人使用";
             }
             ViewBag.Message = "此帳號已有人使用";
             return View();

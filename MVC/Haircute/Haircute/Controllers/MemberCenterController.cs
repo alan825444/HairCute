@@ -103,5 +103,13 @@ namespace Haircute.Controllers
             string result = new 資料儲存器().會員資料修改(SSID, m);
             return Json(new { Message = result});
         }
+
+        [HttpPost]
+        public ActionResult PwdChange(string fpwd)
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name);
+            string resault = new 資料儲存器().密碼修改(SSID, fpwd);
+            return Json(new { Message = resault});
+        }
     }
 }

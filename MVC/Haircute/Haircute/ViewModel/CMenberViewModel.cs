@@ -59,7 +59,6 @@ namespace Haircute.ViewModel
             set { this.Member.fGender = value; }
         }
         [DisplayName("生日")]
-        [RegularExpression(@"^((0?[1-9]|[12][0-9]|3[01])[/.](0?[1-9]|1[012])[/.]((?:19|20)[0-9]{2}))*$", ErrorMessage = "請輸入正確的日期格式")]
         [Required(ErrorMessage = "此欄不得為空")]
         public Nullable<System.DateTime> fBirth 
         {

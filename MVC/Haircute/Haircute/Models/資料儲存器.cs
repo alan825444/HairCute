@@ -89,5 +89,26 @@ namespace Haircute.Models
             db.SaveChanges();
             return "OK";
         }
+
+        public string 密碼修改(int SSID, string Pwd)
+        {
+            
+            try
+            {
+                demodbEntities db = new demodbEntities();
+                var q = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+                q.fPwd = Pwd;
+                int result = db.SaveChanges();
+                return "OK";
+            }
+            catch (Exception)
+            {
+                return "Error";
+                throw;
+            }
+            
+            
+            
+        }
     }
 }
