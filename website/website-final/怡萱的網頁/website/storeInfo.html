@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>髮CUTE | 預剪美好的一天</title>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- jquery ui -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- jQuery js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- timepicker -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+  <!-- confirm btn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+
+</head>
+
+<body>
+
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area">
+    <!-- Main Header Start -->
+    <div class="main-header-area">
+      <div class="classy-nav-container breakpoint-off">
+        <!-- Classy Menu -->
+        <nav class="classy-navbar justify-content-between" id="monaNav">
+
+          <!-- Background Curve -->
+          <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
+
+          <!-- Logo -->
+          <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt=""></a>
+
+          <!-- Navbar Toggler -->
+          <div class="classy-navbar-toggler">
+            <span class="navbarToggler"><span></span><span></span><span></span></span>
+          </div>
+
+          <!-- Menu -->
+          <div class="classy-menu">
+            <!-- Menu Close Button -->
+            <div class="classycloseIcon">
+              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+            </div>
+
+            <!-- Nav Start -->
+            <div class="classynav">
+
+              <ul id="nav">
+
+                <li><a href="login.html">登入</a>
+
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
+
+                </li>
+
+                <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                  <ul class="dropdown">
+                    <li><a href="#">- 台中</a></li>
+                    <li><a href="#">- 高雄</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- Nav End -->
+
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- ***** Top Search Area Start ***** -->
+  <div class="top-search-area">
+    <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <!-- Close Button -->
+            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <!-- Form -->
+            <form action="index.html" method="post">
+              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+              <button type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Top Search Area End ***** -->
+
+
+  <!-- ***** register Area Start ***** -->
+  <div class="register-select">
+    <!-- register Modal -->
+    <div class="modal fade" id="register-select" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content register-cardarea">
+          <div class="modal-header border-0">
+            <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="register-select">
+            <div class="register-card shadow">
+              <a href="register.html">
+                <div class="register-cardHead" id="banner01">設計師</div>
+                <div class="register-cardBody"><img src="img/register-store.png"></div>
+              </a>
+            </div>
+            <div class="register-card shadow">
+              <a href="register.html">
+                <div class="register-cardHead" id="banner02">消費者</div>
+                <div class="register-cardBody"><img src="img/register-customer.png"></div>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- ***** register Area End ***** -->
+
+  <!-- ***** storeInfo Area Start ***** -->
+  <div class="container storeInfo-area">
+    <div class="row storeInfo-header align-items-center">
+      <div class="col-12 col-md-6 d-flex justify-content-md-end storeInfo-pic">
+        <img src="img/user-img/store2.jpg" class="uesr-pic">
+      </div>
+      <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-center">
+        <ul>
+          <li>
+            <div class="userInfo">
+              <h2>查理</h2>
+              <a href="#" class="mt-2 ml-3">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span class="ml-1">4.9</span></a>
+            </div>
+          </li>
+          <li>
+            <div class="d-flex align-items-center">
+              <p class="mr-2 mb-0">ARTIST SALON</p>
+              <p class="mb-0">/</p>
+              <p class="ml-2 mb-0">桃園市楊梅區金山街257號1樓</p>
+            </div>
+          </li>
+          <li>
+            <div class="user-skills mt-2">
+              <h4>擅長</h4>
+            </div>
+          </li>
+          <li>
+            <div class="skills-tag mt-3">
+              <a href="#">#自然卷</a>
+              <a href="#">#短髮</a>
+              <a href="#">#漂髮</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row storeInfo-Tab d-flex justify-content-center">
+      <div class="col-md-12 col-12" id="storeInfo-Tab">
+        <a href="#" class="Tab1 col-3 col-md-3">
+          <i class="far fa-images mr-2"></i>作品集
+        </a>
+        <a href="#" class="Tab3 col-3 col-md-3">
+          <i class="fas fa-cut mr-2"></i>價目表
+        </a>
+        <a href="#" class="Tab5 col-3 col-md-3">
+          <i class="far fa-comment-dots mr-2"></i>評價
+        </a>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".Tab1").addClass('change');
+        $('#article-area,#menu-area,#evaluate-area').hide();
+      })
+      $(".Tab1").click(function () {
+        $(".Tab5,.Tab3").removeClass('change');
+        $(this).addClass('change');
+        $('#design-area').fadeIn();
+        $('#menu-area,#evaluate-area').fadeOut();
+      })
+      $(".Tab3").click(function () {
+        $(".Tab5,.Tab1").removeClass('change');
+        $(this).addClass('change');
+        $('#menu-area').fadeIn();
+        $('#evaluate-area,#design-area').fadeOut();
+      })
+      $(".Tab5").click(function () {
+        $(".Tab1,.Tab3").removeClass('change');
+        $(this).addClass('change');
+        $('#evaluate-area').fadeIn();
+        $('#design-area,#menu-area').fadeOut();
+      })
+    </script>
+
+    <!--design-area start-->
+    <div class="container" id="design-area">
+      <div class="row design-area">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+            <div class="design-body">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/26.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/27.jpg" class="design-pic"></div>
+
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head"><img src="img/bg-img/28.jpg" class="design-pic"></div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--design-area End-->
+
+    <!--menu-area start-->
+    <div class="container" id="menu-area">
+      <div class="row menu-info mt-3">
+        <div class="menu-img col-md-3">
+          <div class="menu-img-container">
+            <img src="img/bg-img/hair-cut.jpg">
+          </div>
+        </div>
+        <div class="col-md-4 menu-title">
+          <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+            <h4 class="menu-name">造型剪髮＋舒適洗頭</h4>
+            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>499</h6>
+          </div>
+          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        </div>
+        <div class="dateTime-area col-md-3">
+          <p>請選擇日期時間</p>
+          <div class="reserve-date">
+            <input type="text" class="datepicker">
+          </div>
+          <div class="reserve-time">
+            <input type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="reserve-btn col-md-2">
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
+        </div>
+      </div>
+      <div class="row menu-info mt-3">
+        <div class="menu-img col-md-3">
+          <div class="menu-img-container">
+            <img src="img/bg-img/perm-hair.jpg">
+          </div>
+        </div>
+        <div class="col-md-4 menu-title">
+          <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+            <h4 class="menu-name">精油護理＋燙髮</h4>
+            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>799</h6>
+          </div>
+          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        </div>
+        <div class="dateTime-area col-md-3">
+          <p>請選擇日期時間</p>
+          <div class="reserve-date">
+            <input type="text" class="datepicker">
+          </div>
+          <div class="reserve-time">
+            <input type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="reserve-btn col-md-2">
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
+        </div>
+      </div>
+      <div class="row menu-info mt-3">
+        <div class="menu-img col-md-3">
+          <div class="menu-img-container">
+            <img src="img/bg-img/dye-hair.jpg">
+          </div>
+        </div>
+        <div class="col-md-4 menu-title">
+          <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+            <h4 class="menu-name">精油護理＋染髮</h4>
+            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>799</h6>
+          </div>
+          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+        </div>
+        <div class="dateTime-area col-md-3">
+          <p>請選擇日期時間</p>
+          <div class="reserve-date">
+            <input type="text" class="datepicker">
+          </div>
+          <div class="reserve-time">
+            <input type="text" class="timepicker">
+          </div>
+        </div>
+        <div class="reserve-btn col-md-2">
+          <button class="btn btn-success reserve-confirm" type="submit">預約</button>
+        </div>
+      </div>
+    </div>
+    <!--menu-area End-->
+
+    <!--evaluate-area start-->
+    <div id="evaluate-area" class="container evaluate-area">
+      <div class="row d-flex justify-content-center">
+        <div class="evaluate-item mt-3 col-md-8 col-10">
+          <div class="evaluate-title col-md-12 col-12">
+            <i class="fas fa-user-circle mr-1"></i><b>查理</b>
+          </div>
+          <div class="review-content row">
+            <div class="evaluate-star col-md-6">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <!-- <p>3.0</p> -->
+            </div>
+            <div class="evaluate-body col-md-6">
+              服務真的很好
+              環境舒適 造型做得太好了阿
+              超級推薦這位設計師的啦啦啦啦啦啦啦啦
+            </div>
+          </div>
+          <div class="evaluate-footer">
+            <div class="col-md-6 col-12">
+              <label>服務項目：</label><b>造型剪髮+洗頭</b>
+            </div>
+            <div class="col-md-6 col-12 pos-label">
+              <label>日期：</label><b>2021/10/12</b>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-item mt-3 col-md-8 col-10">
+          <div class="evaluate-title col-md-12 col-12">
+            <i class="fas fa-user-circle mr-1"></i><b>查理</b>
+          </div>
+          <div class="review-content row">
+            <div class="evaluate-star col-md-6">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <!-- <p>3.0</p> -->
+            </div>
+            <div class="evaluate-body col-md-6">
+              服務真的很好
+              環境舒適 造型做得太好了阿
+              超級推薦這位設計師的啦啦啦啦啦啦啦啦
+            </div>
+          </div>
+          <div class="evaluate-footer">
+            <div class="col-md-6">
+              <label>服務項目：</label><b>造型剪髮+洗頭</b>
+            </div>
+            <div class="col-md-6 pos-label">
+              <label>日期：</label><b>2021/10/12</b>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-item mt-3 col-md-8 col-10">
+          <div class="evaluate-title col-md-12 col-12">
+            <i class="fas fa-user-circle mr-1"></i><b>查理</b>
+          </div>
+          <div class="review-content row">
+            <div class="evaluate-star col-md-6">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <!-- <p>3.0</p> -->
+            </div>
+            <div class="evaluate-body col-md-6">
+              服務真的很好
+              環境舒適 造型做得太好了阿
+              超級推薦這位設計師的啦啦啦啦啦啦啦啦
+            </div>
+          </div>
+          <div class="evaluate-footer">
+            <div class="col-md-6">
+              <label>服務項目：</label><b>造型剪髮+洗頭</b>
+            </div>
+            <div class="col-md-6 pos-label">
+              <label>日期：</label><b>2021/10/12</b>
+            </div>
+          </div>
+        </div>
+        <div class="evaluate-item mt-3 col-md-8 col-10">
+          <div class="evaluate-title col-md-12 col-12">
+            <i class="fas fa-user-circle mr-1"></i><b>查理</b>
+          </div>
+          <div class="review-content row">
+            <div class="evaluate-star col-md-6">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+              <i class="far fa-star"></i>
+              <!-- <p>3.0</p> -->
+            </div>
+            <div class="evaluate-body col-md-6">
+              服務真的很好
+              環境舒適 造型做得太好了阿
+              超級推薦這位設計師的啦啦啦啦啦啦啦啦
+            </div>
+          </div>
+          <div class="evaluate-footer">
+            <div class="col-md-6">
+              <label>服務項目：</label><b>造型剪髮+洗頭</b>
+            </div>
+            <div class="col-md-6 pos-label">
+              <label>日期：</label><b>2021/10/12</b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--evaluate-area End-->
+  </div>
+  <!-- ***** membercenter Area Start ***** -->
+
+  <!-- ***** Footer Area Start ***** -->
+  <div footer-html="footer.html"></div>
+  <!-- ***** Footer Area End ***** -->
+
+
+
+  <!-- ******* All JS ******* -->
+
+  <!-- Popper js -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap js -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <!-- All js -->
+  <script src="js/mona.bundle.js"></script>
+  <!-- Active js -->
+  <script src="js/default-assets/active.js"></script>
+  <!-- import js -->
+  <script src="import.js"></script>
+  <!-- timepicker -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+
+
+  <script>
+    //footer
+    includeFooter();
+
+    //datepicker
+    $(function () {
+      $(".datepicker").datepicker();
+      $(".datepicker").datepicker('setDate', 'today');
+    });
+
+    //timepicker
+    $(document).ready(function () {
+      $('.timepicker').timepicker();
+    });
+    $('.timepicker').timepicker({
+      timeFormat: 'h:mm p',
+      interval: 60,
+      minTime: '10',
+      maxTime: '20:00',
+      defaultTime: '10',
+      startTime: '10:00',
+      dynamic: false,
+      dropdown: true,
+      scrollbar: true
+    });
+
+    //reserve-confirm-btn
+    $('.reserve-confirm').confirm({
+      title: '預約確認',
+      content: '您預訂的是${"date"}的${"time"}</br>確認無誤後',
+      type: 'blue',
+      buttons: {
+        取消: {
+          btnClass: 'btn-red'
+        },
+        預約: {
+          btnClass: 'btn-success',
+          action: function () {
+            $.alert('預約成功');
+          }
+        }
+      }
+    });
+  </script>
+
+
+</body>
+
+</html>
