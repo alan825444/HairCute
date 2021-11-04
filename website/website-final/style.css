@@ -293,7 +293,7 @@ ul li {
 
 /* :: 3.0 Preloader CSS */
 
-/* .wrapper {
+.wrapper {
   padding-left: 1em;
   padding-right: 1em;
   margin: auto;
@@ -389,7 +389,7 @@ ul li {
     -moz-transform: scale(1);
     opacity: 0;
   }
-} */
+}
 /* :: 4.0 Heading CSS */
 .section-heading {
   position: relative;
@@ -830,13 +830,10 @@ ul li {
   .single-welcome-slide {
     height: 400px;
   }
-  .single-welcome-slide .bg-curve{
-    display: none;
-  }
 }
 .single-welcome-slide .bg-curve {
   position: absolute;
-  width: 59.7%;
+  width: 60%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: top right;
@@ -3207,43 +3204,43 @@ section .section-title span {
   color: rgb(238, 234, 234);
 }
 /*design-area*/
-.storeInfo-area .design-area {
+.design-area {
   display: flex;
   align-items: center;
   text-align: center;
   width: 100%;
   justify-content: center;
 }
-.storeInfo-area .design-item {
+.design-item {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.storeInfo-area .design-head {
+.design-head {
   height: 40vh;
   width: 16vw;
   overflow: hidden;
   margin: 10px 0;
 }
-.storeInfo-area .design-pic {
+.design-pic {
   min-height: 100%;
 }
-.storeInfo-area .design-head:hover {
+.design-head:hover {
   box-shadow: rgba(102, 102, 102, 0.5) 5px 5px 5px;
   border-radius: 1rem;
   transition: 0.6s;
 }
-.storeInfo-area .design-pic:hover {
+.design-pic:hover {
   transform: scale(1.1);
   transition: 0.8s;
 }
 @media screen and (max-width: 750px) {
-  .storeInfo-area .design-head {
+  .design-head {
     width: 40vw;
     height: 25vh;
   }
-  .storeInfo-area #design-area {
+  #design-area {
     display: flex;
     justify-content: center;
     padding: 0;
@@ -3268,6 +3265,10 @@ section .section-title span {
   border-radius: 10px;
   box-shadow: rgba(166, 166, 166, 0.4) 3px 2px 5px;
 }
+/* 
+#even-num-row{
+  background-color: rgba(151, 45, 68, 0.2);
+} */
 
 .menu-img {
   display: flex;
@@ -3360,7 +3361,7 @@ section .section-title span {
 
 /*evaluate-area*/
 
-.storeInfo-area .evaluate-area {
+.evaluate-area {
   display: flex;
   justify-content: center;
   padding: 20px 0;
@@ -3368,45 +3369,45 @@ section .section-title span {
   border: 3px outset rgba(237, 72, 157, 0.5);
   border-radius: 1rem;
 }
-.storeInfo-area .evaluate-item {
+.evaluate-item {
   border-bottom: 1px solid #dfd9d9;
 }
-.storeInfo-area .evaluate-title {
+.evaluate-title {
   font-size: 20px;
 }
 
-.storeInfo-area .review-content{
+.review-content{
 display: flex;
 align-items: center;
 justify-content: center;
 margin: 15px 0 25px 0;
 }
 
-.storeInfo-area .evaluate-star {
+.evaluate-star {
   display: flex;
   justify-content: center;
   font-size: 1.3rem;
 }
-.storeInfo-area .evaluate-star i {
+.evaluate-star i {
   color: rgb(251, 177, 5);
 }
-.storeInfo-area .evaluate-body {
+.evaluate-body {
   font-size: 16px;
 }
-.storeInfo-area .evaluate-footer {
+.evaluate-footer {
   display: flex;
   flex-direction: row;
   color: #9c9c9c;
 }
-.storeInfo-area .pos-label {
+.pos-label {
   text-align: end;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .storeInfo-area .evaluate-item {
+  .evaluate-item {
     /* width: 80%;
     height: 180px; */
   }
-  .storeInfo-area .pos-label {
+  .pos-label {
     /* margin-left: 400px; */
   }
 }
@@ -3417,669 +3418,20 @@ margin: 15px 0 25px 0;
   }
 }
 @media only screen and (max-width: 767px) {
-  .storeInfo-area .evaluate-star {
+  .evaluate-star {
     font-size: 20px;
   }
-  .storeInfo-area .evaluate-body {
+  .evaluate-body {
     font-size: 14px;
     margin-top: 20px;
   }
-  .storeInfo-area .evaluate-footer {
+  .evaluate-footer {
    display: flex;
    flex-direction: column;
    text-align: end;
    font-size: 0.8rem;
   }
 }
-
-/*membercenter area*/
-.membercenter-area{
-  z-index: 1;
-  margin-top: 150px;
-}
-
-.uesr-pic{
-  border-radius: 50%;
-  width: 35vw;
-  height: auto;
-}
-.pic-cover{
-  width: 16vw;
-  height:35vh;
-  position: absolute;
-  bottom: 10%;
-  border-radius: 50%;
-  /* border: olivedrab 1px solid; */
-}
-
-.pic-cover:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-  transition: all 0.3s 0s ease;
-}
-
-.pic-cover:hover i{
-  color: #3b4241;
-  transition: all 0.3s 0s ease;
-}
-.pic-cover i{
-  font-size: 3.5rem;
-  color: transparent;
-  position: relative;
-  top: 35%;
-}
-
-.user-star i{
-  color: #e9ad28;
-}
-.user-service{
-  margin-top: 10px;
-}
-.service-menu{
-  width: 35vw;
-  height: 20vh;
-  font-size: 1rem;
-  line-height: 30px;
-  color: #666666;
-}
-
-.service-menu i{
-  color: #da627d;
-}
-
-.membercenter-edit{
-  display:flex;
-  align-items: center;
-  text-align: center;
-}
-.membercenter-edit li{
-  margin: 30px 0;
-}
-.userinfo-edit{
-  border: 1px solid #314499;
-  border-radius: 0.8rem;
-  padding: 8px 12px;
-  text-align: center;
-  font-size: 1.1rem;
-  color: #314499;
-}
-.userinfo-edit:hover{
-  color:rgb(241, 238, 238);
-  background-color:rgba(40, 70, 153, 0.7);
-  border: none;
-  transition: all 0s 0s ease-in;
-}
-
-
-@media only screen and (max-width: 767px) {
-  .membercenter-header{
-    margin: 0;
-  }
-  .membercenter-area{
-    margin-top: 100px;
-  }
-  .pic-cover{
-    width: 45vw;
-    height: 25vh;
-    top: 3%;
-    left: 28%;
-  }
-  .membercenter-pic img{
-    width: 50%;
-    height: auto;
-    margin-left: 20px;
-  }
-  .membercenter-user{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-  }
-  .membercenter-user-title {
-    display: flex;
-    flex-direction: column;
-  }
-  .desAddress{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  .desAddress .slash{
-    display: none;
-  }
-  
-  .service-menu{
-    width: auto;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: 5px;
-  }
-  .membercenter-edit{
-    display: flex;
-    justify-content: center;
-  }
-  .membercenter-edit ul{
-    display: flex;
-    flex-direction: column;
-  }
-  .membercenter-edit li{
-    margin: 15px 0;
-  }
-  .userinfo-edit{
-    font-size: 16px;
-    margin: 0 5px;
-  }
-  .membercenter-area .membercenter-Tab{
-    margin: 10px;
-  }
-}
-.membercenter-Tab{
-  display: flex;
-  text-align: center;
-  height: 30px;
-  width: 100%;
-  margin: 60px 0 50px 0;
-}
-
-.membercenter-Tab .Tab1, .membercenter-Tab .Tab2, .membercenter-Tab .Tab3 {
-  border-radius: 10px;
-  position: relative;
-  display: inline-block;
-  font-size: 1.2rem;
-  color: #666666;
-  padding: 3px 0;
-}
-
-.membercenter-Tab .Tab2 i {
-  transform: rotate(-45deg);
-}
-
-.membercenter-Tab .change {
-  background-color: rgba(228, 110, 63, 0.8);
-  color: rgb(238, 234, 234);
-}
-
-/*design-area*/
-.membercenter-area .design-area{
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  justify-content: center;
-}
-.membercenter-area .design-item{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.membercenter-area .design-head{
-  height: 40vh;
-  width: 16vw;
-  overflow: hidden;
-  margin: 10px 0;
-}
-
-.membercenter-are .design-pic{
-  min-height: 100%;
-}
-
-@media only screen and (max-width: 767px) {
-  .membercenter-area #design-area {
-    display: flex;
-    justify-content: center;
-    padding: 0;
-  }
-  .membercenter-area .design-area{
-    margin-top: 20px;
-  }
-  .membercenter-area .design-item{
-    display: flex;
-    justify-content: center;
-  }
-  .membercenter-area .design-head{
-    height: auto;
-    width: auto;
-  }
-  .membercenter-area .design-pic{
-    height: auto;
-    width: 40vw;
-  }
-  .membercenter-area .design-footer i{
-    display: none;
-  }
-  .membercenter-edit ul{
-    display: flex;
-    flex-direction: row;
-  }
-  .membercenter-edit a{
-    border: none;
-  }
-}
-
-/*reservation-area*/
-.reservation-area{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.reservation-item{
-  display: flex;
-  position: relative;
-  border: 3px outset rgba(50, 69, 154, 0.7);
-  border-radius: 1rem;
-  padding: 10px 0;
-}
-
-.reservation-pic img{
-  border-radius: 50%;
-  width: 90%;
-  height: auto;
-  margin: 10px ;
-}
-.reservation-info{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.reservation-title a{
-  font-size: 1.3rem;
-  color: #1e82df;
-}
-/* .reservation-title b{
-  font-size: 16px;
-} */
-/* .reservation-star{
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  width: 130px;
-  align-items: center;
-}
-.reservation-star i{
-  color: rgb(251, 177, 5);
-} */
-.reservation-body{
-  font-size: 1.2rem;
-  background-color: rgba(102, 102, 102, 0.2);
-  margin: 5px 5px 0 0;
-  border-radius: 3px;
-}
-.reservation-body ul{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 10px 10px;
-}
-.reservation-body li{
-  width: 20vw;
-  color: #3b4241;
-}
-.reservation-footer{
-  margin-top: 10px;
-  font-size: 20px;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  font-size: 1.1rem;
-}
-.reservation-footer h6{
-  margin: 0;
-  color: #108d6f;
-}
-.fa-check-circle{
-  color: #108d6f;
-}
-.reservation-cancel-btn{
-  display: inline-flex;
-  align-items:center;
-  margin: 0 20px;
-  color: rgb(187, 41, 41);
-}
-
-.reservation-cancel-btn:hover{
-  background-color: rgba(187, 41, 41);
-  color: whitesmoke;
-}
-
-.reveiew-btn{
-  margin: 0 20px;
-  color: #3b4241;
-}
-.reveiew-btn:hover{
-  background-color: #F9BF45;
-  color: whitesmoke;
-  border: none;
-}
-
-.reservation-canceled, .reservation-complete{
-  margin-right:15px ;
-}
-
-.reservation-canceled, .reservation-canceled h6 {
-  color:rgb(187, 41, 41) ;
-}
-
-/* @media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 80%;
-    height: 200px;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:690px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-    width: 500px;
-  }
-  .reservation-title a{
-    font-size: 20px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 1.3rem;
-    width: 500px;
-  }
-  .re-la1{
-    margin-left: 50px;
-  }
-  .reservation-footer{
-    margin-top: 15px;
-    font-size: 20px;
-  }
-  .reservation-footer button{
-    font-size: 20px;
-    width: 80px;
-  }
-} */
-/* @media only screen and (min-width: 768px) and (max-width: 991px) {
-  .reservation-item{
-    margin-left: 25px;
-    width: 100%;
-  }
-  .reservation-pic-div{
-    margin-top: 30px;
-  }
-  .pic-li{
-    width:640px;
-  }
-  .reservation-title{
-    margin-top: 15px;
-  }
-  .reservation-title a{
-    font-size: 16px;
-  }
-  .reservation-title b{
-    font-size: 14px;
-  }
-  .reservation-body{
-    margin-top: 10px;
-    font-size: 16px;
-    width: 470px;
-  }
-  .re-la1{
-    margin-left: 45px;
-  }
-  .reservation-footer{
-    font-size: 16px;
-  }
-  .reservation-footer button{
-    font-size: 16px;
-    width: 65px;
-  }
-} */
-@media only screen and (max-width: 767px) {
-  .reservation-pic{
-    display: none;
-  }
-  .reservation-item{
-    margin-top: 20px;
-  }
-  .reservation-title a{
-    font-size: 1rem;
-    margin-left: 5px;
-  }
-  .reservation-body{
-    font-size: 1rem;
-  }
-  .reservation-body ul{
-    display: flex;
-    flex-direction: column;
-  }
-  .reservation-body li{
-    display: inline-flex;
-    width: auto;
-  }
-  .reservation-footer{
-    font-size: 16px;
-    /* right: 20px;
-    top: 180px; */
-  }
-  .reservation-footer button{
-    /* width: 65px;
-    font-size: 16px; */
-  }
-}
-
-
-
-/*evaluate-area*/
-.membercenter-area .evaluate-area{
-  display: flex;
-  justify-content: center;
-  height: 1500px;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 1000px;
-}
-.membercenter-area .evaluate-item{
-  display: flex;
-  position: relative;
-  margin-top: 30px;
-  height: 180px;
-  width: 60%;
-  border-bottom: 1px solid #dfd9d9;
-}
-.membercenter-area .evaluate-title{
-  font-size: 20px;
-  width: 100px;
-}
-.membercenter-area .evaluate-star{
-  position: relative;
-  font-size: 24px;
-  width: 180px;
-  margin-left: 70px;
-  top:30px;
-}
-.membercenter-area .evaluate-star i{
-  color: rgb(251, 177, 5);
-}
-.membercenter-area .evaluate-body{
-  position: relative;
-  height: 140px;
-  width: 310px;
-  font-size: 16px;
-  padding-top: 30px;
-  left: 320px;
-  top: -50px;
-}
-.membercenter-area .evaluate-footer{
-  margin-top: -50px;
-  color: #9c9c9c;
-}
-.membercenter-area .pos-label{
-  margin-left: 350px;
-}
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .membercenter-area .evaluate-item{
-    width: 80%;
-    height: 180px;
-  }
-  .membercenter-area .pos-label{
-    margin-left: 400px;
-  }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .membercenter-area .evaluate-item{
-    width: 100%;
-    height: 180px;
-  }
-}
-@media only screen and (max-width: 767px) {
-  .membercenter-area .evaluate-item{
-    width: 100%;
-    height: 250px;
-  }
-  .membercenter-area .evaluate-star{
-    font-size: 20px;
-    margin-left: 20px;
-    top:10px;
-  }
-  .membercenter-area .evaluate-body{
-    font-size: 14px;
-    left: 20px;
-    top: -10px;
-  }
-  .membercenter-area .evaluate-footer{
-    margin-top: 10px;
-  }
-  .membercenter-area .pos-label{
-    margin-left: 10px;
-  }
-}
-/*reserve-menu*/
-.reserve-menu{
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 5px;
-}
-.reserve-menu label{
-  width: 80px;
-  font-size: 20px;
-  margin-top: 5px;
-}
-.reserve-menu input{
-  width: 140px;
-  height: 35px;
-  margin-left: -10px;
-  font-size: 20px;
-}
-/*reserve-manage-area*/
-.reserve-manage-area{
-  text-align: center;
-}
-.reserve-manage-area a{
-  font-size: 16px;
-  color: blue;
-}
-.close-a{
-  padding-top: 5px;
-}
-.reserve-manage-area button{
-    font-size: 10px;
-}
-/*update-user-info*/
-.add-col{
-  display: inline-block;
-}
-.addin{
-  display: inline-block;
-  width: 90%;
-  margin-left: 10px;
-}
-.addcopy{
-  width: 90%;
-  margin-left: 25px;
-}
-.modal-footer{
-  display: flex;
-  justify-content: center;
-}
-/*reservation-evaluate*/
-.main-body{
-  display: block;
-  text-align: center;
-}
-.main-star{
-  position: relative;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.main-star img{
-  width: 50px;
-}
-.write-body{
-  position: relative;
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-/*update-user-design*/
-.designpreview{
-  display: block;
-  position: relative;
-  width: 350px;
-  height: 350px;
-}
-.design-modal{
-  height: 350px;
-  width: 300px;
-  margin-left:80px;
-  overflow: hidden;
-}
-#design-info{
-  margin-left: 80px;
-}
-.modal-body h4{
-  margin-top: 10px;
-  margin-left: 180px;
-}
-/*update-user-pic*/
-.userpreview{
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.userpreviewdiv{
-  width: 270px;
-  height: 270px;
-  padding: 5px;
-  margin-left:90px;
-}
-@media only screen and (max-width: 767px){
-  .design-modal{
-    margin-top: 5px;
-    margin-left:20px;
-  }
-  #design-info{
-    margin-left: 20px;
-  }
-  .modal-body h4{
-    margin-left: 110px;
-  }
-  .userpreviewdiv{
-    margin-left:30px;
-  }
-}
-
-
-
-
-
-
-
 /*reserve-menu*/
 .reserve-menu {
   margin-top: 10px;
@@ -4119,4 +3471,988 @@ margin: 15px 0 25px 0;
 
 .reserve-manage-area button {
   font-size: 10px;
+}
+
+
+/*membercenter area*/
+.membercenter-area-cos {
+  z-index: 1;
+  position: relative;
+  top: 100px;
+}
+
+.membercenter-header-cos {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.membercenter-pic-cos {
+  width: 270px;
+  height: 270px;
+  padding: 5px;
+}
+
+.consumer-pic {
+  width: 270px;
+  height: 270px;
+  padding: 5px;
+  margin-left: 420px;
+}
+.consumer-user{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.consumer-name {
+  display: inline-block;
+  margin-left: 440px;
+}
+
+.consumer-star {
+  position: relative;
+  display: inline-flex;
+  margin-left: 10px;
+  align-items: center;
+  height: 60px;
+  width: 180px;
+}
+
+  .consumer-star i {
+      color: rgb(251, 177, 5);
+  }
+
+.uesr-pic-cos {
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.uesr-btn-cos {
+  border: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+}
+
+.membercenter-user-cos ul {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.consumer-user-cos ul {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.user-name-cos {
+  display: inline-block;
+}
+
+.user-star-cos {
+  position: relative;
+  display: inline-flex;
+  margin-left: 10px;
+  align-items: center;
+  height: 60px;
+  width: 180px;
+}
+
+.user-star-cos i {
+ color: rgb(251, 177, 5);
+}
+
+.user-service-cos {
+  margin-top: 10px;
+}
+
+.service-edit-cos {
+  display: block;
+  width: 510px;
+  height: 120px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.rwd-edit {
+  display: block;
+  width: 660px;
+  height: 120px;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+.membercenter-edit-cos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.membercenter-edit-cos ul{
+  margin-right: 10px;
+}
+.userinfo-edit-cos {
+  position: relative;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 5px;
+  text-align: center;
+  font-size: 20px;
+  width: 150px;
+}
+
+.userinfo-edit-cos:hover {
+  color: white;
+  background-color: #DA627D;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .service-edit-cos {
+      width: 430px;
+      height: 130px;
+      font-size: 20px;
+  }
+
+  .rwd-edit {
+      width: 610px;
+      font-size: 20px;
+  }
+
+  .consumer-pic {
+      margin-left: 320px;
+  }
+
+  .consumer-name {
+      margin-left: 350px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .membercenter-pic-cos {
+      width: 24px;
+      height: 200px;
+      padding: 5px;
+      margin-top: 20px;
+  }
+
+  .service-edit-cos {
+      width: 340px;
+  }
+
+  .rwd-edit {
+      width: 500px;
+  }
+
+  .consumer-pic {
+      margin-left: 210px;
+  }
+
+  .consumer-name {
+      margin-left: 250px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .membercenter-pic-cos {
+      position: relative;
+      width: 100%;
+      height: 100%;
+  }
+
+  .membercenter-user-cos {
+      margin-top: 10px;
+  }
+
+  .membercenter-user-cos ul {
+          position: relative;
+          left: -100px;
+          margin-top: 0px;
+          margin-left: 0px;
+          width: 360px;
+          height: 360px;
+  }
+
+  .membercenter-user-cos li {
+          width: 360px;
+          height: 50px;
+  }
+
+  .user-name-cos {
+      font-size: 16px;
+      position: relative;
+      margin-left: 90px;
+  }
+
+  .user-star-cos {
+      width: 130px;
+  }
+
+  .desAddress {
+      margin-left: 90px;
+      font-size: 8px;
+  }
+
+  .service-edit-cos {
+      width: 165px;
+      height: 180px;
+  }
+
+  .rwd-edit {
+      width: 340px;
+      height: 180px;
+  }
+
+  .membercenter-edit-cos {
+      left: -50px;
+      top: 20px;
+  }
+
+  .userinfo-edit-cos {
+      font-size: 16px;
+      width: 130px;
+  }
+
+  .consumer-pic {
+      margin-left: 35px;
+  }
+
+  .consumer-name {
+      margin-left: 70px;
+  }
+
+  .consumer-star {
+      width: 120px;
+  }
+}
+
+.membercenter-Tab-cos {
+  display: flex;
+  text-align: center;
+  height: 30px;
+}
+
+.Tab1-cos {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 90px;
+  height: 30px;
+}
+
+.membercenter-Tab-cos span {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+  margin-bottom: 1px;
+}
+
+.Tab2-cos {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 110px;
+  height: 30px;
+}
+
+.Tab3-cos {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 80px;
+  height: 30px;
+}
+
+.change {
+  background-color: #f8b195;
+}
+/*design-area*/
+.design-area {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 400px;
+  width: 100%;
+  margin-top: -5px;
+  margin-bottom: -60px;
+}
+
+.design-item {
+  padding-left: 35px;
+}
+
+.design-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.design-body {
+  display: flex;
+  margin-top: -1px;
+  height: 50px;
+  width: 200px;
+  overflow: hidden;
+  font-size: 20px;
+  justify-content: center;
+}
+
+.design-pic {
+  border: solid 1px;
+  height: 300px;
+  max-width: 300px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .design-item {
+      padding-left: 10px;
+  }
+
+  .design-item {
+      padding-left: 10px;
+      width: 50%;
+  }
+
+  .design-head {
+      height: 250px;
+      width: 175px;
+  }
+
+  .design-body {
+      height: 50px;
+      width: 175px;
+      font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .design-area {
+      margin-top: 20px;
+      height: 500px;
+  }
+
+  .design-item {
+      padding-left: 40px;
+      margin-top: -50px;
+      width: 50%;
+  }
+
+  .design-head {
+      height: 150px;
+      width: 120px;
+  }
+
+  .design-body {
+      width: 120px;
+      font-size: 12px;
+  }
+}
+
+/*reservation-area*/
+.reservation-area-cos {
+  display: flex;
+  justify-content: center;
+  height: 1500px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 900px;
+}
+
+.reservation-item-cos {
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+  height: 180px;
+  width: 70%;
+  border: 1px solid #dfd9d9;
+  box-shadow: 1px 1px #b6b5b5;
+}
+
+.reservation-pic-div-cos {
+  height: 20%;
+  width: 20%;
+  background: white;
+  margin-top: 15px;
+  margin-left: 15px;
+  overflow:hidden;
+}
+
+.reservation-pic-cos {
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.reservation-title-cos {
+  position: absolute;
+  border-bottom: 1px solid;
+  left: 190px;
+  top: 20px;
+}
+
+.reservation-title-cos a {
+      font-size: 20px;
+      color: #007bff;
+}
+.reservation-title-cos b {
+      font-size: 16px;
+}
+
+.reservation-star-cos {
+  position: relative;
+  display: inline-flex;
+  margin-left: 10px;
+  width: 130px;
+  align-items: center;
+}
+
+  .reservation-star-cos i {
+      color: rgb(251, 177, 5);
+  }
+
+.reservation-body-cos {
+  position: absolute;
+  border-bottom: 1px solid;
+  font-size: 20px;
+  left: 190px;
+  top: 60px;
+  width: 520px;
+}
+
+.reservation-body-cos b {
+      margin-right: 10px;
+}
+
+.re-la1-cos {
+  margin-left: 45px;
+}
+
+.reservation-footer-cos {
+  position: absolute;
+  font-size: 20px;
+  right: 50px;
+  top: 140px;
+}
+
+.reservation-footer-cos b {
+      color: green;
+}
+
+.reservation-footer-cos i {
+      color: green;
+}
+
+.reservation-footer-cos button {
+      display: inline-flex;
+      height: 30px;
+      width: 78px;
+      align-items: center;
+      letter-spacing: 10px;
+      font-size: 20px;
+}
+
+.res-cancel-cos b {
+  color: red;
+}
+
+.res-cancel-cos i {
+  color: red;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .reservation-item-cos {
+      margin-left: 25px;
+      width: 80%;
+      height: 200px;
+  }
+
+  .reservation-pic-div-cos {
+      margin-top: 30px;
+  }
+
+  .pic-li-cos {
+      width: 690px;
+  }
+
+  .reservation-title-cos {
+      margin-top: 15px;
+      width: 500px;
+  }
+
+  .reservation-title-cos a {
+          font-size: 20px;
+  }
+
+  .reservation-title-cos b {
+          font-size: 14px;
+  }
+
+  .reservation-body-cos {
+      margin-top: 10px;
+      font-size: 1.3rem;
+      width: 500px;
+  }
+
+  .re-la1-cos {
+      margin-left: 50px;
+  }
+
+  .reservation-footer-cos {
+      margin-top: 15px;
+      font-size: 20px;
+  }
+
+  .reservation-footer-cos button {
+          font-size: 20px;
+          width: 80px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .reservation-item-cos {
+      margin-left: 25px;
+      width: 100%;
+  }
+
+  .reservation-pic-div-cos {
+      margin-top: 30px;
+  }
+
+  .pic-li-cos {
+      width: 640px;
+  }
+
+  .reservation-title-cos {
+      margin-top: 15px;
+  }
+
+  .reservation-title-cos a {
+          font-size: 16px;
+  }
+
+  .reservation-title-cos b {
+          font-size: 14px;
+  }
+
+  .reservation-body-cos {
+      margin-top: 10px;
+      font-size: 16px;
+      width: 470px;
+  }
+
+  .re-la1-cos {
+      margin-left: 45px;
+  }
+
+  .reservation-footer-cos {
+      font-size: 16px;
+  }
+
+  .reservation-footer-cos button {
+          font-size: 16px;
+          width: 65px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .reservation-item-cos {
+      margin-left: 25px;
+      width: 100%;
+      height: 220px;
+  }
+
+  .pic-li-cos {
+      width: 290px;
+  }
+
+  .reservation-pic-div-cos {
+      height: 40%;
+      width: 40%;
+      margin-top: 20px;
+  }
+
+  .reservation-title-cos {
+      width: 160px;
+      left: 10px;
+      top: 140px;
+      border: none;
+  }
+
+  .reservation-title-cos a {
+          font-size: 12px;
+  }
+
+  .reservation-title-cos b {
+          font-size: 8px;
+  }
+
+  .reservation-star-cos {
+      width: 110px;
+  }
+
+  .reservation-body-cos {
+      font-size: 8px;
+      left: 170px;
+      top: 50px;
+      width: 160px;
+      border: none;
+  }
+
+  .re-la1-cos {
+      margin-left: 0px;
+  }
+
+  .reservation-footer-cos {
+      font-size: 16px;
+      right: 20px;
+      top: 180px;
+  }
+
+  .reservation-footer-cos button {
+          width: 65px;
+          font-size: 16px;
+  }
+}
+
+/*evaluate-area*/
+.evaluate-area-cos {
+  display: flex;
+  justify-content: center;
+  height: 1500px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 1000px;
+}
+
+.evaluate-item-cos {
+  display: flex;
+  position: relative;
+  margin-top: 30px;
+  height: 180px;
+  width: 60%;
+  border-bottom: 1px solid #dfd9d9;
+}
+
+.evaluate-title-cos {
+  font-size: 20px;
+  width: 100px;
+}
+
+.evaluate-star-cos {
+  position: relative;
+  font-size: 24px;
+  width: 180px;
+  margin-left: 70px;
+  top: 30px;
+}
+
+.evaluate-star-cos i {
+color: rgb(251, 177, 5);
+}
+
+.evaluate-body-cos {
+  position: relative;
+  height: 140px;
+  width: 310px;
+  font-size: 16px;
+  padding-top: 40px;
+  padding-left: 10px;
+  left: 320px;
+  top: -50px;
+}
+
+.evaluate-footer-cos {
+  margin-top: -50px;
+  color: #9c9c9c;
+}
+
+.pos-label-cos {
+  margin-left:50px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .evaluate-item-cos {
+      width: 80%;
+      height: 180px;
+  }
+
+  .pos-label-cos {
+      margin-left: 400px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .evaluate-item-cos {
+      width: 100%;
+      height: 180px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .evaluate-item-cos {
+      width: 100%;
+      height: 250px;
+  }
+
+  .evaluate-star-cos {
+      font-size: 20px;
+      margin-left: 20px;
+      top: 10px;
+  }
+
+  .evaluate-body-cos {
+      font-size: 14px;
+      left: 20px;
+      top: -10px;
+  }
+
+  .evaluate-footer-cos {
+      margin-top: 10px;
+  }
+
+  .pos-label-cos {
+      margin-left: 10px;
+  }
+}
+/*reserve-menu*/
+.reserve-menu {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.reserve-menu label {
+      width: 80px;
+      font-size: 20px;
+      margin-top: 5px;
+}
+
+.reserve-menu input {
+      width: 140px;
+      height: 35px;
+      margin-left: -10px;
+      font-size: 20px;
+}
+/*reserve-manage-area*/
+.reserve-manage-area {
+  text-align: center;
+}
+
+.reserve-manage-area a {
+      font-size: 16px;
+      color: blue;
+}
+
+.close-a {
+  padding-top: 5px;
+}
+
+.reserve-manage-area button {
+  font-size: 10px;
+}
+/*update-user-info*/
+.add-col {
+  display: inline-block;
+}
+
+.addin {
+  display: inline-block;
+  width: 90%;
+  margin-left: 10px;
+}
+
+.addcopy {
+  width: 90%;
+  margin-left: 25px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
+/*reservation-evaluate*/
+.main-body {
+  display: block;
+  text-align: center;
+}
+
+.main-star {
+  position: relative;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.main-star img {
+      width: 50px;
+}
+
+.write-body {
+  position: relative;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/*update-user-design*/
+.designpreview {
+  display: block;
+  position: relative;
+  width: 350px;
+  height: 350px;
+}
+
+.design-modal {
+  height: 350px;
+  width: 300px;
+  margin-left: 80px;
+  overflow: hidden;
+}
+
+#design-info {
+  margin-left: 80px;
+}
+
+.modal-body h4 {
+  margin-top: 10px;
+  margin-left: 180px;
+}
+/*update-user-pic*/
+.userpreview {
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.userpreviewdiv {
+  width: 270px;
+  height: 270px;
+  padding: 5px;
+  margin-left: 90px;
+}
+
+@media only screen and (max-width: 767px) {
+  .design-modal {
+      margin-top: 5px;
+      margin-left: 20px;
+  }
+
+  #design-info {
+      margin-left: 20px;
+  }
+
+  .modal-body h4 {
+      margin-left: 110px;
+  }
+
+  .userpreviewdiv {
+      margin-left: 30px;
+  }
+}
+/* Edit*/
+.Edit-area{
+  margin-top: 30px;
+  margin-left: 200px;
+  width: 60%;
+}
+.Edit-pic{
+  width: 270px;
+  height: 270px;
+  padding: 5px;
+}
+.select-pic{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.upicon{
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+.fas{
+  cursor: pointer;
+}
+.Edit-from{
+  margin-left: 25px;
+}
+.Errorstatus{
+  color: red;
+}
+.Okstatus{
+  color: green;
+}
+/* Backstage */
+
+.Backstage-edit{
+  display: flex;
+  justify-content: center;
+  margin-top:10px ;
+}
+.Backstage-edit ul{
+  margin-left: 10px;
+}
+.Backstage-user{
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.Backstage-Tab-cos {
+  display: flex;
+  text-align: center;
+  height: 30px;
+}
+.Backstage-Tab-cos span {
+  vertical-align: middle;
+  margin-right: 5px;
+  margin-top: -2px;
+  margin-bottom: 1px;
+}
+.Tab1-back {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+}
+.Tab2-back {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+}
+
+.Tab3-back {
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+}
+.back-area{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.back-form{
+  margin-bottom: 60px;
+  width: 450px;
+}
+.item-area{
+  margin-bottom: 150px;
 }
