@@ -86,7 +86,6 @@ function submitQuery() {
         */  
         var openTime = parseInt(book.openTime.split(":")[0]);  
         var closeTime = parseInt(book.closeTime.split(":")[0]);  
-          
         var bookList = book.bookList;  
           
         //清空預約table  
@@ -107,7 +106,7 @@ function submitQuery() {
         var first_row = openTime;  
         var today = new Date();
         //判斷預約的時間是否為今天之前，是就將所有預約時間段設置過期，判斷預約日期如果是今天就將過期的時間設置為當前時間(奧爾斯)
-        //對table的每一行，如果在過期時間之前的時間段，就將這一行所有td的class設置為“outtime”，表示不可預約，否則class設置為“useable”表示可預約
+        //對table的每一行，如果在過期時間之前的時間段，就將這一行所有td的class設置為outtime，表示不可預約，否則class設置為useable表示可預約
         if(today.getFullYear() > (new Date(date)).getFullYear()){
             var end_year = first_row -1;
             $("#resourceTable tr").each(function(i) {  
@@ -139,7 +138,7 @@ function submitQuery() {
         });
         }
           
-        //開始遍歷，根據預約紀錄的開始時間生成對應的行坐標，找到表格中對應位置的td删除本身的class，增加“occupied”表示對應時段已經被預約  
+        //開始遍歷，根據預約紀錄的開始時間生成對應的行坐標，找到表格中對應位置的td删除本身的class，增加occupied表示對應時段已經被預約  
         $(bookList).each(function(i) {  
             var row = parseInt(bookList[i].startTime.split(":")[0]) - openTime + 1;  
             var col = 0;  
@@ -147,7 +146,7 @@ function submitQuery() {
             $("#resourceTable tr").eq(row).find("td").eq(col).removeClass().addClass("occupied");  
         });  
           
-        //所有可以預約的td绑定一個click事件，即點擊表示選中，再點一次恢復原来狀態，直到點擊預約按钮預約成功後，解除click事件，並由“useable”變為“occupied”  
+        //所有可以預約的td绑定一個click事件，即點擊表示選中，再點一次恢復原来狀態，直到點擊預約按钮預約成功後，解除click事件，並由useable變為occupied
         $("tr .useable").bind("click", function() {  
             $(this).toggleClass("selected");
         });  
@@ -156,7 +155,7 @@ function submitQuery() {
 }  
 
 })
-//format(Date型別)=>(資料庫date型別"yyyy-MM-dd")應該吧  下面我google的:DD
+//format(Date型別)=>(資料庫date型別"yyyy-MM-dd")
 Date.prototype.format = function (fmt) { 
 	var o = {
 		"M+": this.getMonth()+1, 
