@@ -2731,7 +2731,7 @@ section .section-title span {
   left: 0;
   z-index: 100;
   border-radius: 1rem;
-  /*width: 24vw;*/
+  width: 24vw;
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
   -o-transform: rotateY(-180deg);
@@ -2767,7 +2767,6 @@ section .section-title span {
 
 .backside .card a {
   font-size: 18px;
-  color: #007b5e !important;
 }
 
 .frontside .card .card-title,
@@ -2814,7 +2813,7 @@ section .section-title span {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1140px) {
   .frontside h4 {
     font-size: 3rem;
   }
@@ -2822,8 +2821,7 @@ section .section-title span {
   .list_store_review i {
     font-size: 1.5rem;
   }
-  .backside,
-  .backside .card {
+  .backside, .backside .card {
     width: 44vw;
     height: 45.4vh;
   }
@@ -2838,6 +2836,31 @@ section .section-title span {
   .backside a.btn,
   p {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1500px){
+  .frontside h4 {
+    font-size: 2rem;
+  }
+  .frontside a,
+  .list_store_review i {
+    font-size: 1.2rem;
+  }
+  .backside, .backside .card {
+    width: 17vw;
+    height: 47.1vh;
+  }
+  .store_image {
+    width: 10vw;
+    height: auto;
+    margin-top: 10px;
+  }
+  .backside h4{
+    font-size: 2rem;
+  }
+  .backside p{
+    font-size: 1.5rem;
   }
 }
 
