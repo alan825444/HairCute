@@ -2816,7 +2816,7 @@ section .section-title span {
   }
     .backside, .backside .card {
     //width: 17vw;
-    min-height: 442px;
+    min-height: 40vh;
     }
   .store_image {
     width: 10vw;
