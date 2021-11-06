@@ -230,30 +230,27 @@
       <div id="reservation-area">
         <article>
           <div class="row reservation-area">
-            <div class="notice">
-              <div class="occupied">&nbsp;&nbsp;</div>被預約
-              <div class="outtime">&nbsp;&nbsp;</div>已過期
-              <div class="useable">&nbsp;&nbsp;</div>可預約
-              <div class="useables">&nbsp;&nbsp;</div>已選取
+            <div class="booknotice">
+              <div class="bookoccupied">&nbsp;&nbsp;</div>被預約
+              <div class="bookouttime">&nbsp;&nbsp;</div>已過期
+              <div class="bookuseable">&nbsp;&nbsp;</div>可預約
+              <div class="bookuseables">&nbsp;&nbsp;</div>已選取
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <label class="label-date">請選擇日期:<input id="date" type="date" value=""></label>
+              <label class="booklabel-date">請選擇日期:<input id="bookDate" type="date" value=""></label>
               &nbsp;&nbsp;
-              <input class="btn-book" type="button" name="btn-myBook" value="預約搜尋"/>
+              <input class="bookbtn" type="button" name="btn-myBook" value="預約搜尋"/>
               &nbsp;&nbsp;
-              <input class="btn-book" type="button" name="btn-reserve" value="預約"/>
+              <input class="bookbtn" type="button" name="btn-reserve" value="預約"/>
             </div>
             
             <table >
-            <tbody id="resourceTable">
+            <tbody id="bookTable">
             <!-- 以下js生成 -->
             
             </tbody>
             </table>
-            <!--<div class="btn-area">
-              <input type="button" name="btn-reserve" value="預約" class="btn-book"/>
-              <input type="button" name="btn-myBook" value="查看預約" class="btn-book"/>
-            </div>-->
-            <div class="reserveResult">
+
+            <div class="bookresult">
             </div>
           
           </div>
