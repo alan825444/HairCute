@@ -2689,29 +2689,15 @@ section .section-title span {
 
 .image-flip:hover .backside,
 .image-flip.hover .backside {
-  -webkit-transform: rotateY(0deg);
-  -moz-transform: rotateY(0deg);
-  -o-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
 
 .image-flip:hover .frontside,
 .image-flip.hover .frontside {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
 
 .mainflip {
-  -webkit-transition: 1s;
-  -webkit-transform-style: preserve-3d;
-  -ms-transition: 1s;
-  -moz-transition: 1s;
-  -moz-transform: perspective(1000px);
-  -moz-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
   transition: 1s;
   transform-style: preserve-3d;
   position: relative;
@@ -2719,8 +2705,6 @@ section .section-title span {
 
 .frontside {
   position: relative;
-  -webkit-transform: rotateY(0deg);
-  -ms-transform: rotateY(0deg);
   z-index: 2;
   margin-bottom: 30px;
 }
@@ -2731,31 +2715,14 @@ section .section-title span {
   left: 0;
   z-index: 100;
   border-radius: 1rem;
-  /*width: 24vw;*/
-  -webkit-transform: rotateY(-180deg);
-  -moz-transform: rotateY(-180deg);
-  -o-transform: rotateY(-180deg);
-  -ms-transform: rotateY(-180deg);
+  //width: 24vw;
   transform: rotateY(-180deg);
-  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
-  -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
   box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
 }
 
 .frontside,
 .backside {
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: 1s;
-  -webkit-transform-style: preserve-3d;
-  -moz-transition: 1s;
-  -moz-transform-style: preserve-3d;
-  -o-transition: 1s;
-  -o-transform-style: preserve-3d;
-  -ms-transition: 1s;
-  -ms-transform-style: preserve-3d;
   transition: 1s;
   transform-style: preserve-3d;
 }
@@ -2767,7 +2734,6 @@ section .section-title span {
 
 .backside .card a {
   font-size: 18px;
-  color: #007b5e !important;
 }
 
 .frontside .card .card-title,
@@ -2814,7 +2780,7 @@ section .section-title span {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1024px) and (max-width: 1140px) {
   .frontside h4 {
     font-size: 3rem;
   }
@@ -2822,11 +2788,10 @@ section .section-title span {
   .list_store_review i {
     font-size: 1.5rem;
   }
-  .backside,
-  .backside .card {
-    width: 44vw;
-    height: 45.4vh;
-  }
+    .backside, .backside .card {
+     //width: 500px;
+     min-height: 370px;
+    }
   .store_image {
     width: 25vw;
     height: auto;
@@ -2838,6 +2803,31 @@ section .section-title span {
   .backside a.btn,
   p {
     font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1200px){
+  .frontside h4 {
+    font-size: 2rem;
+  }
+  .frontside a,
+  .list_store_review i {
+    font-size: 1.2rem;
+  }
+    .backside, .backside .card {
+    //width: 17vw;
+    min-height: 40vh;
+    }
+  .store_image {
+    width: 10vw;
+    height: auto;
+    margin-top: 10px;
+  }
+  .backside h4{
+    font-size: 2rem;
+  }
+  .backside p{
+    font-size: 1.5rem;
   }
 }
 
