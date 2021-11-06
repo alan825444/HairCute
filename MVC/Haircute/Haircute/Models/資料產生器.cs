@@ -28,7 +28,7 @@ namespace Haircute.Models
 
             foreach (var item in q2)
             {
-                data.Add(new tPhoto { fk_Designer = item.fk_Designer, fPath = item.fPath, fTag = item.fTag, fDateTime = item.fDateTime });
+                data.Add(new tPhoto { fid=item.fid, fk_Designer = item.fk_Designer, fPath = item.fPath, fTag = item.fTag, fDateTime = item.fDateTime });
             }
 
             return data;
@@ -180,7 +180,48 @@ namespace Haircute.Models
             return data;
 
         }
-        
-        
+
+        public List<照片資料> 取得最新上傳() 
+        {
+            demodbEntities db = new demodbEntities();
+            List<int> ID = new List<int>();
+            List<照片資料> data = new List<照片資料>();
+            var q = db.tPhoto.OrderByDescending(x => x.fid).Take(30).GroupBy(x => x.fk_Designer).OrderBy(x => Guid.NewGuid()).Select(x=>new { 數量=x.Count() , ID = x.Key }).Take(5);
+            foreach (var item in q)
+            {
+                if (item.數量>=2)
+                {
+                    ID.Add((int)item.ID);
+                }
+            }
+            foreach (var item in ID)
+            {
+                var qphoto = db.tPhoto.Where(x => x.fk_Designer == item).OrderBy(x => x.fDateTime).Take(2).ToList();
+                var qDesigner = db.tDesigner.Where(x => x.fid==item).FirstOrDefault();
+                照片資料 temp = new 照片資料();
+                temp = new 照片資料 { photo = qphoto[0].fPath, photo2 = qphoto[1].fPath, DesignerId = item ,DesignerName=qDesigner.tMember.fNickname };
+                data.Add(temp);
+            }
+            return data;
+        }
+
+        public List<string> 取得關鍵字() 
+        {
+            demodbEntities db = new demodbEntities();
+            List<string> data = new List<string>();
+            var q = db.tPhoto.GroupBy(x=>x.fTag);
+            foreach (var item in q)
+            {
+                data.Add(item.Key);
+            }
+            return data;
+        }
+
+        public void 回傳搜尋結果()
+        {
+
+        }
+
+
     }
 }

@@ -16,6 +16,8 @@ namespace Haircute.Controllers
         {
             SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
             ViewBag.SelectList = selectLists;
+            ViewBag.圖片 = new 資料產生器().取得最新上傳();
+            ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
             return View();
         }
 
@@ -141,7 +143,7 @@ namespace Haircute.Controllers
             if (member == null)
             {
                 ViewBag.Message = "帳號密碼錯誤";
-                return View();
+                return View("Login");
             }
             FormsAuthentication.RedirectFromLoginPage(member.fID.ToString(),true);
             Session["Member"] = member.fNickname;
@@ -152,6 +154,22 @@ namespace Haircute.Controllers
         public ActionResult ConfirmPage()
         {
             return View();
+        }
+
+        public ActionResult Search() 
+        {
+            string Strtest = TempData["test"].ToString();
+            string StrCity = TempData["City"].ToString();
+            string StrArea = TempData["Area"].ToString();
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Search(string Keyword, string fCity, string fArea) 
+        {
+            TempData["test"] = Keyword;
+            TempData["City"] = fCity;
+            TempData["Area"] = fArea;
+            return RedirectToAction("Search", "Search");
         }
     }
 }

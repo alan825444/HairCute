@@ -313,14 +313,20 @@
                         <button class="btn btn-light" data-toggle="modal" data-target="#update-user-design">上傳作品</button>
                     </div>
                 </div>
-                <div class="row ">
+                <div class="row">
                     @foreach (var item in ViewBag.Dphoto)
                     {
-                        <div class="col-sm-3 design-item">
+                        <div class="col-sm-3 design-item flex-column">
                             <a href="#" data-toggle="modal" data-target="#update-user-design-info">
                                 <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
                                 <div class="design-body">#@item.fTag</div>
                             </a>
+                            <form action="/MemberCenter/test" method="post">
+                                <input type="hidden" name="fid" value="@item.fid" />
+                                <button type="submit" class="btn btn-outline-danger mx-2">
+                                    <i class="far fa-edit mr-1"></i> 刪除
+                                </button>
+                            </form>
                         </div>
                     }
 
@@ -774,17 +780,17 @@
 
     <script>
         $(document).ready(function () {
-            $("#fCity2").change(function () { ChangeCity(); })
+            $("#fCity2").change(function () { ChangeCity2(); })
         });
 
-        function ChangeCity() {
+        function ChangeCity2() {
             var selectedCity = $("#fCity2 option:selected").val();
             if ($.trim(selectedCity).length > 0) {
-                GetArea(selectedCity)
+                GetArea2(selectedCity)
             }
         }
 
-        function GetArea(CityID) {
+        function GetArea2(CityID) {
             $.ajax({
                 url: "/Home/Area",
                 data: { CityID: CityID },

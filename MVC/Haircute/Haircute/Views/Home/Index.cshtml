@@ -159,7 +159,7 @@
 <!--Search-->
 <span id="search-bar"></span>
 <div class="container search-bar">
-    <form class="row">
+    <form class="row" method="post" action="/Search/Search">
         <div class="location-dropdown col-md-3 col-sm-10">
             @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select col-10", id = "fCity" })
         </div>
@@ -178,22 +178,18 @@
                 </h4>
             </div>
             <div class="col-md-8 col-sm-12">
-                <select class="tag_search" multiple>
-                    <option value="1">Acura</option>
-                    <option value="2">Audi</option>
-                    <option value="3">BMW</option>
-                    <option value="4">Cadillac</option>
-                    <option value="5">Chevrolet</option>
-                    <option value="6">Ferrari</option>
-                    <option value="7">Ford</option>
-                    <option value="8">Honda</option>
-                    <option value="9">Lexus</option>
-                    <option value="10">Mercedes-Benz</option>
+                <select name="test" class="tag_search" multiple>
+                    @{
+                        foreach (var item in ViewBag.關鍵字)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    }
                 </select>
             </div>
         </div>
-        <div class="search-btn align-self-center col-md-12 col-sm-10">
-             <a href="~/Search/Index" role="button" class="col-6">預約搜尋</a>
+        <div class="align-self-center d-grid gap-2 col-12 col-md-8 mx-auto">
+            <input type="submit" name="test" class="btn btn-outline-danger" value="預約搜尋" />
         </div>
     </form>
     
@@ -239,164 +235,152 @@
                             <!-- All Model Slide -->
                             <div class="mona-all-model-slide owl-carousel">
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                @{
+                                    foreach (var item in ViewBag.圖片)
+                                    {
+                                        <div class="single-model-item">
+                                            <div class="model-thumbnail">
+                                                <!-- First Thumbnail -->
+                                                <img class="first-thumbnail img-fluid" src="~/Images/@item.photo" alt="">
+                                                <!-- Second Thumbnail -->
+                                                <img class="second-thumbnail img-fluid" src="~/Images/@item.photo2" alt="">
+                                                <!-- Share Info -->
+                                            </div>
+                                            <div class="model-info">
+                                                <h3>@item.DesignerName</h3>
+                                                <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
+                                            </div>
+                                        </div>
+                                    }
+                                    
+                                }
+                                <!-- Single Model Item -->
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="../img/bg-img/13.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="../img/bg-img/14.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="../img/bg-img/11.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="../img/bg-img/12.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="../img/bg-img/13.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="../img/bg-img/14.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
+                                <!--<div class="single-model-item">
+                                    <div class="model-thumbnail">-->
                                         <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
+                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
                                         <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
+                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
                                         <!-- Share Info -->
 
-                                    </div>
+                                    <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
-                                </div>
-
-                                <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
-                                        <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
-                                        <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
-                                        <!-- Share Info -->
-
-                                    </div>
-                                    <div class="model-info">
-                                        <h3>Willie Figueroa</h3>
-                                        <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
-                                    </div>
-                                </div>
-
-                                <!-- Single Model Item -->
-                                <div class="single-model-item">
-                                    <div class="model-thumbnail">
-                                        <!-- First Thumbnail -->
-                                        <img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">
-                                        <!-- Second Thumbnail -->
-                                        <img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">
-                                        <!-- Share Info -->
-
-                                    </div>
-                                    <div class="model-info">
-                                        <h3>Willie Figueroa</h3>
-                                        <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
-                                    </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
 
@@ -1076,7 +1060,7 @@
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="post-thumbnail">
-                        <a href="#"><img src="./img/bg-img/1.jpg" alt=""></a>
+                        <a href="/Search/Index?id=12"><img src="~/img/bg-img/1.jpg" alt=""></a>
                     </div>
                     <div class="post-content">
                         <a href="#" class="post-title">What Curling Irons Are The Best Ones</a>
@@ -1154,3 +1138,66 @@
     </div>
 </section>
 <!-- ***** Blog Area End ***** -->
+
+@section HomeIndex{
+    <script>
+
+
+        $(document).ready(function () {
+        /*$('#Search-Button').click(function () { 查詢資料() });*/
+            $('.tag_search').tokenize2();
+            
+        })
+
+        
+
+        function 查詢資料()
+        {
+            var test = $('.tag_search').data('tokenize2').toArray().join(', ');
+            var 城市 = $('.location-dropdown #fCity option:selected').val();
+            var 區域 = $('.location-dropdown #fArea option:selected').val();
+            console.log(`${test},${城市},${區域}`)
+            $.post(
+                '/Search/Search',
+                { "test": test , "City": 城市, "Area": 區域},
+                function (data) {
+
+                },
+                "json"
+            )
+        }
+
+         /*location jquery*/
+        //$(".location-menu li a").click(function () {
+
+        //    $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
+        //    $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
+
+        //});
+
+        //autoComplete
+        
+
+
+
+        //用Ajax連接資料庫
+         //$('.tag_search').tokenize2({
+         //    dataSource: function (term, object)
+         //    {
+         //        $.ajax({
+         //            url: "/Home/test",
+         //            type: 'post',
+         //            data: { "search": term, "start": 0 },
+         //            dataType: 'json',
+         //            success: function (data) {
+
+         //            }
+         //        })
+         //    }
+         //});
+
+        //footer
+
+    </script>
+
+    }

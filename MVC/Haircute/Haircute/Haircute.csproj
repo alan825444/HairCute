@@ -314,6 +314,7 @@
     <Compile Include="Models\cDiction.cs" />
     <Compile Include="Models\CityArea.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\照片資料.cs" />
     <Compile Include="Models\用戶.cs" />
     <Compile Include="Models\用戶crud.cs" />
     <Compile Include="Models\registFunction.cs" />
@@ -451,8 +452,6 @@
     <Content Include="scss\_widget.scss" />
     <Content Include="Views\Shared\package-lock.json" />
     <Content Include="Views\Shared\package.json" />
-    <Content Include="Views\Home\package-lock.json" />
-    <Content Include="Views\Home\package.json" />
     <Content Include="Views\Home\RGFDesigner.cshtml" />
     <Content Include="Views\Home\mailtest.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
@@ -463,6 +462,7 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\DesgnerPage\DesignerPage.cshtml" />
     <Content Include="Views\UserCenter\Index.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

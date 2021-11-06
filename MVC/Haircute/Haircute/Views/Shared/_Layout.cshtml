@@ -272,37 +272,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- autoComplete -->
     <script src="~/Content/Autocomplete/tokenize2.js"></script>
-    <script>
-        // location jquery
-        $(".location-menu li a").click(function () {
 
-            $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
-            $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
-
-        });
-
-        //autoComplete
-        $('.tag_search').tokenize2();
-
-        //用Ajax連接資料庫
-        // $('.tag_search').tokenize2({
-        //     dataSource: ''
-        // });
-        // JSON
-        // [
-        //     { "text": "Afghanistan", "value": "AF" },
-        //     { "text": "Åland Islands", "value": "AX" },
-        //     { "text": "Albania", "value": "AL" },
-        //     { "text": "Algeria", "value": "DZ" },
-        //     { "text": "American Samoa", "value": "AS" },
-        //     { "text": "Andorra", "value": "AD" },
-        //     { "text": "Angola", "value": "AO" }
-        // ]
-
-        //footer
-        includeFooter();
-
-    </script>
 
     @*<script>
             $(function () {
@@ -314,6 +284,8 @@
     @RenderSection("Register", required: false);
     @RenderSection("DesignerPage", required: false);
     @RenderSection("UserpageJs", required: false);
+    @RenderSection("Backstage", required: false);
+    @RenderSection("HomeIndex", required: false);
 </body>
 
 </html>

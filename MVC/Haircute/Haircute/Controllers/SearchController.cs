@@ -11,11 +11,16 @@ namespace Haircute.Controllers
         // GET: Search
         public ActionResult Index()
         {
-            if (Session["ID"] == null)
-            {
-                return View();
-            }
-            return View("", "_LayourMember");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Search(string test , string fCity, string fArea) 
+        {
+            TempData["test"] = test;
+            TempData["City"] = fCity;
+            TempData["Area"] = fArea;
+            return RedirectToAction("Index","Search");
         }
     }
 }
