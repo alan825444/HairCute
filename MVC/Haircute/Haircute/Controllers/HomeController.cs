@@ -42,6 +42,7 @@ namespace Haircute.Controllers
                 db.SaveChanges();
                 var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
                 db.tDesigner.Add(new tDesigner { fk_Member = m.fID });
+                db.tWork.Add(new tWork { fk_Designer = m.fID });
                 db.SaveChanges();
                 //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
                 return RedirectToAction("ConfirmPage");
