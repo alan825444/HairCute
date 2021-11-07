@@ -224,61 +224,91 @@ namespace Haircute.Models
         {
             demodbEntities db = new demodbEntities();
             List<搜尋資料> data = new List<搜尋資料>();
-
-            if (Keyword == "")
+            try
             {
-                var q = db.tDesigner.Where(x => x.fStoreCity == City && x.fStoreArea == Area).GroupBy(x => x.fid);
-                foreach (var item in q)
+                if (Keyword == "")
                 {
-                    搜尋資料 tempdata = new 搜尋資料();
-                    var tempq = db.tDesigner.Where(x => x.fid == item.Key).FirstOrDefault();
-                    int Cityid = Convert.ToInt32(tempq.fStoreCity);
-                    int Areaid = Convert.ToInt32(tempq.fStoreArea);
-                    string Address = db.tCity.Where(x => x.fID == Cityid).FirstOrDefault().fCity;
-                    Address += db.tArea.Where(x => x.fid == Areaid).FirstOrDefault().fArea;
-                    Address += tempq.fAddress;
-                    tempdata.Photo1 = db.tPhoto.OrderBy(x => Guid.NewGuid()).FirstOrDefault().fPath;
-                    tempdata.DesgnerName = db.tMember.Where(x=>x.fID == tempq.fk_Member).FirstOrDefault().fNickname;
-                    tempdata.設計師ID = item.Key;
-                    tempdata.Address = Address;
-                    tempdata.HeadStack = tempq.fHeadSticker;
-                    data.Add(tempdata);
-                }
-            }
-            else
-            {
-                string[] KW = Keyword.Split('/');
-
-                foreach (var item in KW)
-                {
-                    var q = db.tDesigner.Join(db.tPhoto, m => m.fid, s => s.fk_Designer,
-                        (m, s) => new
-                        {
-                            Designer = m,
-                            Photo = s
-                        }).Where(x => x.Designer.fStoreCity == City && x.Designer.fStoreArea == Area && x.Photo.fTag == item);
-                    var qGRBfid = q.GroupBy(x => x.Designer.fid);
-                    foreach (var item2 in qGRBfid)
+                    var q = db.tDesigner.Where(x => x.fStoreCity == City && x.fStoreArea == Area).GroupBy(x => x.fid);
+                    foreach (var item in q)
                     {
                         搜尋資料 tempdata = new 搜尋資料();
-                        var tempq = q.Where(x => x.Designer.fid == item2.Key).FirstOrDefault();
-                        int Cityid = Convert.ToInt32(tempq.Designer.fStoreCity);
-                        int Areaid = Convert.ToInt32(tempq.Designer.fStoreArea);
+                        var tempq = db.tDesigner.Where(x => x.fid == item.Key).FirstOrDefault();
+                        int Cityid = Convert.ToInt32(tempq.fStoreCity);
+                        int Areaid = Convert.ToInt32(tempq.fStoreArea);
                         string Address = db.tCity.Where(x => x.fID == Cityid).FirstOrDefault().fCity;
                         Address += db.tArea.Where(x => x.fid == Areaid).FirstOrDefault().fArea;
-                        Address += tempq.Designer.fAddress;
-                        tempdata.Photo1 = tempq.Photo.fPath;
-                        tempdata.DesgnerName = tempq.Designer.tMember.fNickname;
-                        tempdata.設計師ID = item2.Key;
+                        Address += tempq.fAddress;
+                        tempdata.Photo1 = db.tPhoto.OrderBy(x => Guid.NewGuid()).FirstOrDefault().fPath;
+                        tempdata.DesgnerName = db.tMember.Where(x => x.fID == tempq.fk_Member).FirstOrDefault().fNickname;
+                        tempdata.設計師ID = item.Key;
                         tempdata.Address = Address;
-                        tempdata.HeadStack = tempq.Designer.fHeadSticker;
+                        tempdata.HeadStack = tempq.fHeadSticker;
+                        tempdata.StoreName = tempq.fStore;
                         data.Add(tempdata);
                     }
-
                 }
-            }
+                else if ((Keyword != "") && ((City == 0) || (Area == 0)))
+                {
+                    string[] KW = Keyword.Split('/');
 
-            return data;
+                    foreach (var item in KW)
+                    {
+                        var q = db.tPhoto.Where(x => x.fTag == item).GroupBy(x => x.fk_Designer);
+                        foreach (var item2 in q)
+                        {
+                            搜尋資料 tempdata = new 搜尋資料();
+                            var q2 = db.tPhoto.Where(x => x.fk_Designer == item2.Key).OrderByDescending(x => x.fid).FirstOrDefault();
+                            tempdata.Photo1 = q2.fPath;
+                            tempdata.設計師ID = (int)item2.Key;
+                            tempdata.HeadStack = q2.tDesigner.fHeadSticker;
+                            tempdata.DesgnerName = q2.tDesigner.tMember.fNickname;
+                            tempdata.StoreName = q2.tDesigner.fStore;
+                            data.Add(tempdata);
+                        }
+                    }
+                }
+                else
+                {
+                    string[] KW = Keyword.Split('/');
+
+                    foreach (var item in KW)
+                    {
+                        var q = db.tDesigner.Join(db.tPhoto, m => m.fid, s => s.fk_Designer,
+                            (m, s) => new
+                            {
+                                Designer = m,
+                                Photo = s
+                            }).Where(x => x.Designer.fStoreCity == City && x.Designer.fStoreArea == Area && x.Photo.fTag == item);
+                        var qGRBfid = q.GroupBy(x => x.Designer.fid);
+                        foreach (var item2 in qGRBfid)
+                        {
+                            搜尋資料 tempdata = new 搜尋資料();
+                            var tempq = q.Where(x => x.Designer.fid == item2.Key).FirstOrDefault();
+                            int Cityid = Convert.ToInt32(tempq.Designer.fStoreCity);
+                            int Areaid = Convert.ToInt32(tempq.Designer.fStoreArea);
+                            string Address = db.tCity.Where(x => x.fID == Cityid).FirstOrDefault().fCity;
+                            Address += db.tArea.Where(x => x.fid == Areaid).FirstOrDefault().fArea;
+                            Address += tempq.Designer.fAddress;
+                            tempdata.Photo1 = tempq.Photo.fPath;
+                            tempdata.DesgnerName = tempq.Designer.tMember.fNickname;
+                            tempdata.設計師ID = item2.Key;
+                            tempdata.Address = Address;
+                            tempdata.HeadStack = tempq.Designer.fHeadSticker;
+                            tempdata.StoreName = tempq.Designer.fStore;
+                            data.Add(tempdata);
+                        }
+
+                    }
+                }
+
+                return data;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            
             
         }
 

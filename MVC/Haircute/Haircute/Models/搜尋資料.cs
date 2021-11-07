@@ -13,6 +13,7 @@ namespace Haircute.Models
         public string Photo1 { get; set; }
 
         public string DesgnerName { get; set; }
+        public string StoreName { get; set; }
         public string HeadStack { get; set; }
     }
 }
