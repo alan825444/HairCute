@@ -2715,7 +2715,7 @@ section .section-title span {
   left: 0;
   z-index: 100;
   border-radius: 1rem;
-  //width: 24vw;
+  width: 24vw;
   transform: rotateY(-180deg);
   box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
 }
@@ -2789,7 +2789,7 @@ section .section-title span {
     font-size: 1.5rem;
   }
     .backside, .backside .card {
-     //width: 500px;
+     width: 500px;
      min-height: 370px;
     }
   .store_image {
@@ -2815,7 +2815,7 @@ section .section-title span {
     font-size: 1.2rem;
   }
     .backside, .backside .card {
-    //width: 17vw;
+    width: 17vw;
     min-height: 40vh;
     }
   .store_image {

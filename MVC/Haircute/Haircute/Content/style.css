@@ -551,7 +551,7 @@ ul li {
 }
 .classy-nav-container .classy-navbar .bg-curve {
   position: absolute;
-  width: 60%;
+  width: 60.2%;
   height: 100%;
   top: 0;
   right: 0;
@@ -847,10 +847,10 @@ ul li {
   height: 180px;
   overflow: hidden;
   border-radius: 50%;
-  background-image: url(img/banner-img/store2.jpg);
+  /*background-image: url(../img/banner-img/store2.jpg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100%;*/
 
   /* right: 20%; */
 }
@@ -868,10 +868,10 @@ ul li {
   height: 350px;
   overflow: hidden;
   border-radius: 1rem;
-  background-image: url(img/banner-img/hair4.jpeg);
+  /*background-image: url(../img/banner-img/hair4.jpeg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 120%;
+  background-size: 120%;*/
   left: 10%;
   top: 35%;
 }
@@ -881,10 +881,10 @@ ul li {
   height: 350px;
   overflow: hidden;
   border-radius: 1rem;
-  background-image: url(img/banner-img/hair6.jpeg);
+  /*background-image: url(../img/banner-img/hair6.jpeg);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100%;*/
   left: 70%;
   bottom: 40%;
 }
@@ -3006,21 +3006,22 @@ section .section-title span {
 }
 /*login area*/
 .log-in-area {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 30px;
-  border-radius: 2rem;
-  border: hsla(329, 82%, 61%, 0.4) 3px outset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-  background-image: url(img/bg-img/log-in.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 400px;
+    border-radius: 2rem;
+    border: hsla(329, 82%, 61%, 0.4) 3px outset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-image: url(../img/bg-img/log-in.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin-bottom: -250px;
 }
 @media screen and (max-width: 780px) {
   .log-in-area {
@@ -3261,6 +3262,7 @@ section .section-title span {
 #menu-area .menu-info {
   background-color: rgba(218, 98, 124, 0.2);
   display: flex;
+  justify-content:center;
   align-items: center;
   border-radius: 10px;
   box-shadow: rgba(166, 166, 166, 0.4) 3px 2px 5px;
@@ -4116,12 +4118,12 @@ margin: 15px 0 25px 0;
 
 /*evaluate-area*/
 .evaluate-area-cos {
-  display: flex;
-  justify-content: center;
-  height: 1500px;
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 1000px;
+    display: flex;
+    justify-content: center;
+    height: 1500px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 1000px;
 }
 
 .evaluate-item-cos {

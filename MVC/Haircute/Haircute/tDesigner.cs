@@ -18,7 +18,6 @@ namespace Haircute
         public tDesigner()
         {
             this.tBook = new HashSet<tBook>();
-            this.tComment = new HashSet<tComment>();
             this.tPhoto = new HashSet<tPhoto>();
             this.tService = new HashSet<tService>();
             this.tWork = new HashSet<tWork>();
@@ -34,8 +33,6 @@ namespace Haircute
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tBook> tBook { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tComment> tComment { get; set; }
         public virtual tMember tMember { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tPhoto> tPhoto { get; set; }
