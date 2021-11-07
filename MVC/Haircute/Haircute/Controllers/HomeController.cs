@@ -18,7 +18,12 @@ namespace Haircute.Controllers
             ViewBag.SelectList = selectLists;
             return View();
         }
-
+        [HttpPost]
+        public ActionResult IndexSearch()
+        {
+            ViewBag.searchstr = Request.Form["searchstr"];
+            return View();
+        }
         public ActionResult RGFDesigner()
         {
             ViewBag.DS = "T";

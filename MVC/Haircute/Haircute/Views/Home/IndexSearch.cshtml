@@ -1,4 +1,9 @@
-﻿<!-- ***** Welcome Area Start ***** -->
+﻿
+@{
+    ViewBag.Title = "IndexSearch";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
 <section class="welcome-area">
     <!-- Welcome Slides -->
     <div class="welcome-slides owl-carousel">
@@ -24,7 +29,7 @@
                         <div class="welcome-text">
                             <h2 data-animation="bounceInUp" data-delay="400ms">
                                 Sep. <br>
-                                預約排行
+                                @ViewBag.searchstr
                             </h2>
                             <h3 data-animation="bounceInUp" data-delay="600ms">查理</h3>
                             <a href="#" class="btn" data-animation="bounceInUp" data-delay="800ms">
@@ -43,16 +48,18 @@
                     <i class="fas fa-hashtag mr-2"></i><span>短髮設計</span>
                 </a>
                 <a href="#" data-animation="bounceInDown" data-delay="1000ms">
-                    <i class="fas fa-hashtag mr-2"></i><span>特殊色染髮</span>
+                    <i class="fas fa-hashtag mr-2"></i><span>@ViewBag.searchstr</span>
                 </a>
 
+            </div>
+            <div class="row">
+                @ViewBag.searchstr
             </div>
             <!-- Pager -->
             <div class="slide-pager">
                 <a href="#">Next > Top 2</a>
             </div>
         </div>
-
         <!-- Single Welcome Slide -->
         <div class="single-welcome-slide">
             <!-- Background Curve -->
@@ -93,7 +100,7 @@
                     <i class="fas fa-hashtag mr-2"></i><span>短髮設計</span>
                 </a>
                 <a href="#" data-animation="bounceInDown" data-delay="1000ms">
-                    <i class="fas fa-hashtag mr-2"></i><span>特殊色染髮</span>
+                    <i class="fas fa-hashtag mr-2"></i><span>@ViewBag.searchstr</span>
                 </a>
 
             </div>
@@ -143,7 +150,7 @@
                     <i class="fas fa-hashtag mr-2"></i><span>短髮設計</span>
                 </a>
                 <a href="#" data-animation="bounceInDown" data-delay="1000ms">
-                    <i class="fas fa-hashtag mr-2"></i><span>特殊色染髮</span>
+                    <i class="fas fa-hashtag mr-2"></i><span>@ViewBag.searchstr</span>
                 </a>
 
             </div>
@@ -193,25 +200,10 @@
             </div>
         </div>
         <div class="search-btn align-self-center col-md-12 col-sm-10">
-            <div class="row">
-                @using (Html.BeginForm("IndexSearch", "Home", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                {
-                    <div class="form-group">
-                        <div class="col-md-10">
-                            @Html.TextBox("searchstr", "", new { @class = "form-control" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <input type="submit" value="搜尋" class="btn btn-default" />
-                        </div>
-                    </div>
-                }
-            </div>
             <a href="~/Search/Index" role="button" class="col-6">預約搜尋</a>
         </div>
     </form>
-    
+
 </div>
 
 <!--Search End-->
@@ -1168,4 +1160,3 @@
     </div>
     </div>
 </section>
-<!-- ***** Blog Area End ***** -->

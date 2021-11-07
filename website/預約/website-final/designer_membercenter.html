@@ -74,12 +74,21 @@
         $(".datepicker").datepicker('setDate', 'today');
         });
   </script>
+  <script type="text/javascript">
+    function foo(){
+      var a = "abc"
+      var str = 'consumer_bookHairCute.html?id="燙髮";';
+      window.location.replace(str);
+      return false;
+    }
+  </script>
 
 
     
 </head>
 
 <body>
+
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
     <!-- Main Header Start -->
@@ -1410,6 +1419,10 @@
       </div>
     </div>
     <!--cancel End-->
+
+    <FORM name="frm" method="get" onsubmit="return foo()">
+      <INPUT type="submit">
+    </FORM>
 
     <script>
       $(document).ready(function(){

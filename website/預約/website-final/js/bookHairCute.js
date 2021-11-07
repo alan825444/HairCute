@@ -14,12 +14,12 @@ $(function() {
     });
     $("[name='btn-reserve']").click(getReserve);
     $("[name='btn-myBook']").click(submitQuery);
-    /*  
-        var date = $("#date").val();            //這是測試用=沒用的註解 怕忘記當初怎弄得
-        var date1 = new Date("2021/11/05");     //這是測試用=沒用的註解 怕忘記當初怎弄得
+      
+        /*var date = $("#date").val();            //這是測試用=沒用的註解 怕忘記當初怎弄得
+        var date1 = new Date("2021-11-05");     //這是測試用=沒用的註解 怕忘記當初怎弄得
         var date2 = date1.format("yyyy-MM-dd"); //這是測試用=沒用的註解 怕忘記當初怎弄得
-        console.log(date);                      //這是測試用=沒用的註解 怕忘記當初怎弄得
-    */
+        console.log(date1);*/                      //這是測試用=沒用的註解 怕忘記當初怎弄得
+    
 
 
 function getReserve() {  
@@ -46,7 +46,7 @@ function getReserve() {
         console.log(params);
         /*ajax回乎函式能訪問到當前表格單元，將其存入變數$td中*/  
         //var $td = $(this);  
-        if(params!= null){$(".bookResult").append("<p>" + "會員：" + "阿賢預約成功" + "，時間：" + params.startTime +" 到 " + params.endTime + "</p>");}
+        if(params!= null){$(".bookresult").append("<p>" + "會員：" + "阿賢預約成功" + "，時間：" + params.startTime +" 到 " + params.endTime + "</p>");}
         //$.post("#", params, function(data, status) {  
             /*如果預約成功，將原來的bookuseable變為bookoccupied，並且解除點擊事件，不可預約*/  
             //if(data.message.result == "success") {  
@@ -54,7 +54,7 @@ function getReserve() {
             //} 
             //var mesg = data.message.result == "success" ? "預約成功" : "預約失败";  
             /*在表格下方展示此次預約的结果，包括詳細資訊*/  
-            //$(".bookResult").append("<p>" + "會員：" + "阿賢" + mesg + "，時間：" + params.startTime +" 到 " + params.endTime + "</p>");  
+            //$(".bookresult").append("<p>" + "會員：" + "阿賢" + mesg + "，時間：" + params.startTime +" 到 " + params.endTime + "</p>");  
         //}, "json");
     });  
 } 
@@ -72,8 +72,8 @@ function submitQuery() {
           
         //var book = data.data.book;
         var book = {
-            openTime:"01:00:00",
-            closeTime:"00:00:00",
+            openTime:"08:00:00",
+            closeTime:"22:00:00",
             bookList:[{startTime:"10:00:00",endTime:"11:00:00"},
             {startTime:"13:00:00",endTime:"14:00:00"}]
         }
