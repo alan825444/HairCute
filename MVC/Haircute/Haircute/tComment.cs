@@ -16,13 +16,9 @@ namespace Haircute
     {
         public int fid { get; set; }
         public string fComment { get; set; }
-        public Nullable<double> fScore { get; set; }
+        public Nullable<int> fScore { get; set; }
         public Nullable<int> fk_Member { get; set; }
         public Nullable<int> fk_Designer { get; set; }
         public Nullable<int> fk_Book { get; set; }
-    
-        public virtual tBook tBook { get; set; }
-        public virtual tMember tMember { get; set; }
-        public virtual tDesigner tDesigner { get; set; }
     }
 }

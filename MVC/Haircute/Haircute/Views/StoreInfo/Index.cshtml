@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
+<!-- ***** storeInfo Area Start ***** -->
+<div class="container storeInfo-area">
+    <div class="row storeInfo-header align-items-center">
+        <div class="col-12 col-md-6 d-flex justify-content-md-end storeInfo-pic">
+            <img src="~/Images/@ViewBag.HImg" class="uesr-pic">
+        </div>
+        <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-sm-center">
+            <ul>
+                <li>
+                    <div class="userInfo">
+                        <h2>@ViewBag.Name</h2>
+                        <a href="#" class="mt-2 ml-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="ml-1">4.9</span>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    @foreach (var item in ViewBag.店鋪資訊)
+                    {
+                        <div class="d-flex align-items-center">
+                            <p class="mr-2 mb-0">@item.fStore</p>
+                            <p class="mb-0">/</p>
+                            <p class="ml-2 mb-0">@item.fAddress</p>
+                        </div>
+                    }
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row storeInfo-Tab d-flex justify-content-center">
+        <div class="col-md-12 col-12" id="storeInfo-Tab">
+            <a href="#" class="Tab1 col-3 col-md-3">
+                <i class="far fa-images mr-2"></i>作品集
+            </a>
+            <a href="#" class="Tab3 col-3 col-md-3">
+                <i class="fas fa-cut mr-2"></i>價目表
+            </a>
+            <a href="#" class="Tab5 col-3 col-md-3">
+                <i class="far fa-comment-dots mr-2"></i>評價
+            </a>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $(".Tab1").addClass('change');
+            $('#menu-area,#evaluate-area').hide();
+        })
+        $(".Tab1").click(function () {
+            $(".Tab5,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#design-area').fadeIn();
+            $('#menu-area,#evaluate-area').fadeOut();
+        })
+        $(".Tab3").click(function () {
+            $(".Tab5,.Tab1").removeClass('change');
+            $(this).addClass('change');
+            $('#menu-area').fadeIn();
+            $('#evaluate-area,#design-area').fadeOut();
+        })
+        $(".Tab5").click(function () {
+            $(".Tab1,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#evaluate-area').fadeIn();
+            $('#design-area,#menu-area').fadeOut();
+        })
+    </script>
+
+    <!--design-area start-->
+    <div class="container" id="design-area">
+        <div class="row">
+            @foreach (var item in ViewBag.Dphoto)
+            {
+                <div class="col-sm-3 design-item flex-column">
+                    <a href="#" data-toggle="modal" data-target="#update-user-design-info">
+                        <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
+                        <div class="design-body">#@item.fTag</div>
+                    </a>
+                    <form action="/MemberCenter/test" method="post">
+                        <input type="hidden" name="fid" value="@item.fid" />
+                    </form>
+                </div>
+            }
+        </div>
+    </div>
+    <!--design-area End-->
+    <!--menu-area start-->
+    <div class="container" id="menu-area">
+        @foreach (var item in ViewBag.服務項目)
+        {
+            <div class="row menu-info mt-3">
+                <div class="menu-img col-md-3">
+                    <div class="menu-img-container">
+                        <img src="~/img/bg-img/hair-cut.jpg">
+                    </div>
+                </div>
+                <div class="col-md-4 menu-title">
+                    <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+                        <h4 class="menu-name">@item.Item</h4>
+                        <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>@item.Price</h6>
+                    </div>
+                </div>
+                <div class="reserve-btn col-md-2">
+                    <button class="btn btn-success" type="submit">預約</button>
+                </div>
+            </div>
+        }
+    </div>
+    <!--menu-area End-->
+    <!--evaluate-area start-->
+    <!--evaluate-area start-->
+    <div id="evaluate-area">
+        <article>
+            <div class="row evaluate-area">
+                @foreach (var item in ViewBag.評價)
+                {
+                    <div class="evaluate-item-cos">
+                        <ul>
+                            <li>
+                                <div class="evaluate-title-cos">
+                                    <i class="fas fa-user-circle"></i><b>@item.MemberName</b>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="evaluate-star-cos">
+                                    <span>
+                                        @{
+                                            for (int i = 0; i < @item.Score; i++)
+                                            {
+                                                <i class="fas fa-star"></i>
+                                            }
+                                            for (int i = 0; i < 5 - @item.Score; i++)
+                                            {
+                                                <i class="far fa-star"></i>
+                                            }
+                                        }
+                                    </span>
+                                </div>
+                                <div class="evaluate-body-cos">
+                                    @item.Comment
+                                </div>
+                            </li>
+                            <li>
+                                <div class="evaluate-footer-cos">
+                                    <label>日期：</label><b>@item.date</b>
+                                    <label class="pos-label-cos">服務項目：</label><b>@item.Service</b>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                }
+
+            </div>
+        </article>
+    </div>
+    <!--evaluate-area End-->
+</div>
+<!-- ***** storeInfo Area Start ***** -->

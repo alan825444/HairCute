@@ -10,12 +10,16 @@
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
+                    <img src="~/img/bg-img/15.jpg" style="height:100%;" />
                 </div>
-                <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
+                    <img src="~/img/banner-img/小短髮2.jpg" style="height:100%;" />
                 </div>
                 <div class="hair-style-img2 shadow">
+                    <img src="~/img/banner-img/歐美 Undercut2.jpg" style="height:100%;" />
                 </div>
+                <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
+
             </div>
             <!-- Welcome Text -->
             <div class="container h-100">
@@ -60,11 +64,14 @@
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
+                    <img src="~/img/banner-img/store2.jpg" style="height:100%;" />
                 </div>
-                <!-- <div class="rank"><img src="img/banner-img/rank2.png" alt=""></div> -->
+                <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
+                    <img src="~/img/banner-img/hair4.jpeg" style="height:100%;" />
                 </div>
                 <div class="hair-style-img2 shadow">
+                    <img src="~/img/banner-img/hair6.jpeg" style="height:100%;" />
                 </div>
             </div>
             <!-- Welcome Text -->
@@ -110,11 +117,14 @@
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
+                    <img src="~/img/banner-img/store2.jpg" style="height:100%;" />
                 </div>
-                <!-- <div class="rank"><img src="img/banner-img/rank3.png" alt=""></div> -->
+                <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
                 <div class="hair-style-img shadow">
+                    <img src="~/img/banner-img/韓系劉海頭2.jpg" style="height:100%;" />
                 </div>
                 <div class="hair-style-img2 shadow">
+                    <img src="~/img/banner-img/小短髮2.jpg" style="height:100%;" />
                 </div>
             </div>
             <!-- Welcome Text -->
@@ -192,7 +202,7 @@
             <input type="submit" name="" class="btn btn-outline-danger" value="預約搜尋" />
         </div>
     </form>
-    
+
 </div>
 
 <!--Search End-->
@@ -205,20 +215,20 @@
                     <ul class="nav nav-tabs mb-50" id="mona_modelTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="tab1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1"
-                               aria-selected="true">本月推薦</a>
+                               aria-selected="true">最新設計</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
-                               aria-selected="false">剪</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3"
-                               aria-selected="false">染</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab4" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4"
-                               aria-selected="false">燙</a>
-                        </li>
+                        <!--<li class="nav-item">
+        <a class="nav-link" id="tab2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
+           aria-selected="false">剪</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="tab3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3"
+           aria-selected="false">染</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="tab4" data-toggle="tab" href="#tab-4" role="tab" aria-controls="tab-4"
+           aria-selected="false">燙</a>
+    </li>-->
                     </ul>
                 </div>
             </div>
@@ -237,7 +247,7 @@
                                 <!-- Single Model Item -->
                                 @{
                                     foreach (var item in ViewBag.圖片)
-                                    {
+                                    { <a href="#">
                                         <div class="single-model-item">
                                             <div class="model-thumbnail">
                                                 <!-- First Thumbnail -->
@@ -250,132 +260,117 @@
                                                 <h3>@item.DesignerName</h3>
                                                 <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                             </div>
-                                        </div>
+                                        </div></a>
                                     }
-                                    
+
                                 }
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="../img/bg-img/13.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="../img/bg-img/14.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="../img/bg-img/13.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="../img/bg-img/14.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="../img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="../img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
                                     </div>
                                 </div>-->
-
                                 <!-- Single Model Item -->
                                 <!--<div class="single-model-item">
                                     <div class="model-thumbnail">-->
-                                        <!-- First Thumbnail -->
-                                        <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
-                                        <!-- Second Thumbnail -->
-                                        <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
-                                        <!-- Share Info -->
-
-                                    <!--</div>
+                                <!-- First Thumbnail -->
+                                <!--<img class="first-thumbnail" src="~/img/bg-img/10.jpg" alt="">-->
+                                <!-- Second Thumbnail -->
+                                <!--<img class="second-thumbnail" src="~/img/bg-img/9.jpg" alt="">-->
+                                <!-- Share Info -->
+                                <!--</div>
                                     <div class="model-info">
                                         <h3>Willie Figueroa</h3>
                                         <h6><i class="fas fa-hashtag"></i>短髮設計</h6>
@@ -1045,10 +1040,10 @@
 </section>
 <!-- ***** Client Feedback Area End ***** -->
 <!-- ***** Blog Area Start ***** -->
-<section class="mona-blog-area mb-50 section-padding-80-0">
+<!--<section class="mona-blog-area mb-50 section-padding-80-0">
     <div class="container">
         <div class="row">
-            <!-- Section Heading -->
+            <!-- Section Heading
             <div class="col-12">
                 <div class="section-heading text-center">
                     <h2>Hair Blog</h2>
@@ -1056,7 +1051,7 @@
             </div>
         </div>
         <div class="row">
-            <!-- Single Blog Post -->
+            <!-- Single Blog Post
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="post-thumbnail">
@@ -1068,7 +1063,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Single Blog Post -->
+            <!-- Single Blog Post
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="post-thumbnail">
@@ -1081,7 +1076,7 @@
                 </div>
             </div>
 
-            <!-- Single Blog Post -->
+            <!-- Single Blog Post
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="post-thumbnail">
@@ -1093,20 +1088,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Single Blog Post -->
-            <div class="col-12 col-sm-6 col-md-4">
-                <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
-                    <div class="post-thumbnail">
-                        <a href="#"><img src="./img/bg-img/1.jpg" alt=""></a>
-                    </div>
-                    <div class="post-content">
-                        <a href="#" class="post-title">What Curling Irons Are The Best Ones</a>
-                        <span class="post-date">30 Aug 2018</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Single Blog Post -->
+            <!-- Single Blog Post
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="post-thumbnail">
@@ -1119,7 +1101,20 @@
                 </div>
             </div>
 
-            <!-- Single Blog Post -->
+            <!-- Single Blog Post
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="post-thumbnail">
+                        <a href="#"><img src="./img/bg-img/1.jpg" alt=""></a>
+                    </div>
+                    <div class="post-content">
+                        <a href="#" class="post-title">What Curling Irons Are The Best Ones</a>
+                        <span class="post-date">30 Aug 2018</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Blog Post
             <div class="col-12 col-sm-6 col-md-4">
                 <div class="single-blog-post mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="post-thumbnail">
@@ -1136,7 +1131,7 @@
     </div>
     </div>
     </div>
-</section>
+</section>-->
 <!-- ***** Blog Area End ***** -->
 
 @section HomeIndex{
@@ -1152,4 +1147,4 @@
 
     </script>
 
-    }
+}

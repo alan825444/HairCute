@@ -26,6 +26,7 @@
           <Property Name="fk_Service" Type="int" />
           <Property Name="fk_Member" Type="int" />
           <Property Name="fk_Designer" Type="int" />
+          <Property Name="fBookTime" Type="time" Precision="7" />
         </EntityType>
         <EntityType Name="tCity">
           <Key>
@@ -40,7 +41,7 @@
           </Key>
           <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fComment" Type="nvarchar" MaxLength="50" />
-          <Property Name="fScore" Type="float" />
+          <Property Name="fScore" Type="int" />
           <Property Name="fk_Member" Type="int" />
           <Property Name="fk_Designer" Type="int" />
           <Property Name="fk_Book" Type="int" />
@@ -160,42 +161,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tComment_tBook">
-          <End Role="tBook" Type="Self.tBook" Multiplicity="0..1" />
-          <End Role="tComment" Type="Self.tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tBook">
-              <PropertyRef Name="fid" />
-            </Principal>
-            <Dependent Role="tComment">
-              <PropertyRef Name="fk_Book" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tComment_tDesigner">
-          <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="0..1" />
-          <End Role="tComment" Type="Self.tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tDesigner">
-              <PropertyRef Name="fid" />
-            </Principal>
-            <Dependent Role="tComment">
-              <PropertyRef Name="fk_Designer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tComment_tMember">
-          <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
-          <End Role="tComment" Type="Self.tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tMember">
-              <PropertyRef Name="fID" />
-            </Principal>
-            <Dependent Role="tComment">
-              <PropertyRef Name="fk_Member" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tDesigner_tMember">
           <End Role="tMember" Type="Self.tMember" Multiplicity="0..1" />
           <End Role="tDesigner" Type="Self.tDesigner" Multiplicity="*" />
@@ -295,18 +260,6 @@
             <End Role="tService" EntitySet="tService" />
             <End Role="tBook" EntitySet="tBook" />
           </AssociationSet>
-          <AssociationSet Name="FK_tComment_tBook" Association="Self.FK_tComment_tBook">
-            <End Role="tBook" EntitySet="tBook" />
-            <End Role="tComment" EntitySet="tComment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tComment_tDesigner" Association="Self.FK_tComment_tDesigner">
-            <End Role="tDesigner" EntitySet="tDesigner" />
-            <End Role="tComment" EntitySet="tComment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tComment_tMember" Association="Self.FK_tComment_tMember">
-            <End Role="tMember" EntitySet="tMember" />
-            <End Role="tComment" EntitySet="tComment" />
-          </AssociationSet>
           <AssociationSet Name="FK_tDesigner_tMember" Association="Self.FK_tDesigner_tMember">
             <End Role="tMember" EntitySet="tMember" />
             <End Role="tDesigner" EntitySet="tDesigner" />
@@ -353,7 +306,6 @@
           <Property Name="fCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="fconfirmation" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <NavigationProperty Name="tBook" Relationship="demodbModel.FK_tBook_tMember" FromRole="tMember" ToRole="tBook" />
-          <NavigationProperty Name="tComment" Relationship="demodbModel.FK_tComment_tMember" FromRole="tMember" ToRole="tComment" />
           <NavigationProperty Name="tLike" Relationship="demodbModel.FK_tLike_tMember" FromRole="tMember" ToRole="tLike" />
           <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tMember" ToRole="tDesigner" />
         </EntityType>
@@ -367,7 +319,6 @@
           </AssociationSet>
           <EntitySet Name="tService" EntityType="demodbModel.tService" />
           <EntitySet Name="tBook" EntityType="demodbModel.tBook" />
-          <EntitySet Name="tComment" EntityType="demodbModel.tComment" />
           <EntitySet Name="tLike" EntityType="demodbModel.tLike" />
           <EntitySet Name="tPhoto" EntityType="demodbModel.tPhoto" />
           <EntitySet Name="tWork" EntityType="demodbModel.tWork" />
@@ -378,14 +329,6 @@
           <AssociationSet Name="FK_tBook_tService" Association="demodbModel.FK_tBook_tService">
             <End Role="tService" EntitySet="tService" />
             <End Role="tBook" EntitySet="tBook" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tComment_tBook" Association="demodbModel.FK_tComment_tBook">
-            <End Role="tBook" EntitySet="tBook" />
-            <End Role="tComment" EntitySet="tComment" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tComment_tMember" Association="demodbModel.FK_tComment_tMember">
-            <End Role="tMember" EntitySet="tMember" />
-            <End Role="tComment" EntitySet="tComment" />
           </AssociationSet>
           <AssociationSet Name="FK_tLike_tMember" Association="demodbModel.FK_tLike_tMember">
             <End Role="tMember" EntitySet="tMember" />
@@ -399,10 +342,6 @@
           <AssociationSet Name="FK_tBook_tDesigner" Association="demodbModel.FK_tBook_tDesigner">
             <End Role="tDesigner" EntitySet="tDesigner" />
             <End Role="tBook" EntitySet="tBook" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tComment_tDesigner" Association="demodbModel.FK_tComment_tDesigner">
-            <End Role="tDesigner" EntitySet="tDesigner" />
-            <End Role="tComment" EntitySet="tComment" />
           </AssociationSet>
           <AssociationSet Name="FK_tDesigner_tMember" Association="demodbModel.FK_tDesigner_tMember">
             <End Role="tMember" EntitySet="tMember" />
@@ -420,6 +359,7 @@
             <End Role="tDesigner" EntitySet="tDesigner" />
             <End Role="tWork" EntitySet="tWork" />
           </AssociationSet>
+          <EntitySet Name="tComment" EntityType="demodbModel.tComment" />
         </EntityContainer>
         <EntityType Name="tArea">
           <Key>
@@ -476,22 +416,8 @@
           <Property Name="fk_Designer" Type="Int32" />
           <NavigationProperty Name="tMember" Relationship="demodbModel.FK_tBook_tMember" FromRole="tBook" ToRole="tMember" />
           <NavigationProperty Name="tService" Relationship="demodbModel.FK_tBook_tService" FromRole="tBook" ToRole="tService" />
-          <NavigationProperty Name="tComment" Relationship="demodbModel.FK_tComment_tBook" FromRole="tBook" ToRole="tComment" />
           <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tBook_tDesigner" FromRole="tBook" ToRole="tDesigner" />
-        </EntityType>
-        <EntityType Name="tComment">
-          <Key>
-            <PropertyRef Name="fid" />
-          </Key>
-          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fComment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fScore" Type="Double" />
-          <Property Name="fk_Member" Type="Int32" />
-          <Property Name="fk_Designer" Type="Int32" />
-          <Property Name="fk_Book" Type="Int32" />
-          <NavigationProperty Name="tBook" Relationship="demodbModel.FK_tComment_tBook" FromRole="tComment" ToRole="tBook" />
-          <NavigationProperty Name="tMember" Relationship="demodbModel.FK_tComment_tMember" FromRole="tComment" ToRole="tMember" />
-          <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tComment_tDesigner" FromRole="tComment" ToRole="tDesigner" />
+          <Property Name="fBookTime" Type="Time" Precision="7" />
         </EntityType>
         <EntityType Name="tLike">
           <Key>
@@ -551,30 +477,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tComment_tBook">
-          <End Type="demodbModel.tBook" Role="tBook" Multiplicity="0..1" />
-          <End Type="demodbModel.tComment" Role="tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tBook">
-              <PropertyRef Name="fid" />
-            </Principal>
-            <Dependent Role="tComment">
-              <PropertyRef Name="fk_Book" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tComment_tMember">
-          <End Type="demodbModel.tMember" Role="tMember" Multiplicity="0..1" />
-          <End Type="demodbModel.tComment" Role="tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tMember">
-              <PropertyRef Name="fID" />
-            </Principal>
-            <Dependent Role="tComment">
-              <PropertyRef Name="fk_Member" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_tLike_tMember">
           <End Type="demodbModel.tMember" Role="tMember" Multiplicity="0..1" />
           <End Type="demodbModel.tLike" Role="tLike" Multiplicity="*" />
@@ -611,7 +513,6 @@
           <Property Name="fStoreCity" Type="Int32" />
           <Property Name="fStoreArea" Type="Int32" />
           <NavigationProperty Name="tBook" Relationship="demodbModel.FK_tBook_tDesigner" FromRole="tDesigner" ToRole="tBook" />
-          <NavigationProperty Name="tComment" Relationship="demodbModel.FK_tComment_tDesigner" FromRole="tDesigner" ToRole="tComment" />
           <NavigationProperty Name="tMember" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tDesigner" ToRole="tMember" />
           <NavigationProperty Name="tPhoto" Relationship="demodbModel.FK_tPhoto_tDesigner" FromRole="tDesigner" ToRole="tPhoto" />
           <NavigationProperty Name="tService" Relationship="demodbModel.FK_tService_tDesigner1" FromRole="tDesigner" ToRole="tService" />
@@ -625,18 +526,6 @@
               <PropertyRef Name="fid" />
             </Principal>
             <Dependent Role="tBook">
-              <PropertyRef Name="fk_Designer" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tComment_tDesigner">
-          <End Type="demodbModel.tDesigner" Role="tDesigner" Multiplicity="0..1" />
-          <End Type="demodbModel.tComment" Role="tComment" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tDesigner">
-              <PropertyRef Name="fid" />
-            </Principal>
-            <Dependent Role="tComment">
               <PropertyRef Name="fk_Designer" />
             </Dependent>
           </ReferentialConstraint>
@@ -689,6 +578,17 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tComment">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fComment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fScore" Type="Int32" />
+          <Property Name="fk_Member" Type="Int32" />
+          <Property Name="fk_Designer" Type="Int32" />
+          <Property Name="fk_Book" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -743,6 +643,7 @@
           <EntitySetMapping Name="tBook">
             <EntityTypeMapping TypeName="demodbModel.tBook">
               <MappingFragment StoreEntitySet="tBook">
+                <ScalarProperty Name="fBookTime" ColumnName="fBookTime" />
                 <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
                 <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
                 <ScalarProperty Name="fk_Service" ColumnName="fk_Service" />
@@ -751,18 +652,6 @@
                 <ScalarProperty Name="fAddress" ColumnName="fAddress" />
                 <ScalarProperty Name="fPhone" ColumnName="fPhone" />
                 <ScalarProperty Name="fDateTime" ColumnName="fDateTime" />
-                <ScalarProperty Name="fid" ColumnName="fid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tComment">
-            <EntityTypeMapping TypeName="demodbModel.tComment">
-              <MappingFragment StoreEntitySet="tComment">
-                <ScalarProperty Name="fk_Book" ColumnName="fk_Book" />
-                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
-                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
-                <ScalarProperty Name="fScore" ColumnName="fScore" />
-                <ScalarProperty Name="fComment" ColumnName="fComment" />
                 <ScalarProperty Name="fid" ColumnName="fid" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -808,6 +697,18 @@
                 <ScalarProperty Name="fHeadSticker" ColumnName="fHeadSticker" />
                 <ScalarProperty Name="fAddress" ColumnName="fAddress" />
                 <ScalarProperty Name="fStore" ColumnName="fStore" />
+                <ScalarProperty Name="fid" ColumnName="fid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tComment">
+            <EntityTypeMapping TypeName="demodbModel.tComment">
+              <MappingFragment StoreEntitySet="tComment">
+                <ScalarProperty Name="fk_Book" ColumnName="fk_Book" />
+                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+                <ScalarProperty Name="fScore" ColumnName="fScore" />
+                <ScalarProperty Name="fComment" ColumnName="fComment" />
                 <ScalarProperty Name="fid" ColumnName="fid" />
               </MappingFragment>
             </EntityTypeMapping>

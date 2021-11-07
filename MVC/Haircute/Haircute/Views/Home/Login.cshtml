@@ -17,17 +17,19 @@
                 </div>
                 <div class="row">
                     <div class="col-6 my-3">
-                        <ul>
-                        <li>
-                            <input type="checkbox" id="remember" name="remember" class="login-chk"><b>記住帳號</b>
-                            <a href="#">忘記密碼?</a>
-                        <li>
-                            <input type="submit" class="login-btn" value="登入">
-                            <span>@ViewBag.Message</span>
-                        </li>
-                        </ul>
+                        <div class="form-check">
+                            <input type="checkbox" id="remember" name="remember" class="form-check-input">
+                            <label class="form-check-label" for="inlineFormCheck">記住帳號</label>
+                        </div>
+                    </div>
+                    <div class="col-6 my-3 d-flex flex-row-reverse">
+                        <a href="#"><i class="far fa-question-circle mr-1"></i>忘記密碼 </a>
                     </div>
                 </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <button type="submit" class="btn log-in-btn">登入</button>
+                </div>
+                <span>@ViewBag.Message</span>
             </div>
         </form>
     </div>
