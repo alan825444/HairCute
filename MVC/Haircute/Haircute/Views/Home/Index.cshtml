@@ -189,7 +189,7 @@
             </div>
         </div>
         <div class="align-self-center d-grid gap-2 col-12 col-md-8 mx-auto">
-            <input type="submit" name="test" class="btn btn-outline-danger" value="預約搜尋" />
+            <input type="submit" name="" class="btn btn-outline-danger" value="預約搜尋" />
         </div>
     </form>
     
@@ -1145,58 +1145,10 @@
 
         $(document).ready(function () {
         /*$('#Search-Button').click(function () { 查詢資料() });*/
-            $('.tag_search').tokenize2();
+            $('.tag_search').tokenize2({
+            });
             
         })
-
-        
-
-        function 查詢資料()
-        {
-            var test = $('.tag_search').data('tokenize2').toArray().join(', ');
-            var 城市 = $('.location-dropdown #fCity option:selected').val();
-            var 區域 = $('.location-dropdown #fArea option:selected').val();
-            console.log(`${test},${城市},${區域}`)
-            $.post(
-                '/Search/Search',
-                { "test": test , "City": 城市, "Area": 區域},
-                function (data) {
-
-                },
-                "json"
-            )
-        }
-
-         /*location jquery*/
-        //$(".location-menu li a").click(function () {
-
-        //    $(this).parents(".location-dropdown").find('#dropdownMenuButton').text($(this).text());
-        //    $(this).parents(".location-dropdown").find('#dropdownMenuButton').val($(this).text());
-
-        //});
-
-        //autoComplete
-        
-
-
-
-        //用Ajax連接資料庫
-         //$('.tag_search').tokenize2({
-         //    dataSource: function (term, object)
-         //    {
-         //        $.ajax({
-         //            url: "/Home/test",
-         //            type: 'post',
-         //            data: { "search": term, "start": 0 },
-         //            dataType: 'json',
-         //            success: function (data) {
-
-         //            }
-         //        })
-         //    }
-         //});
-
-        //footer
 
     </script>
 

@@ -4,53 +4,17 @@
 }
 
 <!-- ***** search bar Area Start ***** -->
-<div class="container search-bar" id="search-bar">
-    <form class="row">
-        <div class="location-dropdown col-md-2 col-sm-10">
-            <button class="btn dropdown-toggle col-10 " type="button" id="dropdownMenuButton"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                縣市
-            </button>
-            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台北市
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台中市
-                    </a>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        高雄市
-                    </a>
-                </li>
-            </ul>
+<div class="container search-bar">
+    <form class="row" method="post" action="/Search/Search">
+        <div class="location-dropdown col-md-3 col-sm-10">
+            @Html.DropDownList("fCity", (SelectList)ViewBag.SelectList, "-縣市-", new { @class = "form-select col-10", id = "fCity" })
         </div>
-        <div class="location-dropdown col-md-2 col-sm-10">
-            <button class="btn dropdown-toggle col-10" type="button" id="dropdownMenuButton"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                地區
-            </button>
-            <ul class="dropdown-menu location-menu" aria-labelledby="dropdownMenuButton">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台北市
-                    </a>
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        台中市
-                    </a>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        高雄市
-                    </a>
-                </li>
-            </ul>
+        <div class="location-dropdown col-md-3 col-sm-10">
+            <select class="form-select col-10" aria-label="Default select example" name="fArea" id="fArea">
+                <option>--------</option>
+            </select>
         </div>
-        <div class="col-md-5 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
+        <div class="col-md-6 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
             <div class="col-md-4 col-sm-2 keyword">
                 <h4>
                     <span class="badge rounded-pill bg-info px-3 py-2">
@@ -59,25 +23,22 @@
                     </span>
                 </h4>
             </div>
-            <div class="col-md-8 col-sm-10">
-                <select class="tag_search" multiple>
-                    <option value="1">Acura</option>
-                    <option value="2">Audi</option>
-                    <option value="3">BMW</option>
-                    <option value="4">Cadillac</option>
-                    <option value="5">Chevrolet</option>
-                    <option value="6">Ferrari</option>
-                    <option value="7">Ford</option>
-                    <option value="8">Honda</option>
-                    <option value="9">Lexus</option>
-                    <option value="10">Mercedes-Benz</option>
+            <div class="col-md-8 col-sm-12">
+                <select name="test" class="tag_search" multiple>
+                    @{
+                        foreach (var item in ViewBag.關鍵字)
+                        {
+                            <option value="@item">@item</option>
+                        }
+                    }
                 </select>
             </div>
         </div>
-        <div class="search-btn align-items-center col-md-3 col-sm-10">
-            <a href="search_result.html" role="button" class="col-8">預約搜尋</a>
+        <div class="align-self-center d-grid gap-2 col-12 col-md-8 mx-auto">
+            <input type="submit" name="" class="btn btn-outline-danger" value="預約搜尋" />
         </div>
     </form>
+
 </div>
 <!-- ***** search bar Area End ***** -->
 <!-- ***** register Area Start ***** -->
@@ -119,73 +80,54 @@
     <div class="container">
         <h3 class="section-title"><span>搜尋結果</span></h3>
         <div class="row">
-            <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="image-flip">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <div id="carouselExampleControls" class="carousel slide"
-                                         data-bs-ride="carousel">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <div class="image-flip">
-                                                    <a href="storeInfo.html">
-                                                        <img src="~/img/hair2.jpeg">
-                                                    </a>
+            @{
+                if (ViewBag.搜索結果 != null)
+                {
+                    foreach (var item in ViewBag.搜索結果)
+                    {
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <div class="image-flip">
+                                <div class="mainflip flip-0">
+                                    <div class="frontside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <div id="carouselExampleControls" class="carousel slide"
+                                                     data-bs-ride="carousel">
+                                                    <div class="carousel-inner">
+                                                        <div class="carousel-item active">
+                                                            <div class="image-flip">
+                                                                <a href="storeInfo.html">
+                                                                    <img src="~/Images/@item.Photo1">
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-
-                                            <div class="carousel-item">
-                                                <div class="image-flip">
-                                                    <a href="storeInfo.html">
-                                                        <img src="~/img/hair2.jpeg">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="carousel-item">
-                                                <div class="image-flip">
-                                                    <a href="storeInfo.html">
-                                                        <img src="~/img/hair2.jpeg">
-                                                    </a>
-                                                </div>
+                                                <h4 class="card-title mt-3">Happy hair</h4>
+                                                <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>@item.Address</a>                                               
                                             </div>
                                         </div>
                                     </div>
-                                    <h4 class="card-title mt-3">Happy hair</h4>
-                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>高雄市前金區中正四路211號8樓</a></li>
-                                    <li class="list_store_review text-center mt-2">
-                                        <a href="#">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <span class="ml-1">4.9</span>
-                                        </a>
+                                    <div class="backside">
+                                        <div class="card">
+                                            <div class="card-body text-center">
+                                                <a href="storeInfo.html">
+                                                    <img src="~/Images/@item.HeadStack"
+                                                         class="img-thumbnail img-fluid rounded-circle store_image">
+                                                </a>
+                                                <h4 class="card-title">@item.DesgnerName</h4>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card-body text-center">
-                                    <a href="storeInfo.html">
-                                        <img src="~/img/banner-img/store2.jpg"
-                                             class="img-thumbnail img-fluid rounded-circle store_image mt-2">
-                                    </a>
-                                    <h4 class="card-title">查理</h4>
-                                    <a href="#" class="btn">自然卷</a>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- store card end -->
+                    }
+                }
+            }
+
             <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -247,10 +189,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- store card end -->
             <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -312,10 +254,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- store card end -->
             <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -377,10 +319,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- store card end -->
             <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -442,10 +384,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- store card end -->
             <!-- store card -->
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <!--<div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -507,7 +449,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- store card end -->
         </div>
     </div>
@@ -540,3 +482,18 @@
     </div>
 </div>
 <!-- ***** Page navigation Area End ***** -->
+
+@section SearchIndex{
+    <script>
+
+
+        $(document).ready(function () {
+        /*$('#Search-Button').click(function () { 查詢資料() });*/
+            $('.tag_search').tokenize2({
+            });
+
+        })
+
+    </script>
+
+}
