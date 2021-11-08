@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>髮CUTE | 預剪美好的一天</title>
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="">
+  <meta name="robots" content="index, follow" />
+  <meta name="description" content="" />
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
 
   <!-- Core Stylesheet -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -21,20 +21,21 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- jquery ui -->
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" />
 
   <!-- jQuery js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <!-- timepicker -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css" />
 
+  <!-- confirm btn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 </head>
 
 <body>
-
-
   <!-- ***** Header Area Start ***** -->
   <header class="header-area">
     <!-- Main Header Start -->
@@ -42,12 +43,11 @@
       <div class="classy-nav-container breakpoint-off">
         <!-- Classy Menu -->
         <nav class="classy-navbar justify-content-between" id="monaNav">
-
           <!-- Background Curve -->
           <div class="bg-curve" style="background-image: url(./img/banner-img/curve.png);"></div>
 
           <!-- Logo -->
-          <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt=""></a>
+          <a class="nav-brand" href="index.html"><img src="./img/banner-img/logo.png" alt="" /></a>
 
           <!-- Navbar Toggler -->
           <div class="classy-navbar-toggler">
@@ -58,22 +58,21 @@
           <div class="classy-menu">
             <!-- Menu Close Button -->
             <div class="classycloseIcon">
-              <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+              <div class="cross-wrap">
+                <span class="top"></span><span class="bottom"></span>
+              </div>
             </div>
 
             <!-- Nav Start -->
             <div class="classynav">
-
               <ul id="nav">
-
-                <li><a href="login.html">登入</a>
-
-                </li>
-                <li><a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
-
+                <li><a href="login.html">登入</a></li>
+                <li>
+                  <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
                 </li>
 
-                <li><a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                <li>
+                  <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
                   <ul class="dropdown">
                     <li><a href="#">- 台中</a></li>
                     <li><a href="#">- 高雄</a></li>
@@ -82,7 +81,6 @@
               </ul>
             </div>
             <!-- Nav End -->
-
           </div>
         </nav>
       </div>
@@ -98,10 +96,12 @@
         <div class="modal-content">
           <div class="modal-body">
             <!-- Close Button -->
-            <button type="button" class="btn close-btn" data-dismiss="modal"><i class="fa fa-times"></i></button>
+            <button type="button" class="btn close-btn" data-dismiss="modal">
+              <i class="fa fa-times"></i>
+            </button>
             <!-- Form -->
             <form action="index.html" method="post">
-              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
+              <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter..." />
               <button type="submit">Search</button>
             </form>
           </div>
@@ -110,7 +110,6 @@
     </div>
   </div>
   <!-- ***** Top Search Area End ***** -->
-
 
   <!-- ***** register Area Start ***** -->
   <div class="register-select">
@@ -125,23 +124,23 @@
             <div class="register-card shadow">
               <a href="register.html">
                 <div class="register-cardHead" id="banner01">設計師</div>
-                <div class="register-cardBody"><img src="img/register-store.png"></div>
+                <div class="register-cardBody">
+                  <img src="img/register-store.png" />
+                </div>
               </a>
             </div>
             <div class="register-card shadow">
               <a href="register.html">
                 <div class="register-cardHead" id="banner02">消費者</div>
-                <div class="register-cardBody"><img src="img/register-customer.png"></div>
+                <div class="register-cardBody">
+                  <img src="img/register-customer.png" />
+                </div>
               </a>
             </div>
-
           </div>
-
         </div>
       </div>
-
     </div>
-
   </div>
   <!-- ***** register Area End ***** -->
 
@@ -149,9 +148,9 @@
   <div class="container storeInfo-area">
     <div class="row storeInfo-header align-items-center">
       <div class="col-12 col-md-6 d-flex justify-content-md-end storeInfo-pic">
-        <img src="img/user-img/store2.jpg" class="uesr-pic">
+        <img src="img/user-img/store2.jpg" class="uesr-pic" />
       </div>
-      <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-sm-center">
+      <div class="col-12 col-md-6 storeInfo-section d-flex justify-content-center">
         <ul>
           <li>
             <div class="userInfo">
@@ -203,54 +202,110 @@
     </div>
     <script>
       $(document).ready(function () {
-        $(".Tab1").addClass('change');
-        $('#article-area,#menu-area,#evaluate-area').hide();
+        $('.Tab1').addClass('change')
+        $('#article-area,#menu-area,#evaluate-area').hide()
       })
-      $(".Tab1").click(function () {
-        $(".Tab5,.Tab3").removeClass('change');
-        $(this).addClass('change');
-        $('#design-area').fadeIn();
-        $('#menu-area,#evaluate-area').fadeOut();
+      $('.Tab1').click(function () {
+        $('.Tab5,.Tab3').removeClass('change')
+        $(this).addClass('change')
+        $('#design-area').fadeIn()
+        $('#menu-area,#evaluate-area').fadeOut()
       })
-      $(".Tab3").click(function () {
-        $(".Tab5,.Tab1").removeClass('change');
-        $(this).addClass('change');
-        $('#menu-area').fadeIn();
-        $('#evaluate-area,#design-area').fadeOut();
+      $('.Tab3').click(function () {
+        $('.Tab5,.Tab1').removeClass('change')
+        $(this).addClass('change')
+        $('#menu-area').fadeIn()
+        $('#evaluate-area,#design-area').fadeOut()
       })
-      $(".Tab5").click(function () {
-        $(".Tab1,.Tab3").removeClass('change');
-        $(this).addClass('change');
-        $('#evaluate-area').fadeIn();
-        $('#design-area,#menu-area').fadeOut();
+      $('.Tab5').click(function () {
+        $('.Tab1,.Tab3').removeClass('change')
+        $(this).addClass('change')
+        $('#evaluate-area').fadeIn()
+        $('#design-area,#menu-area').fadeOut()
       })
     </script>
 
     <!--design-area start-->
     <div class="container" id="design-area">
-      <div class="row">
-        <div class="col-6 col-md-3 design-item mb-3 d-flex flex-column">
-          <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+      <div class="row design-area">
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/25.jpg" class="design-pic" />
+            </div>
+            <div class="design-body">
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/26.jpg" class="design-pic" />
+            </div>
+          </a>
           <div class="design-body">
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 design-item mb-3 d-flex flex-column">
-          <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/27.jpg" class="design-pic" />
+            </div>
+          </a>
           <div class="design-body">
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 design-item mb-3 d-flex flex-column">
-          <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/28.jpg" class="design-pic" />
+            </div>
+          </a>
           <div class="design-body">
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
-        <div class="col-6 col-md-3 design-item mb-3 d-flex flex-column">
-          <div class="design-head"><img src="img/bg-img/25.jpg" class="design-pic"></div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/25.jpg" class="design-pic" />
+            </div>
+          </a>
           <div class="design-body">
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/26.jpg" class="design-pic" />
+            </div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/27.jpg" class="design-pic" />
+            </div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 design-item d-flex flex-column">
+          <a href="#">
+            <div class="design-head">
+              <img src="img/bg-img/28.jpg" class="design-pic" />
+            </div>
+          </a>
+          <div class="design-body">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
       </div>
@@ -262,79 +317,103 @@
       <div class="row menu-info mt-3">
         <div class="menu-img col-md-3">
           <div class="menu-img-container">
-            <img src="img/bg-img/hair-cut.jpg">
+            <img src="img/bg-img/hair-cut.jpg" />
           </div>
         </div>
         <div class="col-md-4 menu-title">
           <div class="d-flex flex-md-row justify-content-md-between align-items-center">
             <h4 class="menu-name">造型剪髮＋舒適洗頭</h4>
-            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>499</h6>
+            <h6 class="menu-price col-md-3">
+              <i class="fas fa-dollar-sign mr-1"></i>499
+            </h6>
           </div>
-          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+          <p class="menu-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
         </div>
         <div class="dateTime-area col-md-3">
           <p>請選擇日期時間</p>
           <div class="reserve-date">
-            <input type="text" class="datepicker">
+            <input class="reserve-datepicker" id="bookDate" type="date" value="" />
           </div>
           <div class="reserve-time">
-            <input type="text" class="timepicker">
+            <select class="reserve-time-select" id="reserve-time-select">
+              <!-- JS生成 -->
+            </select>
           </div>
         </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
-        </div>
-      </div>
-      <div class="row menu-info mt-3" id="even-num-row">
-        <div class="menu-img col-md-3">
-          <div class="menu-img-container">
-            <img src="img/bg-img/perm-hair.jpg">
-          </div>
-        </div>
-        <div class="col-md-4 menu-title">
-          <div class="d-flex flex-md-row justify-content-md-between align-items-center">
-            <h4 class="menu-name">精油護理＋燙髮</h4>
-            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>799</h6>
-          </div>
-          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-        </div>
-        <div class="dateTime-area col-md-3">
-          <p>請選擇日期時間</p>
-          <div class="reserve-date">
-            <input type="text" class="datepicker">
-          </div>
-          <div class="reserve-time">
-            <input type="text" class="timepicker">
-          </div>
-        </div>
-        <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
+          <button class="btn btn-success reserve-confirm" type="submit">
+            預約
+          </button>
         </div>
       </div>
       <div class="row menu-info mt-3">
         <div class="menu-img col-md-3">
           <div class="menu-img-container">
-            <img src="img/bg-img/dye-hair.jpg">
+            <img src="img/bg-img/perm-hair.jpg" />
+          </div>
+        </div>
+        <div class="col-md-4 menu-title">
+          <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+            <h4 class="menu-name">精油護理＋燙髮</h4>
+            <h6 class="menu-price col-md-3">
+              <i class="fas fa-dollar-sign mr-1"></i>799
+            </h6>
+          </div>
+          <p class="menu-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+        </div>
+        <div class="dateTime-area col-md-3">
+          <p>請選擇日期時間</p>
+          <div class="reserve-date">
+            <input class="reserve-datepicker" id="bookDate2" type="date" value="" />
+          </div>
+          <div class="reserve-time">
+            <select class="reserve-time-select" id="reserve-time-select2">
+              <!-- JS生成 -->
+            </select>
+          </div>
+        </div>
+        <div class="reserve-btn col-md-2">
+          <button class="btn btn-success reserve-confirm" type="submit">
+            預約
+          </button>
+        </div>
+      </div>
+      <div class="row menu-info mt-3">
+        <div class="menu-img col-md-3">
+          <div class="menu-img-container">
+            <img src="img/bg-img/dye-hair.jpg" />
           </div>
         </div>
         <div class="col-md-4 menu-title">
           <div class="d-flex flex-md-row justify-content-md-between align-items-center">
             <h4 class="menu-name">精油護理＋染髮</h4>
-            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>799</h6>
+            <h6 class="menu-price col-md-3">
+              <i class="fas fa-dollar-sign mr-1"></i>799
+            </h6>
           </div>
-          <p class="menu-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+          <p class="menu-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
         </div>
         <div class="dateTime-area col-md-3">
           <p>請選擇日期時間</p>
           <div class="reserve-date">
-            <input type="text" class="datepicker">
+            <input class="reserve-datepicker" id="bookDate3" type="date" value="" />
           </div>
           <div class="reserve-time">
-            <input type="text" class="timepicker">
+            <select class="reserve-time-select" id="reserve-time-select3">
+              <!-- JS生成 -->
+            </select>
           </div>
         </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success" type="submit">預約</button>
+          <button class="btn btn-success reserve-confirm" type="submit">
+            預約
+          </button>
         </div>
       </div>
     </div>
@@ -357,8 +436,7 @@
               <!-- <p>3.0</p> -->
             </div>
             <div class="evaluate-body col-md-6">
-              服務真的很好
-              環境舒適 造型做得太好了阿
+              服務真的很好 環境舒適 造型做得太好了阿
               超級推薦這位設計師的啦啦啦啦啦啦啦啦
             </div>
           </div>
@@ -385,8 +463,7 @@
               <!-- <p>3.0</p> -->
             </div>
             <div class="evaluate-body col-md-6">
-              服務真的很好
-              環境舒適 造型做得太好了阿
+              服務真的很好 環境舒適 造型做得太好了阿
               超級推薦這位設計師的啦啦啦啦啦啦啦啦
             </div>
           </div>
@@ -413,8 +490,7 @@
               <!-- <p>3.0</p> -->
             </div>
             <div class="evaluate-body col-md-6">
-              服務真的很好
-              環境舒適 造型做得太好了阿
+              服務真的很好 環境舒適 造型做得太好了阿
               超級推薦這位設計師的啦啦啦啦啦啦啦啦
             </div>
           </div>
@@ -441,8 +517,7 @@
               <!-- <p>3.0</p> -->
             </div>
             <div class="evaluate-body col-md-6">
-              服務真的很好
-              環境舒適 造型做得太好了阿
+              服務真的很好 環境舒適 造型做得太好了阿
               超級推薦這位設計師的啦啦啦啦啦啦啦啦
             </div>
           </div>
@@ -459,13 +534,11 @@
     </div>
     <!--evaluate-area End-->
   </div>
-  <!-- ***** storeInfo Area Start ***** -->
+  <!-- ***** membercenter Area Start ***** -->
 
   <!-- ***** Footer Area Start ***** -->
   <div footer-html="footer.html"></div>
   <!-- ***** Footer Area End ***** -->
-
-
 
   <!-- ******* All JS ******* -->
 
@@ -483,37 +556,138 @@
   <!-- import js -->
   <script src="import.js"></script>
   <!-- timepicker -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <script>
     //footer
     includeFooter();
 
-    //datepicker
-    $(function () {
-      $(".datepicker").datepicker();
-      $(".datepicker").datepicker('setDate', 'today');
-    });
-
-    //timepicker
+    //datepicker 自動設定為當天日期
     $(document).ready(function () {
-      $('.timepicker').timepicker();
-    });
-    $('.timepicker').timepicker({
-      timeFormat: 'h:mm p',
-      interval: 60,
-      minTime: '10',
-      maxTime: '20:00',
-      defaultTime: '10',
-      startTime: '10:00',
-      dynamic: false,
-      dropdown: true,
-      scrollbar: true
-    });
+      var now = new Date()
+      var month = now.getMonth() + 1
+      var day = now.getDate()
+      if (month < 10) month = '0' + month
+      if (day < 10) day = '0' + day
+      var today = now.getFullYear() + '-' + month + '-' + day
+      $('.reserve-datepicker').val(today)
+      $('.reserve-datepicker').attr('min', today); //過去時間全部不可選
+    })
+
+    //timepicker 選擇可預約時間
+    $(document).ready(function () {
+      /*獲取查詢的日期和設計師ID*/
+
+      var date = $('.reserve-datepicker').val()
+      var designerId = 1
+
+      /*ajax查詢已經預約的列表*/
+
+      //$.post("#", {"designerId": designerId, "queryDay": date}, function(data, status) {
+
+      //var book = data.data.book;
+
+
+      /**
+       *   預約的資料
+       *   @Params openTime 開放時間
+       *   @Params closeTime 結束時間
+       *   @Params bookList 指定日期的預約列表
+       */
+
+      var today = new Date()
+      timeDisplay()
+    })
+
+    //當datepicker選定日期改變時執行
+    $('.reserve-datepicker').on('change', function (e) {
+      timeDisplay()
+    })
+
+    //透過指定日期顯示可供預定之時間，已被預定的時間不會顯示
+    function timeDisplay() {
+
+      var book = {
+        openTime: '09:00:00',
+        closeTime: '22:00:00',
+        bookList: [
+          { startTime: '10:00:00', endTime: '11:00:00', reservationDate: moment().format('2021-11-09') },
+          { startTime: '13:00:00', endTime: '15:00:00', reservationDate: moment().format('2021-11-10') },
+          { startTime: '15:00:00', endTime: '16:00:00', reservationDate: moment().format('2021-11-09') }
+        ]
+      }
+      var today = new Date()
+      var openTime = parseInt(book.openTime.split(':')[0])
+      var closeTime = parseInt(book.closeTime.split(':')[0])
+      var bookList = book.bookList
+      var date = $('.reserve-datepicker').val()
+
+      $('.reserve-time-select').empty()
+
+
+      for (let time = openTime; time < closeTime; time++) {
+        let isPrint = true//判斷是否顯示該時間的布林值
+        let show_time = time + ':00-' + (time + 1) + ':00'
+
+        //如果日期為當天，將不會顯示已經過去的時間
+        if (today.getDate() != new Date(date).getDate() || time > parseInt(new Date().getHours())) {
+
+          //搜尋booklist裡的預約記錄，如果有預約則不顯示
+          $(bookList).each(function (j) {
+            if (date == bookList[j].reservationDate && time >= parseInt(bookList[j].startTime.split(':')[0]) && time < parseInt(bookList[j].endTime.split(':')[0])) {
+              isPrint = false
+            }
+          })
+
+          //只顯示可供預定的時間
+          if (isPrint) {
+            let time_option = '<option>' + show_time + '</option>'
+            $('.reserve-time-select').append(time_option)
+          }
+        }
+      }
+    }
+
+
+    //reserve-confirm-btn
+    $(document).ready(function () {
+      $('.reserve-confirm').confirm({
+        title: '預約確認',
+        content: '路人甲 您好</br>請確認以下會員資訊無誤</br>電話：09123123123</br>Email：human123@gmail.com',
+        type: 'blue',
+        buttons: {
+          取消: {
+            btnClass: 'btn-red'
+          },
+          下一步: {
+            btnClass: 'btn-warning',
+            action: function () {
+              var date = $('.reserve-datepicker').val().toString()
+              var reservationTime = $('.reserve-time-select').val().toString()
+              $.confirm({
+                title: '預約確認',
+                content: '您預訂的是' + date.toString() + '的' + reservationTime.toString(),
+                type: 'blue',
+                buttons: {
+                  取消: {
+                    btnClass: 'btn-red'
+                  },
+                  送出: {
+                    btnClass: 'btn-success',
+                  }
+                }
+              })
+            }
+          }
+        }
+      });
+    })
+
   </script>
-
-
 </body>
 
 </html>

@@ -3114,8 +3114,8 @@ section .section-title span {
 }
 
 .storeInfo-section .userInfo {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 .userInfo i {

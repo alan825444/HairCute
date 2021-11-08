@@ -3299,12 +3299,12 @@ section .section-title span {
   flex-direction: column;
   align-items: center;
 }
-.datepicker{
+.reserve-datepicker{
   margin: 0px 0 12px 0;
 }
 
 
-.datepicker, .timepicker{
+.reserve-datepicker, .reserve-time-select{
   /* margin: 13px 0; */
   width: 13vw;
   height: 4.5vh;
@@ -3339,14 +3339,13 @@ section .section-title span {
     text-align: center;
     font-size: 1.2rem;
   }
-  .datepicker, .timepicker{
+  .reserve-datepicker, .reserve-time-select{
     width: 45vw;
   }
   .reserve-btn{
     margin: 15px 0 ;
   }
 }
-
 
 
 /*evaluate-area*/

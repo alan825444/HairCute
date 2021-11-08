@@ -29,9 +29,8 @@
                     @foreach (var item in ViewBag.店鋪資訊)
                     {
                         <div class="d-flex align-items-center">
-                            <p class="mr-2 mb-0">@item.fStore</p>
-                            <p class="mb-0">/</p>
-                            <p class="ml-2 mb-0">@item.fAddress</p>
+                            <a href="https://www.google.com.tw/maps/place/@item.fAddress" target="_blank">
+                                <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>                     </a>
                         </div>
                     }
 
