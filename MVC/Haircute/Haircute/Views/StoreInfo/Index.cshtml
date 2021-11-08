@@ -100,22 +100,26 @@
     <div class="container" id="menu-area">
         @foreach (var item in ViewBag.服務項目)
         {
-            <div class="row menu-info mt-3">
-                <div class="menu-img col-md-3">
-                    <div class="menu-img-container">
-                        <img src="~/img/bg-img/hair-cut.jpg">
+            if ((item.Item != null) || (item.Price != null))
+            {
+                <div class="row menu-info mt-3">
+                    <div class="menu-img col-md-3">
+                        <div class="menu-img-container">
+                            <img src="~/img/bg-img/hair-cut.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu-title">
+                        <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+                            <h4 class="menu-name">@item.Item</h4>
+                            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>@item.Price</h6>
+                        </div>
+                    </div>
+                    <div class="reserve-btn col-md-2">
+                        <button class="btn btn-success" type="submit">預約</button>
                     </div>
                 </div>
-                <div class="col-md-4 menu-title">
-                    <div class="d-flex flex-md-row justify-content-md-between align-items-center">
-                        <h4 class="menu-name">@item.Item</h4>
-                        <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>@item.Price</h6>
-                    </div>
-                </div>
-                <div class="reserve-btn col-md-2">
-                    <button class="btn btn-success" type="submit">預約</button>
-                </div>
-            </div>
+            }
+
         }
     </div>
     <!--menu-area End-->

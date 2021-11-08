@@ -11,10 +11,10 @@ namespace Haircute.Controllers
     {
         // GET: StoreInfo
         demodbEntities db = new demodbEntities();
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
             /*int SSID = Convert.ToInt32(User.Identity.Name);*/
-            int SSID = 1010;
+            int SSID = (int)id;
             var q = db.tDesigner.Where(x => x.fid == SSID).FirstOrDefault();
             ViewBag.Name = db.tMember.Where(x => x.fID == q.fk_Member).FirstOrDefault().fNickname;
             if(q != null)
