@@ -35,5 +35,7 @@ namespace Haircute
         public virtual DbSet<tWork> tWork { get; set; }
         public virtual DbSet<tDesigner> tDesigner { get; set; }
         public virtual DbSet<tComment> tComment { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<tEvaluate> tEvaluate { get; set; }
     }
 }

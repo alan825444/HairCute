@@ -21,6 +21,7 @@ namespace Haircute
             this.tPhoto = new HashSet<tPhoto>();
             this.tService = new HashSet<tService>();
             this.tWork = new HashSet<tWork>();
+            this.tComment = new HashSet<tComment>();
         }
     
         public int fid { get; set; }
@@ -40,5 +41,7 @@ namespace Haircute
         public virtual ICollection<tService> tService { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tWork> tWork { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tComment> tComment { get; set; }
     }
 }

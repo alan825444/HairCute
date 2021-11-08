@@ -12,17 +12,12 @@ namespace Haircute
     using System;
     using System.Collections.Generic;
     
-    public partial class tComment
+    public partial class sysdiagrams
     {
-        public int fid { get; set; }
-        public string fComment { get; set; }
-        public Nullable<int> fScore { get; set; }
-        public Nullable<int> fk_Member { get; set; }
-        public Nullable<int> fk_Designer { get; set; }
-        public Nullable<int> fk_Book { get; set; }
-    
-        public virtual tBook tBook { get; set; }
-        public virtual tDesigner tDesigner { get; set; }
-        public virtual tMember tMember { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
