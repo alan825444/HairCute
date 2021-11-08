@@ -334,7 +334,7 @@
         <div class="dateTime-area col-md-3">
           <p>請選擇日期時間</p>
           <div class="reserve-date">
-            <input class="reserve-datepicker" id="bookDate" type="date" value="" />
+            <input class="reserve-datepicker" name="reserve-datepicker" id="bookDate" type="date" value="" />
           </div>
           <div class="reserve-time">
             <select class="reserve-time-select" id="reserve-time-select">
@@ -605,6 +605,15 @@
 
     //當datepicker選定日期改變時執行
     $('.reserve-datepicker').on('change', function (e) {
+      /*var today = $(".reserve-datepicker").val();
+      $.post(
+        "StoreInfo/Index",
+        {"date" : today},
+        function(data){
+          timeDisplay();
+        },
+        "json"
+      )*/
       timeDisplay()
     })
 

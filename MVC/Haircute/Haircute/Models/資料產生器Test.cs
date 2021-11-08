@@ -87,8 +87,12 @@ namespace Haircute.Models
                 {
                     data.Add(new 評價表 { fid = item.fid, Score = (int)item.fScore, 
                         Comment = item.fComment,MemberName=item.fNickname,
-                        Service=item.fServicN,date= (DateTime)item.fDateTime});
+                        Service=item.fServicN,date= (DateTime)item.fDateTime/*).ToString("d")*/});
+                    //DateTime thisdate = new DateTime();
+                    //((DateTime)item.fDateTime).ToString("d");
+                    
                 }
+                
             }
             return data;
 

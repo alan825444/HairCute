@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace Haircute.Models
 {
@@ -12,9 +13,10 @@ namespace Haircute.Models
         public string 取得會員大頭貼(int SSID)
         {
             tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
-            if (q == null)
+            if (q.fHeadSticker == null)
             {
-                return "nothing";
+                q.fHeadSticker = "preview.jpg";
+                return "preview.jpg";
             }
             return q.fHeadSticker;
             
@@ -109,24 +111,39 @@ namespace Haircute.Models
         }
 
         public List<SelectListItem> 取得會員Area(int SSID)
-        { 
-            List<SelectListItem> data = new List<SelectListItem>();
-            var 會員資料 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
-            int fcityID = Convert.ToInt32(會員資料.fCity);
-            var area = db.tArea.Where(x=>x.fk_City == fcityID).OrderBy(x=>x.fid);
-            if (會員資料 == null)
+        {
+            try
             {
-                return data;
+                List<SelectListItem> data = new List<SelectListItem>();
+                var 會員資料 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+                int fcityID = Convert.ToInt32(會員資料.fCity);
+                var area = db.tArea.Where(x => x.fk_City == fcityID).OrderBy(x => x.fid);
+                if (會員資料 == null)
+                {
+                    return data;
+                }
+                else
+                {
+                    foreach (var item in area)
+                    {
+                        data.Add(new SelectListItem { Value = item.fid.ToString(), Text = item.fArea });
+                    }
+                    data.Where(x => x.Value == 會員資料.fArea).First().Selected = true;
+                    return data;
+                }
             }
-            else
+            catch (Exception)
             {
+                List<SelectListItem> data = new List<SelectListItem>();
+                var area = db.tArea.OrderBy(x => x.fid);
                 foreach (var item in area)
                 {
                     data.Add(new SelectListItem { Value = item.fid.ToString(), Text = item.fArea });
                 }
-                data.Where(x => x.Value == 會員資料.fArea).First().Selected = true;
                 return data;
+                throw;
             }
+            
         }
 
         public List<設計師資料> 店鋪資訊(int SSID)
@@ -144,7 +161,8 @@ namespace Haircute.Models
                 }
                 else
                 {
-                    data.Add(new 設計師資料 { fStore = q.fStore, fAddress = q.fAddress, fStartTime = q2.fStartTime, fEndTime = q2.fEndTime });
+                    var test = ((TimeSpan)q2.fStartTime).ToString(@"hh\:mm");
+                    data.Add(new 設計師資料 { fStore = q.fStore, fAddress = q.fAddress, fStartTime =q2.fStartTime, fEndTime = q2.fEndTime });
                     return data;
                 }
             }
@@ -202,7 +220,7 @@ namespace Haircute.Models
                 var qphoto = db.tPhoto.Where(x => x.fk_Designer == item).OrderBy(x => x.fDateTime).Take(2).ToList();
                 var qDesigner = db.tDesigner.Where(x => x.fid==item).FirstOrDefault();
                 照片資料 temp = new 照片資料();
-                temp = new 照片資料 { photo = qphoto[0].fPath, photo2 = qphoto[1].fPath, DesignerId = item ,DesignerName=qDesigner.tMember.fNickname };
+                temp = new 照片資料 { photo = qphoto[0].fPath, fTime =((DateTime)qphoto[0].fDateTime).ToString("d"), photo2 = qphoto[1].fPath, DesignerId = item ,DesignerName=qDesigner.tMember.fNickname };
                 data.Add(temp);
             }
             return data;
@@ -310,6 +328,17 @@ namespace Haircute.Models
             }
             
             
+        }
+
+        public void 時間搜尋() 
+        {
+            var q = "2021-11-20";
+            var s = DateTime.Parse(q);
+            var q2 = db.tBook.Where(x => DbFunctions.TruncateTime(x.fDateTime) == s );
+            foreach (var item in q2)
+            {
+                var s2 = item.fDateTime;
+            }
         }
 
 

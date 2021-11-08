@@ -11,7 +11,9 @@ namespace Haircute.Models
         public int DesignerId { get; set; }
         public string DesignerName { get; set; }
         public string photo { get; set; }
+        public string tag { get; set; }
         public string photo2 { get; set; }
-        public Nullable<System.DateTime> fTime { get; set; }
+        public string tag2 { get; set; }
+        public string fTime { get; set; }
     }
 }

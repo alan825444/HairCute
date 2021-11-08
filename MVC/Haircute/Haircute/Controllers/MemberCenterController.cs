@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Haircute.Models;
+using System.IO;
 
 namespace Haircute.Controllers
 {
@@ -121,8 +122,10 @@ namespace Haircute.Controllers
         }
 
         [HttpPost]
-        public ActionResult test(int fid) 
+        public ActionResult deletephoto(int fid) 
         {
+            var fullpath = "~/Images/" + new 資料儲存器().刪除作品(fid);
+            System.IO.File.Delete(Server.MapPath(fullpath));
             return RedirectToAction("Index");
         }
     }

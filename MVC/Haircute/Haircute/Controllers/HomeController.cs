@@ -18,6 +18,7 @@ namespace Haircute.Controllers
             ViewBag.SelectList = selectLists;
             ViewBag.圖片 = new 資料產生器().取得最新上傳();
             ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
+            new 資料產生器().時間搜尋();
             return View();
         }
 
@@ -171,6 +172,12 @@ namespace Haircute.Controllers
             TempData["City"] = fCity;
             TempData["Area"] = fArea;
             return RedirectToAction("Search", "Search");
+        }
+
+        public ActionResult Logout() 
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
     }
 }

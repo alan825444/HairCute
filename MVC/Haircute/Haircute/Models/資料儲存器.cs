@@ -110,5 +110,24 @@ namespace Haircute.Models
             
             
         }
+
+        public string 刪除作品(int id)
+        {
+            try
+            {
+                demodbEntities db = new demodbEntities();
+                var q = db.tPhoto.Where(x => x.fid == id).FirstOrDefault();
+                string deletePhotoPath = q.fPath;
+                db.tPhoto.Remove(q);
+                db.SaveChanges();
+                return deletePhotoPath;
+            }
+            catch (Exception)
+            {
+                return "Error";
+                throw;
+            }
+            
+        }
     }
 }
