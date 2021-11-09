@@ -3038,10 +3038,12 @@ section .section-title span {
     background-position: center;
     margin-bottom: -250px;
 }
-@media screen and (max-width: 780px) {
-  .log-in-area {
-    background-size: cover;
-  }
+@media screen and (max-width: 768px) {
+    .log-in-area {
+        background-size: cover;
+        margin-top: 360px;
+        margin-bottom: -200px;
+    }
 }
 
 .log-in-area:hover {
@@ -3178,6 +3180,13 @@ section .section-title span {
     display: flex;
     justify-content: center;
   }
+   .storeInfo-section {
+       margin-left: 60px;
+   }
+   .des-rwd{
+       margin-top:90px;
+   }
+
 }
 .storeInfo-Tab {
   display: flex;

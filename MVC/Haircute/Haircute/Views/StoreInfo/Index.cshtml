@@ -29,7 +29,7 @@
                 <li>
                     @foreach (var item in ViewBag.店鋪資訊)
                     {
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center ">
                             <a href="https://www.google.com.tw/maps/place/@item.fAddress" target="_blank">
                                 <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>
                             </a>
@@ -57,7 +57,7 @@
 
 
     <!--design-area start-->
-    <div class="container" id="design-area">
+    <div class="container des-rwd" id="design-area">
         <div class="row">
             @foreach (var item in ViewBag.Dphoto)
             {
