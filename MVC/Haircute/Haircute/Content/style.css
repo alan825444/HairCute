@@ -564,6 +564,9 @@ ul li {
     max-width: 90px;
     margin-right: 15px;
   }
+    .classy-nav-container .classy-navbar .bg-curve {
+        width: 63%;
+    }
 }
 .classy-nav-container .classy-navbar .classynav ul li a {
   position: relative;
@@ -842,7 +845,7 @@ ul li {
   right: 0;
 }
 .store-img-container {
-  /* position: absolute; */
+  position: absolute;
   width: 180px;
   height: 180px;
   overflow: hidden;
@@ -913,18 +916,30 @@ ul li {
 }
 
 @media only screen and (max-width: 767px) {
-  .single-welcome-slide .main-bg-img {
-    height: calc(90% - 50px);
-    width: 70vw;
-    background-image: url(img/banner-img/hair6.jpeg);
-    border-radius: 1rem;
-    right: 10px;
+    .single-welcome-slide .main-bg-img {
+        height: calc(90% - 50px);
+        width: 70vw;
+        /*background-image: url(img/banner-img/hair6.jpeg);*/
+        border-radius: 1rem;
+        right: 10px;
+    }
+  .store-img-container{
+      height:100px;
+      width:100px;
+      bottom:90%;
   }
-  .store-img-container,
-  .hair-style-img,
-  .hair-style-img2 {
-    display: none;
-  }
+    .hair-style-img {
+        height: calc(90% - 50px);
+        width: 70vw;
+        left: -10%;
+    }
+    .hair-style-img2 {
+        height: 150px;
+        width: 150px;
+        
+        left: 40%;
+        bottom: 65%;
+    }
 }
 .single-welcome-slide .social-info {
   position: absolute;
@@ -3023,10 +3038,12 @@ section .section-title span {
     background-position: center;
     margin-bottom: -250px;
 }
-@media screen and (max-width: 780px) {
-  .log-in-area {
-    background-size: cover;
-  }
+@media screen and (max-width: 768px) {
+    .log-in-area {
+        background-size: cover;
+        margin-top: 360px;
+        margin-bottom: -200px;
+    }
 }
 
 .log-in-area:hover {
@@ -3163,6 +3180,13 @@ section .section-title span {
     display: flex;
     justify-content: center;
   }
+   .storeInfo-section {
+       margin-left: 60px;
+   }
+   .des-rwd{
+       margin-top:90px;
+   }
+
 }
 .storeInfo-Tab {
   display: flex;
@@ -3474,6 +3498,8 @@ margin: 15px 0 25px 0;
 .reserve-manage-area button {
   font-size: 10px;
 }
+
+
 /*membercenter area*/
 .membercenter-area-cos {
   z-index: 1;
@@ -3501,16 +3527,20 @@ margin: 15px 0 25px 0;
 
 .consumer-name {
   display: inline-block;
-  margin-left: 440px;
+  margin-left: 520px;
+}
+.des-name {
+    display: inline-block;
+    margin-left: 440px;
 }
 
 .consumer-star {
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  align-items: center;
-  height: 60px;
-  width: 180px;
+    position: relative;
+    display: inline-flex;
+    margin-left: 10px;
+    align-items: center;
+    height: 60px;
+    width: 180px;
 }
 
   .consumer-star i {
@@ -3677,6 +3707,10 @@ margin: 15px 0 25px 0;
       position: relative;
       margin-left: 90px;
   }
+  .des-name {
+        font-size: 16px;
+        margin-left: 50px;
+  }
 
   .user-star-cos {
       width: 130px;
@@ -3712,7 +3746,7 @@ margin: 15px 0 25px 0;
   }
 
   .consumer-name {
-      margin-left: 70px;
+      margin-left: 140px;
   }
 
   .consumer-star {
@@ -3943,24 +3977,21 @@ margin: 15px 0 25px 0;
 .reservation-footer-cos i {
       color: green;
 }
+.gi {
+    color: green;
+}
+.far fa-edit{
+    color:red;
+}
 
 .reservation-footer-cos button {
-      display: inline-flex;
-      height: 30px;
-      width: 78px;
-      align-items: center;
-      letter-spacing: 10px;
-      font-size: 20px;
+    display: inline-flex;
+    height: 30px;
+    width: 78px;
+    align-items: center;
+    letter-spacing: 10px;
+    font-size: 20px;
 }
-
-.res-cancel-cos b {
-  color: red;
-}
-
-.res-cancel-cos i {
-  color: red;
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .reservation-item-cos {
       margin-left: 25px;
@@ -4114,6 +4145,138 @@ margin: 15px 0 25px 0;
           width: 65px;
           font-size: 16px;
   }
+}
+/*reservation-area ©É¸©ª©¥»(©ñBackstage)*/
+.reservation-area-e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    margin-top: 30px;
+}
+
+.reservation-item-e {
+    display: flex;
+    position: relative;
+    border: 3px outset rgba(50, 69, 154, 0.7);
+    border-radius: 1rem;
+    padding: 10px 0;
+}
+
+.reservation-pic-e img {
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+    margin: 10px;
+}
+
+.reservation-info-e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reservation-title-e a {
+    font-size: 1.3rem;
+    color: #1e82df;
+}
+
+.reservation-body-e {
+    font-size: 1.2rem;
+    background-color: rgba(102, 102, 102, 0.2);
+    margin: 5px 5px 0 0;
+    border-radius: 3px;
+}
+
+    .reservation-body-e ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px 10px;
+    }
+
+    .reservation-body-e li {
+        width: 20vw;
+        color: #3b4241;
+    }
+
+.reservation-footer-e {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+    .reservation-footer-e h6 {
+        margin: 0;
+        color: #108d6f;
+    }
+
+.fa-check-circle-e {
+    color: #108d6f;
+}
+
+.reservation-cancel-btn-e {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 20px;
+    color: rgb(187, 41, 41);
+}
+
+    .reservation-cancel-btn-e:hover {
+        background-color: rgba(187, 41, 41);
+        color: whitesmoke;
+    }
+
+.reveiew-btn-e {
+    margin: 0 20px;
+    color: #3b4241;
+}
+
+    .reveiew-btn-e:hover {
+        background-color: #F9BF45;
+        color: whitesmoke;
+        border: none;
+    }
+
+.reservation-canceled-e, .reservation-complete-e {
+    margin-right: 15px;
+}
+
+    .reservation-canceled-e, .reservation-canceled-e h6 {
+        color: rgb(187, 41, 41);
+    }
+
+@media only screen and (max-width: 767px) {
+    .reservation-pic-e {
+        display: none;
+    }
+
+    .reservation-item-e {
+        margin-top: 20px;
+    }
+
+    .reservation-title-e a {
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+
+    .reservation-body-e {
+        font-size: 1rem;
+    }
+
+        .reservation-body-e ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reservation-body-e li {
+            display: inline-flex;
+            width: auto;
+        }
 }
 
 /*evaluate-area*/
@@ -4435,6 +4598,15 @@ color: rgb(251, 177, 5);
   height: 30px;
   padding-left: 5px;
 }
+.Tab4-back{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+}
 .back-area{
   display: flex;
   justify-content: center;
@@ -4443,4 +4615,12 @@ color: rgb(251, 177, 5);
 .back-form{
   margin-bottom: 60px;
   width: 450px;
+}
+@media only screen and (max-width: 767px) {
+    .back-form {
+        width: 100%;
+    }
+    .Backstage-edit{
+        margin-bottom:50px;
+    }
 }

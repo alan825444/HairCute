@@ -43,8 +43,8 @@
                 <div class="Backstage-user">
                     <ul>
                         <li>
-                            <div class="consumer-name">
-                                <h2>查理</h2>
+                            <div class="des-name">
+                                <h2>@ViewBag.Name</h2>
                             </div>
                             <div class="consumer-star">
                                 <i class="fas fa-star"></i>
@@ -65,6 +65,7 @@
                 <a href="#"><div class="Tab1-back"><span>店家</span></div></a>
                 <a href="#"><div class="Tab2-back"><span>服務</span></div></a>
                 <a href="#"><div class="Tab3-back"><span>作品</span></div></a>
+                <a href="#"><div class="Tab4-back"><span>預約</span></div></a>
             </div>
         </div>
 
@@ -321,7 +322,7 @@
                                 <div class="design-head"><img src="~/Images/@item.fPath" class="design-pic"></div>
                                 <div class="design-body">#@item.fTag</div>
                             </a>
-                            <form action="/MemberCenter/test" method="post">
+                            <form action="/MemberCenter/deletephoto" method="post">
                                 <input type="hidden" name="fid" value="@item.fid" />
                                 <button type="submit" class="btn btn-outline-danger mx-2">
                                     <i class="far fa-edit mr-1"></i> 刪除
@@ -353,6 +354,136 @@
             </article>
         </div>
         <!--item-area End-->
+        <!--reservation-area start-->
+        <div id="reservation-area">
+            <div class="row reservation-area-e">
+                @{
+                    DateTime today = DateTime.Now;
+
+                    foreach (var item in ViewBag.預約紀錄)
+                    {
+                        if ((DateTime.Compare(item.比較時間, today) >= 0) && (item.狀態 == "T"))
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照">
+                                </div>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
+                                    </div>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reservation-footer-e">
+                                        <h6>已確認</h6><i class="gi fas fa-check-circle ml-1 mb-1"></i>
+                                        <form action="/UserCenter/deletebook" method="post">
+                                            <input type="hidden" name="fid" value="@item.預約ID" />
+                                            <button type="submit" class="btn btn-outline-danger mx-2">
+                                                <i class="far fa-edit mr-1"></i> 取消
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if ((DateTime.Compare(item.比較時間, today) < 0) && (item.狀態 == "T"))
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照">
+                                </div>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
+                                    </div>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reservation-footer-e">
+                                        <span id="res-evaluation">
+                                            <input type="hidden" name="fid" value="@item.預約ID" />
+                                            <button type="button" class="btn btn-warning reveiew-btn"
+                                            data-toggle="modal" data-target="#reservation-evaluate">
+                                            評價</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if ((DateTime.Compare(item.比較時間, today) < 0) && (item.狀態 == "F"))
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照" class="reservation-pic-e">
+                                </div>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
+                                    </div>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reservation-footer-e reservation-complete-e">
+                                        <h6>已完成</h6>
+                                        <i class="gi fas fa-check-circle ml-1 mb-1"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+        <!--reservation-area End-->
     </div>
 </main>
 <!-- ***** backstage Area Start ***** -->
@@ -417,34 +548,34 @@
                             @if (item.fGender == "1         ")
                             {
                                 <div class="col-md-3 col-4">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
-                                           value="1" checked>
-                                    <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                               value="1" checked>
+                                        <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                               value="2">
+                                        <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
-                                           value="2" >
-                                    <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
-                                </div>
-                            </div>
                             }
                             else
                             {
                                 <div class="col-md-3 col-4">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
-                                           value="option1">
-                                    <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                               value="option1">
+                                        <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                               value="option2" checked>
+                                        <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                    </div>
                                 </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
-                                           value="option2" checked>
-                                    <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
-                                </div>
-                            </div>
                             }
-                            
+
                             <div class="col-md-5 c0l-12">
                                 <label class="form-label">暱稱</label>
                                 <input type="text" name="fNickname" id="usernickname" value="@item.fNickname" maxlength="20" placeholder="顯示在網站上的名稱"
@@ -514,6 +645,37 @@
     </div>
 </div>
 <!--update-user-Pwd end-->
+<!--reservation-evaluate start-->
+<div class="modal fade" id="reservation-evaluate">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body main-body">
+                <div class="main-star">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img1">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img2">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img3">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img4">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img5">
+                </div>
+                <div>
+                    單擊即可評分，雙擊可重新評分
+                    <input type="hidden" name="fScore" value="" />
+                </div>
+                <div class="write-body">
+                    <textarea name="fcomment" id="comment" cols="30" rows="3" placeholder="請填寫評價"
+                              maxlength="40"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="sendscore">送出評價</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--reservation-evaluate End-->
 
 @section Backstage{
 
@@ -531,11 +693,10 @@
         $(document).ready(function () {
             $("#Service-sent").click(function () { 項目json資料組成() })
             $("#Send-change-data").click(function () { 會員資料修改() })
-            $("#pwdChange").click(function () { 密碼修改()})
+            $("#pwdChange").click(function () { 密碼修改() })
         })
 
-        function 密碼修改()
-        {
+        function 密碼修改() {
             var Pwd1 = $("#update-user-Pwd input[name='fPwd']").val();
             var Pwd2 = $("#update-user-Pwd input[name='fChangePwd']").val();
             console.log(`${Pwd1} ${Pwd2}`);
@@ -591,7 +752,7 @@
                     "json"
                 )
             }
-            
+
         }
 
 
@@ -628,8 +789,8 @@
     <script>
         var basic2 = $('#Head-cropper').croppie
             ({
-                viewport: { width: 300, height: 300, type: 'circle'}, // 裁切區塊
-                boundary: { width: 400, height: 400 }, // 預覽區塊
+                viewport: { width: 250, height: 250, type: 'circle'}, // 裁切區塊
+                boundary: { width: 300, height: 300 }, // 預覽區塊
                 showZoomer: true, //隱藏或顯示縮放滑塊
                 url: '/img/preview.jpg', //預設圖片
                 format: 'png' //'jpeg'|'png'|'webp'
@@ -690,8 +851,8 @@
     <script>
         var basic = $('#main-cropper').croppie
             ({
-                viewport: { width: 400, height: 500 }, // 裁切區塊
-                boundary: { width: 425, height: 625 }, // 預覽區塊
+                viewport: { width: 250, height: 315 }, // 裁切區塊
+                boundary: { width: 300, height: 475 }, // 預覽區塊
                 showZoomer: true, //隱藏或顯示縮放滑塊
                 url: '/img/preview.jpg', //預設圖片
                 format: 'png' //'jpeg'|'png'|'webp'
@@ -753,25 +914,31 @@
         //Tab function
         $(document).ready(function () {
             $(".Tab1-back").addClass('change');
-            $('#service-area,#item-area').hide();
+            $('#service-area,#item-area,#reservation-area').hide();
         })
         $(".Tab1-back").click(function () {
-            $(".Tab3-back,.Tab2-back").removeClass('change');
+            $(".Tab3-back,.Tab2-back,.Tab4-back").removeClass('change');
             $(this).addClass('change');
             $('#store-area').fadeIn();
-            $('#service-area,#item-area').fadeOut();
+            $('#service-area,#item-area,#reservation-area').fadeOut();
         })
         $(".Tab2-back").click(function () {
-            $(".Tab3-back,.Tab1-back").removeClass('change');
+            $(".Tab3-back,.Tab1-back,.Tab4-back").removeClass('change');
             $(this).addClass('change');
             $('#service-area').fadeIn();
-            $('#store-area,#item-area').fadeOut();
+            $('#store-area,#item-area,#reservation-area').fadeOut();
         })
         $(".Tab3-back").click(function () {
-            $(".Tab2-back,.Tab1-back").removeClass('change');
+            $(".Tab2-back,.Tab1-back,.Tab4-back").removeClass('change');
             $(this).addClass('change');
             $('#item-area').fadeIn();
-            $('#service-area,#store-area').fadeOut();
+            $('#service-area,#store-area,#reservation-area').fadeOut();
+        })
+        $(".Tab4-back").click(function () {
+            $(".Tab2-back,.Tab1-back,.Tab3-back").removeClass('change');
+            $(this).addClass('change');
+            $('#reservation-area').fadeIn();
+            $('#service-area,#store-area,#item-area').fadeOut();
         })
 
         //clockpicker
@@ -809,6 +976,86 @@
                 }
             })
         }
+    </script>
+
+    @*評價系統*@
+    <script>
+        $(document).ready(function () {
+            $(".Tab2-cos").addClass('change');
+            $("#sendscore").click(function () { sendscore(); })
+        })
+
+
+        let star = document.querySelectorAll("img.x");
+        for (let img of star) {
+            img.addEventListener("mouseover", mouseover);
+            img.addEventListener("mouseout", mouseout);
+            img.addEventListener("click", click);
+            img.addEventListener("dblclick", dblclick);
+        }
+        function mouseover() {
+            let num = $(this).index();
+            for (let i = 0; i < num + 1; i++) {
+                star[i].src = "../img/user-img/star-yellow.png"
+            }
+        }
+        function mouseout() {
+            let num = $(this).index();
+            if (starNum != -1) {
+                for (let i = 0; i < num + 1; i++) {
+                    if (i <= starNum) {
+                        star[i].src = "../img/user-img/star-yellow.png"
+                    } else {
+                        star[i].src = "../img/user-img/star-black.png";
+                    }
+                }
+            } else {
+                for (let i = 0; i < 5; i++) {
+                    star[i].src = "../img/user-img/star-black.png";
+                }
+            }
+        }
+        var starNum = -1;
+        var starArray = Array.from(star);
+        function click(e) {
+            if (e.target.tagName === "IMG") {
+                starNum = starArray.indexOf(e.target);
+            }
+        }
+        function dblclick() {
+            starNum = -1;
+            for (let i = 0; i < 5; i++) {
+                star[i].src = "../img/user-img/star-black.png";
+            }
+        }
+
+        function sendscore() {
+            var id = $("#res-evaluation input[name='fid']").val();
+            var score = starNum + 1;
+            var comment = $("#comment").val();
+            if (score > 0) {
+                $.post(
+                    "/UserCenter/sendscore",
+                    {
+                        "fid": id, "fScore": score, "fComment": comment
+                    },
+                    function (data) {
+                        if (data.Message == "OK") {
+                            swal("成功", "", "success");
+                            $("#res-evaluation").replaceWith('<div class="reservation-footer-e reservation-complete-e"><h6>已完成</h6><i class="gi fas fa-check-circle ml-1 mb-1"></i></div>');
+                        }
+                        else {
+                            swal("失敗", "", "error");
+                        }
+                    },
+                    "json"
+                )
+            } else {
+                swal("失敗2", "", "error");
+            }
+
+        }
+
     </script>
 
 }

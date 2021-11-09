@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Haircute.Models;
+using System.IO;
 
 namespace Haircute.Controllers
 {
@@ -20,8 +21,13 @@ namespace Haircute.Controllers
             {
                 return RedirectToAction("Index", "UserCenter");
             }
+            //else if (q.fconfirmation == null)
+            //{
+            //    return RedirectToAction("remindpage");
+            //}
             else
             {
+                ViewBag.Name = q.fNickname;
                 ViewBag.HImg = new 資料產生器().取得會員大頭貼(SSID);
                 ViewBag.Dphoto = new 資料產生器().取得設計師作品(SSID);
                 ViewBag.selectCity = new 資料產生器().selectedCity(SSID);
@@ -31,6 +37,7 @@ namespace Haircute.Controllers
                 ViewBag.店鋪資訊 = new 資料產生器().店鋪資訊(SSID);
                 ViewBag.服務項目 = new 資料產生器().服務項目(SSID);
                 ViewBag.會員資料 = new 資料產生器().取得會員資料(SSID);
+                ViewBag.預約紀錄 = new 資料產生器Test().預約(SSID);
                 return View();
             }
             
@@ -64,16 +71,25 @@ namespace Haircute.Controllers
 
         public ActionResult Headupbdate(string filename, HttpPostedFileBase blob)
         {
-            string systemFileExtenstion = filename.Substring(filename.LastIndexOf('.'));
-            var newfileName180 = GenerateFileName("PhotoDesigner", systemFileExtenstion);
-            var fullpath = "~/Images/" + newfileName180;
-            blob.SaveAs(Server.MapPath(fullpath));
+            try
+            {
+                string systemFileExtenstion = filename.Substring(filename.LastIndexOf('.'));
+                var newfileName180 = GenerateFileName("PhotoDesigner", systemFileExtenstion);
+                var fullpath = "~/Images/" + newfileName180;
+                blob.SaveAs(Server.MapPath(fullpath));
 
-            int SSID = Convert.ToInt32(User.Identity.Name);
-            tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
-            q.fHeadSticker = newfileName180;
-            db.SaveChanges();
-            return Json(new { Message = "OK" });
+                int SSID = Convert.ToInt32(User.Identity.Name);
+                tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
+                q.fHeadSticker = newfileName180;
+                db.SaveChanges();
+                return Json(new { Message = "OK" });
+            }
+            catch (Exception)
+            {
+                return Json(new { Message = "Error" });
+                throw;
+            }
+            
         }
 
         public string GenerateFileName(string fileTypeName, string fileextenstion)
@@ -121,9 +137,24 @@ namespace Haircute.Controllers
         }
 
         [HttpPost]
-        public ActionResult test(int fid) 
+        public ActionResult deletephoto(int fid) 
         {
+            var fullpath = "~/Images/" + new 資料儲存器().刪除作品(fid);
+            System.IO.File.Delete(Server.MapPath(fullpath));
             return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult deletebook(int fid)
+        {
+            new 資料儲存器().預約刪除(fid);
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public ActionResult sendscore(int fid, int fScore, string fComment)
+        {
+            string result = new 資料儲存器().評價產生(fid, fScore, fComment);
+            return Json(new { Message = result }, JsonRequestBehavior.AllowGet);
         }
     }
 }

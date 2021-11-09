@@ -38,14 +38,25 @@ namespace Haircute.Controllers
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if ((member == null)&&(m.fCity!=null)&&(m.fArea!=null))
             {
-                db.tMember.Add(m.Member);
-                db.SaveChanges();
-                var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
-                db.tDesigner.Add(new tDesigner { fk_Member = m.fID });
-                db.tWork.Add(new tWork { fk_Designer = m.fID });
-                db.SaveChanges();
-                //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-                return RedirectToAction("ConfirmPage");
+                try
+                {
+                    db.tMember.Add(m.Member);
+                    db.SaveChanges();
+                    var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault().fID;
+                    //屬於mail功能部份
+                    db.tDesigner.Add(new tDesigner { fk_Member = id });
+                    db.SaveChanges();
+                    db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
+                    db.SaveChanges();
+                    //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                    return RedirectToAction("ConfirmPage");
+                }
+                catch (Exception exe)
+                {
+
+                    throw;
+                }
+                
             }
             else if ((member == null) && ((m.fCity == null) || (m.fArea == null)))
             {
@@ -125,6 +136,10 @@ namespace Haircute.Controllers
             tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
             認證.fconfirmation = "Y";
             db.SaveChanges();
+            db.tDesigner.Add(new tDesigner { fk_Member = cfID });
+            db.SaveChanges();
+            db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x => x.fk_Member == cfID).FirstOrDefault().fid });
+            db.SaveChanges();
             FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(),true);
             Session["Member"] = 認證.fNickname;
             Session["ID"] = 認證.fID.ToString();
@@ -171,6 +186,12 @@ namespace Haircute.Controllers
             TempData["City"] = fCity;
             TempData["Area"] = fArea;
             return RedirectToAction("Search", "Search");
+        }
+
+        public ActionResult Logout() 
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
     }
 }

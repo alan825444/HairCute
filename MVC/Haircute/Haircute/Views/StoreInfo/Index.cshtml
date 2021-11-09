@@ -1,8 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayourMember.cshtml";
+    ViewBag.Title = "設計師資訊";
 }
+
+
 
 <!-- ***** storeInfo Area Start ***** -->
 <div class="container storeInfo-area">
@@ -28,9 +29,10 @@
                 <li>
                     @foreach (var item in ViewBag.店鋪資訊)
                     {
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center ">
                             <a href="https://www.google.com.tw/maps/place/@item.fAddress" target="_blank">
-                                <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>                     </a>
+                                <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>
+                            </a>
                         </div>
                     }
 
@@ -52,33 +54,10 @@
             </a>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $(".Tab1").addClass('change');
-            $('#menu-area,#evaluate-area').hide();
-        })
-        $(".Tab1").click(function () {
-            $(".Tab5,.Tab3").removeClass('change');
-            $(this).addClass('change');
-            $('#design-area').fadeIn();
-            $('#menu-area,#evaluate-area').fadeOut();
-        })
-        $(".Tab3").click(function () {
-            $(".Tab5,.Tab1").removeClass('change');
-            $(this).addClass('change');
-            $('#menu-area').fadeIn();
-            $('#evaluate-area,#design-area').fadeOut();
-        })
-        $(".Tab5").click(function () {
-            $(".Tab1,.Tab3").removeClass('change');
-            $(this).addClass('change');
-            $('#evaluate-area').fadeIn();
-            $('#design-area,#menu-area').fadeOut();
-        })
-    </script>
+
 
     <!--design-area start-->
-    <div class="container" id="design-area">
+    <div class="container des-rwd" id="design-area">
         <div class="row">
             @foreach (var item in ViewBag.Dphoto)
             {
@@ -97,28 +76,33 @@
     <!--design-area End-->
     <!--menu-area start-->
     <div class="container" id="menu-area">
-        @foreach (var item in ViewBag.服務項目)
-        {
-            if ((item.Item != null) || (item.Price != null))
+        @{
+            var count = 1;
+            foreach (var item in ViewBag.服務項目)
             {
-                <div class="row menu-info mt-3">
-                    <div class="menu-img col-md-3">
-                        <div class="menu-img-container">
-                            <img src="~/img/bg-img/hair-cut.jpg">
+                if ((item.Item != null) || (item.Price != null))
+                {
+                    <div class="row menu-info mt-3">
+                        <div class="menu-img col-md-3">
+                            <div class="menu-img-container">
+                                <img src="~/img/bg-img/hair-cut.jpg">
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4 menu-title">
-                        <div class="d-flex flex-md-row justify-content-md-between align-items-center">
-                            <h4 class="menu-name">@item.Item</h4>
-                            <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>@item.Price</h6>
+                        <div class="col-md-4 menu-title">
+                            <div class="d-flex flex-md-row justify-content-md-between align-items-center">
+                                <h4 class="menu-name">@item.Item</h4>
+                                <h6 class="menu-price col-md-3"><i class="fas fa-dollar-sign mr-1"></i>@item.Price</h6>
+                            </div>
                         </div>
-                    </div>
-                    <div class="reserve-btn col-md-2">
-                        <button class="btn btn-success" type="submit">預約</button>
-                    </div>
-                </div>
-            }
+                        <div class="reserve-btn col-md-2">
 
+                            <button class="btn btn-success" type="submit">預約</button>
+                        </div>
+                    </div>
+                    count++;
+                }
+
+            }
         }
     </div>
     <!--menu-area End-->
@@ -129,6 +113,7 @@
             <div class="row evaluate-area">
                 @foreach (var item in ViewBag.評價)
                 {
+                    var date = item.date.ToString("d");
                     <div class="evaluate-item-cos">
                         <ul>
                             <li>
@@ -157,17 +142,43 @@
                             </li>
                             <li>
                                 <div class="evaluate-footer-cos">
-                                    <label>日期：</label><b>@item.date</b>
+                                    <label>日期：</label>@date<b></b>
                                     <label class="pos-label-cos">服務項目：</label><b>@item.Service</b>
                                 </div>
                             </li>
                         </ul>
                     </div>
                 }
-
             </div>
         </article>
     </div>
     <!--evaluate-area End-->
 </div>
 <!-- ***** storeInfo Area Start ***** -->
+@section storeinfo{
+    <script>
+        $(document).ready(function () {
+            $(".Tab1").addClass('change');
+            $('#menu-area,#evaluate-area').hide();
+        })
+        $(".Tab1").click(function () {
+            $(".Tab5,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#design-area').fadeIn();
+            $('#menu-area,#evaluate-area').fadeOut();
+        })
+        $(".Tab3").click(function () {
+            $(".Tab5,.Tab1").removeClass('change');
+            $(this).addClass('change');
+            $('#menu-area').fadeIn();
+            $('#evaluate-area,#design-area').fadeOut();
+        })
+        $(".Tab5").click(function () {
+            $(".Tab1,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#evaluate-area').fadeIn();
+            $('#design-area,#menu-area').fadeOut();
+        })
+    </script>
+}
+

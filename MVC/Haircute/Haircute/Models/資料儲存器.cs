@@ -110,5 +110,61 @@ namespace Haircute.Models
             
             
         }
+
+        public string 刪除作品(int id)
+        {
+            try
+            {
+                demodbEntities db = new demodbEntities();
+                var q = db.tPhoto.Where(x => x.fid == id).FirstOrDefault();
+                string deletePhotoPath = q.fPath;
+                db.tPhoto.Remove(q);
+                db.SaveChanges();
+                return deletePhotoPath;
+            }
+            catch (Exception)
+            {
+                return "Error";
+                throw;
+            }
+            
+        }
+        
+        public string 預約刪除(int id)
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tBook.Where(m => m.fid == id).FirstOrDefault();
+            db.tBook.Remove(q);
+            db.SaveChanges();
+            return "ok";
+        }
+
+        public string 評價產生(int id,int fScore, string fComment)
+        {
+            try
+            {
+                demodbEntities db = new demodbEntities();
+                var b = db.tBook.Where(m => m.fid == id).FirstOrDefault();
+                tComment c = new tComment();
+                if (b != null)
+                {
+                    b.fstatus = "F";
+                    c.fComment = fComment;
+                    c.fScore = fScore;
+                    c.fk_Book = b.fid;
+                    c.fk_Designer = b.fk_Designer;
+                    c.fk_Member = b.fk_Member;
+                    db.tComment.Add(c);
+                    db.SaveChanges();
+                }
+                return "OK";
+            }
+            catch (Exception)
+            {
+                return "Error";
+                throw;
+            }
+               
+        }
     }
 }

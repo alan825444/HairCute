@@ -54,7 +54,7 @@
                     <div class="bg-curve" style="background-image: url('../img/banner-img/curve.png');"></div>
 
                     <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="~/img/banner-img/logo.png" alt=""></a>
+                    <a class="nav-brand" href="/Home/Index"><img src="~/img/banner-img/logo.png" alt=""></a>
 
                     <!-- Navbar Toggler -->
                     <div class="classy-navbar-toggler">
@@ -80,7 +80,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">登出</a>
+                                    <a href="/Home/Logout">登出</a>
 
                                 </li>
 
@@ -287,7 +287,7 @@
     @RenderSection("Backstage", required: false);
     @RenderSection("HomeIndex", required: false);
     @RenderSection("SearchIndex", required: false);
-
+    @RenderSection("storeinfo", required: false);
 </body>
 
 </html>
