@@ -43,6 +43,7 @@ namespace Haircute.Controllers
                     db.tMember.Add(m.Member);
                     db.SaveChanges();
                     var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault().fID;
+                    //屬於mail功能部份
                     db.tDesigner.Add(new tDesigner { fk_Member = id });
                     db.SaveChanges();
                     db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
@@ -134,6 +135,10 @@ namespace Haircute.Controllers
             demodbEntities db = new demodbEntities();
             tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
             認證.fconfirmation = "Y";
+            db.SaveChanges();
+            db.tDesigner.Add(new tDesigner { fk_Member = cfID });
+            db.SaveChanges();
+            db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x => x.fk_Member == cfID).FirstOrDefault().fid });
             db.SaveChanges();
             FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(),true);
             Session["Member"] = 認證.fNickname;

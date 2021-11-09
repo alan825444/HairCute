@@ -21,6 +21,10 @@ namespace Haircute.Controllers
             {
                 return RedirectToAction("Index", "UserCenter");
             }
+            //else if (q.fconfirmation == null)
+            //{
+            //    return RedirectToAction("remindpage");
+            //}
             else
             {
                 ViewBag.HImg = new 資料產生器().取得會員大頭貼(SSID);
@@ -136,6 +140,11 @@ namespace Haircute.Controllers
             var fullpath = "~/Images/" + new 資料儲存器().刪除作品(fid);
             System.IO.File.Delete(Server.MapPath(fullpath));
             return RedirectToAction("Index");
+        }
+
+        public ActionResult remindpage() 
+        {
+            return View();
         }
     }
 }
