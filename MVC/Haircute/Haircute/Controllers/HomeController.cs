@@ -18,7 +18,6 @@ namespace Haircute.Controllers
             ViewBag.SelectList = selectLists;
             ViewBag.圖片 = new 資料產生器().取得最新上傳();
             ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
-            new 資料產生器().時間搜尋();
             return View();
         }
 
@@ -39,14 +38,24 @@ namespace Haircute.Controllers
             var member = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
             if ((member == null)&&(m.fCity!=null)&&(m.fArea!=null))
             {
-                db.tMember.Add(m.Member);
-                db.SaveChanges();
-                var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault();
-                db.tDesigner.Add(new tDesigner { fk_Member = m.fID });
-                db.tWork.Add(new tWork { fk_Designer = m.fID });
-                db.SaveChanges();
-                //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
-                return RedirectToAction("ConfirmPage");
+                try
+                {
+                    db.tMember.Add(m.Member);
+                    db.SaveChanges();
+                    var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault().fID;
+                    db.tDesigner.Add(new tDesigner { fk_Member = id });
+                    db.SaveChanges();
+                    db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
+                    db.SaveChanges();
+                    //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                    return RedirectToAction("ConfirmPage");
+                }
+                catch (Exception exe)
+                {
+
+                    throw;
+                }
+                
             }
             else if ((member == null) && ((m.fCity == null) || (m.fArea == null)))
             {

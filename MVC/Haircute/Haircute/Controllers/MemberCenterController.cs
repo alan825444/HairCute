@@ -65,16 +65,25 @@ namespace Haircute.Controllers
 
         public ActionResult Headupbdate(string filename, HttpPostedFileBase blob)
         {
-            string systemFileExtenstion = filename.Substring(filename.LastIndexOf('.'));
-            var newfileName180 = GenerateFileName("PhotoDesigner", systemFileExtenstion);
-            var fullpath = "~/Images/" + newfileName180;
-            blob.SaveAs(Server.MapPath(fullpath));
+            try
+            {
+                string systemFileExtenstion = filename.Substring(filename.LastIndexOf('.'));
+                var newfileName180 = GenerateFileName("PhotoDesigner", systemFileExtenstion);
+                var fullpath = "~/Images/" + newfileName180;
+                blob.SaveAs(Server.MapPath(fullpath));
 
-            int SSID = Convert.ToInt32(User.Identity.Name);
-            tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
-            q.fHeadSticker = newfileName180;
-            db.SaveChanges();
-            return Json(new { Message = "OK" });
+                int SSID = Convert.ToInt32(User.Identity.Name);
+                tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
+                q.fHeadSticker = newfileName180;
+                db.SaveChanges();
+                return Json(new { Message = "OK" });
+            }
+            catch (Exception)
+            {
+                return Json(new { Message = "Error" });
+                throw;
+            }
+            
         }
 
         public string GenerateFileName(string fileTypeName, string fileextenstion)
