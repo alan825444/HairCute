@@ -1,8 +1,9 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayourMember.cshtml";
+    ViewBag.Title = "設計師資訊";
 }
+
+
 
 <!-- ***** storeInfo Area Start ***** -->
 <div class="container storeInfo-area">
@@ -30,7 +31,8 @@
                     {
                         <div class="d-flex align-items-center">
                             <a href="https://www.google.com.tw/maps/place/@item.fAddress" target="_blank">
-                                <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>                     </a>
+                                <p class="mr-2 mb-0">@item.fStore / @item.fAddress</p>
+                            </a>
                         </div>
                     }
 
@@ -52,30 +54,7 @@
             </a>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            $(".Tab1").addClass('change');
-            $('#menu-area,#evaluate-area').hide();
-        })
-        $(".Tab1").click(function () {
-            $(".Tab5,.Tab3").removeClass('change');
-            $(this).addClass('change');
-            $('#design-area').fadeIn();
-            $('#menu-area,#evaluate-area').fadeOut();
-        })
-        $(".Tab3").click(function () {
-            $(".Tab5,.Tab1").removeClass('change');
-            $(this).addClass('change');
-            $('#menu-area').fadeIn();
-            $('#evaluate-area,#design-area').fadeOut();
-        })
-        $(".Tab5").click(function () {
-            $(".Tab1,.Tab3").removeClass('change');
-            $(this).addClass('change');
-            $('#evaluate-area').fadeIn();
-            $('#design-area,#menu-area').fadeOut();
-        })
-    </script>
+
 
     <!--design-area start-->
     <div class="container" id="design-area">
@@ -98,7 +77,7 @@
     <!--menu-area start-->
     <div class="container" id="menu-area">
         @{
-            var count =1;
+            var count = 1;
             foreach (var item in ViewBag.服務項目)
             {
                 if ((item.Item != null) || (item.Price != null))
@@ -116,7 +95,7 @@
                             </div>
                         </div>
                         <div class="reserve-btn col-md-2">
-                            
+
                             <button class="btn btn-success" type="submit">預約</button>
                         </div>
                     </div>
@@ -174,6 +153,32 @@
         </article>
     </div>
     <!--evaluate-area End-->
-    <input type="text" name="idservice" value="" hidden/>彈跳視窗
 </div>
 <!-- ***** storeInfo Area Start ***** -->
+@section storeinfo{
+    <script>
+        $(document).ready(function () {
+            $(".Tab1").addClass('change');
+            $('#menu-area,#evaluate-area').hide();
+        })
+        $(".Tab1").click(function () {
+            $(".Tab5,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#design-area').fadeIn();
+            $('#menu-area,#evaluate-area').fadeOut();
+        })
+        $(".Tab3").click(function () {
+            $(".Tab5,.Tab1").removeClass('change');
+            $(this).addClass('change');
+            $('#menu-area').fadeIn();
+            $('#evaluate-area,#design-area').fadeOut();
+        })
+        $(".Tab5").click(function () {
+            $(".Tab1,.Tab3").removeClass('change');
+            $(this).addClass('change');
+            $('#evaluate-area').fadeIn();
+            $('#design-area,#menu-area').fadeOut();
+        })
+    </script>
+}
+
