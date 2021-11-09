@@ -116,7 +116,8 @@ namespace Haircute.Models
                          s.fServicN,
                          s.fprice,
                          b.fDateTime,
-                         b.fBookTime
+                         b.fBookTime,
+                         b.fstatus
                      };
             List<預約紀錄> data = new List<預約紀錄>();
             if(q2 != null)
@@ -134,7 +135,8 @@ namespace Haircute.Models
                         價格 = item.fprice,
                         比較時間 = (DateTime)item.fDateTime,
                         預約日期 = ((DateTime)item.fDateTime).ToString("d"),
-                        預約時間 = ((TimeSpan)item.fBookTime).ToString(@"hh\:mm")
+                        預約時間 = ((TimeSpan)item.fBookTime).ToString(@"hh\:mm"),
+                        狀態=item.fstatus
                     });
                 }
             }

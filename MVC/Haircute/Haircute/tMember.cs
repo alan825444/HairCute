@@ -35,6 +35,7 @@ namespace Haircute
         public string fNickname { get; set; }
         public string fCity { get; set; }
         public string fconfirmation { get; set; }
+        public string fHeadstack { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tBook> tBook { get; set; }

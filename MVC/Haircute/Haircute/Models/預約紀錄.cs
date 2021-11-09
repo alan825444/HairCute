@@ -17,5 +17,6 @@ namespace Haircute.Models
         public DateTime 比較時間 { get; set; }
         public string 預約日期 { get; set; }
         public string 預約時間 { get; set; }
+        public string 狀態 { get; set; }
     }
 }

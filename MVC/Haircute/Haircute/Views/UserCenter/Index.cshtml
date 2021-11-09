@@ -3,7 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayourMember.cshtml";
 }
-
 <!-- ***** membercenter Area Start ***** -->
 <main class="membercenter-area-cos">
     <div class="container h-100 ">
@@ -65,7 +64,7 @@
 
                     foreach (var item in ViewBag.預約紀錄)
                     {
-                        if (DateTime.Compare(item.比較時間, today) >= 0)
+                        if ((DateTime.Compare(item.比較時間, today) >= 0) && (item.狀態 == "T"))
                         {
                             <div class="reservation-item-e col-md-10 col-10 mb-3">
                                 <div class="reservation-pic-e col-md-3">
@@ -95,7 +94,7 @@
                                         </ul>
                                     </div>
                                     <div class="reservation-footer-e">
-                                        <h6>已確認</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
+                                        <h6>已確認</h6><i class="gi fas fa-check-circle ml-1 mb-1"></i>
                                         <form action="/UserCenter/deletebook" method="post">
                                             <input type="hidden" name="fid" value="@item.預約ID" />
                                             <button type="submit" class="btn btn-outline-danger mx-2">
@@ -106,13 +105,12 @@
                                 </div>
                             </div>
                         }
-                        else
+                        else if ((DateTime.Compare(item.比較時間, today) < 0) && (item.狀態 == "T"))
                         {
                             <div class="reservation-item-e col-md-10 col-10 mb-3">
                                 <div class="reservation-pic-e col-md-3">
                                     <img src="~/Images/@item.設計師照">
                                 </div>
-                                <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
                                 <div class="reservation-info-e col-md-9">
                                     <div class="reservation-title-e">
                                         <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
@@ -140,51 +138,51 @@
                                         <span id="res-evaluation">
                                             <input type="hidden" name="fid" value="@item.預約ID" />
                                             <button type="button" class="btn btn-warning reveiew-btn"
-                                            data-toggle="modal"  data-target="#reservation-evaluate">
-                                                評價
-                                            </button>
+                                            data-toggle="modal" data-target="#reservation-evaluate">
+                                            評價</button>
                                         </span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        else if ((DateTime.Compare(item.比較時間, today) < 0) && (item.狀態 == "F"))
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照" class="reservation-pic-e">
+                                </div>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
+                                    </div>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reservation-footer-e reservation-complete-e">
+                                        <h6>已完成</h6>
+                                        <i class="gi fas fa-check-circle ml-1 mb-1"></i>
                                     </div>
                                 </div>
                             </div>
                         }
                     }
                 }
-
-
-                <!--<div class="reservation-item-e col-md-10 col-10 mb-3">
-                    <div class="reservation-pic-e col-md-3">
-                        <img src="img/user-img/store2.jpg" class="reservation-pic-e">
-                    </div>
-                    <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
-                    <div class="reservation-info-e col-md-9">
-                        <div class="reservation-title-e">
-                            <a href="#">路人丙</a>
-                        </div>
-                        <div class="reservation-body-e">
-                            <ul>
-                                <li>
-                                    電話：<span>09123123123</span>
-                                </li>
-                                <li>
-                                    預約日期：<span>2021/10/12</span>
-                                </li>
-                                <li>
-                                    服務項目：<span>造型剪髮+洗頭</span>
-                                </li>
-                                <li>
-                                    預約時間：<span>09:00</span>
-                                </li>
-                                <li>
-                                    金額：<span>$499</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="reservation-footer-e reservation-complete-e">
-                            <h6>已完成</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
-                        </div>
-                    </div>
-                </div>-->            
             </div>
         </div>
         <!--reservation-area End-->
@@ -543,11 +541,6 @@
     @*評價系統*@
     <script>
         $(document).ready(function () {
-            if ($('#res-cancel,#res-ok,#res-evaluation')) {
-                $('#cancelbtn').hide();
-                $('#okbtn').hide();
-                $('#evaluationbtn').hide();
-            }
             $(".Tab2-cos").addClass('change');
             $("#sendscore").click(function () { sendscore();})
         })
@@ -609,6 +602,7 @@
                     function (data) {
                         if (data.Message == "OK") {
                             swal("成功", "", "success");
+                            $("#res-evaluation").replaceWith('<div class="reservation-footer-e reservation-complete-e"><h6>已完成</h6><i class="gi fas fa-check-circle ml-1 mb-1"></i></div>');
                         }
                         else {
                             swal("失敗", "", "error");

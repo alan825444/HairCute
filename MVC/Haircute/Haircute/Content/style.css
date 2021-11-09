@@ -3489,6 +3489,8 @@ margin: 15px 0 25px 0;
 .reserve-manage-area button {
   font-size: 10px;
 }
+
+
 /*membercenter area*/
 .membercenter-area-cos {
   z-index: 1;
@@ -3958,24 +3960,21 @@ margin: 15px 0 25px 0;
 .reservation-footer-cos i {
       color: green;
 }
+.gi {
+    color: green;
+}
+.far fa-edit{
+    color:red;
+}
 
 .reservation-footer-cos button {
-      display: inline-flex;
-      height: 30px;
-      width: 78px;
-      align-items: center;
-      letter-spacing: 10px;
-      font-size: 20px;
+    display: inline-flex;
+    height: 30px;
+    width: 78px;
+    align-items: center;
+    letter-spacing: 10px;
+    font-size: 20px;
 }
-
-.res-cancel-cos b {
-  color: red;
-}
-
-.res-cancel-cos i {
-  color: red;
-}
-
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .reservation-item-cos {
       margin-left: 25px;

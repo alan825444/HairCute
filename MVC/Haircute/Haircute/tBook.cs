@@ -30,6 +30,7 @@ namespace Haircute
         public Nullable<int> fk_Member { get; set; }
         public Nullable<int> fk_Designer { get; set; }
         public Nullable<System.TimeSpan> fBookTime { get; set; }
+        public string fstatus { get; set; }
     
         public virtual tMember tMember { get; set; }
         public virtual tService tService { get; set; }

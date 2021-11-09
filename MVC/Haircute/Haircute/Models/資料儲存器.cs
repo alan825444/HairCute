@@ -148,6 +148,7 @@ namespace Haircute.Models
                 tComment c = new tComment();
                 if (b != null)
                 {
+                    b.fstatus = "F";
                     c.fComment = fComment;
                     c.fScore = fScore;
                     c.fk_Book = b.fid;
@@ -156,7 +157,7 @@ namespace Haircute.Models
                     db.tComment.Add(c);
                     db.SaveChanges();
                 }
-                return "Ok";
+                return "OK";
             }
             catch (Exception)
             {
