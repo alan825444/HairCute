@@ -330,15 +330,25 @@ namespace Haircute.Models
             
         }
 
-        public void 時間搜尋() 
+        //public void 時間搜尋() 
+        //{
+        //    var q = "2021-11-20";
+        //    var s = DateTime.Parse(q);
+        //    var q2 = db.tBook.Where(x => DbFunctions.TruncateTime(x.fDateTime) == s );
+        //    foreach (var item in q2)
+        //    {
+        //        var s2 = item.fDateTime;
+        //    }
+        //}
+
+        public string 會員頭貼(int ID) 
         {
-            var q = "2021-11-20";
-            var s = DateTime.Parse(q);
-            var q2 = db.tBook.Where(x => DbFunctions.TruncateTime(x.fDateTime) == s );
-            foreach (var item in q2)
+            var q = db.tMember.Where(x => x.fID == ID).FirstOrDefault().fHeadstack;
+            if (q != null)
             {
-                var s2 = item.fDateTime;
+                return q;
             }
+            return "preview.jpg";
         }
 
 

@@ -25,7 +25,7 @@
             <div class="col-12">
                 <div class="consumer-pic">
                     <button class="uesr-btn-cos">
-                        <img src="~/img/user-img/store2.jpg" class="uesr-pic-cos">
+                        <img src="~/Images/@ViewBag.會員大頭貼" class="uesr-pic-cos">
                     </button>
                 </div>
                 <div class="consumer-user">
@@ -201,7 +201,7 @@
             </div>
             <div class="modal-body">
                 <div id="Head-cropper"></div>
-                <input type="file" name="fileupload2" id="fileupload2" accept="image/*" onchange="userpicFile()">
+                <input type="file" name="fileupload2" id="fileupload2" accept="image/*" ">
             </div>
             <div class="modal-footer">
                 <input type="submit" id="btnupload2" class="btn btn-success" value="儲存修改">
@@ -276,7 +276,7 @@
                         <div class="row">
                             <label class="form-label">地址</label>
                             <div class="col-md-6 col-12">
-                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity2, "-鄉鎮市區-", new { @class = "form-select", id = "fCity2" })
+                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity2, "-縣市-", new { @class = "form-select", id = "fCity2" })
                             </div>
                             <div class="col-md-6 col-12">
                                 @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea2, "-鄉鎮市區-", new { @class = "form-select", id = "fArea2" })
@@ -367,6 +367,8 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.min.js" integrity="sha512-x0qixPCOQbS3xAQw8BL9qjhAh185N7JSw39hzE/ff71BXg7P1fkynTqcLYMlNmwRDtgdoYgURIvos+NJ6g0rNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
 
     <script>
         $(function () {
@@ -484,7 +486,7 @@
             formData.append('blob', blob);
             var myAppUrlSettings =
             {
-                MyUsefulUrl: '@Url.Action("Headupbdate", "MemberCenter")'
+                MyUsefulUrl: '@Url.Action("Headupbdate", "UserCenter")'
             }
 
             var request = new XMLHttpRequest();
@@ -494,12 +496,8 @@
             request.onreadystatechange = function () { // Call a function when the state changes.
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200)
                 {
-                    if (request.responseText.Message == "OK") {
-
-                    }
-                        alert('Photo Cropped Successfully!');
-                        window.location.reload();
-
+                    alert('大頭貼更新成功');
+                    window.location.reload();
                 }
             }
         });

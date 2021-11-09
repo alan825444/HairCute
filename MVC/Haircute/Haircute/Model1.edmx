@@ -93,6 +93,7 @@
           <Property Name="fArea" Type="nvarchar" MaxLength="50" />
           <Property Name="fDesign" Type="char" MaxLength="10" />
           <Property Name="fconfirmation" Type="char" MaxLength="1" />
+          <Property Name="fHeadstack" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="tPhoto">
           <Key>
@@ -368,6 +369,7 @@
           <NavigationProperty Name="tLike" Relationship="demodbModel.FK_tLike_tMember" FromRole="tMember" ToRole="tLike" />
           <NavigationProperty Name="tDesigner" Relationship="demodbModel.FK_tDesigner_tMember" FromRole="tMember" ToRole="tDesigner" />
           <NavigationProperty Name="tComment" Relationship="demodbModel.FK_tComment_tMember" FromRole="tMember" ToRole="tComment" />
+          <Property Name="fHeadstack" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="demodbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tMember" EntityType="Self.tMember" />
@@ -722,6 +724,7 @@
           <EntitySetMapping Name="tMember">
             <EntityTypeMapping TypeName="demodbModel.tMember">
               <MappingFragment StoreEntitySet="tMember">
+                <ScalarProperty Name="fHeadstack" ColumnName="fHeadstack" />
                 <ScalarProperty Name="fconfirmation" ColumnName="fconfirmation" />
                 <ScalarProperty Name="fCity" ColumnName="fCity" />
                 <ScalarProperty Name="fNickname" ColumnName="fNickname" />
