@@ -584,6 +584,7 @@
 
       var date = $('.reserve-datepicker').val()
       var designerId = 1
+      console.log(date);
 
       /*ajax查詢已經預約的列表*/
 
@@ -612,12 +613,13 @@
     function timeDisplay() {
 
       var book = {
-        openTime: '09:00:00',
+        openTime: '01:00:00',
         closeTime: '22:00:00',
         bookList: [
           { startTime: '10:00:00', endTime: '11:00:00', reservationDate: moment().format('2021-11-09') },
           { startTime: '13:00:00', endTime: '15:00:00', reservationDate: moment().format('2021-11-10') },
-          { startTime: '15:00:00', endTime: '16:00:00', reservationDate: moment().format('2021-11-09') }
+          { startTime: '15:00:00', endTime: '16:00:00', reservationDate: moment().format('2021-11-09') },
+          { startTime: '15:00:00', endTime: '16:00:00', reservationDate: moment().format('2022-02-09')}
         ]
       }
       var today = new Date()
@@ -627,7 +629,6 @@
       var date = $('.reserve-datepicker').val()
 
       $('.reserve-time-select').empty()
-
 
       for (let time = openTime; time < closeTime; time++) {
         let isPrint = true//判斷是否顯示該時間的布林值
@@ -651,13 +652,24 @@
         }
       }
     }
+function sss (){
+  var date = $('.reserve-datepicker').val().toString();
+  var reservationTime = $('.reserve-time-select').val().toString();
+
+  var params = {
+    "date" : date,
+    "time" : reservationTime
+  }
+
+  console.log(params);
+}
 
 
     //reserve-confirm-btn
     $(document).ready(function () {
       $('.reserve-confirm').confirm({
         title: '預約確認',
-        content: '路人甲 您好</br>請確認以下會員資訊無誤</br>電話：09123123123</br>Email：human123@gmail.com',
+        content: a,
         type: 'blue',
         buttons: {
           取消: {
@@ -665,19 +677,20 @@
           },
           下一步: {
             btnClass: 'btn-warning',
-            action: function () {
-              var date = $('.reserve-datepicker').val().toString()
-              var reservationTime = $('.reserve-time-select').val().toString()
+            action:
+            function () {
+              //var date = $('.reserve-datepicker').val().toString()
+              //var reservationTime = $('.reserve-time-select').val().toString()
               $.confirm({
                 title: '預約確認',
                 content: '您預訂的是' + date.toString() + '的' + reservationTime.toString(),
                 type: 'blue',
                 buttons: {
                   取消: {
-                    btnClass: 'btn-red'
-                  },
+                    btnClass: 'btn-red'},
                   送出: {
                     btnClass: 'btn-success',
+                    action: sss()
                   }
                 }
               })
@@ -687,6 +700,7 @@
       });
     })
 
+    var a = "路人甲 您好</br>請確認以下會員資訊無誤</br>電話：09123123123</br>Email：human123@gmail.com"
   </script>
 </body>
 
