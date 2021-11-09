@@ -564,6 +564,9 @@ ul li {
     max-width: 90px;
     margin-right: 15px;
   }
+    .classy-nav-container .classy-navbar .bg-curve {
+        width: 63%;
+    }
 }
 .classy-nav-container .classy-navbar .classynav ul li a {
   position: relative;
@@ -842,7 +845,7 @@ ul li {
   right: 0;
 }
 .store-img-container {
-  /* position: absolute; */
+  position: absolute;
   width: 180px;
   height: 180px;
   overflow: hidden;
@@ -913,18 +916,30 @@ ul li {
 }
 
 @media only screen and (max-width: 767px) {
-  .single-welcome-slide .main-bg-img {
-    height: calc(90% - 50px);
-    width: 70vw;
-    background-image: url(img/banner-img/hair6.jpeg);
-    border-radius: 1rem;
-    right: 10px;
+    .single-welcome-slide .main-bg-img {
+        height: calc(90% - 50px);
+        width: 70vw;
+        /*background-image: url(img/banner-img/hair6.jpeg);*/
+        border-radius: 1rem;
+        right: 10px;
+    }
+  .store-img-container{
+      height:100px;
+      width:100px;
+      bottom:90%;
   }
-  .store-img-container,
-  .hair-style-img,
-  .hair-style-img2 {
-    display: none;
-  }
+    .hair-style-img {
+        height: calc(90% - 50px);
+        width: 70vw;
+        left: -10%;
+    }
+    .hair-style-img2 {
+        height: 150px;
+        width: 150px;
+        
+        left: 40%;
+        bottom: 65%;
+    }
 }
 .single-welcome-slide .social-info {
   position: absolute;
