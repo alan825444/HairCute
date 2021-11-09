@@ -21,6 +21,10 @@ namespace Haircute.Controllers
             {
                 return RedirectToAction("Index", "UserCenter");
             }
+            //else if (q.fconfirmation == null)
+            //{
+            //    return RedirectToAction("remindpage");
+            //}
             else
             {
                 ViewBag.Name = q.fNickname;

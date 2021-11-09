@@ -23,7 +23,8 @@ namespace Haircute.Models
             var to = new EmailAddress(Email, "Example User");
             var subject = "Haircute認證信件";
             var plainTextContent = "請按以下連結認證信箱";
-            var htmlContent = $"<a href='https://localhost:44333/Home/mailtest/{加密ID}'>認證連結</a>";
+            var htmlContent = $"<h3>請點選以下連結開通設計師全縣</h3>";
+            htmlContent += $"<a href='https://localhost:44333/Home/mailtest/{加密ID}'>認證連結</a>";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
         }
