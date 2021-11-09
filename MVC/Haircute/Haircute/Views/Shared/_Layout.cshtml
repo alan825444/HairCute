@@ -104,68 +104,61 @@
         </div>
     </header>
     <!-- ***** Header Area Start ***** -->
-    <header class="header-area">
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <!-- Classy Menu -->
-                <nav class="classy-navbar justify-content-between" id="monaNav">
+    <!--<header class="header-area">-->
+    <!-- Main Header Start -->
+    <!--<div class="main-header-area">
+        <div class="classy-nav-container breakpoint-off">-->
+    <!-- Classy Menu -->
+    <!--<nav class="classy-navbar justify-content-between" id="monaNav">-->
+    <!-- Background Curve -->
+    <!--<div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>-->
+    <!-- Logo -->
+    <!--<a class="nav-brand" href="index.html"><img src="~/img/banner-img/logo.png" alt=""></a>-->
+    <!-- Navbar Toggler -->
+    <!--<div class="classy-navbar-toggler">
+        <span class="navbarToggler"><span></span><span></span><span></span></span>
+    </div>-->
+    <!-- Menu -->
+    <!--<div class="classy-menu">-->
+    <!-- Menu Close Button -->
+    <!--<div class="classycloseIcon">
+        <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+    </div>-->
+    <!-- Nav Start -->
+    <!--<div class="classynav">
 
-                    <!-- Background Curve -->
-                    <div class="bg-curve" style="background-image: url(../img/banner-img/curve.png);"></div>
+        <ul id="nav">
 
-                    <!-- Logo -->
-                    <a class="nav-brand" href="index.html"><img src="~/img/banner-img/logo.png" alt=""></a>
+            <li>
+                <a href="~/Home/Login">登入</a>
 
-                    <!-- Navbar Toggler -->
-                    <div class="classy-navbar-toggler">
-                        <span class="navbarToggler"><span></span><span></span><span></span></span>
-                    </div>
+            </li>
+            <li>
+                <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
 
-                    <!-- Menu -->
-                    <div class="classy-menu">
-                        <!-- Menu Close Button -->
-                        <div class="classycloseIcon">
-                            <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                        </div>
+            </li>
 
-                        <!-- Nav Start -->
-                        <div class="classynav">
-
-                            <ul id="nav">
-
-                                <li>
-                                    <a href="~/Home/Login">登入</a>
-
-                                </li>
-                                <li>
-                                    <a href="#" data-toggle="modal" data-target="#register-select">註冊</a>
-
-                                </li>
-
-                                <li>
-                                    <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
-                                    <ul class="dropdown">
-                                        <li><a href="#">- 台中</a></li>
-                                        <li><a href="#">- 高雄</a></li>
-                                    </ul>
-                                </li>
+            <li>
+                <a href="#"><i class="fas fa-map-marker-alt mr-2"></i>台北</a>
+                <ul class="dropdown">
+                    <li><a href="#">- 台中</a></li>
+                    <li><a href="#">- 高雄</a></li>
+                </ul>
+            </li>
 
 
-                            </ul>
-
-                            <!-- Search Icon -->
-                            <div class="search-icon">
-                                <a href="#search-bar"><i class="icon_search"></i></a>
-                            </div>
-                        </div>
-                        <!-- Nav End -->
-
-                    </div>
+        </ul>-->
+    <!-- Search Icon -->
+    <!--<div class="search-icon">
+            <a href="#search-bar"><i class="icon_search"></i></a>
+        </div>
+    </div>-->
+    <!-- Nav End -->
+    <!--</div>
                 </nav>
             </div>
         </div>
-    </header>
+    </header>-->
     <!-- ***** Header Area End ***** -->
     <!-- ***** register Area Start ***** -->
     <div class="register-select">
@@ -208,7 +201,7 @@
                 <div class="col-12 col-sm-6">
                     <div class="single-footer-widget ">
                         <!-- Logo -->
-                        <a href="#" class="d-block mb-4"><img src="img/banner-img/logo.png" alt=""></a>
+                        <a href="#" class="d-block mb-4"><img src="~/img/banner-img/logo.png" alt=""></a>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam veritatis aperiam.</p>
                         <div class="copywrite-text">
                             <p>
@@ -287,7 +280,8 @@
     @RenderSection("Backstage", required: false);
     @RenderSection("HomeIndex", required: false);
     @RenderSection("SearchIndex", required: false);
-    
+    @RenderSection("storeinfo", required: false);
+
 </body>
 
 </html>

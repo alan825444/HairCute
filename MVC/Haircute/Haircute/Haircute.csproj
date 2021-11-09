@@ -283,6 +283,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Content Include="Views\StoreInfo\Index.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -472,7 +473,6 @@
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\DesgnerPage\DesignerPage.cshtml" />
     <Content Include="Views\UserCenter\Index.cshtml" />
-    <Content Include="Views\StoreInfo\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
