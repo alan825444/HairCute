@@ -3248,17 +3248,19 @@ section .section-title span {
 }
 
 /*menu-area*/
+#menu-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #menu-area .menu-info {
   background-color: rgba(218, 98, 124, 0.2);
   display: flex;
   align-items: center;
   border-radius: 10px;
   box-shadow: rgba(166, 166, 166, 0.4) 3px 2px 5px;
+  width: 70vw;
 }
-/* 
-#even-num-row{
-  background-color: rgba(151, 45, 68, 0.2);
-} */
 
 .menu-img {
   display: flex;
@@ -3289,30 +3291,85 @@ section .section-title span {
 
 .menu-price, .menu-price i{
   color: #0089A7;
+  font-size: 1.3rem;
 }
 
 .menu-description{
   color: #868383;
 }
-.dateTime-area{
+
+#time-table .modal-header{
+  background-color: #006284;
+  padding: 15px 10px;
+}
+#time-table .modal-content{
+  border-radius: 6px;
+  border: none;
+}
+#time-table .modal-header h5{
+  color: whitesmoke;
+}
+
+.modal-body .reservation-btns{
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-.reserve-datepicker{
-  margin: 0px 0 12px 0;
+  justify-content: center;
 }
 
-
-.reserve-datepicker, .reserve-time-select{
-  /* margin: 13px 0; */
-  width: 13vw;
-  height: 4.5vh;
+.modal-body #bookDate{
+  width: 25vw;
+  height: 5vh;
   text-align: center;
   font-size: 1rem;
-  color: #868383;
-  border: #afaaaa 1px solid;
+  color: #3b4241;
+  border: #3b4241 1px solid;
   border-radius: 0.5rem;
+  margin: 0 15px 10px 0;
+}
+.modal-body .reservation-colors{
+  display: inline-flex;
+  justify-content: center;
+}
+.reservation-colors p{
+  padding: 4px 7px;
+  margin: 0 5px;
+}
+.modal-body .bookbtn{
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+.modal-body .table{
+  margin-top: 10px;
+}
+.bookoccupied{
+	background:rgba(251, 154, 102, 0.8) !important;
+}
+.bookouttime{
+	background:#bbb !important;
+}
+
+#border{
+  border: 1px solid rgba(128, 128, 128, 0.6);
+}
+.bookuseables{
+	background-color: rgba(48, 171, 193, 0.6);
+}
+tr .bookouttime:hover,tr .bookoccupied:hover{
+	cursor:not-allowed !important;
+}
+tr .bookuseable:hover{
+	cursor:pointer;
+	background:rgba(48, 171, 193, 0.6) !important;
+}
+tr .bookuseable:active{
+	background:rgba(48, 171, 193, 0.6) !important;
+}
+.bookselected {
+	background:rgba(48, 171, 193, 0.6)!important;
+}
+
+#bookTable th {
+	text-align: center;
 }
 
 .reserve-btn{
@@ -3339,14 +3396,13 @@ section .section-title span {
     text-align: center;
     font-size: 1.2rem;
   }
-  .reserve-datepicker, .reserve-time-select{
-    width: 45vw;
+  .modal-body #bookDate{
+    width: 50vw;
   }
   .reserve-btn{
     margin: 15px 0 ;
   }
 }
-
 
 /*evaluate-area*/
 

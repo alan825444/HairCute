@@ -314,13 +314,14 @@
 
     <!--menu-area start-->
     <div class="container" id="menu-area">
-      <div class="row menu-info mt-3">
-        <div class="menu-img col-md-3">
+      <div class="row menu-info mb-3">
+
+        <div class="menu-img col-12 col-md-3">
           <div class="menu-img-container">
             <img src="img/bg-img/hair-cut.jpg" />
           </div>
         </div>
-        <div class="col-md-4 menu-title">
+        <div class="col-md-6 col-12 menu-title">
           <div class="d-flex flex-md-row justify-content-md-between align-items-center">
             <h4 class="menu-name">造型剪髮＋舒適洗頭</h4>
             <h6 class="menu-price col-md-3">
@@ -331,30 +332,21 @@
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
         </div>
-        <div class="dateTime-area col-md-3">
-          <p>請選擇日期時間</p>
-          <div class="reserve-date">
-            <input class="reserve-datepicker" name="reserve-datepicker" id="bookDate" type="date" value="" />
-          </div>
-          <div class="reserve-time">
-            <select class="reserve-time-select" id="reserve-time-select">
-              <!-- JS生成 -->
-            </select>
-          </div>
-        </div>
-        <div class="reserve-btn col-md-2">
-          <button class="btn btn-success reserve-confirm" type="submit">
-            預約
+        <div class="reserve-btn col-12 col-md-2">
+          <button class="btn btn-success reserve-confirm" data-bs-toggle="modal" data-bs-target="#time-table">
+            查看可預約時間
           </button>
         </div>
       </div>
-      <div class="row menu-info mt-3">
+      <div class="row menu-info mt-3 mb-3">
+
+
         <div class="menu-img col-md-3">
           <div class="menu-img-container">
             <img src="img/bg-img/perm-hair.jpg" />
           </div>
         </div>
-        <div class="col-md-4 menu-title">
+        <div class="col-md-6 menu-title">
           <div class="d-flex flex-md-row justify-content-md-between align-items-center">
             <h4 class="menu-name">精油護理＋燙髮</h4>
             <h6 class="menu-price col-md-3">
@@ -365,30 +357,21 @@
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
         </div>
-        <div class="dateTime-area col-md-3">
-          <p>請選擇日期時間</p>
-          <div class="reserve-date">
-            <input class="reserve-datepicker" id="bookDate2" type="date" value="" />
-          </div>
-          <div class="reserve-time">
-            <select class="reserve-time-select" id="reserve-time-select2">
-              <!-- JS生成 -->
-            </select>
-          </div>
-        </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success reserve-confirm" type="submit">
-            預約
+          <button class="btn btn-success reserve-confirm" data-bs-toggle="modal" data-bs-target="#time-table">
+            查看可預約時間
           </button>
         </div>
       </div>
-      <div class="row menu-info mt-3">
+      <div class="row menu-info mt-3 mb-3">
+
+
         <div class="menu-img col-md-3">
           <div class="menu-img-container">
             <img src="img/bg-img/dye-hair.jpg" />
           </div>
         </div>
-        <div class="col-md-4 menu-title">
+        <div class="col-md-6 menu-title">
           <div class="d-flex flex-md-row justify-content-md-between align-items-center">
             <h4 class="menu-name">精油護理＋染髮</h4>
             <h6 class="menu-price col-md-3">
@@ -399,25 +382,58 @@
             Lorem ipsum dolor sit amet consectetur, adipisicing elit.
           </p>
         </div>
-        <div class="dateTime-area col-md-3">
-          <p>請選擇日期時間</p>
-          <div class="reserve-date">
-            <input class="reserve-datepicker" id="bookDate3" type="date" value="" />
-          </div>
-          <div class="reserve-time">
-            <select class="reserve-time-select" id="reserve-time-select3">
-              <!-- JS生成 -->
-            </select>
-          </div>
-        </div>
         <div class="reserve-btn col-md-2">
-          <button class="btn btn-success reserve-confirm" type="submit">
-            預約
+          <button class="btn btn-success reserve-confirm" data-bs-toggle="modal" data-bs-target="#time-table">
+            查看可預約時間
           </button>
         </div>
       </div>
     </div>
     <!--menu-area End-->
+
+    <!-- the reservation time check area -->
+    <div class="modal fade" id="time-table" tabindex="-1" aria-labelledby="time-table-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="time-table-label">可預約時間表</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close\"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row reservation-area">
+              <div class="reservation-btns d-flex flex-md-row">
+                <input id="bookDate" type="date" value="">
+                <button class="btn bookbtn btn-outline-primary" name="btn-myBook">搜尋</button>
+              </div>
+              <div class="reservation-colors d-flex flex-md-row">
+                <p class="bookuseable" id="border">可預約</p>
+                <p class="bookuseables">已選取</p>
+                <p class="bookoccupied">被預約</p>
+                <p class="bookouttime">已過期</p>
+
+              </div>
+              <div>
+                <table class="table">
+                  <tbody id="bookTable">
+                    <!-- 以下js生成 -->
+
+                  </tbody>
+                </table>
+              </div>
+              <div class="bookresult">
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+            <button type="button" class="btn btn-success bookbtn" name="btn-reserve">預約</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- the reservation time check area -->
+
 
     <!--evaluate-area start-->
     <div id="evaluate-area" class="container evaluate-area">
@@ -566,135 +582,269 @@
     //footer
     includeFooter();
 
-    //datepicker 自動設定為當天日期
-    $(document).ready(function () {
-      var now = new Date()
-      var month = now.getMonth() + 1
-      var day = now.getDate()
-      if (month < 10) month = '0' + month
-      if (day < 10) day = '0' + day
-      var today = now.getFullYear() + '-' + month + '-' + day
-      $('.reserve-datepicker').val(today)
-      $('.reserve-datepicker').attr('min', today); //過去時間全部不可選
-    })
+    //reservation table
+    $(function () {
+      /*預設日期為當天*/
+      $(document).ready(function () {
+        var now = new Date()
+        var month = now.getMonth() + 1
+        var day = now.getDate()
+        if (month < 10) month = '0' + month
+        if (day < 10) day = '0' + day
+        var today = now.getFullYear() + '-' + month + '-' + day
+        $('#bookDate').val(today)
+        $('#bookDate').attr('min', today)
+      })
+      $("[name='btn-reserve']").click(getReserve)
+      $("[name='btn-myBook']").click(submitQuery)
+      /*  
+            var date = $("#date").val();            //這是測試用=沒用的註解 怕忘記當初怎弄得
+            var date1 = new Date("2021/11/05");     //這是測試用=沒用的註解 怕忘記當初怎弄得
+            var date2 = date1.format("yyyy-MM-dd"); //這是測試用=沒用的註解 怕忘記當初怎弄得
+            console.log(date);                      //這是測試用=沒用的註解 怕忘記當初怎弄得
+        */
 
-    //timepicker 選擇可預約時間
-    $(document).ready(function () {
-      /*獲取查詢的日期和設計師ID*/
+      function getReserve() {
+        $('.bookselected').each(function () {
+          /*根據所在的行取得當前預約的時間段和預約的日期，並進行相應的初始化，轉化為預約開始時間和預約結束時間 */
 
-      var date = $('.reserve-datepicker').val()
-      var designerId = 1
+          var time = $(this)
+            .parent()
+            .find('th')
+            .text()
+          var hours = time.split('-')[0].split(':')[0]
+          var datetime = new Date($('#bookDate').val())
+          datetime.setHours(parseInt(hours))
+          var startTime = datetime.format('yyyy-MM-dd hh:mm:ss')
+          datetime.setHours(parseInt(hours) + 1)
+          var endTime = datetime.format('yyyy-MM-dd hh:mm:ss')
 
-      /*ajax查詢已經預約的列表*/
-
-      //$.post("#", {"designerId": designerId, "queryDay": date}, function(data, status) {
-
-      //var book = data.data.book;
-
-
-      /**
-       *   預約的資料
-       *   @Params openTime 開放時間
-       *   @Params closeTime 結束時間
-       *   @Params bookList 指定日期的預約列表
-       */
-
-      var today = new Date()
-      timeDisplay()
-    })
-
-    //當datepicker選定日期改變時執行
-    $('.reserve-datepicker').on('change', function (e) {
-      /*var today = $(".reserve-datepicker").val();
-      $.post(
-        "StoreInfo/Index",
-        {"date" : today},
-        function(data){
-          timeDisplay();
-        },
-        "json"
-      )*/
-      timeDisplay()
-    })
-
-    //透過指定日期顯示可供預定之時間，已被預定的時間不會顯示
-    function timeDisplay() {
-
-      var book = {
-        openTime: '09:00:00',
-        closeTime: '22:00:00',
-        bookList: [
-          { startTime: '10:00:00', endTime: '11:00:00', reservationDate: moment().format('2021-11-09') },
-          { startTime: '13:00:00', endTime: '15:00:00', reservationDate: moment().format('2021-11-10') },
-          { startTime: '15:00:00', endTime: '16:00:00', reservationDate: moment().format('2021-11-09') }
-        ]
-      }
-      var today = new Date()
-      var openTime = parseInt(book.openTime.split(':')[0])
-      var closeTime = parseInt(book.closeTime.split(':')[0])
-      var bookList = book.bookList
-      var date = $('.reserve-datepicker').val()
-
-      $('.reserve-time-select').empty()
-
-
-      for (let time = openTime; time < closeTime; time++) {
-        let isPrint = true//判斷是否顯示該時間的布林值
-        let show_time = time + ':00-' + (time + 1) + ':00'
-
-        //如果日期為當天，將不會顯示已經過去的時間
-        if (today.getDate() != new Date(date).getDate() || time > parseInt(new Date().getHours())) {
-
-          //搜尋booklist裡的預約記錄，如果有預約則不顯示
-          $(bookList).each(function (j) {
-            if (date == bookList[j].reservationDate && time >= parseInt(bookList[j].startTime.split(':')[0]) && time < parseInt(bookList[j].endTime.split(':')[0])) {
-              isPrint = false
-            }
-          })
-
-          //只顯示可供預定的時間
-          if (isPrint) {
-            let time_option = '<option>' + show_time + '</option>'
-            $('.reserve-time-select').append(time_option)
+          var designerId = 1
+          /**
+           * 預約提交的參數
+           * @Params
+           */
+          var params = {
+            designerId: designerId,
+            startTime: startTime,
+            endTime: endTime
           }
-        }
+          console.log(params)
+          /*ajax回乎函式能訪問到當前表格單元，將其存入變數$td中*/
+
+          //var $td = $(this);
+          if (params != null) {
+            $('.bookResult').append(
+              '<p>' +
+              '會員：' +
+              '阿賢預約成功' +
+              '，時間：' +
+              params.startTime +
+              ' 到 ' +
+              params.endTime +
+              '</p>'
+            )
+          }
+          //$.post("#", params, function(data, status) {
+          /*如果預約成功，將原來的bookuseable變為bookoccupied，並且解除點擊事件，不可預約*/
+          //if(data.message.result == "success") {
+          //    $td.removeClass().addClass("bookoccupied").unbind("click");
+          //}
+          //var mesg = data.message.result == "success" ? "預約成功" : "預約失败";
+          /*在表格下方展示此次預約的结果，包括詳細資訊*/
+          //$(".bookResult").append("<p>" + "會員：" + "阿賢" + mesg + "，時間：" + params.startTime +" 到 " + params.endTime + "</p>");
+          //}, "json");
+        })
       }
-    }
 
+      function submitQuery() {
+        /*獲取查詢的日期和設計師ID*/
 
-    //reserve-confirm-btn
-    $(document).ready(function () {
-      $('.reserve-confirm').confirm({
-        title: '預約確認',
-        content: '路人甲 您好</br>請確認以下會員資訊無誤</br>電話：09123123123</br>Email：human123@gmail.com',
-        type: 'blue',
-        buttons: {
-          取消: {
-            btnClass: 'btn-red'
-          },
-          下一步: {
-            btnClass: 'btn-warning',
-            action: function () {
-              var date = $('.reserve-datepicker').val().toString()
-              var reservationTime = $('.reserve-time-select').val().toString()
-              $.confirm({
-                title: '預約確認',
-                content: '您預訂的是' + date.toString() + '的' + reservationTime.toString(),
-                type: 'blue',
-                buttons: {
-                  取消: {
-                    btnClass: 'btn-red'
-                  },
-                  送出: {
-                    btnClass: 'btn-success',
-                  }
-                }
+        var date = $('#bookDate').val()
+        console.log(date)
+
+        var designerId = 1
+
+        /*ajax查詢已經預約的列表*/
+
+        //$.post("#", {"designerId": designerId, "queryDay": date}, function(data, status) {
+
+        //var book = data.data.book;
+        var book = {
+          openTime: '10:00:00',
+          closeTime: '22:00:00',
+          bookList: [
+            { startTime: '10:00:00', endTime: '11:00:00' },
+            { startTime: '13:00:00', endTime: '14:00:00' }
+          ]
+        }
+
+        /**
+         *   預約的資料
+         *   @Params openTime 開放時間
+         *   @Params closeTime 結束時間
+         *   @Params bookList 指定日期的預約列表
+         */
+
+        var openTime = parseInt(book.openTime.split(':')[0])
+        var closeTime = parseInt(book.closeTime.split(':')[0])
+        if (closeTime == 0) {
+          closeTime = 24
+        }
+        var bookList = book.bookList
+
+        /*清空預約table*/
+
+        $('#bookTable').empty()
+
+        /*設置欄位*/
+        var tbRow = '<tr><th scope="col" class="col-6">時間</th><th scope="col" class="col-6">預約</th></tr>'
+        $('#bookTable').append(tbRow)
+
+        /*從開放時間到關閉時間，每一小時為一個預約時間*/
+        for (var time = openTime; time < closeTime; time++) {
+          var show_time = time + ':00 - ' + (time + 1) + ':00'
+          tbRow = '<tr><th>' + show_time + '</th>'
+          tbRow += '<td></td></tr>'
+          $('#bookTable').append(tbRow)
+        }
+
+        var first_row = openTime
+        var today = new Date()
+        /*判斷預約的時間是否為今天之前，是就將所有預約時間段設置過期，判斷預約日期如果是今天就將過期的時間設置為當前時間+1(奧爾斯)
+              對table的每個td如果在過期時間之前的時間段，就將這一行td的class設置為bookouttime，表示不可預約，否則class設置為bookuseable表示可預約*/
+        if (today.getFullYear() > new Date(date).getFullYear()) {
+          $('#bookTable tr').each(function (i) {
+            $(this)
+              .find('td')
+              .addClass('bookouttime')
+          })
+        } else if (today.getFullYear() == new Date(date).getFullYear()) {
+          if (today.getMonth() > new Date(date).getMonth()) {
+            $('#bookTable tr').each(function (i) {
+              $(this)
+                .find('td')
+                .addClass('bookouttime')
+            })
+          } else if (today.getMonth() == new Date(date).getMonth()) {
+            if (today.getDate() > new Date(date).getDate()) {
+              $('#bookTable tr').each(function (i) {
+                $(this)
+                  .find('td')
+                  .addClass('bookouttime')
               })
             }
+            if (today.getDate() == new Date(date).getDate()) {
+              var end_row = parseInt(new Date().getHours()) + 1
+              $('#bookTable tr').each(function (i) {
+                $(this)
+                  .find('td')
+                  .addClass(
+                    i + first_row <= end_row ? 'bookouttime' : 'bookuseable'
+                  )
+              })
+            }
+            if (today.getDate() < new Date(date).getDate()) {
+              $('#bookTable tr').each(function (i) {
+                $(this)
+                  .find('td')
+                  .addClass('bookuseable')
+              })
+            }
+          } else {
+            $('#bookTable tr').each(function (i) {
+              $(this)
+                .find('td')
+                .addClass('bookuseable')
+            })
           }
+        } else {
+          $('#bookTable tr').each(function (i) {
+            $(this)
+              .find('td')
+              .addClass('bookuseable')
+          })
         }
-      });
+        /*開始遍歷，根據預約紀錄的開始時間生成對應的行坐標，找到表格中對應位置的td删除本身的class，增加bookoccupied表示對應時段已經被預約*/
+        $(bookList).each(function (i) {
+          var row = parseInt(bookList[i].startTime.split(':')[0]) - openTime + 1
+          var col = 0
+          console.log('row:' + row + ',col:' + col)
+          $('#bookTable tr')
+            .eq(row)
+            .find('td')
+            .eq(col)
+            .removeClass()
+            .addClass('bookoccupied')
+        })
+
+        /*所有可以預約的td绑定一個click事件，即點擊表示選中，再點一次恢復原来狀態，直到點擊預約按钮預約成功後，解除click事件，並由bookuseable變為bookoccupied*/
+        $('tr .bookuseable').bind('click', function () {
+          $(this).toggleClass('bookselected')
+        })
+
+        //}, "json");
+      }
     })
+
+    /*format(Date型別)=>(資料庫date型別"yyyy-MM-dd")*/
+    Date.prototype.format = function (fmt) {
+      var o = {
+        'M+': this.getMonth() + 1,
+        'd+': this.getDate(),
+        'h+': this.getHours(),
+        'm+': this.getMinutes(),
+        's+': this.getSeconds(),
+        'q+': Math.floor((this.getMonth() + 3) / 3),
+        S: this.getMilliseconds()
+      }
+      if (/(y+)/.test(fmt))
+        fmt = fmt.replace(
+          RegExp.$1,
+          (this.getFullYear() + '').substr(4 - RegExp.$1.length)
+        )
+      for (var k in o)
+        if (new RegExp('(' + k + ')').test(fmt))
+          fmt = fmt.replace(
+            RegExp.$1,
+            RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length)
+          )
+      return fmt
+    }
+
+        //reserve-confirm-btn
+        // $(document).ready(function () {
+        //     $('.reserve-confirm').confirm({
+        //         title: '預約確認',
+        //         content: '路人甲 您好</br>請確認以下會員資訊無誤</br>電話：09123123123</br>Email：human123@gmail.com',
+        //         type: 'blue',
+        //         buttons: {
+        //             取消: {
+        //                 btnClass: 'btn-red'
+        //             },
+        //             下一步: {
+        //                 btnClass: 'btn-warning',
+        //                 action: function () {
+        //                     var date = $('.reserve-datepicker').val().toString()
+        //                     var reservationTime = $('.reserve-time-select').val().toString()
+        //                     $.confirm({
+        //                         title: '預約確認',
+        //                         content: '您預訂的是' + date.toString() + '的' + reservationTime.toString(),
+        //                         type: 'blue',
+        //                         buttons: {
+        //                             取消: {
+        //                                 btnClass: 'btn-red'
+        //                             },
+        //                             送出: {
+        //                                 btnClass: 'btn-success',
+        //                             }
+        //                         }
+        //                     })
+        //                 }
+        //             }
+        //         }
+        //     });
+        // })
 
   </script>
 </body>
