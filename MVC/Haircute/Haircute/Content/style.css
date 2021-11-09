@@ -3520,14 +3520,18 @@ margin: 15px 0 25px 0;
   display: inline-block;
   margin-left: 520px;
 }
+.des-name {
+    display: inline-block;
+    margin-left: 440px;
+}
 
 .consumer-star {
-  position: relative;
-  display: inline-flex;
-  margin-left: 10px;
-  align-items: center;
-  height: 60px;
-  width: 180px;
+    position: relative;
+    display: inline-flex;
+    margin-left: 10px;
+    align-items: center;
+    height: 60px;
+    width: 180px;
 }
 
   .consumer-star i {
@@ -3693,6 +3697,10 @@ margin: 15px 0 25px 0;
       font-size: 16px;
       position: relative;
       margin-left: 90px;
+  }
+  .des-name {
+        font-size: 16px;
+        margin-left: 50px;
   }
 
   .user-star-cos {
@@ -4581,6 +4589,15 @@ color: rgb(251, 177, 5);
   height: 30px;
   padding-left: 5px;
 }
+.Tab4-back{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 60px;
+  height: 30px;
+  padding-left: 5px;
+}
 .back-area{
   display: flex;
   justify-content: center;
@@ -4589,4 +4606,12 @@ color: rgb(251, 177, 5);
 .back-form{
   margin-bottom: 60px;
   width: 450px;
+}
+@media only screen and (max-width: 767px) {
+    .back-form {
+        width: 100%;
+    }
+    .Backstage-edit{
+        margin-bottom:50px;
+    }
 }
