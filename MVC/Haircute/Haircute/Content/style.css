@@ -3516,7 +3516,7 @@ margin: 15px 0 25px 0;
 
 .consumer-name {
   display: inline-block;
-  margin-left: 440px;
+  margin-left: 520px;
 }
 
 .consumer-star {
@@ -4129,6 +4129,138 @@ margin: 15px 0 25px 0;
           width: 65px;
           font-size: 16px;
   }
+}
+/*reservation-area ©É¸©ª©¥»(©ñBackstage)*/
+.reservation-area-e {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    margin-top: 30px;
+}
+
+.reservation-item-e {
+    display: flex;
+    position: relative;
+    border: 3px outset rgba(50, 69, 154, 0.7);
+    border-radius: 1rem;
+    padding: 10px 0;
+}
+
+.reservation-pic-e img {
+    border-radius: 50%;
+    width: 90%;
+    height: auto;
+    margin: 10px;
+}
+
+.reservation-info-e {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reservation-title-e a {
+    font-size: 1.3rem;
+    color: #1e82df;
+}
+
+.reservation-body-e {
+    font-size: 1.2rem;
+    background-color: rgba(102, 102, 102, 0.2);
+    margin: 5px 5px 0 0;
+    border-radius: 3px;
+}
+
+    .reservation-body-e ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 10px 10px;
+    }
+
+    .reservation-body-e li {
+        width: 20vw;
+        color: #3b4241;
+    }
+
+.reservation-footer-e {
+    margin-top: 10px;
+    font-size: 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+    .reservation-footer-e h6 {
+        margin: 0;
+        color: #108d6f;
+    }
+
+.fa-check-circle-e {
+    color: #108d6f;
+}
+
+.reservation-cancel-btn-e {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 20px;
+    color: rgb(187, 41, 41);
+}
+
+    .reservation-cancel-btn-e:hover {
+        background-color: rgba(187, 41, 41);
+        color: whitesmoke;
+    }
+
+.reveiew-btn-e {
+    margin: 0 20px;
+    color: #3b4241;
+}
+
+    .reveiew-btn-e:hover {
+        background-color: #F9BF45;
+        color: whitesmoke;
+        border: none;
+    }
+
+.reservation-canceled-e, .reservation-complete-e {
+    margin-right: 15px;
+}
+
+    .reservation-canceled-e, .reservation-canceled-e h6 {
+        color: rgb(187, 41, 41);
+    }
+
+@media only screen and (max-width: 767px) {
+    .reservation-pic-e {
+        display: none;
+    }
+
+    .reservation-item-e {
+        margin-top: 20px;
+    }
+
+    .reservation-title-e a {
+        font-size: 1rem;
+        margin-left: 5px;
+    }
+
+    .reservation-body-e {
+        font-size: 1rem;
+    }
+
+        .reservation-body-e ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .reservation-body-e li {
+            display: inline-flex;
+            width: auto;
+        }
 }
 
 /*evaluate-area*/

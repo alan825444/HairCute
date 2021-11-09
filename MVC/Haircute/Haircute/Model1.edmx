@@ -68,18 +68,6 @@
           <Property Name="fStoreCity" Type="int" />
           <Property Name="fStoreArea" Type="int" />
         </EntityType>
-        <EntityType Name="tEvaluate">
-          <Key>
-            <PropertyRef Name="fid" />
-          </Key>
-          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="fStar" Type="int" Nullable="false" />
-          <Property Name="fEvaluate" Type="nvarchar" MaxLength="50" />
-          <Property Name="fk_Designer" Type="int" />
-          <Property Name="fk_Member" Type="int" />
-          <Property Name="fk_Order" Type="int" />
-          <Property Name="fk_Service" Type="int" />
-        </EntityType>
         <EntityType Name="tLike">
           <Key>
             <PropertyRef Name="fid" />
@@ -298,7 +286,6 @@
           <EntitySet Name="tCity" EntityType="Self.tCity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tComment" EntityType="Self.tComment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tDesigner" EntityType="Self.tDesigner" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tEvaluate" EntityType="Self.tEvaluate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tLike" EntityType="Self.tLike" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tMember" EntityType="Self.tMember" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tPhoto" EntityType="Self.tPhoto" Schema="dbo" store:Type="Tables" />
@@ -434,7 +421,6 @@
           </AssociationSet>
           <EntitySet Name="tComment" EntityType="demodbModel.tComment" />
           <EntitySet Name="sysdiagrams" EntityType="demodbModel.sysdiagrams" />
-          <EntitySet Name="tEvaluate" EntityType="demodbModel.tEvaluate" />
           <AssociationSet Name="FK_tComment_tBook" Association="demodbModel.FK_tComment_tBook">
             <End Role="tBook" EntitySet="tBook" />
             <End Role="tComment" EntitySet="tComment" />
@@ -691,18 +677,6 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="tEvaluate">
-          <Key>
-            <PropertyRef Name="fid" />
-          </Key>
-          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fStar" Type="Int32" Nullable="false" />
-          <Property Name="fEvaluate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="fk_Designer" Type="Int32" />
-          <Property Name="fk_Member" Type="Int32" />
-          <Property Name="fk_Order" Type="Int32" />
-          <Property Name="fk_Service" Type="Int32" />
-        </EntityType>
         <Association Name="FK_tComment_tBook">
           <End Type="demodbModel.tBook" Role="tBook" Multiplicity="0..1" />
           <End Type="demodbModel.tComment" Role="tComment" Multiplicity="*" />
@@ -871,19 +845,6 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
                 <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tEvaluate">
-            <EntityTypeMapping TypeName="demodbModel.tEvaluate">
-              <MappingFragment StoreEntitySet="tEvaluate">
-                <ScalarProperty Name="fk_Service" ColumnName="fk_Service" />
-                <ScalarProperty Name="fk_Order" ColumnName="fk_Order" />
-                <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
-                <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
-                <ScalarProperty Name="fEvaluate" ColumnName="fEvaluate" />
-                <ScalarProperty Name="fStar" ColumnName="fStar" />
-                <ScalarProperty Name="fid" ColumnName="fid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

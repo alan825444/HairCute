@@ -32,22 +32,22 @@
                     <ul>
                         <li>
                             <div class="consumer-name">
-                                <h2>查理</h2>
-                            </div>
-                            <div class="consumer-star">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <span class="ml-1"><b>4.9</b></span>
+                                <h2>@ViewBag.Name</h2>
                             </div>
                         </li>
                     </ul>
                 </div>
-                <div class="membercenter-edit-cos">
-                    <ul>
-                        <a href="#" data-toggle="modal" data-target="#update-cons-info"><div class="userinfo-edit-cos">編輯個人資料</div></a>
+                <div class="Backstage-edit">
+                    <ul class="d-inline-flex">
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-pic">選擇大頭貼</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-data">修改會員資料</button>
+                        </li>
+                        <li>
+                            <button class="btn btn-light" data-toggle="modal" data-target="#update-user-Pwd">更改密碼</button>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -55,427 +55,572 @@
         <div class="row membercenter-Tab-cos">
             <div class="col-12">
                 <a href="#"><div class="Tab2-cos"><img src="~/img/user-img/reserve.png"><span>我的預約</span></div></a>
-                <a href="#"><div class="Tab3-cos"><img src="~/img/user-img/star.png"><span>評價</span></div></a>
             </div>
         </div>
         <!--reservation-area start-->
-        <div id="reservation-area-cos">
-            <article>
-                <div class="row reservation-area-cos">
-                    <div class="reservation-item-cos">
-                        <ul>
-                            <li class="pic-li-cos">
-                                <div class="reservation-pic-div-cos">
-                                    <img src="~/img/user-img/store2.jpg" class="reservation-pic-cos">
+        <div id="reservation-area">
+            <div class="row reservation-area-e">
+                @{
+                    DateTime today = DateTime.Now;
+
+                    foreach (var item in ViewBag.預約紀錄)
+                    {
+                        if (DateTime.Compare(item.比較時間, today) >= 0)
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照">
                                 </div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <div>
-                                <button type="button" class="btn close-btn"><i class="fa fa-times"></i></button>
-                            </div>
-                            <li>
-                                <div class="reservation-title-cos">
-                                    <a href="#">查理</a>
-                                    <div class="reservation-star-cos">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span class="ml-1"><b>4.9</b></span>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
                                     </div>
-                                    <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="reservation-footer-e">
+                                        <h6>已確認</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
+                                        <form action="/UserCenter/deletebook" method="post">
+                                            <input type="hidden" name="fid" value="@item.預約ID" />
+                                            <button type="submit" class="btn btn-outline-danger mx-2">
+                                                <i class="far fa-edit mr-1"></i> 取消
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="reservation-body-cos">
-                                    <label>預約日期：</label><b>2021/10/12</b>
-                                    <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                                    <label>預約時間：</label><b>09:00</b>
-                                    <label class="re-la1-cos">項目金額：</label><b>$499元</b>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="reservation-item-e col-md-10 col-10 mb-3">
+                                <div class="reservation-pic-e col-md-3">
+                                    <img src="~/Images/@item.設計師照">
                                 </div>
-                            </li>
-                            <li>
-                                <div class="reservation-footer-cos">
-                                    <label>預約狀態:</label>
-                                    <span>
-                                        <b>已確認</b><i class="fas fa-check-circle"></i>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reservation-item-cos">
-                        <ul>
-                            <li class="pic-li-cos">
-                                <div class="reservation-pic-div-cos">
-                                    <img src="~/img/user-img/store2.jpg" class="reservation-pic-cos">
-                                </div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <div>
                                 <button type="button" class="btn close-btn" id="evaluationbtn"><i class="fa fa-times"></i></button>
-                            </div>
-                            <li>
-                                <div class="reservation-title-cos">
-                                    <a href="#">查理</a>
-                                    <div class="reservation-star-cos">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span class="ml-1"><b>4.9</b></span>
+                                <div class="reservation-info-e col-md-9">
+                                    <div class="reservation-title-e">
+                                        <a href="/StoreInfo/Index/@item.設計師ID">@item.設計師名</a>
                                     </div>
-                                    <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="reservation-body-cos">
-                                    <label>預約日期：</label><b>2021/10/12</b>
-                                    <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                                    <label>預約時間：</label><b>09:00</b>
-                                    <label class="re-la1-cos">項目金額：</label><b>$499元</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="reservation-footer-cos">
-                                    <label>預約狀態:</label>
-                                    <span id="res-evaluation">
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#reservation-evaluate">評價</button>
-                                    </span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="reservation-item-cos">
-                        <ul>
-                            <li class="pic-li-cos">
-                                <div class="reservation-pic-div-cos">
-                                    <img src="~/img/user-img/store2.jpg" class="reservation-pic-cos">
-                                </div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <div>
-                                <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
-                            </div>
-                            <li>
-                                <div class="reservation-title-cos">
-                                    <a href="#">查理</a>
-                                    <div class="reservation-star-cos">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span class="ml-1"><b>4.9</b></span>
+                                    <div class="reservation-body-e">
+                                        <ul>
+                                            <li>
+                                                電話：<span>@item.設計師電話</span>
+                                            </li>
+                                            <li>
+                                                預約日期：<span>@item.預約日期</span>
+                                            </li>
+                                            <li>
+                                                服務項目：<span>@item.預約服務</span>
+                                            </li>
+                                            <li>
+                                                預約時間：<span>@item.預約時間</span>
+                                            </li>
+                                            <li>
+                                                金額：<span>$@item.價格</span>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="reservation-body-cos">
-                                    <label>預約日期：</label><b>2021/10/12</b>
-                                    <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                                    <label>預約時間：</label><b>09:00</b>
-                                    <label class="re-la1-cos">項目金額：</label><b>$499元</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="reservation-footer-cos">
-                                    <label>預約狀態:</label>
-                                    <span id="res-ok">
-                                        <b>已完成</b><i class="fas fa-check-circle"></i>
-                                    </span>
-                                </div>
-                        </ul>
-                    </div>
-                    <div class="reservation-item-cos">
-                        <ul>
-                            <li class="pic-li-cos">
-                                <div class="reservation-pic-div-cos">
-                                    <img src="~/img/user-img/store2.jpg" class="reservation-pic-cos">
-                                </div>
-                            </li>
-                        </ul>
-                        <ul>
-                            <div>
-                                <button type="button" class="btn close-btn" id="cancelbtn"><i class="fa fa-times"></i></button>
-                            </div>
-                            <li>
-                                <div class="reservation-title-cos">
-                                    <a href="#">查理</a>
-                                    <div class="reservation-star-cos">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <span class="ml-1"><b>4.9</b></span>
+                                    <div class="reservation-footer-e">
+                                        <span id="res-evaluation">
+                                            <input type="hidden" name="fid" value="@item.預約ID" />
+                                            <button type="button" class="btn btn-warning reveiew-btn"
+                                            data-toggle="modal"  data-target="#reservation-evaluate">
+                                                評價
+                                            </button>
+                                        </span>
                                     </div>
-                                    <b>ARTIST SALON/桃園市楊梅區金山街257號1樓</b>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="reservation-body-cos">
-                                    <label>預約日期：</label><b>2021/10/12</b>
-                                    <label>服務項目：</label><b>造型剪髮+洗頭</b><br>
-                                    <label>預約時間：</label><b>09:00</b>
-                                    <label class="re-la1-cos">項目金額：</label><b>$499元</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="reservation-footer-cos">
-                                    <label>預約狀態:</label>
-                                    <span id="res-cancel" class="res-cancel-cos">
-                                        <b>已取消</b><i class="fas fa-times-circle"></i>
-                                    </span>
-                                </div>
-                        </ul>
+                            </div>
+                        }
+                    }
+                }
+
+
+                <!--<div class="reservation-item-e col-md-10 col-10 mb-3">
+                    <div class="reservation-pic-e col-md-3">
+                        <img src="img/user-img/store2.jpg" class="reservation-pic-e">
                     </div>
-                </div>
-            </article>
+                    <button type="button" class="btn close-btn" id="okbtn"><i class="fa fa-times"></i></button>
+                    <div class="reservation-info-e col-md-9">
+                        <div class="reservation-title-e">
+                            <a href="#">路人丙</a>
+                        </div>
+                        <div class="reservation-body-e">
+                            <ul>
+                                <li>
+                                    電話：<span>09123123123</span>
+                                </li>
+                                <li>
+                                    預約日期：<span>2021/10/12</span>
+                                </li>
+                                <li>
+                                    服務項目：<span>造型剪髮+洗頭</span>
+                                </li>
+                                <li>
+                                    預約時間：<span>09:00</span>
+                                </li>
+                                <li>
+                                    金額：<span>$499</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="reservation-footer-e reservation-complete-e">
+                            <h6>已完成</h6><i class="fas fa-check-circle-e ml-1 mb-1"></i>
+                        </div>
+                    </div>
+                </div>-->            
+            </div>
         </div>
         <!--reservation-area End-->
-        <!--evaluate-area start-->
-        <div id="evaluate-area-cos">
-            <article>
-                <div class="row evaluate-area-cos">
-                    <div class="evaluate-item-cos">
-                        <ul>
-                            <li>
-                                <div class="evaluate-title-cos">
-                                    <i class="fas fa-user-circle"></i><b>查理</b>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="evaluate-star-cos">
-                                    <span>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </span>
-                                </div>
-                                <div class="evaluate-body-cos">
-                                    服務真的很好
-                                    環境舒適 造型做得太好了阿
-                                    超級推薦這位設計師的啦啦啦啦啦啦啦啦
-                                    .......................................
-                                    .......................................
-                                </div>
-                            </li>
-                            <li>
-                                <div class="evaluate-footer-cos">
-                                    <label>服務項目：</label><b>造型剪髮+洗頭</b>
-                                    <label class="pos-label-cos">日期：</label><b>2021/10/12</b>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <!--evaluate-area End-->
     </div>
 </main>
 <!-- ***** membercenter Area Start ***** -->
+<!--update-user-pic start-->
+<div class="modal fade" id="update-user-pic">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">變更大頭貼</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="Head-cropper"></div>
+                <input type="file" name="fileupload2" id="fileupload2" accept="image/*" onchange="userpicFile()">
+            </div>
+            <div class="modal-footer">
+                <input type="submit" id="btnupload2" class="btn btn-success" value="儲存修改">
+            </div>
+        </div>
+    </div>
+</div>
+<!--update-user-pic end-->
 <!--update user-info start-->
-<div>
-    <div class=" modal fade" id="update-cons-info" aria-hidden="true" tabindex="-1" role="dialog">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">編輯個人資料</h3>
-                    <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="form-label">E-mail</label>
-                            <input type="text" id="email" value maxlength="50" class="form-control" placeholder="請填寫有效的Email">
-                            <span id="emailaddress_msg"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="form-label">密碼</label>
-                            <input type="password" name="" id="userpwd" value maxlength="15" placeholder="請輸入6~15位英數字混合密碼"
-                                   class="form-control">
-                            <span id="pwd_msg"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="form-label">確認密碼</label>
-                            <input type="password" name="" id="doubleuserpwd" value maxlength="15" placeholder="請再輸入確認更改的密碼"
-                                   class="form-control">
-                            <span id="doublepwd_msg"></span>
-                        </div>
-                    </div>
-                    <div class="row align-items-center">
-                        <div class="col-md-4 col-8">
-                            <label class="form-label">姓名</label>
-                            <input type="text" name="" id="username" value maxlength="20" placeholder="請填寫真實姓名"
-                                   class="form-control">
-                            <span id="username_msg"></span>
-                        </div>
-                        <div class="col-md-3 col-4">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                       value="option1">
-                                <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+<div class="modal fade" id="update-user-data">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">修改會員資料</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            @{
+                foreach (var item in ViewBag.會員資料)
+                {
+                    <div class="modal-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 col-8">
+                                <label class="form-label">姓名</label>
+                                <input type="text" name="fUsername" id="username" value="@item.fUsername" maxlength="20" placeholder="請填寫真實姓名"
+                                       class="form-control">
+                                <span id="username_msg"></span>
                             </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input mt-4" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                       value="option2">
-                                <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                            @if (item.fGender == "1         ")
+                            {
+                                <div class="col-md-3 col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                               value="1" checked>
+                                        <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                               value="2">
+                                        <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                    </div>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="col-md-3 col-4">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio1"
+                                               value="option1">
+                                        <label class="form-check-label mt-4" for="inlineRadio1">小姐</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input mt-4" type="radio" name="fGender" id="inlineRadio2"
+                                               value="option2" checked>
+                                        <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
+                                    </div>
+                                </div>
+                            }
+
+                            <div class="col-md-5 c0l-12">
+                                <label class="form-label">暱稱</label>
+                                <input type="text" name="fNickname" id="usernickname" value="@item.fNickname" maxlength="20" placeholder="顯示在網站上的名稱"
+                                       class="form-control">
+                                <span id="usernickname_msg"></span>
                             </div>
                         </div>
-                        <div class="col-md-5 c0l-12">
-                            <label class="form-label">暱稱</label>
-                            <input type="text" name="" id="usernickname" value maxlength="20" placeholder="顯示在網站上的名稱"
-                                   class="form-control">
-                            <span id="usernickname_msg"></span>
+                        <div class="row">
+                            <div class="col-12">
+                                <label class="form-label">生日</label>
+                                <input type="text" name="fBirth" value="@item.fBirth" class="form-control datepicker">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="form-label">地址</label>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fCity", (IEnumerable<SelectListItem>)ViewBag.selectCity2, "-鄉鎮市區-", new { @class = "form-select", id = "fCity2" })
+                            </div>
+                            <div class="col-md-6 col-12">
+                                @Html.DropDownList("fArea", (IEnumerable<SelectListItem>)ViewBag.selectArea2, "-鄉鎮市區-", new { @class = "form-select", id = "fArea2" })
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <label class="form-label">生日</label>
-                            <input type="text" name="date" class="form-control datepicker">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <label class="form-label">地址</label>
-                        <div class="col-md-6 col-12">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>縣市</option>
-                                <option value="1">台北市</option>
-                                <option value="2">台中市</option>
-                                <option value="3">高雄市</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <select class="form-select" aria-label="Default select example">
-                                <option selected>區域</option>
-                                <option value="1">大安區</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success">儲存修改</button>
-                </div>
+                }
+
+            }
+            <div class="modal-footer">
+                <button class="btn btn-success" id="Send-change-data">儲存修改</button>
+                <p id="WrongMessage"></p>
             </div>
         </div>
     </div>
-    <!--update user-info End-->
-    <!--reservation-evaluate start-->
-    <div class="modal fade" id="reservation-evaluate">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body main-body">
-                    <div class="main-star">
-                        <img src="~/img/user-img/star-black.png" class="x" id="img1">
-                        <img src="~/img/user-img/star-black.png" class="x" id="img2">
-                        <img src="~/img/user-img/star-black.png" class="x" id="img3">
-                        <img src="~/img/user-img/star-black.png" class="x" id="img4">
-                        <img src="~/img/user-img/star-black.png" class="x" id="img5">
-                    </div>
-                    <div>
-                        單擊即可評分，雙擊可重新評分
-                    </div>
-                    <div class="write-body">
-                        <textarea name="" id="" cols="30" rows="3" placeholder="請填寫評價" maxlength="40"></textarea>
+</div>
+<!--update user-info End-->
+<!--update-user-Pwd end-->
+
+<div class="modal fade" id="update-user-Pwd">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">修改密碼</h3>
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">密碼</label>
+                        <input type="password" name="fPwd" id="userpwd" valuemaxlength="15" placeholder="請輸入6~15位英數字混合密碼"
+                               class="form-control">
+                        <span id="pwd_msg"></span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-success" value="送出">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">確認密碼</label>
+                        <input type="password" name="fChangePwd" id="doubleuserpwd" valuemaxlength="15" placeholder="請再輸入確認更改的密碼"
+                               class="form-control">
+                        <span id="doublepwd_msg"></span>
+                    </div>
                 </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="pwdChange">儲存修改</button>
             </div>
         </div>
     </div>
-    <!--reservation-evaluate End-->
+</div>
+<!--update-user-Pwd end-->
+
+<!--reservation-evaluate start-->
+<div class="modal fade" id="reservation-evaluate">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close text-end" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body main-body">
+                <div class="main-star">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img1">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img2">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img3">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img4">
+                    <img src="~/img/user-img/star-black.png" class="x" id="img5">
+                </div>
+                <div>
+                    單擊即可評分，雙擊可重新評分
+                    <input type="hidden" name="fScore" value="" />
+                </div>
+                <div class="write-body">
+                    <textarea name="fcomment" id="comment" cols="30" rows="3" placeholder="請填寫評價" 
+                     maxlength="40"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" id="sendscore">送出評價</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--reservation-evaluate End-->
+
 
 
 @section UserpageJs{
-        <script>
 
-            $(document).ready(function () {
-                $(".Tab2-cos").addClass('change');
-                $('#evaluate-area').hide();
-            })
-            $(".Tab2-cos").click(function () {
-                $(".Tab3-cos").removeClass('change');
-                $(this).addClass('change');
-                $('#reservation-area-cos').fadeIn();
-                $('#evaluate-area-cos').fadeOut();
-            })
-            $(".Tab3-cos").click(function () {
-                $(".Tab2-cos").removeClass('change');
-                $(this).addClass('change');
-                $('#evaluate-area-cos').fadeIn();
-                $('#reservation-area-cos').fadeOut();
-            })
 
-            $(document).ready(function () {
-                if ($('#res-cancel,#res-ok,#res-evaluation')) {
-                    $('#cancelbtn').hide();
-                    $('#okbtn').hide();
-                    $('#evaluationbtn').hide();
-                }
-            })
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/jquery-clockpicker.min.js" integrity="sha512-x0qixPCOQbS3xAQw8BL9qjhAh185N7JSw39hzE/ff71BXg7P1fkynTqcLYMlNmwRDtgdoYgURIvos+NJ6g0rNg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-            let star = document.querySelectorAll("img.x");
-            for (let img of star) {
-                img.addEventListener("mouseover", mouseover);
-                img.addEventListener("mouseout", mouseout);
-                img.addEventListener("click", click);
-                img.addEventListener("dblclick", dblclick);
+    <script>
+        $(function () {
+            $(".datepicker").datepicker();
+            $(".datepicker").datepicker('setDate', 'today', "yy/mm/dd");
+        });
+    </script>
+
+    @*新增/修改服務項目*@
+    <script>
+        $(document).ready(function () {
+            $("#Send-change-data").click(function () { 會員資料修改() })
+            $("#pwdChange").click(function () { 密碼修改() })
+        })
+
+        function 密碼修改() {
+            var Pwd1 = $("#update-user-Pwd input[name='fPwd']").val();
+            var Pwd2 = $("#update-user-Pwd input[name='fChangePwd']").val();
+            console.log(`${Pwd1} ${Pwd2}`);
+            if (Pwd1 != Pwd2) {
+                swal("密碼不相同", "", "error");
             }
-            function mouseover() {
-                let num = $(this).index();
-                for (let i = 0; i < num + 1; i++) {
-                    star[i].src = "../img/user-img/star-yellow.png"
-                }
-            }
-            function mouseout() {
-                let num = $(this).index();
-                if (starNum != -1) {
-                    for (let i = 0; i < num + 1; i++) {
-                        if (i <= starNum) {
-                            star[i].src = "../img/user-img/star-yellow.png"
-                        } else {
-                            star[i].src = "../img/user-img/star-black.png";
+            else {
+                $('#WrongMessage').empty();
+                $.post(
+                    "/MemberCenter/PwdChange",
+                    {
+                        "fpwd": Pwd1
+                    },
+                    function (data) {
+                        if (data.Message == "OK") {
+                            swal("資料已更改", "", "success");
                         }
+                        else {
+                            swal("資料已更改", "", "error");
+                        }
+                    },
+                    "json"
+                )
+            }
+        }
+
+        function 會員資料修改() {
+            var 名稱 = $("#update-user-data input[name='fUsername']").val();
+            var 性別 = $("#update-user-data input[name='fGender']:checked").val();
+            var 暱稱 = $("#update-user-data input[name='fNickname']").val();
+            var 生日 = $("#update-user-data input[name='fBirth']").val();
+            var 城市 = $("#update-user-data #fCity2 option:selected").val();
+            var 區域 = $("#update-user-data #fArea2 option:selected").val();
+            console.log(`${名稱},${性別},${暱稱},${生日},${城市},${區域}`)
+            if ((名稱 == "") || (性別 == "") || (暱稱 == "") || (生日 == "") || (城市 == 0) || (區域 == 0)) {
+                swal("資料不得為空", "", "error");
+            }
+            else {
+                $('#WrongMessage').empty();
+                $.post(
+                    "/MemberCenter/MemberDataUpdate",
+                    {
+                        "fUsername": 名稱, "fGender": 性別, "fNickname": 暱稱, "fBirth": 生日, "fCity": 城市, "fArea": 區域
+                    },
+                    function (data) {
+                        if (data.Message == "OK") {
+                            swal("資料已更改", "", "success");
+                        }
+                        else {
+                            swal("資料已更改", "", "error");
+                        }
+                    },
+                    "json"
+                )
+            }
+
+        }
+
+
+
+    </script>
+
+    @*croppie for 大頭貼*@
+    <script>
+        var basic2 = $('#Head-cropper').croppie
+            ({
+                viewport: { width: 300, height: 300, type: 'circle'}, // 裁切區塊
+                boundary: { width: 400, height: 400 }, // 預覽區塊
+                showZoomer: true, //隱藏或顯示縮放滑塊
+                url: '/img/preview.jpg', //預設圖片
+                format: 'png' //'jpeg'|'png'|'webp'
+            });
+
+        //Reading the contents of the specified Blob or File
+        function readFile1(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#Head-cropper').croppie('bind', {
+                        url: e.target.result
+                    });
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        // Change Event to Read file content from File input
+        $('#fileupload2').on('change', function () { readFile1(this); });
+
+        // Upload button to Post Cropped Image to Store.
+    $('#btnupload2').on('click', function ()
+    {
+        basic2.croppie('result', 'blob').then(function (blob)
+        {
+            var formData = new FormData();
+
+            formData.append('filename', 'FileName.png');
+            formData.append('blob', blob);
+            var myAppUrlSettings =
+            {
+                MyUsefulUrl: '@Url.Action("Headupbdate", "MemberCenter")'
+            }
+
+            var request = new XMLHttpRequest();
+
+            request.open('POST', myAppUrlSettings.MyUsefulUrl);
+            request.send(formData);
+            request.onreadystatechange = function () { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200)
+                {
+                    if (request.responseText.Message == "OK") {
+
                     }
-                } else {
-                    for (let i = 0; i < 5; i++) {
+                        alert('Photo Cropped Successfully!');
+                        window.location.reload();
+
+                }
+            }
+        });
+    });
+    </script>
+
+
+    <script>
+        $(document).ready(function () {
+            $("#fCity2").change(function () { ChangeCity2(); })
+        });
+
+        function ChangeCity2() {
+            var selectedCity = $("#fCity2 option:selected").val();
+            if ($.trim(selectedCity).length > 0) {
+                GetArea2(selectedCity)
+            }
+        }
+
+        function GetArea2(CityID) {
+            $.ajax({
+                url: "/Home/Area",
+                data: { CityID: CityID },
+                type: 'post',
+                cache: false,
+                async: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#fArea2').empty();
+                        $('#fArea2').append($('<option></option>').val('').text('請選擇'));
+                        $.each(data, function (i, item) {
+                            $('#fArea2').append($('<option></option>').val(item.Key).text(item.Value))
+                        })
+                    }
+                }
+            })
+        }
+    </script>
+
+    @*評價系統*@
+    <script>
+        $(document).ready(function () {
+            if ($('#res-cancel,#res-ok,#res-evaluation')) {
+                $('#cancelbtn').hide();
+                $('#okbtn').hide();
+                $('#evaluationbtn').hide();
+            }
+            $(".Tab2-cos").addClass('change');
+            $("#sendscore").click(function () { sendscore();})
+        })
+
+
+        let star = document.querySelectorAll("img.x");
+        for (let img of star) {
+            img.addEventListener("mouseover", mouseover);
+            img.addEventListener("mouseout", mouseout);
+            img.addEventListener("click", click);
+            img.addEventListener("dblclick", dblclick);
+        }
+        function mouseover() {
+            let num = $(this).index();
+            for (let i = 0; i < num + 1; i++) {
+                star[i].src = "../img/user-img/star-yellow.png"
+            }
+        }
+        function mouseout() {
+            let num = $(this).index();
+            if (starNum != -1) {
+                for (let i = 0; i < num + 1; i++) {
+                    if (i <= starNum) {
+                        star[i].src = "../img/user-img/star-yellow.png"
+                    } else {
                         star[i].src = "../img/user-img/star-black.png";
                     }
                 }
-            }
-            var starNum = -1;
-            var starArray = Array.from(star);
-            function click(e) {
-                if (e.target.tagName === "IMG") {
-                    starNum = starArray.indexOf(e.target);
-                }
-            }
-            function dblclick() {
-                starNum = -1;
+            } else {
                 for (let i = 0; i < 5; i++) {
                     star[i].src = "../img/user-img/star-black.png";
                 }
             }
-        </script>
-    }
+        }
+        var starNum = -1;
+        var starArray = Array.from(star);
+        function click(e) {
+            if (e.target.tagName === "IMG") {
+                starNum = starArray.indexOf(e.target);
+            }
+        }
+        function dblclick() {
+            starNum = -1;
+            for (let i = 0; i < 5; i++) {
+                star[i].src = "../img/user-img/star-black.png";
+            }
+        }
+
+        function sendscore() {
+            var id = $("#res-evaluation input[name='fid']").val();
+            var score = starNum + 1;
+            var comment = $("#comment").val();
+            if (score > 0) {
+                $.post(
+                    "/UserCenter/sendscore",
+                    {
+                        "fid": id, "fScore": score, "fComment": comment
+                    },
+                    function (data) {
+                        if (data.Message == "OK") {
+                            swal("成功", "", "success");
+                        }
+                        else {
+                            swal("失敗", "", "error");
+                        }
+                    },
+                    "json"
+                )
+            } else {
+                swal("失敗2", "", "error");
+            }
+
+        }
+
+    </script>
+}

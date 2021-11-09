@@ -26,7 +26,6 @@
         <AssociationConnector Association="demodbModel.FK_tWork_tDesigner" />
         <EntityTypeShape EntityType="demodbModel.tComment" Width="1.5" PointX="10" PointY="0.5" />
         <EntityTypeShape EntityType="demodbModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="demodbModel.tEvaluate" Width="1.5" PointX="2.75" PointY="8.75" />
         <AssociationConnector Association="demodbModel.FK_tComment_tBook" />
         <AssociationConnector Association="demodbModel.FK_tComment_tDesigner" />
         <AssociationConnector Association="demodbModel.FK_tComment_tMember" />

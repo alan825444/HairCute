@@ -98,5 +98,48 @@ namespace Haircute.Models
 
         }
 
+        public List<預約紀錄> 預約(int SSID)
+        {
+            var q = db.tMember.Where(m => m.fID == SSID).FirstOrDefault();
+            var q2 = from b in db.tBook
+                     where b.fk_Member == q.fID
+                     join s in db.tService on b.fk_Service equals s.fid
+                     join d in db.tDesigner on b.fk_Designer equals d.fid
+                     join m in db.tMember on d.fk_Member equals m.fID
+                     select new
+                     {
+                         b.fid,
+                         s.fk_Designer,
+                         d.fHeadSticker,
+                         m.fNickname,
+                         m.fPhone,
+                         s.fServicN,
+                         s.fprice,
+                         b.fDateTime,
+                         b.fBookTime
+                     };
+            List<預約紀錄> data = new List<預約紀錄>();
+            if(q2 != null)
+            {
+                foreach (var item in q2)
+                {
+                    data.Add(new 預約紀錄
+                    {
+                        預約ID = item.fid,
+                        設計師ID = (int)item.fk_Designer,
+                        設計師照 = item.fHeadSticker,
+                        設計師名 = item.fNickname,
+                        設計師電話 = item.fPhone,
+                        預約服務 = item.fServicN,
+                        價格 = item.fprice,
+                        比較時間 = (DateTime)item.fDateTime,
+                        預約日期 = ((DateTime)item.fDateTime).ToString("d"),
+                        預約時間 = ((TimeSpan)item.fBookTime).ToString(@"hh\:mm")
+                    });
+                }
+            }
+            return data;
+        }
+
     }
 }
