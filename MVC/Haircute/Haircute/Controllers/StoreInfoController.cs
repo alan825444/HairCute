@@ -15,8 +15,7 @@ namespace Haircute.Controllers
         {
             if (User.Identity.Name =="")
             {
-                /*int SSID = (int)TempData["ID"];*/
-                int SSID = 1010;
+                int SSID = (int)TempData["ID"];
                 Session["ID"] = SSID;
                 var q = db.tDesigner.Where(x => x.fid == SSID).FirstOrDefault();
                 ViewBag.Name = db.tMember.Where(x => x.fID == q.fk_Member).FirstOrDefault().fNickname;
@@ -34,8 +33,7 @@ namespace Haircute.Controllers
             }
             else
             {
-                /*int SSID = (int)TempData["ID"];*/
-                int SSID = 1010;
+                int SSID = (int)TempData["ID"];
                 var q = db.tDesigner.Where(x => x.fid == SSID).FirstOrDefault();
                 ViewBag.Name = db.tMember.Where(x => x.fID == q.fk_Member).FirstOrDefault().fNickname;
                 if (q != null)
