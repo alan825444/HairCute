@@ -244,7 +244,7 @@ namespace Haircute.Models
             List<搜尋資料> data = new List<搜尋資料>();
             try
             {
-                if (Keyword == "")
+                if ((Keyword == "")&&(City != 0)&&(Area!=0))
                 {
                     var q = db.tDesigner.Where(x => x.fStoreCity == City && x.fStoreArea == Area).GroupBy(x => x.fid);
                     foreach (var item in q)
@@ -265,7 +265,7 @@ namespace Haircute.Models
                         data.Add(tempdata);
                     }
                 }
-                else if ((Keyword != "") && ((City == 0) || (Area == 0)))
+                else if ((Keyword != "") && (City == 0) && (Area == 0))
                 {
                     string[] KW = Keyword.Split('/');
 
@@ -281,6 +281,62 @@ namespace Haircute.Models
                             tempdata.HeadStack = q2.tDesigner.fHeadSticker;
                             tempdata.DesgnerName = q2.tDesigner.tMember.fNickname;
                             tempdata.StoreName = q2.tDesigner.fStore;
+                            data.Add(tempdata);
+                        }
+                    }
+                }
+                else if ((City != 0)&&(Area == 0))
+                {
+                    
+                    if (Keyword != "")
+                    {
+                        string[] KW = Keyword.Split('/');
+                        foreach (var item in KW)
+                        {
+                            var q = db.tPhoto.Where(x => x.fTag == item).GroupBy(x => x.fk_Designer);
+                            foreach (var item2 in q)
+                            {
+                                搜尋資料 tempdata = new 搜尋資料();
+                                var q2 = db.tDesigner.Where(x => x.fStoreCity == City && x.fid == item2.Key).FirstOrDefault();
+                                int Cityid = Convert.ToInt32(q2.fStoreCity);
+                                int Areaid = Convert.ToInt32(q2.fStoreArea);
+                                string Address = db.tCity.Where(x => x.fID == Cityid).FirstOrDefault().fCity;
+                                Address += db.tArea.Where(x => x.fid == Areaid).FirstOrDefault().fArea;
+                                Address += q2.fAddress;
+                                tempdata.Address = Address;
+                                tempdata.DesgnerName = q2.tMember.fNickname;
+                                tempdata.HeadStack = q2.fHeadSticker;
+                                tempdata.Photo1 = q2.tPhoto.Where(x => x.fTag == item).FirstOrDefault().fPath;
+                                tempdata.設計師ID = (int)item2.Key;
+                                data.Add(tempdata);
+                            }
+                        }
+                        
+                    }
+                    else
+                    {
+                        var q = db.tDesigner.Where(x => x.fStoreCity == City).OrderBy(x => x.fid);
+                        foreach (var item in q)
+                        {
+                            搜尋資料 tempdata = new 搜尋資料();
+                            var q2 = db.tDesigner.Where(x => x.fid == item.fid).FirstOrDefault();
+                            int Cityid = Convert.ToInt32(q2.fStoreCity);
+                            int Areaid = Convert.ToInt32(q2.fStoreArea);
+                            string Address = db.tCity.Where(x => x.fID == Cityid).FirstOrDefault().fCity;
+                            Address += db.tArea.Where(x => x.fid == Areaid).FirstOrDefault().fArea;
+                            Address += q2.fAddress;
+                            tempdata.Address = Address;
+                            tempdata.DesgnerName = q2.tMember.fNickname;
+                            tempdata.HeadStack = q2.fHeadSticker;
+                            tempdata.設計師ID = q2.fid;
+                            if (q2.tPhoto.Count == 0)
+                            {
+                                tempdata.Photo1 = "preview.jpg";
+                            }
+                            else
+                            {
+                                tempdata.Photo1 = q2.tPhoto.Take(1).FirstOrDefault().fPath;
+                            }
                             data.Add(tempdata);
                         }
                     }
@@ -349,6 +405,44 @@ namespace Haircute.Models
                 return q;
             }
             return "preview.jpg";
+        }
+
+        public List<評價表> 評論回傳()
+        {
+            var q = db.tComment.OrderByDescending(x => x.fid).Take(5);
+            List<評價表> comments = new List<評價表>();
+            foreach (var item in q)
+            {
+                評價表 comment = new 評價表();
+                comment.Comment = item.fComment;
+                comment.MemberName = item.tMember.fNickname;
+                comment.HeadStack = item.tMember.fHeadstack;
+                comments.Add(comment);
+            }
+
+            return comments;
+        }
+
+        public void 預約排行() 
+        {
+            var date = DateTime.Parse($"{DateTime.Now.Year}-{DateTime.Now.Month}-1");
+            var q = db.tBook.GroupBy(x => x.fk_Designer).OrderBy(x => x.Key).Take(3);
+            var qtest = db.tBook.Where(x => x.fDateTime >= DbFunctions.TruncateTime(date));
+            foreach (var item in qtest)
+            {
+                //var q2 = db.tDesigner.Where(z => z.fid == item.Key).FirstOrDefault();
+                //var photo1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fPath;
+                //var photo2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fPath;
+                //var tag1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fTag;
+                //var tag2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fTag;
+                //var headstack = q2.fHeadSticker;
+                //var DesignerName = q2.tMember.fNickname;
+                //var city = db.tCity.Where(x => x.fID == q2.fStoreCity).FirstOrDefault();
+                //var Area = db.tArea.Where(x => x.fid == q2.fStoreArea).FirstOrDefault();
+                //var address = q2.fAddress + city + Area;
+                //var Designer = q2.fid;
+
+            }
         }
 
 

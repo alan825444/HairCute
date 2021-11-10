@@ -10,13 +10,13 @@
             <!-- Main Background Image -->
             <div class="main-bg-img bg-img" data-animation="fadeInUpBig" data-delay="200ms">
                 <div class="store-img-container">
-                    <img src="~/img/bg-img/15.jpg" style="height:100%;" />
+                    <img src="~/Images/Memberheadstack_20211109201613145_ed2e671a6a5b47febc7e661363fc997f.png" style="height:100%;" />
                 </div>
                 <div class="hair-style-img shadow">
-                    <img src="~/img/banner-img/小短髮2.jpg" style="height:100%;" />
+                    <img src="~/Images/PhotoDesigner_20211108230243156_8c665f6cf8f642f1ac94ae59c1826796.png" style="height:100%;" />
                 </div>
                 <div class="hair-style-img2 shadow">
-                    <img src="~/img/banner-img/歐美 Undercut2.jpg" style="height:100%;" />
+                    <img src="~/Images/PhotoDesigner_20211108230243156_8c665f6cf8f642f1ac94ae59c1826796.png" style="height:100%;" />
                 </div>
                 <!-- <div class="rank"><img src="img/banner-img/rank1.png" alt=""></div> -->
 
@@ -897,120 +897,118 @@
 
                 <div class="slider slider-for">
 
-                    <!-- Client Feedback Text -->
-                    <div class="client-feedback-text text-center">
+                    @foreach (var item in ViewBag.評論)
+                    {
+                        <!-- Client Feedback Text -->
+                        <div class="client-feedback-text text-center">
 
-                        <div class="client-description text-center">
-                            <h4>
-                                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
-                                either met or exceeded all of the goals that we initially set for all of the projects that they
-                                implemented for us.”
-                            </h4>
+                            <div class="client-description text-center">
+                                <h4>
+                                    @item.Comment
+                                </h4>
+                            </div>
+                            <div class="ratings text-center">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                            </div>
+                            <div class="client-name text-center">
+                                <h5>@item.MemberName</h5>
+                            </div>
                         </div>
-                        <div class="ratings text-center">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="client-name text-center">
-                            <h5>Rodney Williams</h5>
-                            <span>2021.09</span>
-                        </div>
-                    </div>
+                    }
 
-                    <!-- Client Feedback Text -->
-                    <div class="client-feedback-text text-center">
-
-                        <div class="client-description text-center">
-                            <h4>
-                                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
-                                either met or exceeded all of the goals that we initially set for all of the projects that they
-                                implemented for us.”
-                            </h4>
-                        </div>
-                        <div class="ratings text-center">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                        </div>
-                        <div class="client-name text-center">
-                            <h5>Nazrul Islam</h5>
-                            <span>2021.09</span>
-                        </div>
-                    </div>
 
                     <!-- Client Feedback Text -->
-                    <div class="client-feedback-text text-center">
+                    <!--<div class="client-feedback-text text-center">
 
-                        <div class="client-description text-center">
-                            <h4>
-                                “ the best companies that we have worked with! The company has
-                                either met or exceeded all of the goals that we initially set for all of the projects that they
-                                implemented for us.”
-                            </h4>
-                        </div>
-                        <div class="ratings text-center">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
-                            <i class="far fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="client-name text-center">
-                            <h5>Williams Rodney</h5>
-                            <span>2021.10</span>
-                        </div>
-                    </div>
-
+        <div class="client-description text-center">
+            <h4>
+                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
+                either met or exceeded all of the goals that we initially set for all of the projects that they
+                implemented for us.”
+            </h4>
+        </div>
+        <div class="ratings text-center">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+        </div>
+        <div class="client-name text-center">
+            <h5>Nazrul Islam</h5>
+            <span>2021.09</span>
+        </div>
+    </div>-->
                     <!-- Client Feedback Text -->
-                    <div class="client-feedback-text text-center">
+                    <!--<div class="client-feedback-text text-center">
 
-                        <div class="client-description text-center">
-                            <h4>
-                                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
-                                either met or exceeded all of the goals that we initially set for all of the projects that they
-                                implemented for us.”
-                            </h4>
-                        </div>
-                        <div class="ratings text-center">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="client-name text-center">
-                            <h5>Rodney Williams</h5>
-                            <span>2021.09</span>
-                        </div>
-                    </div>
-
+        <div class="client-description text-center">
+            <h4>
+                “ the best companies that we have worked with! The company has
+                either met or exceeded all of the goals that we initially set for all of the projects that they
+                implemented for us.”
+            </h4>
+        </div>
+        <div class="ratings text-center">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star-half-alt" aria-hidden="true"></i>
+            <i class="far fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="client-name text-center">
+            <h5>Williams Rodney</h5>
+            <span>2021.10</span>
+        </div>
+    </div>-->
                     <!-- Client Feedback Text -->
-                    <div class="client-feedback-text text-center">
+                    <!--<div class="client-feedback-text text-center">
 
-                        <div class="client-description text-center">
-                            <h4>
-                                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
-                                either met or exceeded all of the goals that we initially set for all of the projects that they
-                                implemented for us.”
-                            </h4>
-                        </div>
-                        <div class="ratings text-center">
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                            <i class="fa fa-star" aria-hidden="true"></i>
-                        </div>
-                        <div class="client-name text-center">
-                            <h5>Rodney Williams</h5>
-                            <span>2021.09</span>
-                        </div>
-                    </div>
+        <div class="client-description text-center">
+            <h4>
+                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
+                either met or exceeded all of the goals that we initially set for all of the projects that they
+                implemented for us.”
+            </h4>
+        </div>
+        <div class="ratings text-center">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="client-name text-center">
+            <h5>Rodney Williams</h5>
+            <span>2021.09</span>
+        </div>
+    </div>-->
+                    <!-- Client Feedback Text -->
+                    <!--<div class="client-feedback-text text-center">
+
+        <div class="client-description text-center">
+            <h4>
+                “Success Agency is, hands down, one of the best companies that we have worked with! The company has
+                either met or exceeded all of the goals that we initially set for all of the projects that they
+                implemented for us.”
+            </h4>
+        </div>
+        <div class="ratings text-center">
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+        </div>
+        <div class="client-name text-center">
+            <h5>Rodney Williams</h5>
+            <span>2021.09</span>
+        </div>
+    </div>-->
 
                 </div>
             </div>
@@ -1018,7 +1016,13 @@
             <!-- Client Thumbnail Area -->
             <div class="col-12 col-md-6 col-lg-5">
                 <div class="slider slider-nav">
-                    <div class="client-thumbnail">
+                    @foreach (var item in ViewBag.評論)
+                    {
+                        <div class="client-thumbnail">
+                            <img src="~/Images/@item.HeadStack" alt="">
+                        </div>
+                    }
+                    @*<div class="client-thumbnail">
                         <img src="./img/bg-img/6.jpg" alt="">
                     </div>
                     <div class="client-thumbnail">
@@ -1032,7 +1036,7 @@
                     </div>
                     <div class="client-thumbnail">
                         <img src="./img/bg-img/7.jpg" alt="">
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
