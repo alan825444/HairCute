@@ -551,7 +551,7 @@ ul li {
 }
 .classy-nav-container .classy-navbar .bg-curve {
   position: absolute;
-  width: 60.2%;
+  width: 60.5%;
   height: 100%;
   top: 0;
   right: 0;
@@ -816,7 +816,7 @@ ul li {
   position: relative;
   z-index: 2;
   width: 100%;
-  height: 700px;
+  height: 600px;
   background-color: #ffffff;
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -836,7 +836,7 @@ ul li {
 }
 .single-welcome-slide .bg-curve {
   position: absolute;
-  width: 60%;
+  width: 60.1%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: top right;
@@ -845,42 +845,42 @@ ul li {
   right: 0;
 }
 .store-img-container {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  overflow: hidden;
-  border-radius: 50%;
-  /*background-image: url(../img/banner-img/store2.jpg);
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    top: -50px;
+    border-radius: 50%;
+    /*background-image: url(../img/banner-img/store2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;*/
-
-  /* right: 20%; */
+    /* right: 20%; */
 }
-.rank {
+/*.rank {
   width: 80px;
   height: 80px;
   position: absolute;
   z-index: -1;
   bottom: 93%;
   left: 17%;
-}
+}*/
 .hair-style-img {
   position: absolute;
-  width: 350px;
-  height: 450px;
+  width: 430px;
+  height: 330px;
   overflow: hidden;
   border-radius: 1rem;
   /*background-image: url(../img/banner-img/hair4.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 120%;*/
-  left: 25%;
-  top: 25%;
+  left: 10%;
+  top: 30%;
 }
 .hair-style-img2 {
   position: absolute;
-  width: 300px;
+  width: 330px;
   height: 350px;
   overflow: hidden;
   border-radius: 1rem;
@@ -924,21 +924,24 @@ ul li {
         right: 10px;
     }
   .store-img-container{
-      height:100px;
+      /*height:100px;
       width:100px;
-      bottom:90%;
+      bottom:90%;*/
+      display:none;
   }
     .hair-style-img {
         height: calc(90% - 50px);
         width: 70vw;
-        left: -10%;
+        left: -5%;
+        top: -5%;
     }
     .hair-style-img2 {
-        height: 150px;
+        /*height: 150px;
         width: 150px;
         
         left: 40%;
-        bottom: 65%;
+        bottom: 65%;*/
+        display:none;
     }
 }
 .single-welcome-slide .social-info {
@@ -2623,9 +2626,10 @@ ul li {
 }
 
 @media screen and (max-width: 750px) {
-  .search-bar {
-    width: 90vw;
-  }
+    .search-bar {
+        width: 90vw;
+        margin: 50px 20px;
+    }
   .search-bar .location-dropdown,
   .search-btn,
   .tag_search_area {
