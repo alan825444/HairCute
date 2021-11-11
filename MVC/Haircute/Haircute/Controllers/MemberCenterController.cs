@@ -21,6 +21,10 @@ namespace Haircute.Controllers
             {
                 return RedirectToAction("Index", "UserCenter");
             }
+            else if (q.fconfirmation == null)
+            {
+                return RedirectToAction("remindpage");
+            }
             //else if (q.fconfirmation == null)
             //{
             //    return RedirectToAction("remindpage");
@@ -161,6 +165,11 @@ namespace Haircute.Controllers
         {
             string result = new 資料儲存器().評價產生(fid, fScore, fComment);
             return Json(new { Message = result }, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult remindpage() 
+        {
+            return View();
         }
     }
 }
