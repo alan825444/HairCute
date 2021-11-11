@@ -9,7 +9,7 @@ namespace Haircute.Models
     {
         public string Item { get; set; }
         public string Price { get; set; }
-
         public string ID { get; set; }
+        public int DesignerID { get; set; }
     }
 }
