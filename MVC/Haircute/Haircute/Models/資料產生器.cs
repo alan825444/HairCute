@@ -414,9 +414,13 @@ namespace Haircute.Models
             foreach (var item in q)
             {
                 評價表 comment = new 評價表();
+                comment.fid = item.tDesigner.fid;
                 comment.Comment = item.fComment;
+                comment.Score = (int)item.fScore;
                 comment.MemberName = item.tMember.fNickname;
                 comment.HeadStack = item.tMember.fHeadstack;
+
+
                 comments.Add(comment);
             }
 
