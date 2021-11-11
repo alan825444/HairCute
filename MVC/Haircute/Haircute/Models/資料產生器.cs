@@ -434,26 +434,50 @@ namespace Haircute.Models
             return comments;
         }
 
-        public void 預約排行() 
+        public List<排行類別> 預約排行() 
         {
+            List<排行類別> data = new List<排行類別>();
             var date = DateTime.Parse($"{DateTime.Now.Year}-{DateTime.Now.Month}-1");
             var q = db.tBook.GroupBy(x => x.fk_Designer).OrderBy(x => x.Key).Take(3);
-            var qtest = db.tBook.Where(x => x.fDateTime >= DbFunctions.TruncateTime(date));
+            var qtest = db.tBook.Where(x => x.fDateTime >= DbFunctions.TruncateTime(date)).GroupBy(x=>x.fk_Designer).OrderByDescending(x=>x.Count()).Take(3);
             foreach (var item in qtest)
             {
-                //var q2 = db.tDesigner.Where(z => z.fid == item.Key).FirstOrDefault();
-                //var photo1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fPath;
-                //var photo2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fPath;
-                //var tag1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fTag;
-                //var tag2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fTag;
-                //var headstack = q2.fHeadSticker;
-                //var DesignerName = q2.tMember.fNickname;
-                //var city = db.tCity.Where(x => x.fID == q2.fStoreCity).FirstOrDefault();
-                //var Area = db.tArea.Where(x => x.fid == q2.fStoreArea).FirstOrDefault();
-                //var address = q2.fAddress + city + Area;
-                //var Designer = q2.fid;
+                排行類別 tempdata = new 排行類別();
+                var q2 = db.tDesigner.Where(z => z.fid == item.Key).FirstOrDefault();
+                var photoq = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList();
+                if (photoq.Count<2)
+                {
+                    tempdata.photo1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fPath;
+                    tempdata.photo2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fPath;
+                    tempdata.tag1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fTag;
+                    tempdata.tag2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fTag;
+                }
+                else
+                {
+                    tempdata.photo1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fPath;
+                    tempdata.photo2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fPath;
+                    tempdata.tag1 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[0].fTag;
+                    tempdata.tag2 = q2.tPhoto.OrderByDescending(z => z.fid).Take(2).ToList()[1].fTag;
+                }
+                
+                tempdata.headstack = q2.fHeadSticker;
+                tempdata.DesignerName = q2.tMember.fNickname;
+                if (db.tCity.Where(x => x.fID == q2.fStoreCity).FirstOrDefault() == null)
+                {
+                    tempdata.address = "";
+                }
+                else
+                {
+                    var city = db.tCity.Where(x => x.fID == q2.fStoreCity).FirstOrDefault().fCity;
+                    var Area = db.tArea.Where(x => x.fid == q2.fStoreArea).FirstOrDefault().fArea;
+                    tempdata.address = q2.fAddress + city + Area;
 
+                }
+                
+                tempdata.Designer = q2.fid;
+                data.Add(tempdata);
             }
+            return data;
         }
 
 

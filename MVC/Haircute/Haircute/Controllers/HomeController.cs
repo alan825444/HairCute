@@ -21,7 +21,7 @@ namespace Haircute.Controllers
                 ViewBag.圖片 = new 資料產生器().取得最新上傳();
                 ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
                 ViewBag.評論 = new 資料產生器().評論回傳();
-                //new 資料產生器().預約排行();
+                ViewBag.預約排行 = new 資料產生器().預約排行();
 
                 return View("", "_LayourMember");
             }
@@ -32,7 +32,7 @@ namespace Haircute.Controllers
                 ViewBag.圖片 = new 資料產生器().取得最新上傳();
                 ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
                 ViewBag.評論 = new 資料產生器().評論回傳();
-                //new 資料產生器().預約排行();
+                ViewBag.預約排行 = new 資料產生器().預約排行();
                 return View();
             }
             
@@ -223,16 +223,18 @@ namespace Haircute.Controllers
             return Json(result,JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult PwdReset(int ID) 
+        public ActionResult PwdReset(string ID) 
         {
-            Session["TempID"] = ID;
+            ViewBag.ID = Convert.ToInt32(new registFunction().decryptstr(ID));
             return View();
         }
 
-        [HttpPost]
-        public ActionResult PwdRest(string Pwd, string CheckPwd)
+        public ActionResult PwdRes(string id, string Pwd, string ResetPwd)
         {
-            
+
+            var result = new registFunction().重設密碼功能(id, Pwd, ResetPwd);
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
+
 }

@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "密碼重置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="log-in-area-r col-10 col-md-8">
+    <div class="log-in-form">
+        <form class="row row-cols-lg-auto justify-content-center mt-5">
+            <div class="col-10 mb-3">
+                <h3 style="text-align: center;">重置密碼</h3>
+                <p style="text-align: center;">請輸入您欲更改的新密碼</p>
+            </div>
+            <div class="col-10 mb-3">
+                <input type="text" name="fid" id="fid" value="@ViewBag.ID" hidden />
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">password</label>
+                <div class="input-group">
+                    <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
+                    <input type="password" class="form-control" id="pwd" placeholder="請輸入新密碼">
+                </div>
+            </div>
+            <div class="col-10 mb-3">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">password</label>
+                <div class="input-group">
+                    <div class="input-group-text"><i class="fas fa-unlock-alt"></i></div>
+                    <input type="password" class="form-control" id="resetpwd" placeholder="請確認密碼">
+                </div>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <button type="button" id="send" class="btn log-in-btn">送出</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section SetPwd{
+    
+    <script>
+        $(document).ready(function () {
+            $("#send").click(function () { 密碼重置() })
+        })
+
+        function 密碼重置() {
+            var Pwd = $("#pwd").val();
+            var resetPwd = $("#resetpwd").val();
+            var id = $("#fid").val();
+            if ((Pwd=="")||(resetPwd == "")) {
+                swal("欄位不得為空","","error")
+            }
+            else if (Pwd != resetPwd) {
+                seal("請確認輸入的密碼一致","","error")
+            }
+            else {
+                $.post(
+                    "/Home/PwdRes",
+                    { "Pwd": Pwd, "ResetPwd": resetPwd, "id": id },
+                    function (data) {
+                        if (data = "OK") {
+                            swal({
+                                title: "密碼重致成功，請重新登入",
+                                text: "",
+                                type: "success"
+                            }).then(function () {
+                                window.location = "/Home/Login";
+                            });
+                        }
+                        else {
+                            swal("更改密碼失敗請重新輸入", "", "error")
+                        }
+                    },
+                    "json"
+                )
+            }
+            
+
+        }
+
+    </script>
+
+    }
+

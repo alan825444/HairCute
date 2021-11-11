@@ -137,13 +137,15 @@ namespace Haircute.Models
             var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
         }
 
-        public string 重設密碼功能(int id,string Pwd, string CheckPwd) 
+        public string 重設密碼功能(string id,string Pwd, string CheckPwd) 
         {
             demodbEntities db = new demodbEntities();
-            var q = db.tMember.Where(x => x.fID == id).FirstOrDefault();
+            var ID = Convert.ToInt32(id);
+            var q = db.tMember.Where(x => x.fID == ID).FirstOrDefault();
             if (Pwd == CheckPwd)
             {
                 q.fPwd = Pwd;
+                db.SaveChanges();
                 return "OK";
             }
             return "Error";
