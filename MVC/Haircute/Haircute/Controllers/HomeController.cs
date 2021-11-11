@@ -210,5 +210,29 @@ namespace Haircute.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }
+
+        public ActionResult ForgotPassword() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgotPassword(string Email)
+        {
+            var result = new registFunction().忘記密碼(Email);
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult PwdReset(int ID) 
+        {
+            Session["TempID"] = ID;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PwdRest(string Pwd, string CheckPwd)
+        {
+            
+        }
     }
 }
