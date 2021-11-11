@@ -61,11 +61,11 @@ namespace Haircute.Controllers
                     db.SaveChanges();
                     var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault().fID;
                     //屬於mail功能部份
-                    db.tDesigner.Add(new tDesigner { fk_Member = id });
-                    db.SaveChanges();
-                    db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
-                    db.SaveChanges();
-                    //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                    //db.tDesigner.Add(new tDesigner { fk_Member = id });
+                    //db.SaveChanges();
+                    //db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
+                    //db.SaveChanges();
+                    new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
                     return RedirectToAction("ConfirmPage");
                 }
                 catch (Exception exe)
