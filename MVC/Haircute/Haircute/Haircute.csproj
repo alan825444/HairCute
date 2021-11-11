@@ -469,6 +469,7 @@
     <Content Include="Views\DesgnerPage\DesignerPage.cshtml" />
     <Content Include="Views\UserCenter\Index.cshtml" />
     <Content Include="Views\MemberCenter\remindpage.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
