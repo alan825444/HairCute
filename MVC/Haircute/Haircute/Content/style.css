@@ -2608,7 +2608,7 @@ ul li {
     }
 
     .search-bar .dropdown-toggle {
-        width: 20vw;
+        width: 40vw;
         border: rgba(128, 128, 128, 0.3) 1px solid;
         border-radius: 1rem;
     }
