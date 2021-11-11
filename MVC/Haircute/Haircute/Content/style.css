@@ -551,7 +551,7 @@ ul li {
 }
 .classy-nav-container .classy-navbar .bg-curve {
   position: absolute;
-  width: 60.5%;
+  width: 52.8%;
   height: 100%;
   top: 0;
   right: 0;
@@ -867,20 +867,20 @@ ul li {
 }*/
 .hair-style-img {
   position: absolute;
-  width: 430px;
-  height: 330px;
+  width: 320px;
+  height: 450px;
   overflow: hidden;
   border-radius: 1rem;
   /*background-image: url(../img/banner-img/hair4.jpeg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 120%;*/
-  left: 10%;
-  top: 30%;
+  left: 25%;
+  top: 20%;
 }
 .hair-style-img2 {
   position: absolute;
-  width: 330px;
+  width: 280px;
   height: 350px;
   overflow: hidden;
   border-radius: 1rem;
@@ -931,8 +931,8 @@ ul li {
   }
     .hair-style-img {
         height: calc(90% - 50px);
-        width: 70vw;
-        left: -5%;
+        width: 50vw;
+        left: 5%;
         top: -5%;
     }
     .hair-style-img2 {
