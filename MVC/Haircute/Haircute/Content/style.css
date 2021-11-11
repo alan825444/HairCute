@@ -3052,11 +3052,33 @@ section .section-title span {
     background-position: center;
     margin-bottom: -250px;
 }
+.log-in-area-r {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 400px;
+    border-radius: 2rem;
+    border: hsla(329, 82%, 61%, 0.4) 3px outset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 450px;
+    background-image: url(img/bg-img/log-in.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    margin-bottom: -10px;
+}
 @media screen and (max-width: 768px) {
     .log-in-area {
         background-size: cover;
         margin-top: 360px;
         margin-bottom: -200px;
+    }
+    .log-in-area-r {
+        background-size: cover;
     }
 }
 
