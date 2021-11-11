@@ -418,7 +418,14 @@ namespace Haircute.Models
                 comment.Comment = item.fComment;
                 comment.Score = (int)item.fScore;
                 comment.MemberName = item.tMember.fNickname;
-                comment.HeadStack = item.tMember.fHeadstack;
+                if (item.tMember.fHeadstack == null)
+                {
+                    comment.HeadStack = "preview.jpg";
+                }
+                else
+                {
+                    comment.HeadStack = item.tMember.fHeadstack;
+                }
 
 
                 comments.Add(comment);

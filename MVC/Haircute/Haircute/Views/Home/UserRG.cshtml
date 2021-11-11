@@ -76,9 +76,9 @@
                     <label class="form-check-label mt-4" for="inlineRadio2">先生</label>
                 </div>*@
                                         <span style="font-size:20px">先生</span>
-                                        @Html.RadioButtonFor(model => model.fGender, "男")
+                                        @Html.RadioButtonFor(model => model.fGender, "1")
                                         <span style="font-size:20px">女士</span>
-                                        @Html.RadioButtonFor(model => model.fGender, "女")
+                                        @Html.RadioButtonFor(model => model.fGender, "2")
                                         @Html.ValidationMessageFor(model => model.fGender, "", new { @class = "text-danger" })
                                     </div>
                                     <div class="col-md-5 c0l-12">

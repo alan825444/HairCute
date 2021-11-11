@@ -81,6 +81,8 @@ namespace Haircute.Controllers
                 int SSID = Convert.ToInt32(User.Identity.Name);
                 tDesigner q = db.tDesigner.Where(m => m.fk_Member == SSID).FirstOrDefault();
                 q.fHeadSticker = newfileName180;
+                var q2 = db.tMember.Where(x => x.fID == SSID).FirstOrDefault();
+                q2.fHeadstack = newfileName180;
                 db.SaveChanges();
                 return Json(new { Message = "OK" });
             }
@@ -125,6 +127,10 @@ namespace Haircute.Controllers
         {
             int SSID = Convert.ToInt32(User.Identity.Name);
             string result = new 資料儲存器().會員資料修改(SSID, m);
+            if (result == "OK")
+            {
+                Session["Member"] = m.fNickname;
+            }
             return Json(new { Message = result});
         }
 
