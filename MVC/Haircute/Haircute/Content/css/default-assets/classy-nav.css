@@ -139,14 +139,14 @@ img {
   line-height: 1;
 }
 /* Down Arrow Icon for Megamenu */
-@font-face {
+/*@font-face {
   font-family: 'classyfonts';
   src: url("../../fonts/classy.eot?fftrrv");
   src: url("../../fonts/classy.eot?fftrrv#iefix") format("embedded-opentype"), url("../../fonts/classy.ttf?fftrrv") format("truetype"), url("../../fonts/classy.woff?fftrrv") format("woff"), url("../../fonts/classy.svg?fftrrv#classyfonts") format("svg");
   font-weight: normal;
   font-style: normal;
-}
-.icon-classy-nav-down-arrow {
+}*/
+/*.icon-classy-nav-down-arrow {
   font-family: 'classyfonts';
   speak: none;
   font-style: normal;
@@ -160,24 +160,24 @@ img {
 .icon-classy-nav-down-arrow:before {
   content: "\e900";
 }
-.classynav ul li.megamenu-item>a:after,
-.classynav ul li.has-down>a:after {
-  font-family: 'classyfonts';
-  content: "\e900";
-  font-size: 12px;
-  color: #000000;
-  padding-left: 5px;
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
+.classynav ul li.megamenu-item > a:after,
+.classynav .layoutMember li.has-down > a:after {
+    font-family: 'classyfonts';
+    content: "\e900";
+    font-size: 12px;
+    color: #000000;
+    padding-left: 5px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
 }
-.classynav ul li ul li.has-down>a::after {
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  position: absolute;
-  top: 0;
-  right: 10px;
-  z-index: 3;
-}
+.classynav ul li .layoutMember li.has-down > a::after {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 3;
+}*/
 /* button css */
 .classy-btn {
   position: relative;
