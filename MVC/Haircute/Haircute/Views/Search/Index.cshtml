@@ -16,7 +16,7 @@
         </div>
         <div class="location-dropdown col-md-3 col-sm-10">
             <select class="form-select col-10" aria-label="Default select example" name="fArea" id="fArea">
-                <option>--------</option>
+                <option>-地區-</option>
             </select>
         </div>
         <div class="col-md-6 col-sm-10 d-flex flex-md-row pt-1 tag_search_area">
@@ -28,7 +28,7 @@
                     </span>
                 </h4>
             </div>
-            <div class="col-md-8 col-sm-12">
+            <div class="col-md-8 col-sm-12 tag_search_div">
                 <select name="test" class="tag_search" multiple>
                     @{
                         foreach (var item in ViewBag.關鍵字)
@@ -121,6 +121,15 @@
                                                          class="img-thumbnail img-fluid rounded-circle store_image">
                                                 </a>
                                                 <h4 class="card-title">@item.DesgnerName</h4>
+                                                <a href="#" class="mt-2 list_store_review">
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                    <i class="fas fa-star"></i>
+                                                </a>
+                                                <a class="btn btn-outline-info" href="/StoreInfo/idforD/@item.設計師ID">查看更多
+                                                </a>
                                             </div>
                                         </div>
                                     </div>

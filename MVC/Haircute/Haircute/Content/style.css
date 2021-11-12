@@ -2810,6 +2810,18 @@ section .section-title span {
   /* border-radius: 50%; */
 }
 
+.backside .card-body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+    .backside .card-body .btn {
+        margin-top: 10px;
+        width: 10vw;
+        text-align:center;
+    }
+
 .store_image {
   width: 10vw;
   height: auto;
