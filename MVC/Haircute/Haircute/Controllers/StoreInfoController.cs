@@ -56,5 +56,31 @@ namespace Haircute.Controllers
             TempData["ID"] = id;
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public ActionResult BookSend(預約資料類別 mdata)
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name);
+            string result = new 資料儲存器().預約資料儲存(SSID, mdata);
+
+            if (result == "success")
+            {
+                ViewBag.Message = "預約成功";
+                TempData["ID"] = mdata.fDid;
+                return Json(result, JsonRequestBehavior.AllowGet);
+            }
+            ViewBag.Message = "此時段已經被預約請重新預約";
+            TempData["ID"] = mdata.fDid;
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult BookDataGet(string designerId, string queryDay)
+        {
+            int SSID = Convert.ToInt32(designerId);
+            DateTime date = Convert.ToDateTime(queryDay);
+            預約查詢類別 data = new 資料產生器().取得預約資料(SSID, date);
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }
