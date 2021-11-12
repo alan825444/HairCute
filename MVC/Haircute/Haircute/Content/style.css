@@ -3077,7 +3077,7 @@ section .section-title span {
     align-items: center;
     height: 300px;
     width: 450px;
-    background-image: url(img/bg-img/log-in.jpg);
+    background-image: url(../img/bg-img/log-in.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
