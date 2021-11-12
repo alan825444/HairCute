@@ -14,11 +14,28 @@ namespace Haircute.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
-            ViewBag.SelectList = selectLists;
-            ViewBag.圖片 = new 資料產生器().取得最新上傳();
-            ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
-            return View();
+            if (User.Identity.Name != "")
+            {
+                SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+                ViewBag.SelectList = selectLists;
+                ViewBag.圖片 = new 資料產生器().取得最新上傳();
+                ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
+                ViewBag.評論 = new 資料產生器().評論回傳();
+                ViewBag.預約排行 = new 資料產生器().預約排行();
+
+                return View("", "_LayourMember");
+            }
+            else
+            {
+                SelectList selectLists = new SelectList(new CityArea().getcity(), "fID", "fCity");
+                ViewBag.SelectList = selectLists;
+                ViewBag.圖片 = new 資料產生器().取得最新上傳();
+                ViewBag.關鍵字 = new 資料產生器().取得關鍵字();
+                ViewBag.評論 = new 資料產生器().評論回傳();
+                ViewBag.預約排行 = new 資料產生器().預約排行();
+                return View();
+            }
+            
         }
 
         public ActionResult RGFDesigner()
@@ -44,11 +61,11 @@ namespace Haircute.Controllers
                     db.SaveChanges();
                     var id = db.tMember.Where(k => k.fEmail == m.fEmail).FirstOrDefault().fID;
                     //屬於mail功能部份
-                    db.tDesigner.Add(new tDesigner { fk_Member = id });
-                    db.SaveChanges();
-                    db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
-                    db.SaveChanges();
-                    //new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
+                    //db.tDesigner.Add(new tDesigner { fk_Member = id });
+                    //db.SaveChanges();
+                    //db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x=>x.fk_Member == id).FirstOrDefault().fid });
+                    //db.SaveChanges();
+                    new registFunction().SendEmail(m.fID.ToString(), m.fEmail).Wait();
                     return RedirectToAction("ConfirmPage");
                 }
                 catch (Exception exe)
@@ -193,5 +210,31 @@ namespace Haircute.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index");
         }
+
+        public ActionResult ForgotPassword() 
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ForgotPassword(string Email)
+        {
+            var result = new registFunction().忘記密碼(Email);
+            return Json(result,JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult PwdReset(string ID) 
+        {
+            ViewBag.ID = Convert.ToInt32(new registFunction().decryptstr(ID));
+            return View();
+        }
+
+        public ActionResult PwdRes(string id, string Pwd, string ResetPwd)
+        {
+
+            var result = new registFunction().重設密碼功能(id, Pwd, ResetPwd);
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
     }
+
 }

@@ -22,17 +22,28 @@ namespace Haircute.Controllers
                 var q2 = 0;
                 var q3 = 0;
 
-                if ((TempData["City"] != null) || (TempData["Area"] != null) || (TempData["Area"] != null))
+                if ((TempData["City"].ToString() != "") || (TempData["Area"].ToString() != "") || (TempData["test"].ToString() != ""))
                 {
-                    if ((TempData["City"].ToString() == "") && (TempData["Area"].ToString() == "--------") && (TempData["Area"].ToString() == ""))
+                    if ((TempData["City"].ToString() == "") && (TempData["Area"].ToString() == "--------") && (TempData["test"].ToString() == ""))
                     {
                         ViewBag.搜索結果 = null;
                     }
-                    else if (((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == "--------")) && (TempData["Area"].ToString() != ""))
+                    else if (((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == "")) && (TempData["test"].ToString() != ""))
                     {
                         q = TempData["test"].ToString();
                         q2 = 0;
                         q3 = 0;
+                        ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
+                    }
+                    else if ((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == ""))
+                    {
+                        if (TempData["test"].ToString() != "")
+                        {
+                            q = TempData["test"].ToString();
+                        }
+                        q2 = Convert.ToInt32(TempData["City"]);
+                        q3 = 0;
+
                         ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
                     }
                     else
@@ -40,6 +51,7 @@ namespace Haircute.Controllers
                         q = TempData["test"].ToString();
                         q2 = Convert.ToInt32(TempData["City"]);
                         q3 = Convert.ToInt32(TempData["Area"]);
+
                         ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
                     }
                 }
@@ -60,17 +72,28 @@ namespace Haircute.Controllers
                 var q2 = 0;
                 var q3 = 0;
 
-                if ((TempData["City"] != null) || (TempData["Area"] != null) || (TempData["Area"] != null))
+                if ((TempData["City"].ToString() != "") || (TempData["Area"].ToString() != "") || (TempData["test"].ToString() != ""))
                 {
-                    if ((TempData["City"].ToString() == "") && (TempData["Area"].ToString() == "--------") && (TempData["Area"].ToString() == ""))
+                    if ((TempData["City"].ToString() == "") && (TempData["Area"].ToString() == "--------") && (TempData["test"].ToString() == ""))
                     {
                         ViewBag.搜索結果 = null;
                     }
-                    else if (((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == "--------")) && (TempData["Area"].ToString() != ""))
+                    else if (((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == "")) && (TempData["test"].ToString() != ""))
                     {
                         q = TempData["test"].ToString();
                         q2 = 0;
                         q3 = 0;
+                        ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
+                    }
+                    else if ((TempData["City"].ToString() == "") || (TempData["Area"].ToString() == ""))
+                    {
+                        if (TempData["test"].ToString() != "")
+                        {
+                            q = TempData["test"].ToString();
+                        }
+                        q2 = Convert.ToInt32(TempData["City"]);
+                        q3 = 0;
+
                         ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
                     }
                     else
@@ -78,6 +101,7 @@ namespace Haircute.Controllers
                         q = TempData["test"].ToString();
                         q2 = Convert.ToInt32(TempData["City"]);
                         q3 = Convert.ToInt32(TempData["Area"]);
+
                         ViewBag.搜索結果 = new 資料產生器().回傳搜尋結果(q2, q3, q);
                     }
                 }

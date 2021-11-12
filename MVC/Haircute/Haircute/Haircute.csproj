@@ -316,6 +316,7 @@
     <Compile Include="Models\cDiction.cs" />
     <Compile Include="Models\CityArea.cs" />
     <Compile Include="Models\Service.cs" />
+    <Compile Include="Models\排行類別.cs" />
     <Compile Include="Models\搜尋資料.cs" />
     <Compile Include="Models\照片資料.cs" />
     <Compile Include="Models\用戶.cs" />
@@ -469,6 +470,8 @@
     <Content Include="Views\DesgnerPage\DesignerPage.cshtml" />
     <Content Include="Views\UserCenter\Index.cshtml" />
     <Content Include="Views\MemberCenter\remindpage.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Home\PwdReset.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

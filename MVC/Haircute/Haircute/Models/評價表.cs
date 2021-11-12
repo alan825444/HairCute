@@ -12,6 +12,7 @@ namespace Haircute.Models
         public string Comment { get; set; }
         public string MemberName { get; set; }
         public string Service { get; set; }
+        public string HeadStack { get; set; }
         public DateTime date { get; set; }
        
     }

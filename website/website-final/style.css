@@ -3012,15 +3012,38 @@ section .section-title span {
   background-size: 100%;
   background-position: center;
 }
+.log-in-area-r {
+  position: relative;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 400px;
+  border-radius: 2rem;
+  border: hsla(329, 82%, 61%, 0.4) 3px outset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 450px;
+  background-image: url(img/bg-img/log-in.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  margin-bottom: -10px;
+}
 @media screen and (max-width: 780px) {
   .log-in-area {
     background-size: cover;
   }
+  .log-in-area-r{
+    background-size: cover;
+  }
 }
 
-.log-in-area:hover {
+.log-in-area:hover, .log-in-area-r{
   box-shadow: rgba(102, 102, 102, 0.3) 10px 5px 5px;
 }
+
 
 .log-in-area .form-check-label {
   font-size: 1.1rem;

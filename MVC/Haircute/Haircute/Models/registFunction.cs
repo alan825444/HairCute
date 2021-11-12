@@ -109,5 +109,46 @@ namespace Haircute.Models
             string decryptStr = newString.Substring(1, 3) + newString.Substring(6, 5) + newString.Substring(15, 5);
             return decryptStr;
         }
+
+        public string 忘記密碼(string Email) 
+        {
+            demodbEntities db = new demodbEntities();
+            var q = db.tMember.Where(x => x.fEmail == Email).FirstOrDefault();
+            if (q != null)
+            {
+                密碼重設信件(q.fID.ToString(), q.fEmail).Wait();
+                return "OK";
+            }
+            return "Error";
+        }
+
+        public async Task 密碼重設信件(string FID, string Email)
+        {
+            string 加密ID = encryptstr(FID);
+            var apiKey = Environment.GetEnvironmentVariable("SENDGRID_KEY");
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("alan825444@gmail.com", "Example User");
+            var to = new EmailAddress(Email, "Example User");
+            var subject = "Haircute認證信件";
+            var plainTextContent = "請按以下連結認證信箱";
+            var htmlContent = $"<h3>請點選以下連結重設密碼</h3>";
+            htmlContent += $"<a href='https://localhost:44333/Home/PwdReset/{加密ID}'>重設密碼</a>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
+        }
+
+        public string 重設密碼功能(string id,string Pwd, string CheckPwd) 
+        {
+            demodbEntities db = new demodbEntities();
+            var ID = Convert.ToInt32(id);
+            var q = db.tMember.Where(x => x.fID == ID).FirstOrDefault();
+            if (Pwd == CheckPwd)
+            {
+                q.fPwd = Pwd;
+                db.SaveChanges();
+                return "OK";
+            }
+            return "Error";
+        }
     }
 }
