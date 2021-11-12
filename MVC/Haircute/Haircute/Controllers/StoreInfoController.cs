@@ -61,17 +61,22 @@ namespace Haircute.Controllers
         public ActionResult BookSend(預約資料類別 mdata)
         {
             int SSID = Convert.ToInt32(User.Identity.Name);
-            string result = new 資料儲存器().預約資料儲存(SSID, mdata);
-
-            if (result == "success")
+            int designerId = mdata.fDid;
+            DateTime bookDate = (DateTime)mdata.fDateTime;
+            TimeSpan bookTime = (TimeSpan)mdata.fBookTime;
+            bool alreadyBook = new 資料產生器().預約資料確認(designerId, bookDate, bookTime);
+            if (alreadyBook) 
             {
-                ViewBag.Message = "預約成功";
-                TempData["ID"] = mdata.fDid;
-                return Json(result, JsonRequestBehavior.AllowGet);
+                string result = new 資料儲存器().預約資料儲存(SSID, mdata);
+                if (result == "success")
+                    {
+                        TempData["ID"] = mdata.fDid;
+                        return Json(result, JsonRequestBehavior.AllowGet);
+                    }
             }
-            ViewBag.Message = "此時段已經被預約請重新預約";
             TempData["ID"] = mdata.fDid;
-            return Json(result, JsonRequestBehavior.AllowGet);
+            return Json("fail", JsonRequestBehavior.AllowGet);
+            
         }
 
         [HttpPost]

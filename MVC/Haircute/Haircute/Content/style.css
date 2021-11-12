@@ -3331,6 +3331,11 @@ section .section-title span {
 }
 
 /*menu-area*/
+#menu-area{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 #menu-area .menu-info {
   background-color: rgba(218, 98, 124, 0.2);
   display: flex;
@@ -3380,6 +3385,81 @@ section .section-title span {
 .menu-description{
   color: #868383;
 }
+
+#time-table .modal-header{
+  background-color: #006284;
+  padding: 15px 10px;
+}
+#time-table .modal-content{
+  border-radius: 6px;
+  border: none;
+}
+#time-table .modal-header h5{
+  color: whitesmoke;
+}
+
+.modal-body .reservation-btns{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body #bookDate{
+  width: 25vw;
+  height: 5vh;
+  text-align: center;
+  font-size: 1rem;
+  color: #3b4241;
+  border: #3b4241 1px solid;
+  border-radius: 0.5rem;
+  margin: 0 15px 10px 0;
+}
+.modal-body .reservation-colors{
+  display: inline-flex;
+  justify-content: center;
+}
+.reservation-colors p{
+  padding: 4px 7px;
+  margin: 0 5px;
+}
+.modal-body .bookbtn{
+  margin-bottom: 10px;
+  padding: 5px 10px;
+}
+.modal-body .table{
+  margin-top: 10px;
+}
+.bookoccupied{
+	background:rgba(251, 154, 102, 0.8) !important;
+}
+.bookouttime{
+	background:#bbb !important;
+}
+
+#border{
+  border: 1px solid rgba(128, 128, 128, 0.6);
+}
+.bookuseables{
+	background-color: rgba(48, 171, 193, 0.6);
+}
+tr .bookouttime:hover,tr .bookoccupied:hover{
+	cursor:not-allowed !important;
+}
+tr .bookuseable:hover{
+	cursor:pointer;
+	background:rgba(48, 171, 193, 0.6) !important;
+}
+tr .bookuseable:active{
+	background:rgba(48, 171, 193, 0.6) !important;
+}
+.bookselected {
+	background:rgba(48, 171, 193, 0.6)!important;
+}
+
+#bookTable th {
+	text-align: center;
+}
+
 .dateTime-area{
   display: flex;
   flex-direction: column;
@@ -3428,6 +3508,9 @@ section .section-title span {
   }
   .datepicker, .timepicker{
     width: 45vw;
+  }
+  .modal-body #bookDate{
+    width: 50vw;
   }
   .reserve-btn{
     margin: 15px 0 ;
@@ -4197,7 +4280,7 @@ margin: 15px 0 25px 0;
           font-size: 16px;
   }
 }
-/*reservation-area ©É¸©ª©¥»(©ñBackstage)*/
+/*reservation-area ï¿½É¸ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½Backstage)*/
 .reservation-area-e {
     display: flex;
     justify-content: center;

@@ -507,6 +507,27 @@ namespace Haircute.Models
 
         }
 
+        public Boolean 預約資料確認(int SSID, DateTime date, TimeSpan time)
+        {
+            var q = db.tBook.Where(m => m.fk_Designer == SSID).Where(m => DbFunctions.TruncateTime(m.fDateTime) == date);
+            List<已預約資料類別> q2 = new List<已預約資料類別>();
+            if (q != null)
+            {
+                foreach (var item in q)
+                {
+                    q2.Add(new 已預約資料類別 { bookTime = (TimeSpan)item.fBookTime });
+                }
+                foreach (var item in q2)
+                {
+                    if (item.bookTime == time)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
 
     }
 }
