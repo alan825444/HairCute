@@ -528,6 +528,64 @@ namespace Haircute.Models
             return true;
         }
 
+        public List<設計師預約資料> 預約資料回傳(int SSID)
+        {
+            demodbEntities db = new demodbEntities();
+            List<設計師預約資料> data = new List<設計師預約資料>();
+            var time = DateTime.Now;
+            var id = db.tMember.Where(x => x.fID == SSID).FirstOrDefault().tDesigner.FirstOrDefault().fid;
+            var q = db.tBook.Where(x => x.fk_Designer == id && x.fDateTime >= time).OrderBy(x => x.fDateTime).ThenBy(x => x.fBookTime);
+            if (q != null)
+            {
+                foreach (var item in q)
+                {
+                    設計師預約資料 tempdata = new 設計師預約資料();
+                    tempdata.name = db.tMember.Where(x => x.fID == item.fk_Member).FirstOrDefault().fUsername;
+                    tempdata.date = ((DateTime)item.fDateTime).ToString("d");
+                    tempdata.booktime = ((TimeSpan)item.fBookTime).ToString(@"hh\:mm");
+                    tempdata.phone = item.fPhone;
+                    var services = db.tService.Where(x => x.fid == item.fk_Service).FirstOrDefault();
+                    tempdata.service = services.fServicN;
+                    tempdata.price = services.fprice;
+                    data.Add(tempdata);
+                }
+            }
+            return data;
+        }
+
+        public List<設計師預約資料> 搜尋預約回傳(int SSID , string Date)
+        {
+            demodbEntities db = new demodbEntities();
+            List<設計師預約資料> data = new List<設計師預約資料>();
+            if (Date == "")
+            {
+                return data;
+            }
+            else
+            {
+                var time = DateTime.Parse(Date);
+                var id = db.tMember.Where(x => x.fID == SSID).FirstOrDefault().tDesigner.FirstOrDefault().fid;
+                var q = db.tBook.Where(x => x.fk_Designer == id && x.fDateTime == time).OrderBy(x => x.fDateTime).ThenBy(x => x.fBookTime);
+                if (q != null)
+                {
+                    foreach (var item in q)
+                    {
+                        設計師預約資料 tempdata = new 設計師預約資料();
+                        tempdata.name = db.tMember.Where(x => x.fID == item.fk_Member).FirstOrDefault().fUsername;
+                        tempdata.date = ((DateTime)item.fDateTime).ToString("d");
+                        tempdata.booktime = ((TimeSpan)item.fBookTime).ToString(@"hh\:mm");
+                        tempdata.phone = item.fPhone;
+                        var services = db.tService.Where(x => x.fid == item.fk_Service).FirstOrDefault();
+                        tempdata.service = services.fServicN;
+                        tempdata.price = services.fprice;
+                        data.Add(tempdata);
+                    }
+                }
+                return data;
+            }
+            
+        }
+
 
     }
 }

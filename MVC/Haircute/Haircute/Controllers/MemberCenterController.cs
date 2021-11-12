@@ -171,5 +171,20 @@ namespace Haircute.Controllers
         {
             return View();
         }
+
+        public ActionResult 設計師預約查看()
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name);
+            var data = new 資料產生器().預約資料回傳(SSID);
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult 設計師查詢日期訂單(string date)
+        {
+            int SSID = Convert.ToInt32(User.Identity.Name); ;
+            var data = new 資料產生器().搜尋預約回傳(SSID, date);
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -325,6 +325,7 @@
     <Compile Include="Models\registFunction.cs" />
     <Compile Include="Models\設計師資料.cs" />
     <Compile Include="Models\設計師個人資料.cs" />
+    <Compile Include="Models\設計師預約資料.cs" />
     <Compile Include="Models\評價表.cs" />
     <Compile Include="Models\資料儲存器.cs" />
     <Compile Include="Models\資料庫.cs" />
