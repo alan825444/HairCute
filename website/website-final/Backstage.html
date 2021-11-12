@@ -241,38 +241,45 @@
           <a href="#" ><div class="Tab1-back"><span>店家</span></div></a>
           <a href="#" ><div class="Tab2-back"><span>服務</span></div></a>
           <a href="#" ><div class="Tab3-back"><span>作品</span></div></a>
-          <a href="#" ><div class="Tab4-back"><span>預約</span></div></a>
+          <a href="#" ><div class="Tab4-back"><span>我的預約</span></div></a>
+          <a href="#" ><div class="Tab5-back"><span>誰預約我</span></div></a>
         </div>
       </div>
       <script>
         $(document).ready(function(){
           $(".Tab1-back").addClass('change');
-          $('#service-area,#item-area,#reservation-area').hide();
+          $('#service-area,#item-area,#reservation-area,#who-book-me').hide();
         })
         $(".Tab1-back").click(function(){
-          $(".Tab3-back,.Tab2-back,.Tab4-back").removeClass('change');
+          $(".Tab3-back,.Tab2-back,.Tab4-back,.Tab5-back").removeClass('change');
           $(this).addClass('change');
           $('#store-area').fadeIn();
-          $('#service-area,#item-area,#reservation-area').fadeOut();
+          $('#service-area,#item-area,#reservation-area,#who-book-me').fadeOut();
         })
         $(".Tab2-back").click(function(){
-          $(".Tab3-back,.Tab1-back,.Tab4-back").removeClass('change');
+          $(".Tab3-back,.Tab1-back,.Tab4-back,.Tab5-back").removeClass('change');
           $(this).addClass('change');
           $('#service-area').fadeIn();
-          $('#store-area,#item-area,#reservation-area').fadeOut();
+          $('#store-area,#item-area,#reservation-area,#who-book-me').fadeOut();
         })
         $(".Tab3-back").click(function(){
-          $(".Tab2-back,.Tab1-back,.Tab4-back").removeClass('change');
+          $(".Tab2-back,.Tab1-back,.Tab4-back,.Tab5-back").removeClass('change');
           $(this).addClass('change');
           $('#item-area').fadeIn();
-          $('#service-area,#store-area,#reservation-area').fadeOut();
+          $('#service-area,#store-area,#reservation-area,#who-book-me').fadeOut();
         })
         $(".Tab4-back").click(function(){
-          $(".Tab2-back,.Tab1-back,.Tab3-back").removeClass('change');
+          $(".Tab2-back,.Tab1-back,.Tab3-back,.Tab5-back").removeClass('change');
           $(this).addClass('change');
           $('#reservation-area').fadeIn();
-          $('#service-area,#store-area,#item-area').fadeOut();
+          $('#service-area,#store-area,#item-area,#who-book-me').fadeOut();
         })
+        $(".Tab5-back").click(function(){
+          $(".Tab2-back,.Tab1-back,.Tab3-back,.Tab4-back").removeClass('change');
+          $(this).addClass('change');
+          $('#who-book-me').fadeIn();
+          $('#service-area,#store-area,#item-area,#reservation-area').fadeOut();
+        })    
       </script>
 
       <!--store-area start-->
@@ -598,7 +605,6 @@
                 </div>
               </div>
             </div>
-    
           </div>
           <script>
             $(document).ready(function () {
@@ -610,6 +616,36 @@
             })
           </script>
           <!--reservation-area End-->
+          <!--who-book-me-area start-->
+           <div id="who-book-me">
+            <div class="row reservation-area-e">
+              <div class="col-md-6 select-date">
+                <input type="date" style="margin-right: 10px;">
+                <button class="btn bookbtn btn-outline-primary" name="btn-myBook">搜尋</button>
+              </div>
+              <div class="reservation-item-e col-md-10 col-10 mb-3">
+                <div class="reservation-info-e col-md-12">
+                  <div class="reservation-body-e">
+                    <ul>
+                      <li>姓名：<span>路人甲</span>
+                      </li>
+                      <li>電話：<span>09123123123</span>
+                      </li>
+                      <li>預約日期：<span>2021/10/12</span>
+                      </li>
+                      <li>預約項目：<span>造型剪髮+洗頭</span>
+                      </li>
+                      <li>預約時間：<span>09:00</span>
+                      </li>
+                      <li>金額：<span>$499</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+          <!--who-book-me-area End-->
     </div>
   </main>
   <!-- ***** backstage Area Start ***** -->

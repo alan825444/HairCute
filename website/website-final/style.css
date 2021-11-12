@@ -4637,7 +4637,16 @@ color: rgb(251, 177, 5);
   position: relative;
   display: inline-block;
   font-size: 20px;
-  width: 60px;
+  width: 100px;
+  height: 30px;
+  padding-left: 5px;
+}
+.Tab5-back{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 100px;
   height: 30px;
   padding-left: 5px;
 }
@@ -4652,4 +4661,14 @@ color: rgb(251, 177, 5);
 }
 .item-area{
   margin-bottom: 150px;
+}
+.select-date{
+  justify-content: center; 
+  display: flex; 
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 767px) {
+  .select-date{
+    margin-top: 20px;
+  }
 }

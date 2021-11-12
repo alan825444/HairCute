@@ -4001,8 +4001,8 @@ margin: 15px 0 25px 0;
 
   .design-item {
       padding-left: 40px;
-      margin-top: -50px;
       width: 50%;
+      margin-top:10px;
   }
 
   .design-head {
@@ -4737,7 +4737,16 @@ color: rgb(251, 177, 5);
   position: relative;
   display: inline-block;
   font-size: 20px;
-  width: 60px;
+  width: 100px;
+  height: 30px;
+  padding-left: 5px;
+}
+.Tab5-back{
+  border-radius: 10px;
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  width: 100px;
   height: 30px;
   padding-left: 5px;
 }
@@ -4750,11 +4759,23 @@ color: rgb(251, 177, 5);
   margin-bottom: 60px;
   width: 450px;
 }
+.select-date{
+  justify-content: center; 
+  display: flex; 
+  margin-bottom: 20px;
+}
 @media only screen and (max-width: 767px) {
     .back-form {
         width: 100%;
     }
-    .Backstage-edit{
-        margin-bottom:50px;
+    .Backstage-edit {
+        margin-bottom: 50px;
     }
+    .item-area{
+        margin-top:20px;
+    }
+    .select-date {
+        margin-top: 20px;
+    }
+    
 }
