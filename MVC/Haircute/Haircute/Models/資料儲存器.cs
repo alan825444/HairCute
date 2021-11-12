@@ -166,5 +166,31 @@ namespace Haircute.Models
             }
                
         }
+
+        public string 預約資料儲存(int SSID, 預約資料類別 data)
+        {
+            try
+            {
+                if (data != null)
+                {
+                    demodbEntities db = new demodbEntities();
+                    //var q = db.tBook.Where(x => x.fk_Member == SSID).FirstOrDefault();
+                    tBook bookData = new tBook();
+                    bookData = new tBook { fk_Designer = data.fDid, fk_Service = data.fSeverid, fName = data.fName, fPhone = data.fPhone, fDateTime = data.fDateTime, fBookTime = data.fBookTime, fk_Member = SSID, fstatus = "T" };
+                    db.tBook.Add(bookData);
+                    db.SaveChanges();
+                    return "success";
+                }
+
+                return "fail";
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+
+
+        }
     }
 }

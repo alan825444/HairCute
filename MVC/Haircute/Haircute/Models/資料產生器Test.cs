@@ -62,7 +62,7 @@ namespace Haircute.Models
             {
                 foreach (var item in q2)
                 {
-                    data.Add(new Service { ID = item.fid.ToString(), Item = item.fServicN, Price = item.fprice });
+                    data.Add(new Service { ID = item.fid.ToString(), Item = item.fServicN, Price = item.fprice, DesignerId = q.fid });
                 }
             }
             return data;

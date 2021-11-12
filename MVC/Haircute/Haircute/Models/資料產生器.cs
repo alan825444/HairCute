@@ -180,7 +180,7 @@ namespace Haircute.Models
             {
                 foreach (var item in q2)
                 {
-                    data.Add(new Service { ID = item.fid.ToString(), Item = item.fServicN, Price = item.fprice, DesignerID= q.fid });
+                    data.Add(new Service { ID = item.fid.ToString(), Item = item.fServicN, Price = item.fprice, DesignerId = q.fid });
                 }
             }
             return data;
@@ -478,6 +478,33 @@ namespace Haircute.Models
                 data.Add(tempdata);
             }
             return data;
+        }
+
+        public 預約查詢類別 取得預約資料(int SSID, DateTime date)
+        {
+            var q = db.tWork.Where(m => m.fk_Designer == SSID).FirstOrDefault();
+            var q2 = db.tBook.Where(m => m.fk_Designer == SSID).Where(m => DbFunctions.TruncateTime(m.fDateTime) == date);
+            預約查詢類別 bookData = new 預約查詢類別();
+            List<已預約資料類別> q3 = new List<已預約資料類別>();
+            if (q2 != null)
+            {
+                foreach (var item in q2)
+                {
+                    q3.Add(new 已預約資料類別 { bookTime = (TimeSpan)item.fBookTime });
+                }
+
+            }
+            if (q3 != null)
+            {
+                bookData = new 預約查詢類別 { startTime = (TimeSpan)q.fStartTime, closeTime = (TimeSpan)q.fEndTime, bookTimeList = q3 };
+            }
+            else
+            {
+                bookData = new 預約查詢類別 { startTime = (TimeSpan)q.fStartTime, closeTime = (TimeSpan)q.fEndTime };
+            }
+            return bookData;
+
+
         }
 
 
