@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmedPage";
+    Layout = "~/Views/Shared/_LayourMember.cshtml";
+}
+
+<div style="height:70px"></div>
+<div class="container">
+    <div class="col-12 text-center" style="margin-top:200px; margin-bottom:380px">
+        <h1>@ViewBag.result</h1>
+        <h4><a href="/Home/Index">自行跳轉至會員中心</a></h4>
+    </div>
+</div>
+
+<script>
+    setTimeout((()=> window.location = "/MemberCenter/Index"),1000)
+</script>

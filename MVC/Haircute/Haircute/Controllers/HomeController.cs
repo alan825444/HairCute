@@ -151,17 +151,30 @@ namespace Haircute.Controllers
             int cfID = Convert.ToInt32(new registFunction().decryptstr(ID));
             demodbEntities db = new demodbEntities();
             tMember 認證 = db.tMember.FirstOrDefault(p => p.fID == cfID);
-            認證.fconfirmation = "Y";
-            db.SaveChanges();
-            db.tDesigner.Add(new tDesigner { fk_Member = cfID });
-            db.SaveChanges();
-            db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x => x.fk_Member == cfID).FirstOrDefault().fid });
-            db.SaveChanges();
-            FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(),true);
-            Session["Member"] = 認證.fNickname;
-            Session["ID"] = 認證.fID.ToString();
-            return RedirectToAction("Index");
+            if (認證.fconfirmation == null)
+            {
+                認證.fconfirmation = "Y";
+                db.SaveChanges();
+                db.tDesigner.Add(new tDesigner { fk_Member = cfID });
+                db.SaveChanges();
+                db.tWork.Add(new tWork { fk_Designer = db.tDesigner.Where(x => x.fk_Member == cfID).FirstOrDefault().fid });
+                db.SaveChanges();
+                FormsAuthentication.RedirectFromLoginPage(認證.fID.ToString(), true);
+                Session["Member"] = 認證.fNickname;
+                Session["ID"] = 認證.fID.ToString();
+                TempData["result"] = "認證成功，請到會員中心編輯店鋪資訊";
+                return RedirectToAction("ConfirmedPage");
+            }
+            else
+            {
+                Session["Member"] = 認證.fNickname;
+                Session["ID"] = 認證.fID.ToString();
+                TempData["result"] = "您的帳號已通過驗證";
+                return RedirectToAction("ConfirmedPage");
+            }
+           
         }
+
 
         public ActionResult Login()
         {
@@ -186,6 +199,20 @@ namespace Haircute.Controllers
 
         public ActionResult ConfirmPage()
         {
+            return View();
+        }
+
+        public ActionResult ConfirmedPage()
+        {
+            if (TempData["result"] != null)
+            {
+                ViewBag.result = TempData["result"];
+            }
+            else
+            {
+                ViewBag.result = "您的帳號已通過驗證";
+            }
+            
             return View();
         }
 

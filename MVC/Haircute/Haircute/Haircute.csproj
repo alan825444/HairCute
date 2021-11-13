@@ -476,6 +476,7 @@
     <Content Include="Views\MemberCenter\remindpage.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
     <Content Include="Views\Home\PwdReset.cshtml" />
+    <Content Include="Views\Home\ConfirmedPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
