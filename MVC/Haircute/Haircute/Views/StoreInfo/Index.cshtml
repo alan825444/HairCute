@@ -341,10 +341,33 @@
                                         if (data == "success") {
                                             $td.removeClass().addClass("bookoccupied").unbind("click");
                                             swal("預約成功", "", "success");
-                                        } else {
-                                            swal("此時段已被預約，請重新預約", "", "error");
+                                            swal({
+                                                data: "提示",
+                                                text: "預約成功",
+                                                type: "success"
+                                            }).then(function () {
+                                                window.location = `/StoreInfo/idforD/${fDesignerId}`;
+                                            });
                                         }
-                                        window.location.reload();
+                                        else if (data == "Login") {
+                                            swal({
+                                                data: "提示",
+                                                text: "尚未登入無法進行預約，請按下確定跳轉到登入頁面",
+                                                type: "success"
+                                            }).then(function () {
+                                                window.location = "/Home/Login";
+                                            });
+                                        }
+                                        else {
+                                            swal({
+                                                data: "提示",
+                                                text: "此時段已被預約，請重新預約",
+                                                type: "success"
+                                            }).then(function () {
+                                                window.location = `/StoreInfo/idforD/${fDesignerId}`;
+                                            });
+                                        }
+                                        /*window.location.reload();*/
                                     }, "json");
                                 }
                             }

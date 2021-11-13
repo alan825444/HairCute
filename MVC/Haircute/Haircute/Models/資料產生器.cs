@@ -470,7 +470,7 @@ namespace Haircute.Models
                 {
                     var city = db.tCity.Where(x => x.fID == q2.fStoreCity).FirstOrDefault().fCity;
                     var Area = db.tArea.Where(x => x.fid == q2.fStoreArea).FirstOrDefault().fArea;
-                    tempdata.address = q2.fAddress + city + Area;
+                    tempdata.address =  city + Area + q2.fAddress;
 
                 }
                 
