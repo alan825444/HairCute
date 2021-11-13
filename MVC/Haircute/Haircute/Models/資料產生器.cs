@@ -207,13 +207,10 @@ namespace Haircute.Models
             demodbEntities db = new demodbEntities();
             List<int> ID = new List<int>();
             List<照片資料> data = new List<照片資料>();
-            var q = db.tPhoto.OrderByDescending(x => x.fid).Take(30).GroupBy(x => x.fk_Designer).OrderBy(x => Guid.NewGuid()).Select(x=>new { 數量=x.Count() , ID = x.Key }).Take(5);
+            var q = db.tPhoto.OrderByDescending(x => x.fid).Take(30).GroupBy(x => x.fk_Designer).OrderBy(x => Guid.NewGuid()).Select(x => new { 數量 = x.Count(), ID = x.Key }).Where(x => x.數量 >= 2).Take(5);
             foreach (var item in q)
             {
-                if (item.數量>=2)
-                {
-                    ID.Add((int)item.ID);
-                }
+                ID.Add((int)item.ID);
             }
             foreach (var item in ID)
             {
