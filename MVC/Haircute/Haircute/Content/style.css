@@ -3442,6 +3442,9 @@ section .section-title span {
 .bookuseables{
 	background-color: rgba(48, 171, 193, 0.6);
 }
+.bookuseable{
+    background-color: white;
+}
 tr .bookouttime:hover,tr .bookoccupied:hover{
 	cursor:not-allowed !important;
 }

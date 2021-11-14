@@ -304,7 +304,6 @@
             $("[name='btn-myBook']").click(submitQuery);
 
             function getReserve() {
-                
                 $('.bookselected').each(function () {
                     /*根據所在的行取得當前預約的時間段和預約的日期，並進行相應的資料初始化 */
 
@@ -345,33 +344,22 @@
                                 action: function () {
                                     $.post("/StoreInfo/BookSend", { mdata: params }, function (data, status) {
                                         /*如果預約成功，將原來的bookuseable變為bookoccupied，並且解除點擊事件，不可預約*/
-                                        console.log(data);
                                         if (data == "success") {
                                             $td.removeClass().addClass("bookoccupied").unbind("click");
-                                            swal("預約成功", "", "success");
-                                            swal({
-                                                data: "提示",
-                                                text: "預約成功",
-                                                type: "success"
-                                            }).then(function () {
+                                            swal("預約成功", "", "success")
+                                            .then(function () {
                                                 window.location = `/StoreInfo/idforD/${fDesignerId}`;
                                             });
                                         }
                                         else if (data == "Login") {
-                                            swal({
-                                                data: "提示",
-                                                text: "尚未登入無法進行預約，請按下確定跳轉到登入頁面",
-                                                type: "success"
-                                            }).then(function () {
+                                            swal("尚未登入無法進行預約，請按下確定跳轉到登入頁面", "", "error")
+                                            .then(function () {
                                                 window.location = "/Home/Login";
                                             });
                                         }
                                         else {
-                                            swal({
-                                                data: "提示",
-                                                text: "此時段已被預約，請重新預約",
-                                                type: "success"
-                                            }).then(function () {
+                                            swal("此時段已被預約，請重新預約", "", "error")
+                                            .then(function () {
                                                 window.location = `/StoreInfo/idforD/${fDesignerId}`;
                                             });
                                         }
@@ -508,7 +496,16 @@
 
                     /*所有可以預約的td绑定一個click事件，即點擊表示選中，再點一次恢復原来狀態，直到點擊預約按钮預約成功後，解除click事件，並由bookuseable變為bookoccupied*/
                     $('tr .bookuseable').bind('click', function () {
-                        $(this).toggleClass('bookselected')
+                        $(this).toggleClass('bookselected').removeClass("bookuseable");
+                        $('tr .bookuseable').toggleClass('bookouttime');
+                        if ($(this).hasClass("bookselected")) {
+                            if ($('tr .bookuseable').hasClass('bookouttime') != true) {
+                                swal("請單次預約一個時段", "", "error");
+                                submitQuery();
+                            }
+                        } else {
+                            $(this).addClass("bookuseable");
+                        }
                     })
 
                 }, "json");
