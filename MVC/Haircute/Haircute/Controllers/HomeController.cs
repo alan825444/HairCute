@@ -212,10 +212,9 @@ namespace Haircute.Controllers
             {
                 ViewBag.result = "您的帳號已通過驗證";
             }
-            
+
             return View();
         }
-
         public ActionResult Search() 
         {
             string Strtest = TempData["test"].ToString();
