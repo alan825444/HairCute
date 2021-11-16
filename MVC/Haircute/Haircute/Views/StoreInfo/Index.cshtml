@@ -123,7 +123,7 @@
                             <div class="row reservation-area">
                                 <div class="reservation-btns d-flex flex-md-row">
                                     <input id="bookDate" type="date" value="">
-                                    <button class="btn bookbtn btn-outline-primary" name="btn-myBook">搜尋</button>
+                                    <!--<button class="btn bookbtn btn-outline-primary" name="btn-myBook">搜尋</button>-->
                                 </div>
                                 <div class="reservation-colors d-flex flex-md-row">
                                     <p class="bookuseable" id="border">可預約</p>
@@ -297,11 +297,11 @@
                 if (day < 10)
                     day = "0" + day;
                 var today = now.getFullYear() + '-' + month + '-' + day;
-                $('#bookDate').val(today);
+                //$('#bookDate').val(today);
                 $('#bookDate').attr('min', today);
             });
             $("[name='btn-reserve']").click(getReserve);
-            $("[name='btn-myBook']").click(submitQuery);
+            $("#bookDate").change(submitQuery);
 
             function getReserve() {
                 $('.bookselected').each(function () {
@@ -428,6 +428,7 @@
                         $('#bookTable tr').each(function (i) {
                             $(this)
                                 .find('td')
+                                .text('已過期')
                                 .addClass('bookouttime')
                         })
                     } else if (today.getFullYear() == new Date(date).getFullYear()) {
@@ -435,6 +436,7 @@
                             $('#bookTable tr').each(function (i) {
                                 $(this)
                                     .find('td')
+                                    .text('已過期')
                                     .addClass('bookouttime')
                             })
                         } else if (today.getMonth() == new Date(date).getMonth()) {
@@ -442,6 +444,7 @@
                                 $('#bookTable tr').each(function (i) {
                                     $(this)
                                         .find('td')
+                                        .text('已過期')
                                         .addClass('bookouttime')
                                 })
                             }
@@ -450,15 +453,15 @@
                                 $('#bookTable tr').each(function (i) {
                                     $(this)
                                         .find('td')
-                                        .addClass(
-                                            i + first_row <= end_row ? 'bookouttime' : 'bookuseable'
-                                        )
+                                        .text(i + first_row <= end_row ? '已過期' : '可預約')
+                                        .addClass(i + first_row <= end_row ? 'bookouttime' : 'bookuseable')
                                 })
                             }
                             if (today.getDate() < new Date(date).getDate()) {
                                 $('#bookTable tr').each(function (i) {
                                     $(this)
                                         .find('td')
+                                        .text('可預約')
                                         .addClass('bookuseable')
                                 })
                             }
@@ -466,6 +469,7 @@
                             $('#bookTable tr').each(function (i) {
                                 $(this)
                                     .find('td')
+                                    .text('可預約')
                                     .addClass('bookuseable')
                             })
                         }
@@ -473,9 +477,11 @@
                         $('#bookTable tr').each(function (i) {
                             $(this)
                                 .find('td')
+                                .text('可預約')
                                 .addClass('bookuseable')
                         })
                     }
+                        
 
                     /*開始遍歷，根據預約紀錄的開始時間生成對應的行坐標，找到表格中對應位置的td删除本身的class，增加bookoccupied表示對應時段已經被預約*/
                     if (bookList != null) {
@@ -490,13 +496,14 @@
                                 .find('td')
                                 .eq(col)
                                 .removeClass()
-                                .addClass('bookoccupied')
+                                .text('被預約')
+                                .addClass('bookoccupied')      
                         })
                     }
 
                     /*所有可以預約的td绑定一個click事件，即點擊表示選中，再點一次恢復原来狀態，直到點擊預約按钮預約成功後，解除click事件，並由bookuseable變為bookoccupied*/
                     $('tr .bookuseable').bind('click', function () {
-                        $(this).toggleClass('bookselected').removeClass("bookuseable");
+                        $(this).toggleClass('bookselected').removeClass("bookuseable").text('已選取');
                         $('tr .bookuseable').toggleClass('bookouttime');
                         if ($(this).hasClass("bookselected")) {
                             if ($('tr .bookuseable').hasClass('bookouttime') != true) {
@@ -504,7 +511,7 @@
                                 submitQuery();
                             }
                         } else {
-                            $(this).addClass("bookuseable");
+                            $(this).addClass("bookuseable").text('可預約');
                         }
                     })
 

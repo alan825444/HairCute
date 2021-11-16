@@ -3430,17 +3430,17 @@ section .section-title span {
   margin-top: 10px;
 }
 .bookoccupied{
-	background:rgba(251, 154, 102, 0.8) !important;
+    background: rgba(251, 154, 102, 0.8) !important;
 }
 .bookouttime{
-	background:#bbb !important;
+    background: #bbb !important;
 }
 
 #border{
   border: 1px solid rgba(128, 128, 128, 0.6);
 }
 .bookuseables{
-	background-color: rgba(48, 171, 193, 0.6);
+    background-color: rgba(48, 171, 193, 0.6);
 }
 .bookuseable{
     background-color: white;
@@ -3456,17 +3456,17 @@ tr .bookuseable:active{
 	background:rgba(48, 171, 193, 0.6) !important;
 }
 .bookselected {
-	background:rgba(48, 171, 193, 0.6)!important;
+    background: rgba(48, 171, 193, 0.6) !important;
 }
 
 #bookTable th {
-	text-align: center;
+    text-align: center;
 }
 
 .dateTime-area{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .datepicker{
   margin: 0px 0 12px 0;
