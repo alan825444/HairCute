@@ -81,24 +81,21 @@
             {
                 if ((item.Item != null) || (item.Price != null))
                 {
-                    <div class="row menu-info mt-3">
+                    <div class="row menu-info mt-3 col-9">
                         <div class="menu-img col-md-3">
                             <div class="menu-img-container">
                                 <img src="~/img/bg-img/hair-cut.jpg">
                             </div>
                         </div>
-                        <div class="col-md-4 menu-title">
+                        <div class="col-md-6 menu-title">
                             <div class="d-flex flex-md-row justify-content-md-between align-items-center">
                                 <h4 class="menu-name">@item.Item</h4>
-                                <h6 class="menu-price col-md-3">
+                                <h6 class="menu-price col-md-4">
                                     <i class="fas fa-dollar-sign mr-1"></i>@item.Price
                                 </h6>
-                            </div>
-                            <p class="menu-description">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                            </p>
+                            </div> 
                         </div>
-                        <div class="reserve-btn col-md-2">
+                        <div class="reserve-btn col-md-3">
                             <input type="hidden" id="itemId_@count" value="@item.ID" />
                             <input type="hidden" id="designerId_@count" value="@item.DesignerId" />
                             <button class="btn btn-success reserve-confirm" data-bs-toggle="modal" data-bs-target="#time-table" onclick="(itemData_@count)();">
