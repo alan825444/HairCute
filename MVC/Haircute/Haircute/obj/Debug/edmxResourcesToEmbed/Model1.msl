@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="demodbModelStoreContainer" CdmEntityContainer="demodbEntities">
+    <EntitySetMapping Name="tMember">
+      <EntityTypeMapping TypeName="demodbModel.tMember">
+        <MappingFragment StoreEntitySet="tMember">
+          <ScalarProperty Name="fHeadstack" ColumnName="fHeadstack" />
+          <ScalarProperty Name="fconfirmation" ColumnName="fconfirmation" />
+          <ScalarProperty Name="fCity" ColumnName="fCity" />
+          <ScalarProperty Name="fNickname" ColumnName="fNickname" />
+          <ScalarProperty Name="fID" ColumnName="fID" />
+          <ScalarProperty Name="fPwd" ColumnName="fPwd" />
+          <ScalarProperty Name="fUsername" ColumnName="fUsername" />
+          <ScalarProperty Name="fEmail" ColumnName="fEmail" />
+          <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+          <ScalarProperty Name="fGender" ColumnName="fGender" />
+          <ScalarProperty Name="fBirth" ColumnName="fBirth" />
+          <ScalarProperty Name="fArea" ColumnName="fArea" />
+          <ScalarProperty Name="fDesign" ColumnName="fDesign" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tArea">
+      <EntityTypeMapping TypeName="demodbModel.tArea">
+        <MappingFragment StoreEntitySet="tArea">
+          <ScalarProperty Name="fk_City" ColumnName="fk_City" />
+          <ScalarProperty Name="fArea" ColumnName="fArea" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tCity">
+      <EntityTypeMapping TypeName="demodbModel.tCity">
+        <MappingFragment StoreEntitySet="tCity">
+          <ScalarProperty Name="fCity" ColumnName="fCity" />
+          <ScalarProperty Name="fID" ColumnName="fID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tService">
+      <EntityTypeMapping TypeName="demodbModel.tService">
+        <MappingFragment StoreEntitySet="tService">
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fprice" ColumnName="fprice" />
+          <ScalarProperty Name="fServicN" ColumnName="fServicN" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tBook">
+      <EntityTypeMapping TypeName="demodbModel.tBook">
+        <MappingFragment StoreEntitySet="tBook">
+          <ScalarProperty Name="fstatus" ColumnName="fstatus" />
+          <ScalarProperty Name="fBookTime" ColumnName="fBookTime" />
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+          <ScalarProperty Name="fk_Service" ColumnName="fk_Service" />
+          <ScalarProperty Name="fBookNumber" ColumnName="fBookNumber" />
+          <ScalarProperty Name="fName" ColumnName="fName" />
+          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+          <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+          <ScalarProperty Name="fDateTime" ColumnName="fDateTime" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tLike">
+      <EntityTypeMapping TypeName="demodbModel.tLike">
+        <MappingFragment StoreEntitySet="tLike">
+          <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+          <ScalarProperty Name="fk_Photo" ColumnName="fk_Photo" />
+          <ScalarProperty Name="fLike" ColumnName="fLike" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPhoto">
+      <EntityTypeMapping TypeName="demodbModel.tPhoto">
+        <MappingFragment StoreEntitySet="tPhoto">
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fDateTime" ColumnName="fDateTime" />
+          <ScalarProperty Name="fPath" ColumnName="fPath" />
+          <ScalarProperty Name="fTag" ColumnName="fTag" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tWork">
+      <EntityTypeMapping TypeName="demodbModel.tWork">
+        <MappingFragment StoreEntitySet="tWork">
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fRestDate" ColumnName="fRestDate" />
+          <ScalarProperty Name="fEndTime" ColumnName="fEndTime" />
+          <ScalarProperty Name="fStartTime" ColumnName="fStartTime" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDesigner">
+      <EntityTypeMapping TypeName="demodbModel.tDesigner">
+        <MappingFragment StoreEntitySet="tDesigner">
+          <ScalarProperty Name="fStoreArea" ColumnName="fStoreArea" />
+          <ScalarProperty Name="fStoreCity" ColumnName="fStoreCity" />
+          <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+          <ScalarProperty Name="fHeadSticker" ColumnName="fHeadSticker" />
+          <ScalarProperty Name="fAddress" ColumnName="fAddress" />
+          <ScalarProperty Name="fStore" ColumnName="fStore" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tComment">
+      <EntityTypeMapping TypeName="demodbModel.tComment">
+        <MappingFragment StoreEntitySet="tComment">
+          <ScalarProperty Name="fk_Book" ColumnName="fk_Book" />
+          <ScalarProperty Name="fk_Designer" ColumnName="fk_Designer" />
+          <ScalarProperty Name="fk_Member" ColumnName="fk_Member" />
+          <ScalarProperty Name="fScore" ColumnName="fScore" />
+          <ScalarProperty Name="fComment" ColumnName="fComment" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
